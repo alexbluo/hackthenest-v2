@@ -1,15 +1,25 @@
 {
-  "name": "hack-the-hill-2023",
+  "name": "test",
+  "version": "0.0.0",
   "private": true,
-  "version": "1.0.0",
-  "repository": "https://github.com/alexbluo/hack-the-hill-2023.git",
-  "author": "Alex Luo <alexbluo01@gmail.com>",
-  "license": "MIT",
   "workspaces": [
-    "packages/*",
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
   "devDependencies": {
-    "turbo": "^1.5.1"
-  }
+    "eslint-config-custom": "*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.19"
 }

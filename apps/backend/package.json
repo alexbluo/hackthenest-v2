@@ -1,0 +1,18 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-lambda": "^3.10.2",
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "serverless-offline": "^10.1.0",
+    "serverless-webpack": "^5.9.1",
+    "tsconfig": "*",
+    "typescript": "^4.8.3",
+    "webpack": "^5.74.0"
+  }
+}
