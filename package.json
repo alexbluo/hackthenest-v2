@@ -6,10 +6,15 @@
   "author": "Alex Luo <alexbluo01@gmail.com>",
   "license": "MIT",
   "workspaces": [
-    "packages/*",
-    "apps/*"
+    "frontend",
+    "backend"
   ],
+    "scripts": {
+    "start": "yarn workspace backend start",
+    "build": "yarn workspace frontend build",
+    "dev": "concurrently -i \"yarn workspace backend dev\" \"yarn workspace frontend start\""
+  },
   "devDependencies": {
-    "turbo": "^1.5.1"
+    "concurrently": "^7.0.0"
   }
 }
