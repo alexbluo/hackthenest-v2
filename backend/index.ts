@@ -1,6 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server-lambda");
 
-// TODO: how to deploy to same url if express, otherwise how to handle lambda?
+// TODO: serverless webpack
 
 const typeDefs = gql`
   type Query {
