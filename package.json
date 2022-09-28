@@ -3,16 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "repository": "https://github.com/alexbluo/hack-the-hill-2023.git",
-  "author": "Alex Luo <alexbluo01@gmail.com>",
   "license": "MIT",
   "workspaces": [
     "frontend",
     "backend"
   ],
-    "scripts": {
+  "scripts": {
     "start": "yarn workspace backend start",
     "build": "yarn workspace frontend build",
-    "dev": "concurrently -i \"yarn workspace backend dev\" \"yarn workspace frontend start\""
+    "dev": "concurrently -i \"yarn workspace backend dev\" \"yarn workspace frontend dev\""
   },
   "devDependencies": {
     "concurrently": "^7.0.0"
