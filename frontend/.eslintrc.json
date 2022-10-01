@@ -7,6 +7,7 @@
     "plugin:import/typescript",
     "prettier"
   ],
+  "ignorePatterns": "*.config.js",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
