@@ -6,6 +6,13 @@ provider:
   runtime: nodejs16.x
 plugins:
   - serverless-offline
+  - serverless-webpack
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: false
+    packager: 'yarn'
+    excludeFiles: node_modules
 functions:
   graphql:
     handler: index.gqlHandler
@@ -13,4 +20,8 @@ functions:
       - http:
           path: graphql
           method: get
+          cors: true
+      - http:
+          path: graphql
+          method: post
           cors: true
