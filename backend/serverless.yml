@@ -9,9 +9,9 @@ plugins:
   - serverless-webpack
 custom:
   webpack:
-    webpackConfig: 'webpack.config.js'
+    webpackConfig: "webpack.config.js"
     includeModules: false
-    packager: 'yarn'
+    packager: "yarn"
     excludeFiles: node_modules
 functions:
   graphql:

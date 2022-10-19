@@ -2,10 +2,10 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    index: "index.ts",
+    index: "./index.ts",
   },
   output: {
-    path: __dirname,
+    path: path.resolve(__dirname, "build"),
     filename: "[name].js",
   },
   mode: "production",
@@ -16,9 +16,10 @@ module.exports = {
         use: {
           loader: "ts-loader",
           options: {
-            configFile: "tsconfig.scripts.json",
+            configFile: "tsconfig.json",
           },
         },
+        exclude: /node_modules/,
       },
     ],
   },
