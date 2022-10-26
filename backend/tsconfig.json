@@ -2,12 +2,8 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
-    "sourceMap": true
+    "sourceMap": true,
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "index.ts"
-  ],
+  "include": ["**/*.ts", "**/*.tsx", "index.ts"],
   "exclude": ["node_modules"]
 }

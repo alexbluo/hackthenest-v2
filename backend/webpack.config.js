@@ -3,6 +3,7 @@ const slsw = require("serverless-webpack");
 
 module.exports = {
   devtool: "source-map",
+  target: "node",
   entry: {
     index: "./index.ts",
   },
@@ -26,6 +27,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".js", "json"],
+    extensions: [".ts", ".mjs", ".js"],
   },
 };
