@@ -1,7 +1,5 @@
 const { ApolloServer, gql } = require("apollo-server-lambda");
 
-// TODO: serverless webpack
-
 const typeDefs = gql`
   type Query {
     hello: String
@@ -21,4 +19,4 @@ const server = new ApolloServer({
   cache: "bounded",
 });
 
-exports.gqlHandler = server.createHandler();
+exports.handler = server.createHandler();

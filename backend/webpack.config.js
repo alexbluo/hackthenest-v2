@@ -1,6 +1,8 @@
 const path = require("path");
+const slsw = require("serverless-webpack");
 
 module.exports = {
+  devtool: "source-map",
   entry: {
     index: "./index.ts",
   },

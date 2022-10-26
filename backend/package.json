@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "dependencies": {
     "apollo-server-lambda": "^3.10.2",
     "graphql": "^16.6.0"
@@ -22,6 +22,6 @@
     "webpack": "^5.74.0"
   },
   "scripts": {
-    "dev": "sls offline --noPrependStageInUrl"
+    "dev": "sls offline --httpPort 5000 --noPrependStageInUrl"
   }
 }

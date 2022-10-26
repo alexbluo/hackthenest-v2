@@ -1,5 +1,3 @@
-# serverless.yml
-
 service: apollo-lambda
 provider:
   name: aws
@@ -8,20 +6,18 @@ plugins:
   - serverless-offline
   - serverless-webpack
 custom:
+  serverless-offline:
+    useChildProcesses: true
   webpack:
     webpackConfig: "webpack.config.js"
-    includeModules: false
+    includeModules: true
     packager: "yarn"
-    excludeFiles: node_modules
+    excludeFiles:
 functions:
   graphql:
-    handler: index.gqlHandler
+    handler: index.handler
     events:
       - http:
           path: graphql
           method: get
-          cors: true
-      - http:
-          path: graphql
-          method: post
           cors: true
