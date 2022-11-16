@@ -1,5 +1,5 @@
 const FrontSection = () => {
-  return <section id="front">FRONT</section>
+  return <section className="bg-blue-700" id="front">FRONT</section>
 }
 
 export default FrontSection

@@ -4,15 +4,15 @@ provider:
   runtime: nodejs16.x
 plugins:
   - serverless-offline
-#   - serverless-webpack
-# custom:
-#   serverless-offline:
-#     useChildProcesses: true
-#   webpack:
-#     webpackConfig: "webpack.config.js"
-#     includeModules: true
-#     packager: "yarn"
-#     excludeFiles: node_modules
+  - serverless-webpack
+custom:
+  serverless-offline:
+    useChildProcesses: true
+  webpack:
+    webpackConfig: "webpack.config.js"
+    includeModules: true
+    packager: "yarn"
+    excludeFiles: node_modules
 functions:
   graphql:
     handler: index.handler
