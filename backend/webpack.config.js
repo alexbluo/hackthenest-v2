@@ -8,6 +8,7 @@ module.exports = {
     index: "./index.ts",
   },
   output: {
+    libraryTarget: "commonjs",
     path: path.resolve(__dirname, "build"),
     filename: "[name].js",
   },

@@ -5,6 +5,6 @@
     "sourceMap": true,
     "module": "commonjs"
   },
-  "include": ["**/*.ts", "**/*.tsx", "index.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "build/service/index.ts", "index.js"],
   "exclude": ["node_modules"]
 }
