@@ -19,6 +19,4 @@ const server = new ApolloServer({
   cache: "bounded",
 });
 
-// issue is compiled file is found but handler not actually exported
-
 exports.handler = server.createHandler();
