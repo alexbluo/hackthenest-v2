@@ -8,8 +8,9 @@ import ScheduleSection from "../components/ScheduleSection";
 import SponsorsSection from "../components/SponsorsSection";
 
 const Home: NextPage = () => {
+
   return (
-    <div className="bg-raisin">
+    <div className="bg-bl">
       <NavBar />
       <main>
         <FrontSection />
