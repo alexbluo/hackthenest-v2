@@ -1,5 +1,9 @@
 const FrontSection = () => {
-  return <section className="bg-blue-700" id="front">FRONT</section>
-}
+  return (
+    <section className="bg-blue-700 h-screen" id="front">
+      FRONT
+    </section>
+  );
+};
 
-export default FrontSection
+export default FrontSection;
