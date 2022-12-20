@@ -8,7 +8,7 @@ const AboutSection = () => {
 
         <div className = "grid grid-cols-2">
 
-          <div className = "text-center"> soerjf</div>
+          <div className = "text-center"> swrwkjrnoerjf</div>
           <div className = "text-center">andanwd</div>
           
         </div>
