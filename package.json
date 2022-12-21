@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "hack-the-nest-2023",
-=======
-  "name": "frontend",
->>>>>>> 56209ea5 (add faq)
   "private": true,
   "version": "1.0.0",
   "scripts": {
