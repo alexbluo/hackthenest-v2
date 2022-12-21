@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "hack-the-nest-2023",
+=======
+  "name": "frontend",
+>>>>>>> 56209ea5 (add faq)
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -12,7 +16,8 @@
     "framer-motion": "^6.5.1",
     "next": "^13.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-scroll": "^1.8.9"
   },
   "devDependencies": {
     "@types/node": "18.0.3",
