@@ -1,7 +1,7 @@
 import React from "react";
 import { useCycle } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import MobileMenuToggle from "./MobileMenuToggle";
 import NavItem from "./NavItem";
