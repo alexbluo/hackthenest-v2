@@ -1,7 +1,7 @@
-import { NextPage } from "next";
+import { NextPage } from "next"
 
 const Login: NextPage = () => {
-  return <div className=""> Sup</div>;
-};
+  return <div className=""></div>
+}
 
 export default Login;
