@@ -15,7 +15,6 @@ const FAQSection = () => {
         <FAQ question="H">H contents</FAQ>
         <FAQ question="I">I contents</FAQ>
         <FAQ question="J">J contents</FAQ>
-
       </div>
     </section>
   );
