@@ -10,7 +10,7 @@ const NavBar = () => {
   const [open, toggleOpen] = useCycle(false, true);
 
   return (
-    <nav className="z-50 flex h-24 w-full items-center justify-between bg-transparent">
+    <nav className="z-50 absolute top-0 flex h-24 w-full items-center justify-between bg-transparent">
       <div className="flex aspect-square h-full items-center justify-center">
         <div className="relative aspect-square h-3/4">
           {/* <Link href="/favicon.png">

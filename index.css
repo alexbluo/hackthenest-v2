@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  section {
+    @apply relative py-8 sm:py-16 px-8 sm:px-48 max-w-screen-2xl mx-auto;
+  }
+  h2 {
+    @apply text-5xl py-8
+  }
+}

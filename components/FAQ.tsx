@@ -1,5 +1,4 @@
 import { useState } from "react";
-import classNames from "classnames";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -12,9 +11,9 @@ const FAQ = ({ question, children }: Props) => {
 
   return (
     <button className="flex flex-col" onClick={() => setOpen(!open)}>
-      <div>{question}</div>
+      <h3 className="text-2xl">{question}</h3>
       <motion.div
-        className="overflow-y-auto"
+        className="overflow-y-hidden text-lg"
         animate={open ? "open" : "closed"}
         variants={{ closed: { height: 0 }, open: { height: "auto" } }}
       >

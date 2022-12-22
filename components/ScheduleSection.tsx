@@ -1,9 +1,9 @@
 const ScheduleSection = () => {
+  return (
+    <section className="bg-green-900 h-screen" id="schedule">
+      <h2>Schedule</h2>
+    </section>
+  );
+};
 
-
-
-    return <section className="bg-green-900 h-screen" id="schedule"><div>hi</div></section>;
-  };
-  
-  export default ScheduleSection;
-  
+export default ScheduleSection;

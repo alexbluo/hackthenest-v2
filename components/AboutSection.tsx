@@ -1,21 +1,13 @@
 const AboutSection = () => {
   return (
     <section className="bg-yellow-400 h-screen" id="about">
-      
-        <div className= "text-center text-8xl p-10">
-          About
-        </div>
+      <h2>About</h2>
 
-        <div className = "grid grid-cols-2">
-
-          <div className = "text-center"> swrwkjrnoerjf</div>
-          <div className = "text-center">andanwd</div>
-          
-        </div>
-      
+      <div className="grid grid-cols-2">
+        <div className="text-center"> swrwkjrnoerjf</div>
+        <div className="text-center">andanwd</div>
+      </div>
     </section>
-
-    
   );
 };
 
