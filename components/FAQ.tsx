@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classNames from "classnames";
+import { motion } from "framer-motion";
 
-const FAQ = ({ children, question }) => {
+interface Props {
+  question: string;
+  children: string;
+}
+
+const FAQ = ({ question, children }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
     <button className="flex flex-col" onClick={() => setOpen(!open)}>
       <div>{question}</div>
-      <div
-        className={classNames(
-          "duration-1000 overflow-y-auto",
-          { "max-h-0": !open },
-          { "max-h-96": open }
-        )}
+      <motion.div
+        className="overflow-y-auto"
+        animate={open ? "open" : "closed"}
+        variants={{ closed: { height: 0 }, open: { height: "auto" } }}
       >
         {children}
-      </div>
+      </motion.div>
     </button>
   );
 };
