@@ -1,3 +1,4 @@
+import { filterProps } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const FAQ = ({ children, question }) => {
@@ -9,11 +10,11 @@ const FAQ = ({ children, question }) => {
 
   return (
     <button
-      className={open ? "text-blue-400" : "text-red-400"}
+      
       onClick={() => setOpen(!open)}
     >
       <div>{question}</div>
-      <div></div>
+      <div className={open ? "block" : "hidden"}>{children}</div>
     </button>
   );
 };
