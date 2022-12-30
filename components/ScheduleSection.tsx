@@ -1,6 +1,6 @@
 const ScheduleSection = () => {
   return (
-    <section className="bg-green-900 h-screen" id="schedule">
+    <section className="h-screen bg-blue-dark" id="schedule">
       <h2>Schedule</h2>
     </section>
   );

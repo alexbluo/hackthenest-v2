@@ -1,5 +1,9 @@
 const SponsorsSection = () => {
-  return <section className="bg-rose-600 h-screen" id="sponsors"><h2>Sponsors</h2></section>;
+  return (
+    <section className="h-screen bg-grey" id="sponsors">
+      <h2>Sponsors</h2>
+    </section>
+  );
 };
 
 export default SponsorsSection;

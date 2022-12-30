@@ -10,7 +10,7 @@ const MobileMenu = ({ open }: Props) => {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="border-b-blue-dark absolute top-20 left-0 z-50 w-full border-b border-b-peach bg-raisin sm:hidden"
+          className="border-b-peach bg-raisin absolute top-20 left-0 z-50 w-full border-b border-b-blue-dark sm:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

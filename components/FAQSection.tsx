@@ -2,7 +2,7 @@ import FAQ from "./FAQ";
 
 const FAQSection = () => {
   return (
-    <section className="bg-purple-800 h-screen text-6xl" id="faq">
+    <section className="h-screen bg-orange text-6xl" id="faq">
       <h2 className="text-center">FAQ</h2>
       <div className="grid grid-cols-2 gap-4">
         <FAQ question="A">A contents</FAQ>
