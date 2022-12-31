@@ -21,6 +21,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react/button-has-type": "off",
+    "react/self-closing-comp": "off",
     "react/function-component-definition": [
       "error",
       {
