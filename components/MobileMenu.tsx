@@ -8,6 +8,7 @@ interface Props {
 const MobileMenu = ({ open }: Props) => {
   return (
     <AnimatePresence>
+      {/* look in lab for better solution */}
       {open && (
         <motion.div
           className="border-b-peach bg-raisin absolute top-20 left-0 z-50 w-full border-b border-b-blue-dark sm:hidden"
@@ -16,10 +17,10 @@ const MobileMenu = ({ open }: Props) => {
           exit={{ opacity: 0 }}
         >
           <ul className="flex flex-col gap-4 p-4 text-center">
-            <NavItem to="research">Research</NavItem>
-            <NavItem to="team">Team</NavItem>
-            <NavItem to="news">News</NavItem>
-            <NavItem to="publications">Publications</NavItem>
+            <NavItem to="about">About</NavItem>
+            <NavItem to="schedule">Schedule</NavItem>
+            <NavItem to="faq">FAQ</NavItem>
+            <NavItem to="sponsors">Sponsors</NavItem>
           </ul>
         </motion.div>
       )}
