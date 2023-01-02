@@ -1,4 +1,4 @@
-const Dashboard= () => {
+const Dashboard = () => {
   return <div>dashboard</div>;
 };
 

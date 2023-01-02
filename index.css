@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: set max-w-screen-2xl */
 @layer base {
   section {
-    @apply relative py-8 sm:py-16 px-8 sm:px-48 max-w-screen-2xl mx-auto;
+    @apply relative py-8 sm:py-16 px-8 sm:px-48 mx-auto;
   }
   h2 {
     @apply text-5xl py-8

@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <title>Hack the Nest 2023</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <div className="bg-bl">
+      <div className="">
         <NavBar />
         <main>
           <FrontSection />
