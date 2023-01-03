@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Nunito, Hanken_Grotesk } from "@next/font/google";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -6,6 +7,18 @@ import Script from "next/script";
 import * as gtag from "../utils/gtag";
 import { GA_TRACKING_ID } from "../utils/gtag";
 import "../index.css";
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-nunito",
+});
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-hanken-grotesk",
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -43,7 +56,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <div className={`${nunito.variable} ${hankenGrotesk.variable} font-sans`}>
+        <Component {...pageProps} />
+      </div>
     </>
   );
 };

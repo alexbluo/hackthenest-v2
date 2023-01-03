@@ -1,10 +1,13 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
   content: ["./components/*.{ts,tsx}", "./pages/*.{ts,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {},
+    fontFamily: {
+      sans: ["var(--font-nunito)", ...fontFamily.sans],
+      header: ["var(--font-hanken-grotesk)", ...fontFamily.sans],
     },
     colors: {
       "blue-light": "#61a7cf",

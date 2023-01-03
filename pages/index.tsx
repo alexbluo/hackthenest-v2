@@ -13,9 +13,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Hack the Nest 2023</title>
-        <link rel="icon" href="/favicon.png" />
       </Head>
-      <div className="">
         <NavBar />
         <main>
           <FrontSection />
@@ -25,7 +23,6 @@ const Home: NextPage = () => {
           <SponsorsSection />
         </main>
         <Footer />
-      </div>
     </>
   );
 };

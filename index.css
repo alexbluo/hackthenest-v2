@@ -8,6 +8,6 @@
     @apply relative py-8 sm:py-16 px-8 sm:px-48 mx-auto;
   }
   h2 {
-    @apply text-5xl pb-8
+    @apply text-5xl font-bold pb-8 font-header
   }
 }

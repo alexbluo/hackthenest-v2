@@ -1,4 +1,4 @@
-import Sponsor from "./Sponsor";
+import Sponsor from "../pages/Sponsor";
 
 const SponsorsSection = () => {
   return (
