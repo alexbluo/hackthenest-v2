@@ -19,7 +19,7 @@ interface Props {
 const MobileMenuToggle = ({ open, handleClick }: Props) => {
   return (
     <motion.button
-      className="mr-6 block lg:hidden"
+      className="mr-6 block xl:hidden"
       animate={open ? "open" : "closed"}
       onClick={handleClick}
     >

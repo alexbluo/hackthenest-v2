@@ -1,3 +1,4 @@
+// TODO: made with 
 const Footer = () => {
   return <footer></footer>;
 };

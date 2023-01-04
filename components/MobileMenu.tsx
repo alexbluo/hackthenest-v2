@@ -11,7 +11,7 @@ const MobileMenu = ({ open }: Props) => {
       {/* look in lab for better solution */}
       {open && (
         <motion.div
-          className="border-b-peach bg-raisin absolute top-20 left-0 z-50 w-full border-b border-b-blue-dark sm:hidden"
+          className="absolute top-24 left-0 z-50 w-full border-b border-b-blue-dark bg-blue-dark xl:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

@@ -7,7 +7,7 @@ interface Props {
 
 const Sponsor = ({ path, alt }: Props) => {
   return (
-    <div className="h-48 w-full bg-orange p-10" id="sponsors">
+    <div className="h-48 w-full p-10" id="sponsors">
       <div className="relative h-full">
         <Image src={path} alt={alt} fill />
       </div>

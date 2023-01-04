@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <section className="h-screen bg-blue-mid" id="about">
+    <section className="h-screen" id="about">
       <h2>About</h2>
 
       <div className="grid grid-cols-2">

@@ -1,8 +1,8 @@
-import Sponsor from "../pages/Sponsor";
+import Sponsor from "./Sponsor";
 
 const SponsorsSection = () => {
   return (
-    <section className="h-screen bg-grey" id="sponsors">
+    <section className="h-screen" id="sponsors">
       <h2>Sponsors</h2>
       <div className="flex flex-col gap-4">
         <div className="flex">

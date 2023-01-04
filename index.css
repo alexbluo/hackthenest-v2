@@ -5,9 +5,9 @@
 /* TODO: set max-w-screen-2xl */
 @layer base {
   section {
-    @apply relative py-8 sm:py-16 px-8 sm:px-48 mx-auto;
+    @apply container relative mx-auto py-8 px-8 xl:py-16 xl:px-32;
   }
   h2 {
-    @apply text-5xl font-bold pb-8 font-header
+    @apply pb-8 font-header text-5xl font-bold;
   }
 }

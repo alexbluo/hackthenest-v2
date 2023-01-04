@@ -14,15 +14,15 @@ const Home: NextPage = () => {
       <Head>
         <title>Hack the Nest 2023</title>
       </Head>
-        <NavBar />
-        <main>
-          <FrontSection />
-          <AboutSection />
-          <ScheduleSection />
-          <FAQSection />
-          <SponsorsSection />
-        </main>
-        <Footer />
+      <NavBar />
+      <main>
+        <FrontSection />
+        <AboutSection />
+        <ScheduleSection />
+        <FAQSection />
+        <SponsorsSection />
+      </main>
+      <Footer />
     </>
   );
 };
