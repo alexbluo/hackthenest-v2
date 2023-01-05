@@ -7,6 +7,7 @@ const AboutSection = () => {
         <div className="text-center"> swrwkjrnoerjf</div>
         <div className="text-center">andanwd</div>
       </div>
+     
     </section>
   );
 };
