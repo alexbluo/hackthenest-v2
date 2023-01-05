@@ -12,19 +12,19 @@ const Footer = () => {
 
           <div className="flex h-8 w-8 flex-row gap-4">
             <div className="relative aspect-square h-full">
-              <Link href="https://www.op.gg">
+              <Link href="https://media.discordapp.net/attachments/776475361810448398/779130601088483338/Screen_Shot_2020-11-07_at_1.33.36_AM.png">
                 <Image src="/evan.jpg" alt="evan" fill />
               </Link>
             </div>
 
             <div className="relative aspect-square h-full">
-              <Link href="https://www.instagram.com/tylernguyenlol">
+              <Link href="https://media.discordapp.net/attachments/776475361810448398/779130601088483338/Screen_Shot_2020-11-07_at_1.33.36_AM.png">
                 <Image src="/evan.jpg" alt="evan" fill />
               </Link>
             </div>
 
             <div className="relative aspect-square h-full">
-              <Link href="https://www.twitch.tv/sanchovies">
+              <Link href="https://media.discordapp.net/attachments/776475361810448398/779130601088483338/Screen_Shot_2020-11-07_at_1.33.36_AM.png">
                 <Image src="/evan.jpg" alt="evan" fill />
               </Link>
             </div>
