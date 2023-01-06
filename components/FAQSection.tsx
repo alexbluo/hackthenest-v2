@@ -2,7 +2,7 @@ import FAQ from "./FAQ";
 
 const FAQSection = () => {
   return (
-    <section className="h-screen text-6xl" id="faq">
+    <section id="faq">
       <h2 className="text-center">FAQ</h2>
       <div className="flex flex-col gap-4 xl:flex-row xl:gap-16">
         <div className="flex w-full flex-col gap-4">

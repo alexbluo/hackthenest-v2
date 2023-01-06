@@ -9,31 +9,37 @@ const Footer = () => {
           <div className="relative flex h-32 w-32">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </div>
+        </div>
 
-          <div className="flex h-8 w-8 flex-row gap-4">
+        <div className="flex flex-col justify-center">
+          <div className="flex h-8 flex-row gap-4">
             <div className="relative aspect-square h-full">
-              <Link href="https://media.discordapp.net/attachments/776475361810448398/779130601088483338/Screen_Shot_2020-11-07_at_1.33.36_AM.png">
-                <Image src="/evan.jpg" alt="evan" fill />
+              <Link href="https://www.instagram.com/hackthenest_">
+                <Image src="/square-instagram.svg" alt="instagram" fill />
               </Link>
             </div>
 
             <div className="relative aspect-square h-full">
-              <Link href="https://media.discordapp.net/attachments/776475361810448398/779130601088483338/Screen_Shot_2020-11-07_at_1.33.36_AM.png">
-                <Image src="/evan.jpg" alt="evan" fill />
+              <Link href="https://www.twitter.com/hackthenest">
+                <Image src="/square-twitter.svg" alt="twitter" fill />
+              </Link>
+            </div>
+            {/* TODO */}
+            <div className="relative aspect-square h-full">
+              <Link href="https://www.facebook.com/hackthenest">
+                <Image src="/square-facebook.svg" alt="facebook" fill />
               </Link>
             </div>
 
             <div className="relative aspect-square h-full">
-              <Link href="https://media.discordapp.net/attachments/776475361810448398/779130601088483338/Screen_Shot_2020-11-07_at_1.33.36_AM.png">
-                <Image src="/evan.jpg" alt="evan" fill />
+              <Link href="https://www.linkedin.com/company/hackthenest/">
+                <Image src="/linkedin.svg" alt="linkedin" fill />
               </Link>
             </div>
           </div>
-        </div>
 
-        <div>
-          <p>text</p>
-          <p>text</p>
+          <p className="">text</p>
+          <p className="">text</p>
         </div>
       </div>
     </footer>
