@@ -6,15 +6,18 @@ interface Props {
   alt: string;
 }
 
-const Sponsor = ({ href = "", path, alt }: Props) => {
+const Sponsor = ({ href, path, alt }: Props) => {
   return (
-    <div className="h-48 w-full bg-blue-dark p-10" id="sponsors">
-      <a href={href}>
-        <div className="relative h-full">
-          <Image src={path} alt={alt} fill style={{ objectFit: "contain" }} />
-        </div>
-      </a>
-    </div>
+    <a
+      className="h-48 w-full bg-blue-dark p-10"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div className="relative h-full">
+        <Image src={path} alt={alt} style={{ objectFit: "contain" }} fill />
+      </div>
+    </a>
   );
 };
 
