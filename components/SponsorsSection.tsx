@@ -2,7 +2,7 @@ import Sponsor from "./Sponsor";
 
 const SponsorsSection = () => {
   return (
-    <section className="h-screen" id="sponsors">
+    <section className="" id="sponsors">
       <h2>Sponsors</h2>
       <p className="">
         Interested in sponsoring Hack the Nest 2023? Feel free to take a look at

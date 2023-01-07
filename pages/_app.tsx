@@ -57,7 +57,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
       />
       <div
-        className={`${nunito.variable} ${hankenGrotesk.variable} font-sans`}
+        className={`${nunito.variable} ${hankenGrotesk.variable} bg-[#E4CEB8] font-sans`}
       >
         <Component {...pageProps} />
       </div>

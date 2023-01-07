@@ -10,8 +10,8 @@ const NavBar = () => {
   const [open, toggleOpen] = useCycle(false, true);
 
   return (
-    <nav className="bg-transparent px-8 xl:px-32 top-0 container mx-auto z-50 w-full flex h-24 items-center justify-between">
-      <div className="relative aspect-square h-3/4">
+    <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 mx-auto flex h-32 w-full items-center justify-between px-8 xl:px-32">
+      <div className="relative aspect-square h-3/5">
         <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
       </div>
 
