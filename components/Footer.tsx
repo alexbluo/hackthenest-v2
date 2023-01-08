@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto py-12 px-8 xl:py-16 xl:px-32">
+    <footer className="container mx-auto py-12 px-12 xl:py-16 xl:px-32">
       <div className="flex flex-row justify-between">
         {/* the div directly below is necessary https://stackoverflow.com/questions/33636796/chrome-safari-not-filling-100-height-of-flex-parent */}
         <div className="flex">
@@ -15,20 +15,20 @@ const Footer = () => {
           <div className="flex h-8 flex-row gap-4">
             <div className="relative aspect-square h-full">
               <a href="https://www.instagram.com/hackthenest_">
-                <Image src="/square-instagram.svg" alt="instagram" fill />
+                <Image src="/instagram.svg" alt="instagram" fill />
               </a>
             </div>
 
             {/* TODO: check */}
             <div className="relative aspect-square h-full">
               <a href="https://www.facebook.com/hackthenest">
-                <Image src="/square-facebook.svg" alt="facebook" fill />
+                <Image src="/facebook.svg" alt="facebook" fill />
               </a>
             </div>
 
             <div className="relative aspect-square h-full">
               <a href="https://www.twitter.com/hackthenest">
-                <Image src="/square-twitter.svg" alt="twitter" fill />
+                <Image src="/twitter.svg" alt="twitter" fill />
               </a>
             </div>
 

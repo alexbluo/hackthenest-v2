@@ -3,7 +3,7 @@ import FAQ from "./FAQ";
 const FAQSection = () => {
   return (
     <section id="faq">
-      <h2 className="text-center">FAQ</h2>
+      <h2 className="">FAQ</h2>
       <div className="flex flex-col gap-4 xl:flex-row xl:gap-16">
         <div className="flex w-full flex-col gap-4">
           <FAQ question="A">A contents</FAQ>

@@ -9,7 +9,7 @@ interface Props {
 const Sponsor = ({ href, path, alt }: Props) => {
   return (
     <a
-      className="h-48 w-full cursor-pointer bg-blue-dark p-10"
+      className="h-52 rounded-xl w-full cursor-pointer bg-blue-dark p-8"
       href={href}
       target="_blank"
       rel="noreferrer"

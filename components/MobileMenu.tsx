@@ -8,10 +8,9 @@ interface Props {
 const MobileMenu = ({ open }: Props) => {
   return (
     <AnimatePresence>
-      {/* look in lab for better solution */}
       {open && (
         <motion.div
-          className="absolute top-24 left-0 z-50 w-full border-b border-b-blue-dark bg-blue-dark xl:hidden"
+          className="absolute top-32 left-0 z-50 w-full border-b border-b-blue-dark bg-blue-dark xl:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
