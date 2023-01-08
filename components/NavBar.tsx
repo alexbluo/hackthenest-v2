@@ -5,13 +5,13 @@ import MobileMenu from "./MobileMenu";
 import MobileMenuToggle from "./MobileMenuToggle";
 import NavItem from "./NavItem";
 
-// TODO: add padding and make sure massive screens look normal
+// TODO: move social media icon to mobile nav
 const NavBar = () => {
   const [open, toggleOpen] = useCycle(false, true);
 
   return (
     <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 mx-auto flex h-32 w-full items-center justify-between px-8 xl:px-32">
-      <div className="flex h-full items-center gap-8">
+      <div className="flex h-full items-center gap-12">
         <div className="relative aspect-square h-3/5">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
