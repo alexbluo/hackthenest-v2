@@ -40,10 +40,10 @@ const FAQSection = () => {
             Details on volunteer and mentor registration will be released soon.
           </FAQ>
           <FAQ question="How do teams work?">
-            There are up to four people per team, so bring your friends along!
-            Don&apos;t worry if you do not have a team by the start of the
-            event; we&apos;ll have two team formation sessions where several
-            other people are also looking to hack.
+            There are up to four people per team and you get to choose, so bring
+            your friends along! Don&apos;t worry if you do not have a team;
+            we&apos;ll have two team formation sessions towards the beginning of
+            the event.
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
             Due to limitations with our venue, hackers will return home around

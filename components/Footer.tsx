@@ -37,10 +37,23 @@ const Footer = () => {
                 <Image src="/linkedin.svg" alt="linkedin" fill />
               </a>
             </div>
+
+            <div className="relative aspect-square h-full">
+              <a href="https://www.linkedin.com/company/hackthenest/">
+                <Image src="/github.svg" alt="github" fill />
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2 text-right">
-            <p>hello@hackthenest.org</p>
+          <div className="flex flex-col gap-1 text-right font-semibold">
+            {/* <p>hello@hackthenest.org</p> */}
+            <a
+              href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              MLH Code of Conduct
+            </a>
             <p>© Hack the Nest 2023</p>
           </div>
         </div>
