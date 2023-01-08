@@ -1,6 +1,6 @@
 const FrontSection = () => {
   return (
-    <section className="min-h-screen pt-32" id="front">
+    <section className="pt-32 h-screen" id="front">
       <div className="flex h-full flex-col justify-center items-center">
         <h1 className="font-header text-6xl font-extrabold">Hack the Nest</h1>
         <p className="">April 14-16, 2023</p>
