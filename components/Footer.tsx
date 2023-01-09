@@ -12,34 +12,54 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col justify-center gap-4">
-          <div className="flex h-8 flex-row gap-4">
+          <div className="flex h-8 flex-row gap-8">
             <div className="relative aspect-square h-full">
-              <a href="https://www.instagram.com/hackthenest_">
+              <a
+                href="https://www.instagram.com/hackthenest_"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image src="/instagram.svg" alt="instagram" fill />
               </a>
             </div>
 
             {/* TODO: check */}
             <div className="relative aspect-square h-full">
-              <a href="https://www.facebook.com/hackthenest">
+              <a
+                href="https://www.facebook.com/hackthenest"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image src="/facebook.svg" alt="facebook" fill />
               </a>
             </div>
 
             <div className="relative aspect-square h-full">
-              <a href="https://www.twitter.com/hackthenest">
+              <a
+                href="https://www.twitter.com/hackthenest"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image src="/twitter.svg" alt="twitter" fill />
               </a>
             </div>
 
             <div className="relative aspect-square h-full">
-              <a href="https://www.linkedin.com/company/hackthenest/">
+              <a
+                href="https://www.linkedin.com/company/hackthenest/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image src="/linkedin.svg" alt="linkedin" fill />
               </a>
             </div>
 
             <div className="relative aspect-square h-full">
-              <a href="https://www.linkedin.com/company/hackthenest/">
+              <a
+                href="https://www.github.com/alexbluo/hack-the-nest-2023/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image src="/github.svg" alt="github" fill />
               </a>
             </div>

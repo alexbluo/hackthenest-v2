@@ -11,11 +11,11 @@ const FAQSection = () => {
             (also called hackers) bring their ideas to life.
           </FAQ>
           <FAQ question="How much does it cost?">
-            Absolute nothing! We&nbsp;ll take care of food, prizes, swag, and
+            Absolutely nothing! We&apos;ll take care of food, prizes, swag, and
             more.
           </FAQ>
-          <FAQ question="What if I don&nbsp;t know how to code?">
-            That&nbsp;s completely fine! In fact, we expect many participants to
+          <FAQ question="What if I don&apos;t know how to code?">
+            That&apos;s completely fine! In fact, we expect many participants to
             be first time hackers or beginners. Hack the Nest is a great chance
             to explore your interests while meeting new friends and interacting
             with familiar companies.
@@ -26,15 +26,14 @@ const FAQSection = () => {
           </FAQ>
           <FAQ question="Do I have to make a project?">
             You&apos;re not required to make a project to attend, but we
-            strongly encourage that you do in order to get the full hackathon
-            experience.
+            strongly encourage that you do in order to get the full hackathon.
           </FAQ>
         </div>
         <div className="flex w-full flex-col gap-4">
           <FAQ question="Who is eligible to attend?">
             Hack the Nest is open to all high school students. If you&apos;re
             not in high school but would still like to participate then
-            we&nbsp;d love to have you as a mentor or volunteer!
+            we&apos;d love to have you as a mentor or volunteer!
           </FAQ>
           <FAQ question="How can I volunteer or mentor?">
             Details on volunteer and mentor registration will be released soon.
@@ -49,11 +48,11 @@ const FAQSection = () => {
             Due to limitations with our venue, hackers will return home around
             9:00 - 10:00pm. We strongly encourage you to carpool with your group
             and even stay over at a member&apos;s place. Feel free to keep
-            working on your project in the wee hours - we&nbsp;ll even be
+            working on your project in the wee hours - we&apos;ll even be
             hosting online video game tournaments!
           </FAQ>
           <FAQ question="I have more questions!">
-            Contact hello@hackthenest.org and we&nbsp;ll get back to you as soon
+            Contact hello@hackthenest.org and we&apos;ll get back to you as soon
             as possible.
           </FAQ>
         </div>

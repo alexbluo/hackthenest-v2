@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Nunito, Hanken_Grotesk } from "@next/font/google";
+import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -20,7 +21,7 @@ const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken-grotesk",
 });
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -56,11 +57,13 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
         }}
       />
-      <div
-        className={`${nunito.variable} ${hankenGrotesk.variable} bg-[#ffeedb] font-sans`}
-      >
-        <Component {...pageProps} />
-      </div>
+      <SessionProvider session={session}>
+        <div
+          className={`${nunito.variable} ${hankenGrotesk.variable} bg-[#ffeedb] font-sans`}
+        >
+          <Component {...pageProps} />
+        </div>
+      </SessionProvider>
     </>
   );
 };

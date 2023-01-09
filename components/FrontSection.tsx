@@ -7,11 +7,11 @@ const FrontSection = () => {
         <p className="">River Hill High School</p>
       </div>
 
-      {/* <Link href="/login">
+      {/* <Link href="/dashboard">
         <button className="rounded-lg border py-4 px-12 hover:bg-orange">
           Apply Now
         </button>
-      </Link> */}
+      </Link>  */}
     </section>
   );
 };
