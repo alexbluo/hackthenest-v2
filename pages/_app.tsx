@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Nunito, Hanken_Grotesk } from "@next/font/google";
+import { Libre_Franklin, Hanken_Grotesk } from "@next/font/google";
 import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -9,10 +9,10 @@ import * as gtag from "../utils/gtag";
 import { GA_TRACKING_ID } from "../utils/gtag";
 import "../index.css";
 
-const nunito = Nunito({
+const libreFranklin = Libre_Franklin({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  variable: "--font-nunito",
+  variable: "--font-libre-franklin",
 });
 
 const hankenGrotesk = Hanken_Grotesk({
@@ -59,7 +59,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
       />
       <SessionProvider session={session}>
         <div
-          className={`${nunito.variable} ${hankenGrotesk.variable} bg-[#ffeedb] font-sans`}
+          className={`${libreFranklin.variable} ${hankenGrotesk.variable} bg-[#ffeedb] font-sans`}
         >
           <Component {...pageProps} />
         </div>

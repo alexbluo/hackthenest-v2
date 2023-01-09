@@ -6,7 +6,7 @@ module.exports = {
   content: ["./components/*.{ts,tsx}", "./pages/*.{ts,tsx}"],
   theme: {
     fontFamily: {
-      sans: ["var(--font-nunito)", ...fontFamily.sans],
+      sans: ["var(--font-libre-franklin)", ...fontFamily.sans],
       header: ["var(--font-hanken-grotesk)", ...fontFamily.sans],
     },
     colors: {
