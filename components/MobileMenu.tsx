@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import NavItem from "./NavItem";
 import Image from "next/image";
+import NavItem from "./NavItem";
 
 interface Props {
   open: boolean;
