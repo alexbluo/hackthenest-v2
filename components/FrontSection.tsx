@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const FrontSection = () => {
   return (
     <section className="pt-32 h-screen" id="front">
@@ -7,11 +9,11 @@ const FrontSection = () => {
         <p className="">River Hill High School</p>
       </div>
 
-      {/* <Link href="/dashboard">
+       <Link href="/dashboard">
         <button className="rounded-lg border py-4 px-12 hover:bg-orange">
           Apply Now
         </button>
-      </Link>  */}
+      </Link>  
     </section>
   );
 };
