@@ -14,7 +14,7 @@ const FAQSection = () => {
             Absolutely nothing! We&apos;ll take care of food, prizes, swag, and
             more.
           </FAQ>
-          <FAQ question="What if I don&apos;t know how to code?">
+          <FAQ question="What if I don't know how to code?">
             That&apos;s completely fine! In fact, we expect many participants to
             be first time hackers and beginners. Hack the Nest is a great chance
             to explore your interests while meeting new friends and interacting
@@ -26,14 +26,15 @@ const FAQSection = () => {
           </FAQ>
           <FAQ question="Do I have to make a project?">
             You&apos;re not required to make a project to attend, but we
-            strongly encourage that you do in order to get the full hackathon experience.
+            strongly encourage that you do in order to get the full hackathon
+            experience.
           </FAQ>
         </div>
         <div className="flex w-full flex-col gap-4">
           <FAQ question="Who is eligible to attend?">
-            Hack the Nest is open to all high school students. If you&apos;re
-            not in high school but would still like to participate then
-            we&apos;d love to have you as a mentor or volunteer!
+            Hack the Nest is open to all high school students from anywhere. If
+            you&apos;re not in high school but would still like to participate
+            then we&apos;d love to have you as a mentor or volunteer!
           </FAQ>
           <FAQ question="How can I volunteer or mentor?">
             Details on volunteer and mentor registration will be released soon.
@@ -42,7 +43,8 @@ const FAQSection = () => {
             There are up to four people per team and you get to choose, so bring
             your friends along! Don&apos;t worry if you do not have a team;
             we&apos;ll have two team formation sessions towards the beginning of
-            the event, and you can always find a team beforehand through our Discord.
+            the event, and you can always find a team beforehand through our
+            Discord.
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
             Due to limitations with our venue, hackers will return home around

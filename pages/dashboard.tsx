@@ -1,22 +1,41 @@
+import { useEffect } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 
 const Dashboard = () => {
-  return (
-  <section className="h-screen " id="dash">
-    <div className="flex flex-col h-full items-center py-20 space-y-5">
-      <Link href="/application">
-        <button className="rounded-lg border px-12 py-4 hover:bg-orange">
-          Application
-        </button>
-      </Link>
-      <Link href="/application">
-        <button className="rounded-lg border px-12 py-4 hover:bg-orange">
-          Logout
-        </button>
-      </Link>
-    </div>
-  </section>
-  );
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    if (!session) {
+      signIn();
+    }
+  }, []);
+
+  if (session) {
+    return (
+      <section className="h-screen">
+        <div className="flex h-full flex-col items-center justify-center gap-4">
+          <p> Welcome back, {session!.user!.email}</p>
+          <Link href="/application">
+            <button className="rounded-lg border px-12 py-4 hover:bg-orange">
+              Application
+            </button>
+          </Link>
+          <Link href="/application">
+            <button
+              className="rounded-lg border px-12 py-4 hover:bg-orange"
+              onClick={() => signOut()}
+            >
+              Logout
+            </button>
+          </Link>
+        </div>
+      </section>
+    );
+  }
+
+  // TODO: polish out
+  return null;
 };
 
 export default Dashboard;
