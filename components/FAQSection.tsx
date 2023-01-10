@@ -16,17 +16,17 @@ const FAQSection = () => {
           </FAQ>
           <FAQ question="What if I don&apos;t know how to code?">
             That&apos;s completely fine! In fact, we expect many participants to
-            be first time hackers or beginners. Hack the Nest is a great chance
+            be first time hackers and beginners. Hack the Nest is a great chance
             to explore your interests while meeting new friends and interacting
             with familiar companies.
           </FAQ>
           <FAQ question="When is are registrations due?">
             Registrations open February 1st and close April 1st. It only takes a
-            few minutes!
+            few minutes so go for it!
           </FAQ>
           <FAQ question="Do I have to make a project?">
             You&apos;re not required to make a project to attend, but we
-            strongly encourage that you do in order to get the full hackathon.
+            strongly encourage that you do in order to get the full hackathon experience.
           </FAQ>
         </div>
         <div className="flex w-full flex-col gap-4">
@@ -42,7 +42,7 @@ const FAQSection = () => {
             There are up to four people per team and you get to choose, so bring
             your friends along! Don&apos;t worry if you do not have a team;
             we&apos;ll have two team formation sessions towards the beginning of
-            the event.
+            the event, and you can always find a team beforehand through our Discord.
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
             Due to limitations with our venue, hackers will return home around

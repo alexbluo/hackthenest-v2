@@ -11,11 +11,11 @@ const FAQ = ({ question, children }: Props) => {
 
   return (
     <div className="flex flex-col">
-      <h3 className="cursor-pointer text-2xl" onClick={() => setOpen(!open)}>
+      <h3 className="cursor-pointer text-xl" onClick={() => setOpen(!open)}>
         {question}
       </h3>
       <motion.div
-        className="overflow-y-hidden text-lg"
+        className="overflow-y-hidden text-md pt-2"
         animate={open ? "open" : "closed"}
         variants={{ closed: { height: 0 }, open: { height: "auto" } }}
       >

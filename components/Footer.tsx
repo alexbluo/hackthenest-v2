@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-1 text-right font-semibold">
+          <div className="flex flex-col gap-1 text-right font-medium">
             {/* <p>hello@hackthenest.org</p> */}
             <a
               href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"

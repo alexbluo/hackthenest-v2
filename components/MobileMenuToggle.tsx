@@ -19,11 +19,11 @@ interface Props {
 const MobileMenuToggle = ({ open, handleClick }: Props) => {
   return (
     <motion.button
-      className="mr-6 block lg:hidden"
+      className="block lg:hidden"
       animate={open ? "open" : "closed"}
       onClick={handleClick}
     >
-      <svg className="stroke-black" width="23" height="23" viewBox="0 0 23 23">
+      <svg className="stroke-black" width="24" height="24" viewBox="0 0 24 24">
         <Path
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },
