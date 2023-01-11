@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 mx-auto flex h-32 w-full items-center justify-between px-8 lg:px-32">
       <div className="flex h-full items-center gap-12">
-        <div className="relative aspect-square h-3/5">
+        <div className="relative aspect-square h-3/5 z-50">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
 
