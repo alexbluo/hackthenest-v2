@@ -8,7 +8,11 @@ const FAQSection = () => {
         <div className="flex w-full flex-col gap-4">
           <FAQ question="What is a hackathon?">
             Hackathons are collaborative multi-day events where participants
-            (also called hackers) bring their ideas to life.
+            (also called hackers) bring their ideas to life by building a
+            project from scratch using software development skills. Aside from
+            just being coding marathon/competition, hackathons offer several fun
+            side events, educational workshops for all skill levels, sponsor
+            fairs, and an overall great atmosphere to hang out in!
           </FAQ>
           <FAQ question="How much does it cost?">
             Absolutely nothing! We&apos;ll take care of food, prizes, swag, and

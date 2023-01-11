@@ -6,10 +6,12 @@ const Dashboard = () => {
   const { data: session } = useSession();
 
   useEffect(() => {
+    console.log(session);
+
     if (!session) {
       signIn();
     }
-  }, []);
+  }, [session]);
 
   if (session) {
     return (
