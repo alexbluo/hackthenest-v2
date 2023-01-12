@@ -10,7 +10,7 @@ const FrontSection = () => {
       </div>
 
        <Link href="/dashboard">
-        <button className="rounded-lg border py-4 px-12 hover:bg-orange">
+        <button className="rounded-lg  border py-4 px-12 hover:bg-orange">
           Apply Now
         </button>
       </Link>  
