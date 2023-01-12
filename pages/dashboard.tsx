@@ -7,10 +7,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (status === "unauthenticated") {
-      console.log(session);
       signIn();
     }
-  }, [session]);
+  }, [status]);
 
   if (status === "authenticated") {
     return (
@@ -22,20 +21,17 @@ const Dashboard = () => {
               Application
             </button>
           </Link>
-          <Link href="/application">
-            <button
-              className="rounded-lg border px-12 py-4 hover:bg-orange"
-              onClick={() => signOut()}
-            >
-              Logout
-            </button>
-          </Link>
+          <button
+            className="rounded-lg border px-12 py-4 hover:bg-orange"
+            onClick={() => signOut({ callbackUrl: "/" })}
+          >
+            Logout
+          </button>
         </div>
       </section>
     );
   }
 
-  // TODO: polish out using protected page
   return null;
 };
 
