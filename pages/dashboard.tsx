@@ -3,17 +3,16 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 
 const Dashboard = () => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
-    console.log(session);
-
-    if (!session) {
+    if (status === "unauthenticated") {
+      console.log(session);
       signIn();
     }
   }, [session]);
 
-  if (session) {
+  if (status === "authenticated") {
     return (
       <section className="h-screen">
         <div className="flex h-full flex-col items-center justify-center gap-4">
@@ -36,7 +35,7 @@ const Dashboard = () => {
     );
   }
 
-  // TODO: polish out
+  // TODO: polish out using protected page
   return null;
 };
 
