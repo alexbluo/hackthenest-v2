@@ -16,7 +16,7 @@ const MobileMenu = ({ open }: Props) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <ul className="flex flex-col items-center gap-4 p-4">
+          <ul className="flex flex-col justify-center items-center gap-4 p-4 h-screen">
             <NavItem to="about">About</NavItem>
             <NavItem to="schedule">Schedule</NavItem>
             <NavItem to="faq">FAQ</NavItem>
