@@ -60,7 +60,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
       <SessionProvider session={session}>
         {/* fixed left-0 right-0 */}
         <div
-          className={`${libreFranklin.variable} ${hankenGrotesk.variable} bg-[#ffeedb] font-sans`}
+          className={`${libreFranklin.variable} ${hankenGrotesk.variable} font-sans`}
         >
           <Component {...pageProps} />
         </div>

@@ -6,8 +6,14 @@ import MobileMenuToggle from "./MobileMenuToggle";
 import NavItem from "./NavItem";
 
 // TODO: move social media icon to mobile nav
-const NavBar = () => {
-  const [open, toggleOpen] = useCycle(false, true);
+
+interface Props {
+  open: boolean;
+  toggleOpen: ()=>void;
+}
+
+const NavBar = ({open, toggleOpen}: Props) => {
+  
 
   return (
     <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 mx-auto flex h-32 w-full items-center justify-between px-8 lg:px-32">
