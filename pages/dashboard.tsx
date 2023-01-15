@@ -10,7 +10,8 @@ const Dashboard = () => {
   useEffect(() => {
     if (status === "unauthenticated") {
       // TODO: add custom login page with normal email and maybe github?
-      signIn("google");
+      
+      signIn();
     }
     // TODO: create admin account
     // if (session?.user?.email === "hackthenest@gmail.com") {
