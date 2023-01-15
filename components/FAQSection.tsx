@@ -4,7 +4,7 @@ const FAQSection = () => {
   return (
     <section id="faq">
       <h2 className="">FAQ</h2>
-      <div className="flex flex-col gap-4 lg:flex-row lg:gap-16">
+      <div className="flex flex-col gap-4 md:flex-row md:gap-16">
         <div className="flex w-full flex-col gap-4">
           <FAQ question="What is a hackathon?">
             Hackathons are collaborative multi-day events where participants

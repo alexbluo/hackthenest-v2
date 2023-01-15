@@ -16,7 +16,15 @@ module.exports = {
       orange: "#ffbd59",
       black: "#000000",
       grey: "#808080",
-      white: "#ffffff"
+      white: "#ffffff",
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "2rem",
+        sm: "4rem",
+        lg: "8rem",
+      },
     },
   },
   plugins: [],

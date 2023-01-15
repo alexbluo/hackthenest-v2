@@ -1,15 +1,22 @@
 import { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Dashboard = () => {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     if (status === "unauthenticated") {
-      signIn();
+      // TODO: add custom login page with normal email and maybe github?
+      signIn("google");
     }
-  }, [status]);
+    // TODO: create admin account
+    // if (session?.user?.email === "hackthenest@gmail.com") {
+    //   router.push("admin");
+    // }
+  }, [router, session, status]);
 
   if (status === "authenticated") {
     return (
