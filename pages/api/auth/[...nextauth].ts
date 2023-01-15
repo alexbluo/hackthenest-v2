@@ -9,8 +9,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: '/auth/signin',
-    signout: '/auth/signout',
+    signIn: '/login',
   }
 };
 
