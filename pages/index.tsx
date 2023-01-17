@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import classNames from "classnames";
 import { useCycle } from "framer-motion";
 import { NextPage } from "next";
 import Head from "next/head";
@@ -19,11 +19,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Hack the Nest 2023</title>
       </Head>
-      <div
-        className={classnames("bg-[#ffeedb]", {
-          "fixed left-0 right-0 md:static": open,
-        })}
-      >
+      <div className={classNames({ "fixed left-0 right-0 md:static": open })}>
         <NavBar open={open} toggleOpen={toggleOpen} />
         <a
           id="mlh-trust-badge"

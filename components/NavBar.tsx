@@ -4,8 +4,6 @@ import MobileMenu from "./MobileMenu";
 import MobileMenuToggle from "./MobileMenuToggle";
 import NavItem from "./NavItem";
 
-// TODO: move social media icon to mobile nav
-
 interface Props {
   open: boolean;
   toggleOpen: () => void;

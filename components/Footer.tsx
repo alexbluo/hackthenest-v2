@@ -26,7 +26,7 @@ const Footer = () => {
             {/* TODO: check */}
             <div className="relative aspect-square h-full">
               <a
-                href="https://www.facebook.com/hackthenest"
+                href="https://www.facebook.com/rhhshackthenest"
                 target="_blank"
                 rel="noreferrer"
               >
