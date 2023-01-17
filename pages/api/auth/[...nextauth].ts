@@ -1,4 +1,5 @@
 import NextAuth from "next-auth";
+import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
@@ -7,10 +8,14 @@ export const authOptions = {
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
   ],
   pages: {
-    signIn: '/login',
-  }
+    signIn: "/login",
+  },
 };
 
 export default NextAuth(authOptions);

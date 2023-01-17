@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Dropdown from "react-dropdown";
 import { useForm } from "react-hook-form";
 import "react-dropdown/style.css";
@@ -11,6 +10,7 @@ import "react-dropdown/style.css";
 // validation
 // - email, phone number, types, etc.
 // checkboxes for mlh + links + wording
+// add field for additional questions/comments
 
 const Application = () => {
   const {

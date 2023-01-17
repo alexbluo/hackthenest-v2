@@ -7,3 +7,28 @@ datasource db {
   url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
+
+model Hacker {
+  firstName String
+  lastName String
+  email String @id
+  phone String
+  school String
+  yog Int
+  age Int
+  diet String
+  shirt String
+  referral Int
+  where String
+  mlh Boolean
+}
+
+model Volunteer {
+  firstName String
+  lastName String
+  email String @id
+  phone String
+  role String // general (food, directions, etc.), mentor, sponsor rep, chaperone
+  diet String
+  shirt String
+}

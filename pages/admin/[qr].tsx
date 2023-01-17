@@ -1,0 +1,1 @@
+// exact path to this is printed onto qr code (hackthenest.org/admin/[1-300])

@@ -5,6 +5,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import { QueryClient, QueryClientProvider } from "react-query";
 import * as gtag from "../utils/gtag";
 import { GA_TRACKING_ID } from "../utils/gtag";
 import "../index.css";
@@ -21,6 +22,15 @@ const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken-grotesk",
 });
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+});
+
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   const router = useRouter();
 
@@ -35,7 +45,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   }, [router.events]);
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Head>
         <link rel="icon" href="/logo-colored.png" />
       </Head>
@@ -65,7 +75,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
           <Component {...pageProps} />
         </div>
       </SessionProvider>
-    </>
+    </QueryClientProvider>
   );
 };
 
