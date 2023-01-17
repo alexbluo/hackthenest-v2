@@ -10,7 +10,7 @@ const FrontSection = () => {
         <p className="">April 15-16, 2023</p>
         <p className="">River Hill High School</p>
         <Link href="/dashboard">
-          <button className="rounded-lg border py-4 px-12 hover:bg-orange">
+          <button className="rounded-lg border py-4 px-12">
             Apply Now
           </button>
         </Link>
