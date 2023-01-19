@@ -4,7 +4,7 @@
 
 @layer base {
   section {
-    @apply container relative py-8 lg:py-16;
+    @apply container py-8 lg:py-16;
   }
   h2 {
     @apply pb-8 font-header text-5xl font-bold;
