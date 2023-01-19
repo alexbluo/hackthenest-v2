@@ -1,4 +1,5 @@
 import Dropdown from "react-dropdown";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import "react-dropdown/style.css";
 
@@ -7,44 +8,36 @@ import "react-dropdown/style.css";
 // reduce vertical spacing
 // styles
 // types
-// validation
+// make dropdown update formstate
+// validation:
 // - email, phone number, types, etc.
 // checkboxes for mlh
 // add field for additional questions/comments
 // better placeholder text
+
+import * as z from "zod";
+
+const schema = z.object({
+  firstName: z.string().nonempty('Field is required'),
+  lastName: z.string().nonempty('Field is required'),
+  email: z.string().nonempty('Field is required'),
+  phoneNumber: z.string().nonempty('Field is required'),
+  
+});
 
 const Application = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
-  } = useForm();
+    // watch,
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
   const onSubmit = (data) => {
     console.log(data);
   };
-
-  const ageOptions = ["13", "14", "15", "16", "17", "18"];
-
-  const roleOptions = ["Hacker", "Volunteer", "Mentor", "Chaperone"];
-
-  const dietOptions = [
-    "Vegan",
-    "Vegetarian",
-    "Peanut allergies",
-    <input placeholder="Other..." />,
-  ];
-
-  const whereOptions = [
-    "Friends/Family",
-    "LinkedIn",
-    "Instagram",
-    "Twitter",
-    "Facebook",
-    <input placeholder="Other..." />,
-  ];
-  const agreeOptions = ["Yes", "No"];
 
   return (
     <section className="h-[160rem]">
@@ -57,14 +50,9 @@ const Application = () => {
               className="bg-transparent h-10 w-full rounded shadow"
               type="text"
               placeholder=" Type your answer here..."
-              {...register("firstName", {
-                required: true,
-              })}
-              aria-invalid={errors.firstName ? "true" : "false"}
+              {...register("firstName")}
             />
-            {errors.firstName?.type === "required" && (
-              <p role="alert">This field is required</p>
-            )}
+            {errors.firstName?.message && <p>{errors.firstName?.message}</p>}
           </div>
 
           <div className="w-1/2 flex-col">
@@ -73,14 +61,9 @@ const Application = () => {
               className="bg-transparent h-10 w-full rounded shadow"
               type="text"
               placeholder=" Type your answer here..."
-              {...register("lastName", {
-                required: true,
-              })}
-              aria-invalid={errors.lastName ? "true" : "false"}
+              {...register("lastName")}
             />
-            {errors.lastName?.type === "required" && (
-              <p role="alert">This field is required</p>
-            )}
+            {errors.lastName?.message && <p>{errors.lastName?.message}</p>}
           </div>
         </div>
 
@@ -90,14 +73,9 @@ const Application = () => {
             className="bg-transparent h-10 w-full rounded shadow"
             type="text"
             placeholder=" Type your answer here..."
-            {...register("email", {
-              required: true,
-            })}
-            aria-invalid={errors.email ? "true" : "false"}
+            {...register("email")}
           />
-          {errors.email?.type === "required" && (
-            <p role="alert">This field is required</p>
-          )}
+          {errors.email?.message && <p>{errors.email?.message}</p>}
         </div>
 
         <div className="flex-col gap-28 py-20 px-40  text-xl">
@@ -106,20 +84,15 @@ const Application = () => {
             className="bg-transparent h-10 w-full rounded shadow"
             type="text"
             placeholder=" Type your answer here..."
-            {...register("phoneNumber", {
-              required: true,
-            })}
-            aria-invalid={errors.phoneNumber ? "true" : "false"}
+            {...register("phoneNumber")}
           />
-          {errors.phoneNumber?.type === "required" && (
-            <p role="alert">This field is required</p>
-          )}
+          {errors.phoneNumber?.message && <p>{errors.phoneNumber?.message}</p>}
         </div>
 
         <div className="flex-col gap-28 py-20 px-40 text-xl">
           <div className="font-bold">Age *</div>
           <Dropdown
-            options={ageOptions}
+            options={["13", "14", "15", "16", "17", "18"]}
             placeholder="Select an option..."
             className="w-1/3 rounded"
 
@@ -138,7 +111,12 @@ const Application = () => {
         <div className="flex-col gap-28 py-20 px-40 text-xl">
           <div className="relative font-bold">Dietary restrictions</div>
           <Dropdown
-            options={dietOptions}
+            options={[
+              "Vegan",
+              "Vegetarian",
+              "Peanut allergies",
+              // <input placeholder="Other..." />,
+            ]}
             placeholder="Select an option..."
             className="w-1/3 rounded"
           />
@@ -156,7 +134,14 @@ const Application = () => {
         <div className="flex-col gap-28 py-20 px-40 text-xl">
           <div className="font-bold">Where did you hear about us?</div>
           <Dropdown
-            options={whereOptions}
+            options={[
+              "Friends/Family",
+              "LinkedIn",
+              "Instagram",
+              "Twitter",
+              "Facebook",
+              // <input placeholder="Other..." />,
+            ]}
             placeholder="Select an option..."
             className="w-1/3 rounded"
           />
