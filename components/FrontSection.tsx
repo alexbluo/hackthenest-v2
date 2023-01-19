@@ -12,14 +12,14 @@ const FrontSection = () => {
           fill
         />
       </div>
-      <div className="flex flex-col items-center justify-center pt-16">
+      <div className="flex flex-col gap-4 items-center justify-center pt-16">
         <h1 className="z-50 pb-4 font-header text-6xl font-extrabold">
           Hack the Nest
         </h1>
         <p className="z-50">April 15-16, 2023</p>
         <p className="z-50">River Hill High School</p>
         <Link
-          className="z-50 mx-auto rounded-lg border py-4 px-12"
+          className="z-50 mx-auto rounded-lg border py-2 px-12"
           href="/dashboard"
         >
           Apply Now

@@ -19,12 +19,12 @@ const FAQSection = () => {
             more.
           </FAQ>
           <FAQ question="What if I don't know how to code?">
-            That&apos;s completely fine! In fact, we expect many participants to
-            be first time hackers and beginners. Hack the Nest is a great chance
-            to explore your interests while meeting new friends and interacting
+            That&apos;s completely fine! In fact, many participants are first
+            time hackers and beginners. Hack the Nest is a great chance to
+            explore your interests while meeting new friends and interacting
             with familiar companies.
           </FAQ>
-          <FAQ question="When is are registrations due?">
+          <FAQ question="When are registrations due?">
             Registrations open February 1st and close April 1st. It only takes a
             few minutes so go for it!
           </FAQ>

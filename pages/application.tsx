@@ -4,13 +4,14 @@ import "react-dropdown/style.css";
 
 // TODO: move options to inline
 // fix other - search up
-// reduce spacing
+// reduce vertical spacing
 // styles
 // types
 // validation
 // - email, phone number, types, etc.
-// checkboxes for mlh + links + wording
+// checkboxes for mlh
 // add field for additional questions/comments
+// better placeholder text
 
 const Application = () => {
   const {
@@ -48,7 +49,7 @@ const Application = () => {
   return (
     <section className="h-[160rem]">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex gap-28 py-20 px-40  text-xl" id="names">
+        <div className="flex gap-28 py-20 px-40 text-xl">
           <div className="w-1/2 flex-col">
             <div className="relative font-bold">First Name *</div>
 
@@ -68,7 +69,6 @@ const Application = () => {
 
           <div className="w-1/2 flex-col">
             <div className="relative font-bold">Last Name *</div>
-
             <input
               className="bg-transparent h-10 w-full rounded shadow"
               type="text"
@@ -84,9 +84,8 @@ const Application = () => {
           </div>
         </div>
 
-        <div className="flex-col gap-28 py-20 px-40  text-xl" id="email">
-          <div className="relative font-bold">Email *</div>
-
+        <div className="flex-col gap-28 py-20 px-40 text-xl">
+          <div className="font-bold">Email *</div>
           <input
             className="bg-transparent h-10 w-full rounded shadow"
             type="text"
@@ -101,9 +100,8 @@ const Application = () => {
           )}
         </div>
 
-        <div className="flex-col gap-28 py-20 px-40  text-xl" id="email">
-          <div className="relative font-bold">Phone Number *</div>
-
+        <div className="flex-col gap-28 py-20 px-40  text-xl">
+          <div className="font-bold">Phone Number *</div>
           <input
             className="bg-transparent h-10 w-full rounded shadow"
             type="text"
@@ -118,9 +116,8 @@ const Application = () => {
           )}
         </div>
 
-        <div className="flex-col gap-28 py-20 px-40  text-xl" id="email">
-          <div className="relative font-bold">Age? *</div>
-
+        <div className="flex-col gap-28 py-20 px-40 text-xl">
+          <div className="font-bold">Age *</div>
           <Dropdown
             options={ageOptions}
             placeholder="Select an option..."
@@ -138,19 +135,8 @@ const Application = () => {
           )} */}
         </div>
 
-        <div className="flex-col gap-28 py-20 px-40 text-xl" id="email">
-          <div className="relative font-bold">Im registering as a ...</div>
-
-          <Dropdown
-            options={roleOptions}
-            placeholder="Select an option..."
-            className="w-1/3 rounded"
-          />
-        </div>
-
-        <div className="flex-col gap-28 py-20 px-40  text-xl" id="email">
+        <div className="flex-col gap-28 py-20 px-40 text-xl">
           <div className="relative font-bold">Dietary restrictions</div>
-
           <Dropdown
             options={dietOptions}
             placeholder="Select an option..."
@@ -158,9 +144,8 @@ const Application = () => {
           />
         </div>
 
-        <div className="flex-col gap-28 py-20 px-40  text-xl" id="email">
-          <div className="relative font-bold">Referral Code</div>
-
+        <div className="flex-col gap-28 py-20 px-40 text-xl">
+          <div className="font-bold">Referral Code</div>
           <input
             className="bg-transparent h-10 w-1/2 rounded shadow"
             type="text"
@@ -168,9 +153,8 @@ const Application = () => {
           />
         </div>
 
-        <div className="flex-col gap-28 py-20 px-40  text-xl" id="email">
-          <div className="relative font-bold">Where did you hear about us?</div>
-
+        <div className="flex-col gap-28 py-20 px-40 text-xl">
+          <div className="font-bold">Where did you hear about us?</div>
           <Dropdown
             options={whereOptions}
             placeholder="Select an option..."
@@ -178,11 +162,42 @@ const Application = () => {
           />
         </div>
 
-        <div className="flex-col gap-28 py-20 px-40 text-xl" id="email">
-          <div className="relative font-bold">
-            Do you agree to the MLH terms and conditions?
+        <div className="flex-col gap-28 py-20 px-40 text-xl">
+          <div className="font-bold">
+            I have read and agree to the&nbsp;
+            <a
+              href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              MLH Code of Conduct
+            </a>
           </div>
+          <Dropdown
+            options={agreeOptions}
+            placeholder="Select an option..."
+            className="w-1/3 rounded"
+          />
+        </div>
 
+        <div className="flex-col gap-28 py-20 px-40 text-xl">
+          <div className="font-bold">
+            I authorize you to share my application/registration information
+            with Major League Hacking for event administration, ranking, and MLH
+            administration in-line with the&nbsp;
+            <a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">
+              MLH Privacy Policy
+            </a>
+            . I further agree to the terms of both the&nbsp;
+            <a
+              href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
+              target="_blank"
+              rel="noreferrer"
+            >
+              MLH Contest Terms and Conditions
+            </a>
+            and the MLH Privacy Policy.
+          </div>
           <Dropdown
             options={agreeOptions}
             placeholder="Select an option..."

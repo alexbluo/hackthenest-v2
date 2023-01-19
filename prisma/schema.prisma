@@ -11,7 +11,7 @@ datasource db {
 model Hacker {
   firstName String
   lastName String
-  email String @id
+  username String @id
   phone String
   school String
   yog Int
