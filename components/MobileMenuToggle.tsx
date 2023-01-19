@@ -23,7 +23,7 @@ const MobileMenuToggle = ({ open, handleClick }: Props) => {
       animate={open ? "open" : "closed"}
       onClick={handleClick}
     >
-      <svg className="stroke-black" width="24" height="24" viewBox="0 0 24 24">
+      <svg className="stroke-orange" width="24" height="24" viewBox="0 0 24 24">
         <Path
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },
