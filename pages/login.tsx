@@ -1,12 +1,11 @@
 import { InferGetServerSidePropsType } from "next";
 import { getProviders, signIn } from "next-auth/react";
 import Image from "next/image";
-import { useState, ChangeEvent } from "react"
+import { useState, ChangeEvent } from "react";
 
 interface Credentials {
   username: string;
   password: string;
-
 }
 
 // TODO: link to login and redirect to dashboard if signed in
@@ -15,14 +14,12 @@ const Login = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const [credentials, setCredentials] = useState<Credentials>({
     username: "",
-    password: ""
-  })
+    password: "",
+  });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setCredentials({...credentials,
-      username: e.target.value,
-    })
-  }
+    setCredentials({ ...credentials, username: e.target.value });
+  };
 
   return (
     <div className="mx-auto flex h-screen w-80 flex-col items-center justify-center gap-4">
@@ -32,23 +29,21 @@ const Login = ({
       <h1 className="font-header text-5xl font-black">Hack the Nest</h1>
       <input
         className="w-full rounded-md border py-4 px-6"
-        name = "username"
-        onChange={(handleChange)}
+        name="username"
+        onChange={handleChange}
         type="text"
         placeholder="username"
       />
 
-
       <button
         className="flex w-full justify-between rounded-md border px-6 py-4"
-        onClick={() => signIn("credentials", {})}
+        onClick={() => signIn("credentials", credentials)}
       >
         <p>Sign in</p>
         <div className="relative aspect-square h-full">
           <Image src="/arrow-right.svg" alt="Sign in arrow" fill />
         </div>
       </button>
-
 
       <div className="flex w-full items-center gap-2">
         <div className="h-fit w-full border" />

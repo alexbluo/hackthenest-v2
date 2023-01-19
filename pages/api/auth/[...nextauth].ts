@@ -20,12 +20,12 @@ export const authOptions: NextAuthOptions = {
         username: {
           label: "username",
           type: "text",
-          placeholder: "deeznuts@gmail.com",
+          placeholder: "jsmith@gmail.com",
         },
         password: { label: "password", type: "password" },
       },
       authorize: async (credentials, req) => {
-        console.log("deez nuts");
+console.log(credentials)
         return null;
       },
     }),
