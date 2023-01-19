@@ -2,14 +2,13 @@ import classNames from "classnames";
 import { useCycle } from "framer-motion";
 import { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import AboutSection from "../components/AboutSection";
-import FAQSection from "../components/FAQSection";
 import Footer from "../components/Footer";
-import FrontSection from "../components/FrontSection";
 import NavBar from "../components/NavBar";
-import ScheduleSection from "../components/ScheduleSection";
-import SponsorsSection from "../components/SponsorsSection";
+import AboutSection from "../sections/About";
+import FAQSection from "../sections/FAQ";
+import FrontSection from "../sections/Front";
+import ScheduleSection from "../sections/Schedule";
+import SponsorsSection from "../sections/Sponsors";
 
 const Home: NextPage = () => {
   const [open, toggleOpen] = useCycle(false, true);

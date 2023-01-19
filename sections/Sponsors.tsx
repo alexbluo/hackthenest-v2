@@ -1,4 +1,4 @@
-import Sponsor from "./Sponsor";
+import Sponsor from "../components/Sponsor";
 
 const SponsorsSection = () => {
   return (
@@ -20,9 +20,9 @@ const SponsorsSection = () => {
       </p>
       <div className="flex flex-col gap-6">
         {/* gold tier  */}
-        <div className="grid gap-6"></div>
+        <div className="grid gap-6" />
         {/* silver tier */}
-        <div className="grid grid-cols-2 gap-6"></div>
+        <div className="grid grid-cols-2 gap-6" />
         {/* bronze tier */}
         <div className="grid grid-cols-3 gap-6">
           <Sponsor path="/wolfram.png" alt="evan" />
