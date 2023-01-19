@@ -1,10 +1,9 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import CredentialsProvider from "next-auth/providers/credentials";
 
-
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -18,12 +17,16 @@ export const authOptions = {
     CredentialsProvider({
       type: "credentials",
       credentials: {
-        username: { label: "username", type: "text", placeholder: "deeznuts@gmail.com" },
+        username: {
+          label: "username",
+          type: "text",
+          placeholder: "deeznuts@gmail.com",
+        },
         password: { label: "password", type: "password" },
       },
       authorize: async (credentials, req) => {
         console.log("deez nuts");
-            return null;
+        return null;
       },
     }),
   ],

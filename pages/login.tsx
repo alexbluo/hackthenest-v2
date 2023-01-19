@@ -20,10 +20,12 @@ const Login = ({
       />
       <button
         className="flex w-full justify-between rounded-md border px-6 py-4"
-        onClick={() => signIn()}
+        onClick={() => signIn("credentials", {})}
       >
         <p>Sign in</p>
-        <div>:D</div>
+        <div className="relative aspect-square h-full">
+          <Image src="/arrow-right.svg" alt="Sign in arrow" fill />
+        </div>
       </button>
       <div className="flex w-full items-center gap-2">
         <div className="h-fit w-full border" />
@@ -36,7 +38,10 @@ const Login = ({
           signIn(providers?.google.id, { callbackUrl: "/dashboard" })
         }
       >
-        Sign in with Google
+        <p>Sign in with Google</p>
+        <div className="relative aspect-square h-full">
+          <Image src="/google.svg" alt="Google icon" fill />
+        </div>
       </button>
       <button
         className="flex w-full justify-between rounded-md border px-6 py-4"
@@ -44,7 +49,10 @@ const Login = ({
           signIn(providers?.github.id, { callbackUrl: "/dashboard" })
         }
       >
-        Sign in with GitHub
+        <p>Sign in with GitHub</p>
+        <div className="relative aspect-square h-full">
+          <Image src="/github.svg" alt="GitHub icon" fill />
+        </div>
       </button>
     </div>
   );

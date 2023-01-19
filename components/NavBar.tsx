@@ -18,7 +18,7 @@ const NavBar = ({ open, toggleOpen }: Props) => {
         </div>
       </div>
 
-      <ul className="hidden gap-12 sm:flex">
+      <ul className="hidden gap-12 text-orange sm:flex">
         <NavItem to="about">About</NavItem>
         <NavItem to="schedule">Schedule</NavItem>
         <NavItem to="faq">FAQ</NavItem>

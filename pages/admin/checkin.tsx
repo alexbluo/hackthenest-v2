@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import CheckInResult from "../../components/CheckInResult";
 
+// https://github.com/react-qr-reader/react-qr-reader
 const Checkin = () => {
   const [search, setSearch] = useState<string>("");
 

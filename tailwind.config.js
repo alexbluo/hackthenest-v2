@@ -3,7 +3,11 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
-  content: ["./components/*.{ts,tsx}", "./pages/*.{ts,tsx}"],
+  content: [
+    "./components/**/*.tsx",
+    "./pages/**/*.tsx",
+    "./sections/**/*.tsx",
+  ],
   theme: {
     fontFamily: {
       sans: ["var(--font-libre-franklin)", ...fontFamily.sans],
