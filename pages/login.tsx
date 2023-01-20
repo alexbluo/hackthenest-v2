@@ -1,7 +1,9 @@
-import { InferGetServerSidePropsType } from "next";
+import { useState, ChangeEvent } from "react";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { unstable_getServerSession } from "next-auth";
 import { getProviders, signIn } from "next-auth/react";
 import Image from "next/image";
-import { useState, ChangeEvent } from "react";
+import { authOptions } from "./api/auth/[...nextauth]";
 
 interface Credentials {
   username: string;
@@ -76,8 +78,17 @@ const Login = ({
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const providers = await getProviders();
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
+
+  console.log(session);
 
   return {
     props: { providers },

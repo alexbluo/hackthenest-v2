@@ -45,19 +45,20 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   }, [router.events]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Head>
-        <link rel="icon" href="/logo-colored.png" />
-      </Head>
-      <Script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
-      <Script
-        id="ganalytics"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{
-          __html: `
+    <SessionProvider session={session}>
+      <QueryClientProvider client={queryClient}>
+        <Head>
+          <link rel="icon" href="/logo-colored.png" />
+        </Head>
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <Script
+          id="ganalytics"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -65,17 +66,16 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
                 page_path: window.location.pathname,
               });
           `,
-        }}
-      />
-      <SessionProvider session={session}>
+          }}
+        />
         {/* fixed left-0 right-0 */}
         <div
           className={`${libreFranklin.variable} ${hankenGrotesk.variable} font-sans`}
         >
           <Component {...pageProps} />
         </div>
-      </SessionProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </SessionProvider>
   );
 };
 

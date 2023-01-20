@@ -1,8 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { METHODS } from "http";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { optionCSS } from "react-select/dist/declarations/src/components/Option";
+import * as z from "zod";
 
 // TODO: move options to inline
 // fix other - search up
@@ -15,8 +15,6 @@ import { optionCSS } from "react-select/dist/declarations/src/components/Option"
 // checkboxes for mlh
 // add field for additional questions/comments
 // better placeholder text
-
-import * as z from "zod";
 
 interface Option {
   value: string;
@@ -122,11 +120,7 @@ const Application = () => {
 
           <div className="flex-col gap-28 px-40 text-xl">
             <div className="font-bold">Age *</div>
-            <Select
-              options={ageOptions}
-              className="w-1/3 rounded"
-             
-            />
+            <Select options={ageOptions} className="w-1/3 rounded" />
           </div>
 
           <div className="flex-col gap-28 px-40 text-xl">
