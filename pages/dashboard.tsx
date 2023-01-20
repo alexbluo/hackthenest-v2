@@ -3,6 +3,8 @@ import Link from "next/link";
 
 const Dashboard = () => {
   const { data: session, status } = useSession();
+  console.log(session)
+  console.log(status)
 
   return status === "authenticated" ? (
     <section className="h-screen">

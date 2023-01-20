@@ -20,7 +20,7 @@ const FrontSection = () => {
         <p className="z-10">River Hill High School</p>
         <Link
           className="z-10 mx-auto rounded-lg border py-2 px-12"
-          href="/dashboard"
+          href="/login"
         >
           Apply Now
         </Link>

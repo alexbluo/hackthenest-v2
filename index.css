@@ -7,6 +7,6 @@
     @apply container py-8 lg:py-16;
   }
   h2 {
-    @apply pb-8 font-header text-5xl font-bold;
+    @apply pb-8 text-orange font-header text-5xl font-bold;
   }
 }

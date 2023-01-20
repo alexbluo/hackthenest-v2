@@ -25,7 +25,7 @@ export const authOptions: NextAuthOptions = {
         password: { label: "password", type: "password" },
       },
       authorize: async (credentials, req) => {
-console.log(credentials)
+        console.log(credentials);
         return null;
       },
     }),
@@ -33,6 +33,9 @@ console.log(credentials)
   pages: {
     signIn: "/login",
   },
+  jwt: {
+    
+  }
 };
 
 export default NextAuth(authOptions);

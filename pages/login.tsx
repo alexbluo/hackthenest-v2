@@ -39,7 +39,9 @@ const Login = ({
 
       <button
         className="flex w-full justify-between rounded-md border px-6 py-4"
-        onClick={() => signIn("credentials", credentials)}
+        onClick={() =>
+          signIn("credentials", { ...credentials, callbackUrl: "/dashboard" })
+        }
       >
         <p>Sign in</p>
         <div className="relative aspect-square h-full">
