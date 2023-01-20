@@ -28,12 +28,12 @@ const Dashboard = () => {
 
       <div className="flex h-full flex-col items-center justify-center gap-4">
         <Link href="/application" className="z-20">
-          <button className="rounded-lg border border-black bg-grey px-12 py-4 hover:bg-orange">
+          <button className="rounded-lg border border-black bg-white px-12 py-4 hover:bg-orange">
             Application
           </button>
         </Link>
         <button
-          className="z-20 rounded-lg border border-black bg-grey px-12 py-4 hover:bg-orange"
+          className="z-20 rounded-lg border border-black bg-white px-12 py-4 hover:bg-orange"
           onClick={() => signOut({ callbackUrl: "/" })}
         >
           Logout
