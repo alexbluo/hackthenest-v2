@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/router";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
-import { optionCSS } from "react-select/dist/declarations/src/components/Option";
 import * as z from "zod";
 
 // TODO: move options to inline
@@ -22,11 +22,18 @@ interface Option {
 }
 
 const schema = z.object({
-  firstName: z.string().min(1, { message: "Field is required" }),
-  lastName: z.string().min(1, { message: "Field is required" }),
-  email: z.string().min(1, { message: "Field is required" }),
-  phoneNumber: z.string().min(1, { message: "Field is required" }),
-  // accept: z.boolean({message: "Field is required"})
+  firstName: z.string().min(1, { message: "This field is required" }),
+  lastName: z.string().min(1, { message: "This field is required" }),
+  email: z.string().min(1, { message: "This field is required" }),
+  phoneNumber: z.string().min(1, { message: "This field is required" }),
+  accept: z.literal(true, {
+    errorMap: () => ({ message: "You must agree to the MLH code of conduct" }),
+  }),
+  conduct: z.literal(true, {
+    errorMap: () => ({
+      message: "You must agree to the MLH terms and conditions",
+    }),
+  }),
 });
 
 const Application = () => {
@@ -38,6 +45,7 @@ const Application = () => {
   } = useForm({
     resolver: zodResolver(schema),
   });
+  const router = useRouter();
 
   const ageOptions: Option[] = [
     { value: "13", label: "13" },
@@ -65,10 +73,11 @@ const Application = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    router.push("/dashboard");
   };
 
   return (
-    <section className="h-[120rem]">
+    <section className="h-[100rem]">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-12">
           <div className="flex gap-28 px-40 text-xl">
@@ -76,7 +85,7 @@ const Application = () => {
               <div className="relative font-bold">First Name *</div>
 
               <input
-                className="bg-transparent h-10 w-full rounded shadow"
+                className="bg-transparent h-10 w-full rounded p-4 shadow"
                 type="text"
                 placeholder=" Type your answer here..."
                 {...register("firstName")}
@@ -87,7 +96,7 @@ const Application = () => {
             <div className="w-1/2 flex-col">
               <div className="relative font-bold">Last Name *</div>
               <input
-                className="bg-transparent h-10 w-full rounded shadow"
+                className="bg-transparent h-10 w-full rounded p-4 shadow"
                 type="text"
                 placeholder=" Type your answer here..."
                 {...register("lastName")}
@@ -99,7 +108,7 @@ const Application = () => {
           <div className="flex-col gap-28 px-40 text-xl">
             <div className="font-bold">Email *</div>
             <input
-              className="bg-transparent h-10 w-full rounded shadow"
+              className="bg-transparent h-10 w-full rounded p-4 shadow"
               type="text"
               placeholder=" Type your answer here..."
               {...register("email")}
@@ -110,7 +119,7 @@ const Application = () => {
           <div className="flex-col gap-28 px-40  text-xl">
             <div className="font-bold">Phone Number *</div>
             <input
-              className="bg-transparent h-10 w-full rounded shadow"
+              className="bg-transparent h-10 w-full rounded p-4 shadow"
               type="text"
               placeholder=" Type your answer here..."
               {...register("phoneNumber")}
@@ -175,7 +184,9 @@ const Application = () => {
               placeholder="Select an option..."
               className="h-6 w-6 rounded"
               type="checkbox"
+              {...register("conduct")}
             />
+            {errors.conduct && <p>{errors.conduct.message}</p>}
           </div>
 
           <div className="flex-col gap-28 px-40 text-xl">
@@ -206,7 +217,10 @@ const Application = () => {
           </div>
 
           <div className="gap-28 px-40">
-            <button className="rounded-lg border px-12 py-4 hover:bg-orange">
+            <button
+              className="rounded-lg border px-12 py-4 hover:bg-orange"
+              type="submit"
+            >
               Submit
             </button>
           </div>
