@@ -24,13 +24,14 @@ const Login = ({
   };
 
   return (
+    <div className="h-screen w-screen bg-black">
     <div className="mx-auto flex h-screen w-80 flex-col items-center justify-center gap-4">
       <div className="relative z-50 mx-auto aspect-square h-40">
         <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
       </div>
-      <h1 className="font-header text-5xl font-black">Hack the Nest</h1>
+      <h1 className="font-header text-5xl text-orange font-black">Hack the Nest</h1>
       <input
-        className="w-full rounded-md border py-4 px-6"
+        className="w-full rounded-md border text-black placeholder:text-black bg-white py-4 px-6"
         name="username"
         onChange={handleChange}
         type="text"
@@ -38,7 +39,7 @@ const Login = ({
       />
 
       <button
-        className="flex w-full justify-between rounded-md border px-6 py-4"
+        className="flex w-full bg-orange justify-between rounded-md border px-6 py-4"
         onClick={() =>
           signIn("credentials", { ...credentials, callbackUrl: "/dashboard" })
         }
@@ -50,12 +51,12 @@ const Login = ({
       </button>
 
       <div className="flex w-full items-center gap-2">
-        <div className="h-fit w-full border" />
-        <p>or</p>
-        <div className="h-fit w-full border" />
+        <div className="h-fit w-full border border-grey" />
+        <p className="text-white">or</p>
+        <div className="h-fit w-full border border-grey" />
       </div>
       <button
-        className="flex w-full justify-between rounded-md border px-6 py-4"
+        className="flex w-full justify-between bg-blue-light rounded-md border px-6 py-4"
         onClick={() =>
           signIn(providers?.google.id, { callbackUrl: "/dashboard" })
         }
@@ -66,7 +67,7 @@ const Login = ({
         </div>
       </button>
       <button
-        className="flex w-full justify-between rounded-md border px-6 py-4"
+        className="flex w-full justify-between bg-blue-light rounded-md border px-6 py-4"
         onClick={() =>
           signIn(providers?.github.id, { callbackUrl: "/dashboard" })
         }
@@ -76,6 +77,7 @@ const Login = ({
           <Image src="/github.svg" alt="GitHub icon" fill />
         </div>
       </button>
+    </div>
     </div>
   );
 };
