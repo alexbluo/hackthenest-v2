@@ -107,12 +107,10 @@ export const getServerSideProps = async (
     authOptions
   );
 
-  console.log(session);
-
   if (session) {
     return {
       redirect: {
-        destination: "/", // login path
+        destination: "/dashboard",
         permanent: false,
       },
     };
