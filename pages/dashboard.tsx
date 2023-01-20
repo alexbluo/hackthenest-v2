@@ -10,6 +10,8 @@ const Dashboard = () => {
   return status === "authenticated" ? (
     <section className="h-screen">
       <div className="absolute top-0 left-0 z-10 h-screen w-screen bg-black"></div>
+
+      <div className="flex flex-row justify-between">
       <div className="flex flex-col gap-20">
         <div>
           <button
@@ -26,18 +28,22 @@ const Dashboard = () => {
         </div>
       </div>
 
+      <button
+          className="z-20 h-20 rounded-lg border border-black bg-white px-12 py-4 hover:bg-orange"
+          onClick={() => signOut({ callbackUrl: "/" })}
+        >
+          Logout
+        </button>
+      </div>
+   
+
       <div className="flex h-full flex-col items-center justify-center gap-4">
         <Link href="/application" className="z-20">
           <button className="rounded-lg border border-black bg-white px-12 py-4 hover:bg-orange">
             Application
           </button>
         </Link>
-        <button
-          className="z-20 rounded-lg border border-black bg-white px-12 py-4 hover:bg-orange"
-          onClick={() => signOut({ callbackUrl: "/" })}
-        >
-          Logout
-        </button>
+        
       </div>
     </section>
   ) : null;
