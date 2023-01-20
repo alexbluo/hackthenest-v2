@@ -12,6 +12,9 @@ const FrontSection = () => {
           fill
         />
       </div>
+      
+      
+     
       <div className="flex flex-col items-center justify-center gap-4 pt-16">
         <h1 className="z-10 pb-4 text-black font-header text-6xl font-extrabold">
           Hack the Nest
