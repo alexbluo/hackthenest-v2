@@ -6,15 +6,11 @@ import * as z from "zod";
 import Image from "next/image";
 // TODO: move options to inline
 // fix other - search up
-// reduce vertical spacing
-// styles
 // types
 // make dropdown update formstate
 // validation:
 // - email, phone number, types, etc.
-// checkboxes for mlh
-// add field for additional questions/comments
-// better placeholder text
+// move caption to placeholder and placeholder down on focus
 
 interface Option {
   value: string;
@@ -59,7 +55,9 @@ const Application = () => {
   const dietOptions: Option[] = [
     { value: "Vegan", label: "Vegan" },
     { value: "Vegetarian", label: "Vegetarian" },
-    { value: "Peanut allergies", label: "Peanut allergies" },
+    { value: "Halal", label: "Halal" },
+    { value: "Gluten Free", label: "Gluten Free" },
+    { value: "Lactose Free", label: "Lactose Free" },
     // <input placeholder="Other..." />,
   ];
 
@@ -213,7 +211,7 @@ const Application = () => {
               >
                 MLH Contest Terms and Conditions
               </a>
-              and the MLH Privacy Policy.
+              &nbsp;and the MLH Privacy Policy.
             </div>
             <input
               placeholder="Select an option..."

@@ -4,48 +4,43 @@ import Link from "next/link";
 
 const Dashboard = () => {
   const { data: session, status } = useSession();
-  console.log(session);
-  console.log(status);
 
   return status === "authenticated" ? (
-    <section className="h-screen">
-      <div className="absolute top-0 left-0 z-10 h-screen w-screen bg-black"></div>
+    <div className="bg-black">
+      <section className="h-screen">
+        {/* <div className="absolute top-0 left-0 z-10 h-screen w-screen bg-black"></div> */}
 
-      <div className="flex flex-row justify-between">
-      <div className="flex flex-col gap-20">
-        <div>
+        <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
+          <div className="relative z-50 aspect-square h-3/5">
+            <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
+          </div>
+
           <button
-            className="container absolute top-0 left-0 right-0 z-30 h-32"
+            className="text-lg font-medium text-orange"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
+            Logout
+          </button>
+        </nav>
+
+        <div className="flex flex-row justify-between">
+          <div className="flex h-32 flex-col gap-20">
             <div className="relative z-50 aspect-square h-3/5">
               <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
             </div>
-          </button>
-        </div>
-        <div className="z-20 text-xl font-semibold text-white">
-          <p> Welcome back, {session!.user!.email}</p>
-        </div>
-      </div>
 
-      <button
-          className="z-20 h-20 rounded-lg border border-black bg-white px-12 py-4 hover:bg-orange"
-          onClick={() => signOut({ callbackUrl: "/" })}
-        >
-          Logout
-        </button>
-      </div>
-   
-
-      <div className="flex h-full flex-col items-center justify-center gap-4">
-        <Link href="/application" className="z-20">
-          <button className="rounded-lg border border-black bg-white px-12 py-4 hover:bg-orange">
-            Application
-          </button>
-        </Link>
-        
-      </div>
-    </section>
+            <div className="z-20 text-xl">
+              <h1 className="text-3xl font-bold text-orange">
+                Welcome back, {session!.user!.name}
+              </h1>
+              <Link className="text-lg text-orange" href="/application">
+                Application
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   ) : null;
 };
 

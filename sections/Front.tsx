@@ -12,21 +12,19 @@ const FrontSection = () => {
           fill
         />
       </div>
-      
-      
-     
+
       <div className="flex flex-col items-center justify-center gap-4 pt-16">
-        <h1 className="z-10 pb-4 text-black font-header text-6xl font-extrabold">
+        <h1 className="z-10 pb-4 font-header text-6xl font-extrabold text-black">
           Hack the Nest
-        </h1>  
+        </h1>
         <div className="z-10 text-center">
-
-
-        <p className="z-10 text-black font-semibold">April 15-16, 2023</p>
-        <p className="z-10 text-black font-semibold">River Hill High School</p>
+          <p className="z-10 font-semibold text-black">April 15-16, 2023</p>
+          <p className="z-10 font-semibold text-black">
+            River Hill High School
+          </p>
         </div>
         <Link
-          className="z-10 text-black mx-auto rounded-lg bg-orange border border-black py-2 px-12"
+          className="z-10 mx-auto rounded-lg border border-black bg-orange py-4 px-16 text-black"
           href="/login"
         >
           Apply Now
