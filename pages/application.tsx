@@ -86,10 +86,9 @@ const Application = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
-            <div className="flex gap-28 px-40 text-xl">
-              <div className="w-1/2 flex-col">
+            <div className="flex gap-16">
+              <div className="w-full">
                 <div className="relative font-bold">First Name *</div>
-
                 <input
                   className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
                   type="text"
@@ -99,7 +98,7 @@ const Application = () => {
                 {errors.firstName && <p>{errors.firstName.message}</p>}
               </div>
 
-              <div className="w-1/2 flex-col">
+              <div className="w-full">
                 <div className="relative font-bold">Last Name *</div>
                 <input
                   className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
@@ -111,7 +110,7 @@ const Application = () => {
               </div>
             </div>
 
-            <div className="flex-col gap-28 px-40 text-xl">
+            <div className="">
               <div className="font-bold">Email *</div>
               <input
                 className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
@@ -122,7 +121,7 @@ const Application = () => {
               {errors.email && <p>{errors.email.message}</p>}
             </div>
 
-            <div className="flex-col gap-28 px-40  text-xl">
+            <div className="">
               <div className="font-bold">Phone Number *</div>
               <input
                 className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
@@ -133,7 +132,7 @@ const Application = () => {
               {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
             </div>
 
-            <div className="flex-col gap-28 px-40 text-xl">
+            <div className="">
               <div className="font-bold">Age</div>
               <Select
                 options={ageOptions}
@@ -167,7 +166,7 @@ const Application = () => {
               />
             </div>
 
-            <div className="flex-col gap-28 px-40 text-xl">
+            <div className="">
               <div className="relative font-bold">Dietary restrictions</div>
               <Controller
                 control={control}
@@ -214,7 +213,7 @@ const Application = () => {
               />
             </div>
 
-            <div className="flex-col gap-28 px-40 text-xl">
+            <div className="">
               <div className="font-bold">Referral Code</div>
               <input
                 className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
@@ -223,7 +222,7 @@ const Application = () => {
               />
             </div>
 
-            <div className="flex-col gap-28 px-40 text-xl">
+            <div className="">
               <div className="font-bold">Where did you hear about us?</div>
               <Select
                 options={outreachOptions}
@@ -258,7 +257,7 @@ const Application = () => {
               />
             </div>
 
-            <div className="flex-col gap-28 px-40 text-xl">
+            <div className="">
               <div className="font-bold">
                 I have read and agree to the&nbsp;
                 <a
@@ -278,7 +277,7 @@ const Application = () => {
               {errors.conduct && <p>{errors.conduct.message}</p>}
             </div>
 
-            <div className="flex-col gap-28 px-40 text-xl">
+            <div className="">
               <div className="font-bold">
                 I authorize you to share my application/registration information
                 with Major League Hacking for event administration, ranking, and
@@ -309,7 +308,7 @@ const Application = () => {
               {errors.accept && <p>{errors.accept.message}</p>}
             </div>
 
-            <div className="gap-28 px-40">
+            <div className="">
               <button
                 className="rounded-lg border px-12 py-4 hover:bg-orange"
                 type="submit"
