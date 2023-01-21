@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import * as z from "zod";
-
+import Image from "next/image";
 // TODO: move options to inline
 // fix other - search up
 // reduce vertical spacing
@@ -77,7 +77,15 @@ const Application = () => {
   };
 
   return (
-    <section className="h-[100rem]">
+    <section className="min-h-screen pt-32">
+      <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
+        <div className="flex h-full items-center gap-12">
+          <div className="relative z-50 aspect-square h-3/5">
+            <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
+          </div>
+        </div>
+      </nav>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-12">
           <div className="flex gap-28 px-40 text-xl">

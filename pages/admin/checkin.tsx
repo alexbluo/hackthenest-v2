@@ -23,18 +23,26 @@ const Checkin = () => {
         />
         <div className="flex flex-col gap-1">
           <CheckInResult
-            firstName="Bumble"
-            lastName="Bee"
+            firstName="Evan"
+            lastName="Marlow"
             school="River Hill High School"
-            email="bumble@bee.com"
+            email="itsarlow@gmail.com"
             as="hacker"
-            shirt="SM"
+            shirt="MD"
+          />
+          <CheckInResult
+            firstName="Tyler"
+            lastName="Nguyen"
+            school="River Hill High School"
+            email="tytyprime@gmail.com"
+            as="hacker"
+            shirt="MD"
           />
           <CheckInResult
             firstName="Alex"
             lastName="Luo"
             school="River Hill High School"
-            email="bumble@bee.com"
+            email="alexluo92823@gmail.com"
             as="hacker"
             shirt="MD"
           />
