@@ -6,7 +6,6 @@ import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import * as z from "zod";
 
-// TODO: move options to inline
 // fix other - search up
 // types
 // make dropdown update formstate

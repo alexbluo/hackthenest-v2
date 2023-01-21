@@ -45,9 +45,9 @@ const FAQSection = () => {
           </FAQ>
           <FAQ question="How do teams work?">
             There are up to four people per team and you get to choose, so bring
-            your friends along! Don&apos;t worry if you do not have a team;
-            we&apos;ll have two team formation sessions towards the beginning of
-            the event, and you can always find a team beforehand through our
+            your friends along! Don&apos;t worry if you don&apos;t have a team;
+            we&apos;ll have a team formation session at the beginning of the
+            event, and you can always find a team beforehand through our
             Discord.
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
@@ -58,8 +58,8 @@ const FAQSection = () => {
             hosting online video game tournaments!
           </FAQ>
           <FAQ question="I have more questions!">
-            Contact hello@hackthenest.org and we&apos;ll get back to you as soon
-            as possible.
+            Feel free to direct any questions to hello@hackthenest.org and we&apos;ll
+            get back to you as soon as possible!
           </FAQ>
         </div>
       </div>
