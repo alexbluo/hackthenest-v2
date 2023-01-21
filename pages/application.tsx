@@ -75,6 +75,7 @@ const Application = () => {
   };
 
   return (
+    <div className="bg-black text-white">
     <section className="min-h-screen pt-32">
       <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
         <div className="flex h-full items-center gap-12">
@@ -90,149 +91,220 @@ const Application = () => {
             <div className="w-1/2 flex-col">
               <div className="relative font-bold">First Name *</div>
 
-              <input
-                className="bg-transparent h-10 w-full rounded p-4 shadow"
-                type="text"
-                placeholder=" Type your answer here..."
-                {...register("firstName")}
-              />
-              {errors.firstName && <p>{errors.firstName.message}</p>}
-            </div>
-
-            <div className="w-1/2 flex-col">
-              <div className="relative font-bold">Last Name *</div>
-              <input
-                className="bg-transparent h-10 w-full rounded p-4 shadow"
-                type="text"
-                placeholder=" Type your answer here..."
-                {...register("lastName")}
-              />
-              {errors.lastName && <p>{errors.lastName.message}</p>}
-            </div>
-          </div>
-
-          <div className="flex-col gap-28 px-40 text-xl">
-            <div className="font-bold">Email *</div>
-            <input
-              className="bg-transparent h-10 w-full rounded p-4 shadow"
-              type="text"
-              placeholder=" Type your answer here..."
-              {...register("email")}
-            />
-            {errors.email && <p>{errors.email.message}</p>}
-          </div>
-
-          <div className="flex-col gap-28 px-40  text-xl">
-            <div className="font-bold">Phone Number *</div>
-            <input
-              className="bg-transparent h-10 w-full rounded p-4 shadow"
-              type="text"
-              placeholder=" Type your answer here..."
-              {...register("phoneNumber")}
-            />
-            {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
-          </div>
-
-          <div className="flex-col gap-28 px-40 text-xl">
-            <div className="font-bold">Age *</div>
-            <Select options={ageOptions} className="w-1/3 rounded" />
-          </div>
-
-          <div className="flex-col gap-28 px-40 text-xl">
-            <div className="relative font-bold">Dietary restrictions</div>
-            <Controller
-              control={control}
-              defaultValue="Select an option..."
-              name="dietField"
-              render={({ field: { onChange, value, ref } }) => (
-                <Select
-                  ref={ref}
-                  options={dietOptions}
-                  placeholder="Select an option..."
-                  className="w-1/3 rounded"
-                  value={dietOptions.find((el) => el.value === value)}
-                  onChange={(newValue) => onChange(newValue.value)}
+                <input
+                  className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                  type="text"
+                  placeholder=" Type your answer here..."
+                  {...register("firstName")}
                 />
-              )}
-            />
-          </div>
+                {errors.firstName && <p>{errors.firstName.message}</p>}
+              </div>
 
-          <div className="flex-col gap-28 px-40 text-xl">
-            <div className="font-bold">Referral Code</div>
-            <input
-              className="bg-transparent h-10 w-1/2 rounded shadow"
-              type="text"
-              placeholder=" Type your answer here..."
-            />
-          </div>
-
-          <div className="flex-col gap-28 px-40 text-xl">
-            <div className="font-bold">Where did you hear about us?</div>
-            <Select
-              options={outreachOptions}
-              placeholder="Select an option..."
-              className="w-1/3 rounded"
-            />
-          </div>
-
-          <div className="flex-col gap-28 px-40 text-xl">
-            <div className="font-bold">
-              I have read and agree to the&nbsp;
-              <a
-                href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                MLH Code of Conduct
-              </a>
+              <div className="w-1/2 flex-col">
+                <div className="relative font-bold">Last Name *</div>
+                <input
+                  className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                  type="text"
+                  placeholder=" Type your answer here..."
+                  {...register("lastName")}
+                />
+                {errors.lastName && <p>{errors.lastName.message}</p>}
+              </div>
             </div>
-            <input
-              placeholder="Select an option..."
-              className="h-6 w-6 rounded"
-              type="checkbox"
-              {...register("conduct")}
-            />
-            {errors.conduct && <p>{errors.conduct.message}</p>}
-          </div>
 
-          <div className="flex-col gap-28 px-40 text-xl">
-            <div className="font-bold">
-              I authorize you to share my application/registration information
-              with Major League Hacking for event administration, ranking, and
-              MLH administration in-line with the&nbsp;
-              <a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">
-                MLH Privacy Policy
-              </a>
-              . I further agree to the terms of both the&nbsp;
-              <a
-                href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
-                target="_blank"
-                rel="noreferrer"
-              >
-                MLH Contest Terms and Conditions
-              </a>
-              &nbsp;and the MLH Privacy Policy.
+            <div className="flex-col gap-28 px-40 text-xl">
+              <div className="font-bold">Email *</div>
+              <input
+                className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                type="text"
+                placeholder=" Type your answer here..."
+                {...register("email")}
+              />
+              {errors.email && <p>{errors.email.message}</p>}
             </div>
-            <input
-              placeholder="Select an option..."
-              className="h-6 w-6 rounded"
-              type="checkbox"
-              {...register("accept")}
-            />
-            {errors.accept && <p>{errors.accept.message}</p>}
-          </div>
 
-          <div className="gap-28 px-40">
-            <button
-              className="rounded-lg border px-12 py-4 hover:bg-orange"
-              type="submit"
-            >
-              Submit
-            </button>
+            <div className="flex-col gap-28 px-40  text-xl">
+              <div className="font-bold">Phone Number *</div>
+              <input
+                className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                type="text"
+                placeholder=" Type your answer here..."
+                {...register("phoneNumber")}
+              />
+              {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
+            </div>
+
+            <div className="flex-col gap-28 px-40 text-xl">
+              <div className="font-bold">Age</div>
+              <Select
+                options={ageOptions}
+                className="w-1/3 rounded"
+                styles={{
+                  
+                  control: (baseStyles, state) => ({
+                    ...baseStyles,
+                    borderColor: state.isFocused ? "#808080" : "#61a7c",
+                    backgroundColor: "#181818",
+                    color: "#ffffff"
+                  }),
+                  option: (baseStyles, state) => ({
+                    ...baseStyles,
+                    borderColor: state.isFocused ? "#808080" : "#61a7c",
+                    backgroundColor: state.isFocused? "#61a7cf": "#181818"
+                    
+                  }),
+                  menu: (baseStyles) => ({
+                    ...baseStyles,
+                   
+                    backgroundColor: "#181818",
+                    
+                  }),
+                }}
+              />
+            </div>
+
+            <div className="flex-col gap-28 px-40 text-xl">
+              <div className="relative font-bold">Dietary restrictions</div>
+              <Controller
+                control={control}
+                defaultValue="Select an option..."
+                name="dietField"
+                render={({ field: { onChange, value, ref } }) => (
+                  <Select
+                    ref={ref}
+                    options={dietOptions}
+                    placeholder="Select an option..."
+                    className="w-1/3 border-separate rounded"
+                    value={dietOptions.find((el) => el.value === value)}
+                    onChange={(newValue) => onChange(newValue.value)}
+                    styles={{
+                  
+                      control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        borderColor: state.isFocused ? "#808080" : "#61a7c",
+                        backgroundColor: "#181818",
+                        color: "#ffffff"
+                      }),
+                      option: (baseStyles, state) => ({
+                        ...baseStyles,
+                        borderColor: state.isFocused ? "#808080" : "#61a7c",
+                        backgroundColor: state.isFocused? "#61a7cf": "#181818"
+                        
+                      }),
+                      menu: (baseStyles) => ({
+                        ...baseStyles,
+                       
+                        backgroundColor: "#181818",
+                        
+                      }),
+                    }}
+                  />
+                )}
+              />
+            </div>
+
+            <div className="flex-col gap-28 px-40 text-xl">
+              <div className="font-bold">Referral Code</div>
+              <input
+                className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                type="text"
+                placeholder=" Type your answer here..."
+              />
+            </div>
+
+            <div className="flex-col gap-28 px-40 text-xl">
+              <div className="font-bold">Where did you hear about us?</div>
+              <Select
+                options={outreachOptions}
+                placeholder="Select an option..."
+                className="w-1/3 rounded"
+                styles={{
+                  
+                  control: (baseStyles, state) => ({
+                    ...baseStyles,
+                    borderColor: state.isFocused ? "#808080" : "#61a7c",
+                    backgroundColor: "#181818",
+                    color: "#ffffff"
+                  }),
+                  option: (baseStyles, state) => ({
+                    ...baseStyles,
+                    borderColor: state.isFocused ? "#808080" : "#61a7c",
+                    backgroundColor: state.isFocused? "#61a7cf": "#181818"
+                    
+                  }),
+                  menu: (baseStyles) => ({
+                    ...baseStyles,
+                   
+                    backgroundColor: "#181818",
+                    
+                  }),
+                }}
+              />
+            </div>
+
+            <div className="flex-col gap-28 px-40 text-xl">
+              <div className="font-bold">
+                I have read and agree to the&nbsp;
+                <a
+                  href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MLH Code of Conduct
+                </a>
+              </div>
+              <input
+                placeholder="Select an option..."
+                className="h-6 w-6 rounded"
+                type="checkbox"
+                {...register("conduct")}
+              />
+              {errors.conduct && <p>{errors.conduct.message}</p>}
+            </div>
+
+            <div className="flex-col gap-28 px-40 text-xl">
+              <div className="font-bold">
+                I authorize you to share my application/registration information
+                with Major League Hacking for event administration, ranking, and
+                MLH administration in-line with the&nbsp;
+                <a
+                  href="https://mlh.io/privacy"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MLH Privacy Policy
+                </a>
+                . I further agree to the terms of both the&nbsp;
+                <a
+                  href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MLH Contest Terms and Conditions
+                </a>
+                and the MLH Privacy Policy.
+              </div>
+              <input
+                placeholder="Select an option..."
+                className="h-6 w-6 rounded"
+                type="checkbox"
+                {...register("accept")}
+              />
+              {errors.accept && <p>{errors.accept.message}</p>}
+            </div>
+
+            <div className="gap-28 px-40">
+              <button
+                className="rounded-lg border px-12 py-4 hover:bg-orange"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
-    </section>
+        </form>
+      </section>
+    </div>
   );
 };
 

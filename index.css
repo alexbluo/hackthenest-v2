@@ -9,4 +9,8 @@
   h2 {
     @apply pb-8 text-orange font-header text-5xl font-bold;
   }
+  input{
+    @apply outline-none
+  }
+  
 }
