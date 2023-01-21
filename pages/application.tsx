@@ -1,9 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import * as z from "zod";
-import Image from "next/image";
+
 // TODO: move options to inline
 // fix other - search up
 // types
@@ -76,20 +78,18 @@ const Application = () => {
 
   return (
     <div className="bg-black text-white">
-    <section className="min-h-screen pt-32">
-      <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
-        <div className="flex h-full items-center gap-12">
-          <div className="relative z-50 aspect-square h-3/5">
+      <section className="min-h-screen pt-32">
+        <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
+          <Link className="relative z-50 aspect-square h-3/5" href="/">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
-          </div>
-        </div>
-      </nav>
+          </Link>
+        </nav>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col gap-12">
-          <div className="flex gap-28 px-40 text-xl">
-            <div className="w-1/2 flex-col">
-              <div className="relative font-bold">First Name *</div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="flex flex-col gap-12">
+            <div className="flex gap-28 px-40 text-xl">
+              <div className="w-1/2 flex-col">
+                <div className="relative font-bold">First Name *</div>
 
                 <input
                   className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
@@ -140,24 +140,29 @@ const Application = () => {
                 options={ageOptions}
                 className="w-1/3 rounded"
                 styles={{
-                  
                   control: (baseStyles, state) => ({
                     ...baseStyles,
-                    borderColor: state.isFocused ? "#808080" : "#61a7c",
+                    borderColor: state.isFocused ? "#61a7cf" : "#808080",
                     backgroundColor: "#181818",
-                    color: "#ffffff"
+                    color: "#ffffff",
                   }),
                   option: (baseStyles, state) => ({
                     ...baseStyles,
-                    borderColor: state.isFocused ? "#808080" : "#61a7c",
-                    backgroundColor: state.isFocused? "#61a7cf": "#181818"
-                    
+                    backgroundColor: state.isFocused ? "#61a7cf" : "#181818",
                   }),
                   menu: (baseStyles) => ({
                     ...baseStyles,
-                   
                     backgroundColor: "#181818",
-                    
+                    borderColor: "#61a7cf",
+                    borderWidth: "2px",
+                  }),
+                  input: (baseStyles) => ({
+                    ...baseStyles,
+                    color: "#ffffff",
+                  }),
+                  singleValue: (baseStyles) => ({
+                    ...baseStyles,
+                    color: "#ffffff",
                   }),
                 }}
               />
@@ -178,24 +183,31 @@ const Application = () => {
                     value={dietOptions.find((el) => el.value === value)}
                     onChange={(newValue) => onChange(newValue.value)}
                     styles={{
-                  
                       control: (baseStyles, state) => ({
                         ...baseStyles,
-                        borderColor: state.isFocused ? "#808080" : "#61a7c",
+                        borderColor: state.isFocused ? "#61a7cf" : "#808080",
                         backgroundColor: "#181818",
-                        color: "#ffffff"
+                        color: "#ffffff",
                       }),
                       option: (baseStyles, state) => ({
                         ...baseStyles,
-                        borderColor: state.isFocused ? "#808080" : "#61a7c",
-                        backgroundColor: state.isFocused? "#61a7cf": "#181818"
-                        
+                        backgroundColor: state.isFocused
+                          ? "#61a7cf"
+                          : "#181818",
                       }),
                       menu: (baseStyles) => ({
                         ...baseStyles,
-                       
                         backgroundColor: "#181818",
-                        
+                        borderColor: "#61a7cf",
+                        borderWidth: "2px",
+                      }),
+                      input: (baseStyles) => ({
+                        ...baseStyles,
+                        color: "#ffffff",
+                      }),
+                      singleValue: (baseStyles) => ({
+                        ...baseStyles,
+                        color: "#ffffff",
                       }),
                     }}
                   />
@@ -219,24 +231,29 @@ const Application = () => {
                 placeholder="Select an option..."
                 className="w-1/3 rounded"
                 styles={{
-                  
                   control: (baseStyles, state) => ({
                     ...baseStyles,
-                    borderColor: state.isFocused ? "#808080" : "#61a7c",
+                    borderColor: state.isFocused ? "#61a7cf" : "#808080",
                     backgroundColor: "#181818",
-                    color: "#ffffff"
+                    color: "#ffffff",
                   }),
                   option: (baseStyles, state) => ({
                     ...baseStyles,
-                    borderColor: state.isFocused ? "#808080" : "#61a7c",
-                    backgroundColor: state.isFocused? "#61a7cf": "#181818"
-                    
+                    backgroundColor: state.isFocused ? "#61a7cf" : "#181818",
                   }),
                   menu: (baseStyles) => ({
                     ...baseStyles,
-                   
                     backgroundColor: "#181818",
-                    
+                    borderColor: "#61a7cf",
+                    borderWidth: "2px",
+                  }),
+                  input: (baseStyles) => ({
+                    ...baseStyles,
+                    color: "#ffffff",
+                  }),
+                  singleValue: (baseStyles) => ({
+                    ...baseStyles,
+                    color: "#ffffff",
                   }),
                 }}
               />

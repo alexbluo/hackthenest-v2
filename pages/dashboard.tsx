@@ -11,9 +11,9 @@ const Dashboard = () => {
         {/* <div className="absolute top-0 left-0 z-10 h-screen w-screen bg-black"></div> */}
 
         <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
-          <div className="relative z-50 aspect-square h-3/5">
+          <Link className="relative z-50 aspect-square h-3/5" href="/">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
-          </div>
+          </Link>
 
           <button
             className="text-lg font-medium text-orange"
