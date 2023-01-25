@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Libre_Franklin, Hanken_Grotesk } from "@next/font/google";
 import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -9,18 +8,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import * as gtag from "../utils/gtag";
 import { GA_TRACKING_ID } from "../utils/gtag";
 import "../index.css";
-
-const libreFranklin = Libre_Franklin({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-libre-franklin",
-});
-
-const hankenGrotesk = Hanken_Grotesk({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-hanken-grotesk",
-});
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -68,12 +55,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
           `,
           }}
         />
-        {/* fixed left-0 right-0 */}
-        <div
-          className={`${libreFranklin.variable} ${hankenGrotesk.variable} font-sans`}
-        >
-          <Component {...pageProps} />
-        </div>
+        <Component {...pageProps} />
       </QueryClientProvider>
     </SessionProvider>
   );
