@@ -25,7 +25,18 @@ const SponsorsSection = () => {
         <div className="grid grid-cols-2 gap-6" />
         {/* bronze tier */}
         <div className="grid grid-cols-3 gap-6">
-          <Sponsor path="/wolfram.png" alt="evan" />
+          <Sponsor
+            src="/wolfram.png"
+            alt="Wolfram bronze sponsorship"
+            href="https://www.wolframalpha.com/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/janestreet.png"
+            alt="Jane Street bronze sponsorship"
+            href="https://www.janestreet.com/"
+            tier="bronze"
+          />
         </div>
       </div>
     </section>

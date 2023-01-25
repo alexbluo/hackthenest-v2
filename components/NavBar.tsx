@@ -16,7 +16,7 @@ const NavBar = ({ open, toggleOpen }: Props) => {
         <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
       </div>
 
-      <ul className="hidden gap-12 text-orange sm:flex">
+      <ul className="hidden gap-12 text-gold sm:flex">
         <NavItem to="about">About</NavItem>
         <NavItem to="schedule">Schedule</NavItem>
         <NavItem to="faq">FAQ</NavItem>

@@ -14,7 +14,7 @@ const Checkin = () => {
   return (
     <div className="bg-blue-dark">
       <section className="min-h-screen">
-        <h1 className="pb-4 text-5xl font-bold text-orange">Check-In</h1>
+        <h1 className="pb-4 text-5xl font-bold text-gold">Check-In</h1>
         <input
           className="w-full p-4"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {

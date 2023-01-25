@@ -14,7 +14,7 @@ const Dashboard = () => {
           </Link>
 
           <button
-            className="text-lg font-medium text-orange"
+            className="text-lg font-medium text-gold"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
             Logout
@@ -22,12 +22,17 @@ const Dashboard = () => {
         </nav>
 
         <div className="z-20 text-xl">
-          <h1 className="text-3xl font-bold text-orange">
+          <h1 className="text-3xl font-bold text-gold">
             Welcome back, {session!.user!.name}
           </h1>
-          <Link className="text-lg text-orange" href="/application">
-            Application
-          </Link>
+          <div className="pt-12">
+            <Link
+              className="rounded-md border py-2 px-12 text-lg text-gold"
+              href="/application"
+            >
+              Application
+            </Link>
+          </div>
         </div>
       </section>
     </div>

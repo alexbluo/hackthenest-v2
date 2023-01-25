@@ -310,7 +310,7 @@ const Application = () => {
 
             <div className="">
               <button
-                className="rounded-lg border px-12 py-4 hover:bg-orange"
+                className="rounded-lg border px-12 py-4 hover:bg-gold"
                 type="submit"
               >
                 Submit

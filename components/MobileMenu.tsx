@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import NavItem from "./NavItem";
 
 interface Props {
@@ -16,7 +15,7 @@ const MobileMenu = ({ open }: Props) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <ul className="flex h-screen flex-col items-center justify-center gap-8 text-orange">
+          <ul className="flex h-screen flex-col items-center justify-center gap-8 text-gold">
             <NavItem to="about">About</NavItem>
             <NavItem to="schedule">Schedule</NavItem>
             <NavItem to="faq">FAQ</NavItem>
@@ -29,7 +28,7 @@ const MobileMenu = ({ open }: Props) => {
                 rel="noreferrer"
               >
                 <svg
-                  className="aspect-square h-full fill-orange"
+                  className="aspect-square h-full fill-gold"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -43,7 +42,7 @@ const MobileMenu = ({ open }: Props) => {
                 rel="noreferrer"
               >
                 <svg
-                  className="aspect-square h-full fill-orange"
+                  className="aspect-square h-full fill-gold"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -57,7 +56,7 @@ const MobileMenu = ({ open }: Props) => {
                 rel="noreferrer"
               >
                 <svg
-                  className="aspect-square h-full fill-orange"
+                  className="aspect-square h-full fill-gold"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -70,7 +69,7 @@ const MobileMenu = ({ open }: Props) => {
                 rel="noreferrer"
               >
                 <svg
-                  className="aspect-square h-full fill-orange"
+                  className="aspect-square h-full fill-gold"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -84,7 +83,7 @@ const MobileMenu = ({ open }: Props) => {
                 rel="noreferrer"
               >
                 <svg
-                  className="aspect-square h-full fill-orange"
+                  className="aspect-square h-full fill-gold"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 496 512"
                 >

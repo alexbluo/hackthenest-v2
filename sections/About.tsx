@@ -21,16 +21,16 @@ const AboutSection = () => {
             experience consists of the following:
           </p>
           <p>
-            <span className="font-semibold text-orange">40%</span> building and
+            <span className="font-semibold text-gold">40%</span> building and
             designing innovative projects
           </p>
           <p>
-            <span className="font-semibold text-orange">30%</span> attending
+            <span className="font-semibold text-gold">30%</span> attending
             workshops and side events
           </p>
           <p>
-            <span className="font-semibold text-orange">40%</span> interacting
-            and developing alongside sponsors
+            <span className="font-semibold text-gold">40%</span> interacting and
+            developing alongside sponsors
           </p>
         </div>
       </div>

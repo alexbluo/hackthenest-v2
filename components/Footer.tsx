@@ -19,7 +19,7 @@ const Footer = () => {
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-orange"
+                className="aspect-square h-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -34,7 +34,7 @@ const Footer = () => {
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-orange"
+                className="aspect-square h-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -48,7 +48,7 @@ const Footer = () => {
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-orange"
+                className="aspect-square h-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -62,7 +62,7 @@ const Footer = () => {
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-orange"
+                className="aspect-square h-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -76,7 +76,7 @@ const Footer = () => {
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-orange"
+                className="aspect-square h-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 496 512"
               >
@@ -85,7 +85,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="flex flex-col gap-1 text-right font-medium text-orange">
+          <div className="flex flex-col gap-1 text-right font-medium text-gold">
             {/* <p>hello@hackthenest.org</p> */}
             <a
               href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"

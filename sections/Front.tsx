@@ -24,7 +24,7 @@ const FrontSection = () => {
           </p>
         </div>
         <Link
-          className="z-10 mx-auto rounded-lg border border-black bg-orange py-4 px-16 text-black"
+          className="z-10 mx-auto rounded-lg border border-black bg-gold py-4 px-16 text-black"
           href="/login"
         >
           Apply Now

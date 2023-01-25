@@ -10,7 +10,6 @@ interface Credentials {
   password: string;
 }
 
-// TODO: link to login and redirect to dashboard if signed in
 const Login = ({
   providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
@@ -29,7 +28,7 @@ const Login = ({
         <div className="relative z-50 mx-auto aspect-square w-1/2">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
-        <h1 className="font-header text-5xl font-black text-orange">
+        <h1 className="font-header text-5xl font-black text-gold">
           Hack the Nest
         </h1>
         <input
@@ -41,12 +40,12 @@ const Login = ({
         />
 
         <button
-          className="flex w-full items-center justify-between rounded-md border bg-orange px-6 py-4"
+          className="flex w-full items-center justify-between rounded-md border bg-gold px-6 py-4"
           onClick={() =>
             signIn("credentials", { ...credentials, callbackUrl: "/dashboard" })
           }
         >
-          <p>Sign in</p>
+          <p>LOG IN</p>
           <svg
             className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +67,7 @@ const Login = ({
             signIn(providers?.google.id, { callbackUrl: "/dashboard" })
           }
         >
-          <p>Sign in with Google</p>
+          <p>Continue with Google</p>
           <svg
             className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +82,7 @@ const Login = ({
             signIn(providers?.github.id, { callbackUrl: "/dashboard" })
           }
         >
-          <p>Sign in with GitHub</p>
+          <p>Continue with GitHub</p>
           <svg
             className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
