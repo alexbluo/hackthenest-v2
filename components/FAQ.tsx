@@ -11,7 +11,7 @@ const FAQ = ({ question, children }: Props) => {
 
   return (
     <div className="flex flex-col">
-      <h3 className="cursor-pointer text-xl" onClick={() => setOpen(!open)}>
+      <h3 className="cursor-pointer text-xl select-none" onClick={() => setOpen(!open)}>
         {question}
       </h3>
       <motion.div

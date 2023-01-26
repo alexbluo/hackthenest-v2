@@ -12,7 +12,7 @@ const SponsorsSection = () => {
         >
           prospectus
         </a>
-        &nbsp; and email&nbsp;
+        &nbsp;and email&nbsp;
         <a className="font-bold text-blue-light underline">
           sponsor@hackthenest.org
         </a>

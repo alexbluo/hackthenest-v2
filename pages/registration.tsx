@@ -33,7 +33,7 @@ const schema = z.object({
   }),
 });
 
-const Application = () => {
+const Registration = () => {
   const {
     register,
     handleSubmit,
@@ -323,4 +323,4 @@ const Application = () => {
   );
 };
 
-export default Application;
+export default Registration;

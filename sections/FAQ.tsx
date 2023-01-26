@@ -11,8 +11,8 @@ const FAQSection = () => {
             (also called hackers) bring their ideas to life by building projects
             from scratch using software development principals. Aside from just
             being coding marathons/competitions, hackathons offer several fun
-            side events, educational workshops for all skill levels, sponsor
-            fairs, and an overall great atmosphere to hang out in!
+            side events, educational workshops, sponsor fairs, and an overall
+            great atmosphere to hang out in!
           </FAQ>
           <FAQ question="How much does it cost?">
             Absolutely nothing! We&apos;ll take care of food, prizes, swag, and
@@ -25,8 +25,7 @@ const FAQSection = () => {
             with familiar companies.
           </FAQ>
           <FAQ question="When are registrations due?">
-            Registrations open February 1st and close April 1st. It only takes a
-            few minutes so go for it!
+            Registrations open February 1st and close April 1st.
           </FAQ>
           <FAQ question="Do I have to make a project?">
             You&apos;re not required to make a project to attend, but we
@@ -44,21 +43,21 @@ const FAQSection = () => {
             Details on volunteer and mentor registration will be released soon.
           </FAQ>
           <FAQ question="How do teams work?">
-            There are up to four people per team and you get to choose, so bring
-            your friends along! Don&apos;t worry if you don&apos;t have a team;
-            we&apos;ll have a team formation session at the beginning of the
-            event, and you can always find a team beforehand through our
-            Discord.
+            There are up to four people per team and you get to choose who you
+            work with, so bring your friends along! Don&apos;t worry if you
+            don&apos;t have a team; we&apos;ll have a team formation session at
+            the beginning of the event, and you can always find a team
+            beforehand through our Discord.
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
             Due to limitations with our venue, hackers will return home around
             9:00 - 10:00pm. We strongly encourage you to carpool with your group
-            and even stay over at a member&apos;s place. Feel free to keep
-            working on your project in the wee hours - we&apos;ll even be
-            hosting online video game tournaments!
+            and even stay over at a member&apos;s place. The hacking and fun
+            doesn&apos;t stop in the wee hours - we&apos;ll even be hosting
+            online video game tournaments.
           </FAQ>
           <FAQ question="I have more questions!">
-            Feel free to direct any questions to hello@hackthenest.org and we&apos;ll
+            Please direct any questions to hello@hackthenest.org and we&apos;ll
             get back to you as soon as possible!
           </FAQ>
         </div>
