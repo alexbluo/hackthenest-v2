@@ -8,6 +8,14 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+model User {
+  id Int @id @default(autoincrement())
+  username String
+  password String
+  hackerAppSubmitted Boolean
+  volunteerAppSubmitted Boolean
+}
+
 model Hacker {
   firstName String
   lastName String
