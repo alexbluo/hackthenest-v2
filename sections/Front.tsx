@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const FrontSection = () => {
   return (
-    <section className="h-screen pt-32" id="front">
+    <section className="min-h-screen pt-32" id="front">
       <div className="absolute top-0 left-0 h-screen w-screen">
         <Image
           className="object-cover"
@@ -19,9 +19,7 @@ const FrontSection = () => {
         </h1>
         <div className="z-10 text-center text-black">
           <p className="z-10">April 15-16, 2023</p>
-          <p className="z-10">
-            River Hill High School
-          </p>
+          <p className="z-10">River Hill High School</p>
         </div>
         <Link
           className="z-10 mx-auto rounded-lg border border-black bg-gold py-4 px-16 text-black"

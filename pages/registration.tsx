@@ -2,31 +2,30 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useForm, Controller } from "react-hook-form";
-import Select from "react-select";
+import { useForm } from "react-hook-form";
 import * as z from "zod";
+import RegistrationDropdown from "../components/RegistrationDropdown";
 
 // fix other - search up
+// add school fieddld
 // types
 // make dropdown update formstate
 // validation:
 // - email, phone number, types, etc.
 // move caption to placeholder and placeholder down on focus
 
-interface Option {
-  value: string;
-  label: string;
-}
-
 const schema = z.object({
   firstName: z.string().min(1, { message: "This field is required" }),
   lastName: z.string().min(1, { message: "This field is required" }),
   email: z.string().min(1, { message: "This field is required" }),
   phoneNumber: z.string().min(1, { message: "This field is required" }),
-  accept: z.literal(true, {
+  age: z.string().min(1),
+  diet: z.string().min(1),
+  outreach: z.string().min(1),
+  conduct: z.literal(true, {
     errorMap: () => ({ message: "You must agree to the MLH code of conduct" }),
   }),
-  conduct: z.literal(true, {
+  privacy: z.literal(true, {
     errorMap: () => ({
       message: "You must agree to the MLH terms and conditions",
     }),
@@ -37,6 +36,7 @@ const Registration = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
     control,
   } = useForm({
@@ -44,33 +44,8 @@ const Registration = () => {
   });
   const router = useRouter();
 
-  const ageOptions: Option[] = [
-    { value: "13", label: "13" },
-    { value: "14", label: "14" },
-    { value: "15", label: "15" },
-    { value: "16", label: "16" },
-    { value: "17", label: "17" },
-    { value: "18", label: "18" },
-  ];
-
-  const dietOptions: Option[] = [
-    { value: "Vegan", label: "Vegan" },
-    { value: "Vegetarian", label: "Vegetarian" },
-    { value: "Halal", label: "Halal" },
-    { value: "Gluten Free", label: "Gluten Free" },
-    { value: "Lactose Free", label: "Lactose Free" },
-    // <input placeholder="Other..." />,
-  ];
-
-  const outreachOptions: Option[] = [
-    { value: "Friends/Family", label: "Friends/Family" },
-    { value: "LinkedIn", label: "LinkedIn" },
-    { value: "Instagram", label: "Instagram" },
-    { value: "Twitter", label: "Twitter" },
-    { value: "Facebook", label: "Facebook" },
-  ];
-
   const onSubmit = (data) => {
+    console.log("hi");
     console.log(data);
     router.push("/dashboard");
   };
@@ -88,9 +63,9 @@ const Registration = () => {
           <div className="flex flex-col gap-12">
             <div className="flex gap-16">
               <div className="w-full">
-                <div className="relative font-bold">First Name *</div>
+                <p>First Name</p>
                 <input
-                  className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                  className="bg-transparent w-full border-b-2 border-grey bg-black py-2 shadow duration-200 ease-in-out focus:border-blue-light"
                   type="text"
                   placeholder=" Type your answer here..."
                   {...register("firstName")}
@@ -99,7 +74,7 @@ const Registration = () => {
               </div>
 
               <div className="w-full">
-                <div className="relative font-bold">Last Name *</div>
+                <p className="relative ">Last Name</p>
                 <input
                   className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
                   type="text"
@@ -109,9 +84,8 @@ const Registration = () => {
                 {errors.lastName && <p>{errors.lastName.message}</p>}
               </div>
             </div>
-
-            <div className="">
-              <div className="font-bold">Email *</div>
+            <div>
+              <p>Email</p>
               <input
                 className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
                 type="text"
@@ -120,9 +94,8 @@ const Registration = () => {
               />
               {errors.email && <p>{errors.email.message}</p>}
             </div>
-
-            <div className="">
-              <div className="font-bold">Phone Number *</div>
+            <div>
+              <p>Phone Number</p>
               <input
                 className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
                 type="text"
@@ -131,134 +104,60 @@ const Registration = () => {
               />
               {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
             </div>
-
-            <div className="">
-              <div className="font-bold">Age</div>
-              <Select
-                options={ageOptions}
-                className="w-1/3 rounded"
-                styles={{
-                  control: (baseStyles, state) => ({
-                    ...baseStyles,
-                    borderColor: state.isFocused ? "#61a7cf" : "#808080",
-                    backgroundColor: "#181818",
-                    color: "#ffffff",
-                  }),
-                  option: (baseStyles, state) => ({
-                    ...baseStyles,
-                    backgroundColor: state.isFocused ? "#61a7cf" : "#181818",
-                  }),
-                  menu: (baseStyles) => ({
-                    ...baseStyles,
-                    backgroundColor: "#181818",
-                    borderColor: "#61a7cf",
-                    borderWidth: "2px",
-                  }),
-                  input: (baseStyles) => ({
-                    ...baseStyles,
-                    color: "#ffffff",
-                  }),
-                  singleValue: (baseStyles) => ({
-                    ...baseStyles,
-                    color: "#ffffff",
-                  }),
-                }}
-              />
-            </div>
-
-            <div className="">
-              <div className="relative font-bold">Dietary restrictions</div>
-              <Controller
-                control={control}
-                defaultValue="Select an option..."
-                name="dietField"
-                render={({ field: { onChange, value, ref } }) => (
-                  <Select
-                    ref={ref}
-                    options={dietOptions}
-                    placeholder="Select an option..."
-                    className="w-1/3 border-separate rounded"
-                    value={dietOptions.find((el) => el.value === value)}
-                    onChange={(newValue) => onChange(newValue.value)}
-                    styles={{
-                      control: (baseStyles, state) => ({
-                        ...baseStyles,
-                        borderColor: state.isFocused ? "#61a7cf" : "#808080",
-                        backgroundColor: "#181818",
-                        color: "#ffffff",
-                      }),
-                      option: (baseStyles, state) => ({
-                        ...baseStyles,
-                        backgroundColor: state.isFocused
-                          ? "#61a7cf"
-                          : "#181818",
-                      }),
-                      menu: (baseStyles) => ({
-                        ...baseStyles,
-                        backgroundColor: "#181818",
-                        borderColor: "#61a7cf",
-                        borderWidth: "2px",
-                      }),
-                      input: (baseStyles) => ({
-                        ...baseStyles,
-                        color: "#ffffff",
-                      }),
-                      singleValue: (baseStyles) => ({
-                        ...baseStyles,
-                        color: "#ffffff",
-                      }),
-                    }}
-                  />
-                )}
-              />
-            </div>
-
-            <div className="">
-              <div className="font-bold">Referral Code</div>
+            {/* TODO: fix placeholder if not in option values list */}
+            <RegistrationDropdown
+              fieldName="Age"
+              name="age"
+              options={[
+                { value: "13", label: "13" },
+                { value: "14", label: "14" },
+                { value: "15", label: "15" },
+                { value: "16", label: "16" },
+                { value: "17", label: "17" },
+                { value: "18", label: "18" },
+              ]}
+              defaultValue={null}
+              control={control}
+            />
+            <RegistrationDropdown
+              fieldName="Dietary Restrictions"
+              name="diet"
+              options={[
+                { value: null, label: "None" },
+                { value: "vegan", label: "Vegan" },
+                { value: "vegetarian", label: "Vegetarian" },
+                { value: "kosher", label: "Kosher" },
+                { value: "halal", label: "Halal" },
+                { value: "glutenFree", label: "Gluten-free" },
+                { value: "other", label: "Other" },
+              ]}
+              defaultValue={null}
+              control={control}
+            />
+            <RegistrationDropdown
+              fieldName="Where did you hear about us?"
+              name="outreach"
+              options={[
+                { value: null, label: "None" },
+                { value: "friendsFamily", label: "Friends/Family" },
+                { value: "socialMedia", label: "Social Media" },
+                { value: "teacher", label: "Teacher" },
+                { value: "teacher", label: "Teacher" },
+              ]}
+              defaultValue={null}
+              control={control}
+            />
+            {/* TODO: display referral input if where === friends */}
+            <div>
+              <p>Referral Code</p>
               <input
                 className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
                 type="text"
                 placeholder=" Type your answer here..."
               />
             </div>
-
-            <div className="">
-              <div className="font-bold">Where did you hear about us?</div>
-              <Select
-                options={outreachOptions}
-                placeholder="Select an option..."
-                className="w-1/3 rounded"
-                styles={{
-                  control: (baseStyles, state) => ({
-                    ...baseStyles,
-                    borderColor: state.isFocused ? "#61a7cf" : "#808080",
-                    backgroundColor: "#181818",
-                    color: "#ffffff",
-                  }),
-                  option: (baseStyles, state) => ({
-                    ...baseStyles,
-                    backgroundColor: state.isFocused ? "#61a7cf" : "#181818",
-                  }),
-                  menu: (baseStyles) => ({
-                    ...baseStyles,
-                    backgroundColor: "#181818",
-                    borderColor: "#61a7cf",
-                    borderWidth: "2px",
-                  }),
-                  input: (baseStyles) => ({
-                    ...baseStyles,
-                    color: "#ffffff",
-                  }),
-                  singleValue: (baseStyles) => ({
-                    ...baseStyles,
-                    color: "#ffffff",
-                  }),
-                }}
-              />
-            </div>
-
-            <div className="">
-              <div className="font-bold">
+            <div>
+              <p>
                 I have read and agree to the&nbsp;
                 <a
                   href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
@@ -267,7 +166,7 @@ const Registration = () => {
                 >
                   MLH Code of Conduct
                 </a>
-              </div>
+              </p>
               <input
                 placeholder="Select an option..."
                 className="h-6 w-6 rounded"
@@ -276,9 +175,8 @@ const Registration = () => {
               />
               {errors.conduct && <p>{errors.conduct.message}</p>}
             </div>
-
-            <div className="">
-              <div className="font-bold">
+            <div>
+              <p>
                 I authorize you to share my application/registration information
                 with Major League Hacking for event administration, ranking, and
                 MLH administration in-line with the&nbsp;
@@ -297,25 +195,19 @@ const Registration = () => {
                 >
                   MLH Contest Terms and Conditions
                 </a>
-                and the MLH Privacy Policy.
-              </div>
+                &nbsp;and the MLH Privacy Policy.
+              </p>
               <input
                 placeholder="Select an option..."
                 className="h-6 w-6 rounded"
                 type="checkbox"
-                {...register("accept")}
+                {...register("privacy")}
               />
               {errors.accept && <p>{errors.accept.message}</p>}
             </div>
-
-            <div className="">
-              <button
-                className="rounded-lg border px-12 py-4 hover:bg-gold"
-                type="submit"
-              >
-                Submit
-              </button>
-            </div>
+            <button className="rounded-lg border px-12 py-4 hover:bg-gold">
+              Submit
+            </button>
           </div>
         </form>
       </section>
