@@ -10,16 +10,15 @@ datasource db {
 
 model User {
   id Int @id @default(autoincrement())
-  username String
+  email String
   password String
   hackerAppSubmitted Boolean
   volunteerAppSubmitted Boolean
 }
 
-model Hacker {
+model HackerApp {
   firstName String
   lastName String
-  username String @id
   phone String
   school String
   yog Int
@@ -31,10 +30,9 @@ model Hacker {
   mlh Boolean
 }
 
-model Volunteer {
+model VolunteerApp {
   firstName String
   lastName String
-  email String @id
   phone String
   role String // general (food, directions, etc.), mentor, sponsor rep, chaperone
   diet String

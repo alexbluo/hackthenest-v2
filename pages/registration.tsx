@@ -60,12 +60,14 @@ const Registration = () => {
               <RegistrationInput
                 fieldName="First Name"
                 name="firstName"
+                placeholder="Bumble"
                 register={register}
                 error={errors}
               />
               <RegistrationInput
                 fieldName="Last Name"
                 name="lastName"
+                placeholder="Bee"
                 register={register}
                 error={errors}
               />
@@ -74,16 +76,17 @@ const Registration = () => {
             <RegistrationInput
               fieldName="Email"
               name="email"
+              placeholder="bumble@bee.com"
               register={register}
               error={errors}
             />
             <RegistrationInput
               fieldName="Phone Number"
               name="phoneNumber"
+              placeholder="000-000-0000"
               register={register}
               error={errors}
             />
-            {/* TODO: fix placeholder if not in option values list */}
             <RegistrationDropdown
               fieldName="Age"
               name="age"
@@ -151,7 +154,6 @@ const Registration = () => {
                 type="checkbox"
                 {...register("conduct")}
               />
-              {errors.conduct && <p>{errors.conduct.message}</p>}
             </div>
             <div>
               <p>

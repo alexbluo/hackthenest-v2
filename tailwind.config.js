@@ -18,6 +18,7 @@ module.exports = {
       black: "#181818",
       grey: "#808080",
       white: "#ffffff",
+      transparent: "transparent"
     },
     container: {
       center: true,

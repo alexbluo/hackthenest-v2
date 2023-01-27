@@ -22,7 +22,13 @@ interface Props {
 }
 
 // TODO: fix border on focus
-const RegistrationDropdown = ({fieldName, name, options, defaultValue, control}: Props) => {
+const RegistrationDropdown = ({
+  fieldName,
+  name,
+  options,
+  defaultValue,
+  control,
+}: Props) => {
   return (
     <div>
       <p>{fieldName}</p>
@@ -43,23 +49,56 @@ const RegistrationDropdown = ({fieldName, name, options, defaultValue, control}:
             styles={{
               control: (base, state) => ({
                 ...base,
-                borderColor: state.isFocused ? "#61a7cf" : "#808080",
                 backgroundColor: "#181818",
-                color: "#ffffff",
+                // color: "#fff482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// fff",
+                borderTopWidth: 0,
+                borderLeftWidth: 0,
+                borderRightWidth: 0,
+                borderBottomWidth: state.menuIsOpen ? 0 : "2px",
+                borderColor: "#808080",
+                boxShadow: "none",
+                borderRadius: 0,
+                minHeight: 0,
+                alignItems: "center",
+                padding: "4px",
+                cursor: "pointer",
               }),
               option: (base, state) => ({
                 ...base,
-                backgroundColor: state.isFocused ? "#61a7cf" : "#181818",
+                backgroundColor: "#181818",
+                padding: "8px",
+                cursor: "pointer",
+              }),
+              valueContainer: (base) => ({
+                ...base,
+                padding: 0,
               }),
               menu: (base) => ({
                 ...base,
                 backgroundColor: "#181818",
-                borderColor: "#61a7cf",
+                borderColor: "#2386bf",
                 borderWidth: "2px",
+                marginTop: 0,
+                marginBottom: 0,
+                borderRadius: 0,
+              }),
+              menuList: () => ({
+                paddingTop: 0,
+                paddingBottom: 0,
+              }),
+              indicatorSeparator: () => ({
+                width: 0,
+              }),
+              dropdownIndicator: (base) => ({
+                ...base,
+                padding: 0,
               }),
               input: (base) => ({
                 ...base,
                 color: "#ffffff",
+                margin: 0,
+                paddingTop: 0,
+                paddingBottom: 0,
               }),
               singleValue: (base) => ({
                 ...base,
