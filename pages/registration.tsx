@@ -1,18 +1,19 @@
+/* eslint-disable import/no-cycle */
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import RegistrationDropdown from "../components/RegistrationDropdown";
+import RegistrationInput from "../components/RegistrationInput";
 
-// fix other - search up
-// add school fieddld
-// types
-// make dropdown update formstate
+// add school field
+// types - esp on data in onsubmit function
 // validation:
-// - email, phone number, types, etc.
-// move caption to placeholder and placeholder down on focus
+// - email, phone number, school, etc.
+// pt 2: backend
+// async save
 
 const schema = z.object({
   firstName: z.string().min(1, { message: "This field is required" }),
@@ -22,30 +23,24 @@ const schema = z.object({
   age: z.string().min(1),
   diet: z.string().min(1),
   outreach: z.string().min(1),
-  conduct: z.literal(true, {
-    errorMap: () => ({ message: "You must agree to the MLH code of conduct" }),
-  }),
-  privacy: z.literal(true, {
-    errorMap: () => ({
-      message: "You must agree to the MLH terms and conditions",
-    }),
-  }),
+  conduct: z.literal(true),
+  privacy: z.literal(true),
 });
+
+export type SchemaType = z.infer<typeof schema>;
 
 const Registration = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     control,
-  } = useForm({
+  } = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
   const router = useRouter();
 
-  const onSubmit = (data) => {
-    console.log("hi");
+  const onSubmit: SubmitHandler<SchemaType> = (data) => {
     console.log(data);
     router.push("/dashboard");
   };
@@ -62,48 +57,32 @@ const Registration = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
             <div className="flex gap-16">
-              <div className="w-full">
-                <p>First Name</p>
-                <input
-                  className="bg-transparent w-full border-b-2 border-grey bg-black py-2 shadow duration-200 ease-in-out focus:border-blue-light"
-                  type="text"
-                  placeholder=" Type your answer here..."
-                  {...register("firstName")}
-                />
-                {errors.firstName && <p>{errors.firstName.message}</p>}
-              </div>
+              <RegistrationInput
+                fieldName="First Name"
+                name="firstName"
+                register={register}
+                error={errors}
+              />
+              <RegistrationInput
+                fieldName="Last Name"
+                name="lastName"
+                register={register}
+                error={errors}
+              />
+            </div>
 
-              <div className="w-full">
-                <p className="relative ">Last Name</p>
-                <input
-                  className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
-                  type="text"
-                  placeholder=" Type your answer here..."
-                  {...register("lastName")}
-                />
-                {errors.lastName && <p>{errors.lastName.message}</p>}
-              </div>
-            </div>
-            <div>
-              <p>Email</p>
-              <input
-                className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
-                type="text"
-                placeholder=" Type your answer here..."
-                {...register("email")}
-              />
-              {errors.email && <p>{errors.email.message}</p>}
-            </div>
-            <div>
-              <p>Phone Number</p>
-              <input
-                className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
-                type="text"
-                placeholder=" Type your answer here..."
-                {...register("phoneNumber")}
-              />
-              {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
-            </div>
+            <RegistrationInput
+              fieldName="Email"
+              name="email"
+              register={register}
+              error={errors}
+            />
+            <RegistrationInput
+              fieldName="Phone Number"
+              name="phoneNumber"
+              register={register}
+              error={errors}
+            />
             {/* TODO: fix placeholder if not in option values list */}
             <RegistrationDropdown
               fieldName="Age"
@@ -116,14 +95,14 @@ const Registration = () => {
                 { value: "17", label: "17" },
                 { value: "18", label: "18" },
               ]}
-              defaultValue={null}
+              defaultValue={undefined}
               control={control}
             />
             <RegistrationDropdown
               fieldName="Dietary Restrictions"
               name="diet"
               options={[
-                { value: null, label: "None" },
+                { value: undefined, label: "None" },
                 { value: "vegan", label: "Vegan" },
                 { value: "vegetarian", label: "Vegetarian" },
                 { value: "kosher", label: "Kosher" },
@@ -131,20 +110,19 @@ const Registration = () => {
                 { value: "glutenFree", label: "Gluten-free" },
                 { value: "other", label: "Other" },
               ]}
-              defaultValue={null}
+              defaultValue={undefined}
               control={control}
             />
             <RegistrationDropdown
               fieldName="Where did you hear about us?"
               name="outreach"
               options={[
-                { value: null, label: "None" },
                 { value: "friendsFamily", label: "Friends/Family" },
                 { value: "socialMedia", label: "Social Media" },
                 { value: "teacher", label: "Teacher" },
-                { value: "teacher", label: "Teacher" },
+                { value: "other", label: "Other" },
               ]}
-              defaultValue={null}
+              defaultValue={undefined}
               control={control}
             />
             {/* TODO: display referral input if where === friends */}
@@ -153,7 +131,7 @@ const Registration = () => {
               <input
                 className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
                 type="text"
-                placeholder=" Type your answer here..."
+                placeholder="Type your answer here..."
               />
             </div>
             <div>
@@ -198,12 +176,11 @@ const Registration = () => {
                 &nbsp;and the MLH Privacy Policy.
               </p>
               <input
-                placeholder="Select an option..."
                 className="h-6 w-6 rounded"
                 type="checkbox"
                 {...register("privacy")}
               />
-              {errors.accept && <p>{errors.accept.message}</p>}
+              {/* {errors.privacy && <p>{errors.privacy.message}</p>} */}
             </div>
             <button className="rounded-lg border px-12 py-4 hover:bg-gold">
               Submit

@@ -1,8 +1,10 @@
-import { Control, Controller, FieldValues } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 import Select, { SingleValue } from "react-select";
+// eslint-disable-next-line import/no-cycle
+import { SchemaType } from "../pages/registration";
 
 interface Option {
-  value: string | null;
+  value: string | undefined;
   label: string;
 }
 
@@ -10,15 +12,16 @@ interface Props {
   // displayed above field
   fieldName: string;
   // internal name
-  name: string;
+  name: keyof SchemaType;
   // options list
   options: Option[];
   // default value - also controls placeholder
-  defaultValue: string | null;
+  defaultValue: string | true | undefined;
   // control from RHF
-  control: Control<FieldValues, any>;
+  control: Control<SchemaType>;
 }
 
+// TODO: fix border on focus
 const RegistrationDropdown = ({fieldName, name, options, defaultValue, control}: Props) => {
   return (
     <div>
