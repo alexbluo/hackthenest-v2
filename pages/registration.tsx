@@ -48,7 +48,7 @@ const Registration = () => {
   return (
     <div className="bg-black text-white">
       <section className="min-h-screen pt-32">
-        <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
+        <nav className="container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
           <Link className="relative z-50 aspect-square h-3/5" href="/">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </Link>
@@ -111,6 +111,8 @@ const Registration = () => {
                 { value: "kosher", label: "Kosher" },
                 { value: "halal", label: "Halal" },
                 { value: "glutenFree", label: "Gluten-free" },
+                { value: "dairyFree", label: "Dairy-free" },
+                { value: "nutAllergy", label: "nutAllergy" },
                 { value: "other", label: "Other" },
               ]}
               defaultValue={undefined}
@@ -120,9 +122,15 @@ const Registration = () => {
               fieldName="How did you hear about us?"
               name="outreach"
               options={[
-                { value: "friendsFamily", label: "Friends/Family" },
-                { value: "socialMedia", label: "Social Media" },
-                { value: "teacher", label: "Teacher" },
+                { value: "friendFamily", label: "Friend/Family" },
+                { value: "flier", label: "Flier" },
+                { value: "instagram", label: "Instagram" },
+                { value: "facebook", label: "Facebook" },
+                { value: "twitter", label: "Twitter" },
+                { value: "linkedin", label: "LinkedIn" },
+                { value: "internetSearch", label: "Internet Search" },
+                { value: "mlh", label: "MLH" },
+                { value: "hackClub", label: "Hack Club" },
                 { value: "other", label: "Other" },
               ]}
               defaultValue={undefined}
@@ -132,7 +140,7 @@ const Registration = () => {
             <div>
               <p>Referral Code</p>
               <input
-                className="bg-transparent h-10 w-full border-b-2 border-grey bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                className="h-10 w-full border-b-2 border-grey bg-transparent bg-black shadow duration-200 ease-in-out focus:border-blue-light"
                 type="text"
                 placeholder="Type your answer here..."
               />
@@ -184,9 +192,7 @@ const Registration = () => {
               />
               {/* {errors.privacy && <p>{errors.privacy.message}</p>} */}
             </div>
-            <button className="rounded-lg border px-12 py-4 hover:bg-gold">
-              Submit
-            </button>
+            <button className="rounded-lg border px-12 py-4">Submit</button>
           </div>
         </form>
       </section>
