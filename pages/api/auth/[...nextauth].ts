@@ -16,6 +16,7 @@ export const authOptions: NextAuthOptions = {
     }),
     CredentialsProvider({
       type: "credentials",
+      // TODO: change to email and check if email === "admin" && password === env
       credentials: {
         username: {
           label: "username",

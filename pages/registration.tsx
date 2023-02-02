@@ -117,7 +117,7 @@ const Registration = () => {
               control={control}
             />
             <RegistrationDropdown
-              fieldName="Where did you hear about us?"
+              fieldName="How did you hear about us?"
               name="outreach"
               options={[
                 { value: "friendsFamily", label: "Friends/Family" },

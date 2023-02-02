@@ -17,9 +17,11 @@ const FrontSection = () => {
         <h1 className="z-10 pb-4 font-header text-6xl font-extrabold text-black">
           Hack the Nest
         </h1>
-        <div className="z-10 text-center text-black">
-          <p className="z-10">April 15-16, 2023</p>
-          <p className="z-10">River Hill High School</p>
+        <div className="z-10 text-center">
+          <p className="z-10 font-medium text-black">April 15-16, 2023</p>
+          {/* <p className="z-10 font-semibold text-black">
+            River Hill High School
+          </p> */}
         </div>
         <Link
           className="z-10 mx-auto rounded-lg border border-black bg-gold py-4 px-16 text-black"
