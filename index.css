@@ -13,3 +13,34 @@
     @apply outline-none;
   }
 }
+
+.gradient {
+  background-image: repeating-linear-gradient(
+      -10deg,
+      #09cdf963 200px,
+      #7fcec563 300px,
+      #045de963 400px,
+      #09c6f963 600px
+    ),
+    repeating-linear-gradient(
+      10deg,
+      #09c5f969 150px,
+      #045de981 250px,
+      #7fcec581 350px,
+      #09c6f969 450px
+    ),
+    repeating-linear-gradient(
+      20deg,
+      #09c5f963 100px,
+      #045de981 200px,
+      #7fcec581 300px,
+      #09c6f963 400px
+    ),
+    repeating-linear-gradient(
+      -22deg,
+      #09c6f981 150px,
+      #045de969 250px,
+      #7fcec569 400px,
+      #09c6f981 500px
+    );
+}

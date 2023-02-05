@@ -18,7 +18,11 @@ const Home: NextPage = () => {
       <Head>
         <title>Hack the Nest 2023</title>
       </Head>
-      <div className={classNames("bg-black text-white", { "fixed left-0 right-0 md:static": open })}>
+      <div
+        className={classNames("gradient text-white", {
+          "fixed left-0 right-0 md:static": open,
+        })}
+      >
         <NavBar open={open} toggleOpen={toggleOpen} />
         <main>
           <FrontSection />
@@ -28,6 +32,7 @@ const Home: NextPage = () => {
           <SponsorsSection />
         </main>
         <Footer />
+        <div className="h-screen w-screen" />
       </div>
     </>
   );
