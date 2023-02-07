@@ -27,6 +27,7 @@ export const authOptions: NextAuthOptions = {
       },
       authorize: async (credentials, req) => {
         console.log(credentials);
+        console.log(req);
         return null;
       },
     }),

@@ -8,15 +8,15 @@ const FAQSection = () => {
         <div className="flex w-full flex-col gap-4">
           <FAQ question="What is a hackathon?">
             Hackathons are collaborative multi-day events where participants
-            (also called hackers) bring their ideas to life by building projects
-            from scratch using software development principals. Aside from just
-            being coding marathons/competitions, hackathons offer several fun
-            side events, educational workshops, sponsor fairs, and an overall
-            great atmosphere to hang out in!
+            (also called hackers) bring their ideas to life by building
+            innovative projects from scratch using software development
+            principals. Aside from just being coding marathons/competitions,
+            hackathons offer several fun side events, educational workshops,
+            sponsor fairs, and an overall great atmosphere to hang out in!
           </FAQ>
           <FAQ question="How much does it cost?">
             Absolutely nothing! We&apos;ll take care of food, prizes, swag, and
-            more.
+            more :&#41;
           </FAQ>
           <FAQ question="What if I don't know how to code?">
             That&apos;s completely fine! In fact, many participants are first
@@ -24,8 +24,14 @@ const FAQSection = () => {
             explore your interests while meeting new friends and interacting
             with familiar companies.
           </FAQ>
-          <FAQ question="When are registrations due?">
-            Registrations open February 1st and close April 1st.
+          <FAQ question="Why is there an application?">
+            Although we strongly encourage students of all experience levels to
+            apply, we&apos;re unfortunately only able to accomodate a maximum
+            capacity of 250 hackers and must carefully manage our attendance due
+            to logistical limitations. The good news is that the application
+            only takes a few minutes and you can decide whether you are able to
+            come as the event approaches! Applications open February 18th and
+            close April 8th.
           </FAQ>
           <FAQ question="Do I have to make a project?">
             You&apos;re not required to make a project to attend, but we

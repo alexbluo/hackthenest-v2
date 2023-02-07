@@ -3,7 +3,7 @@ const AboutSection = () => {
     <section className="" id="about">
       <h2>About</h2>
       <div className="grid grid-cols-2 gap-8">
-        <div className="">
+        <div className="text-xl">
           This April, Hack the Nest invites 250 young developers on the east
           coast to a 36-hour hackathon in the heart of Maryland. Our team has
           been working tirelessly alongside our administration to pack our
@@ -15,7 +15,7 @@ const AboutSection = () => {
         </div>
         <div className="text-center" />
         <div className="text-center" />
-        <div className="">
+        <div className="text-xl">
           <p className="pb-2">
             Here at Hack the Nest, we believe that the ideal hackathon
             experience consists of the following:

@@ -36,7 +36,7 @@ const Login = ({
           name="username"
           onChange={handleChange}
           type="text"
-          placeholder="username"
+          placeholder="bumble@bee.com"
         />
 
         <button

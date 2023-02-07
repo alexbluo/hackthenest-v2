@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// TODO: make separate gradient for text brighter and more opaque?
 const FrontSection = () => {
   return (
     <section className="min-h-screen pt-32" id="front">
@@ -13,21 +14,20 @@ const FrontSection = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 pt-16">
-        <h1 className="z-10 pb-4 font-header text-6xl font-extrabold text-black">
+      <div className="mx-auto flex w-fit flex-col items-center justify-center gap-4 pt-16">
+        <h1 className="gradient z-10 bg-white bg-clip-text pb-4 font-header text-7xl font-extrabold text-transparent">
           Hack the Nest
         </h1>
-        <div className="z-10 text-center">
-          <p className="z-10 font-medium text-black">April 15-16, 2023</p>
-          {/* <p className="z-10 font-semibold text-black">
-            River Hill High School
-          </p> */}
+        <div className="z-10 w-full rounded-md bg-black py-4 px-6 text-justify">
+          <p className="gradient z-10 bg-clip-text text-lg font-medium text-black text-transparent">
+            April 15-16, 2023
+          </p>
         </div>
         <Link
-          className="z-10 mx-auto rounded-lg border border-black bg-gold py-4 px-16 text-black"
+          className="gradient z-10 mx-auto w-full rounded-md border border-black bg-white px-6 py-4 text-lg font-medium text-black"
           href="/login"
         >
-          Register Now
+          Apply Now!
         </Link>
       </div>
 

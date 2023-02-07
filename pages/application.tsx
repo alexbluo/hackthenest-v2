@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
-import RegistrationDropdown from "../components/RegistrationDropdown";
-import RegistrationInput from "../components/RegistrationInput";
+import ApplicationDropdown from "../components/ApplicationDropdown";
+import ApplicationInput from "../components/ApplicationInput";
 
 // add school field
 // types - esp on data in onsubmit function
@@ -29,7 +29,7 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const Registration = () => {
+const Application = () => {
   const {
     register,
     handleSubmit,
@@ -57,14 +57,14 @@ const Registration = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
             <div className="flex gap-16">
-              <RegistrationInput
+              <ApplicationInput
                 fieldName="First Name"
                 name="firstName"
                 placeholder="Bumble"
                 register={register}
                 error={errors}
               />
-              <RegistrationInput
+              <ApplicationInput
                 fieldName="Last Name"
                 name="lastName"
                 placeholder="Bee"
@@ -73,21 +73,21 @@ const Registration = () => {
               />
             </div>
 
-            <RegistrationInput
+            <ApplicationInput
               fieldName="Email"
               name="email"
               placeholder="bumble@bee.com"
               register={register}
               error={errors}
             />
-            <RegistrationInput
+            <ApplicationInput
               fieldName="Phone Number"
               name="phoneNumber"
-              placeholder="000-000-0000"
+              placeholder="xxx-xxx-xxxx (not to be confused with your ssn!)"
               register={register}
               error={errors}
             />
-            <RegistrationDropdown
+            <ApplicationDropdown
               fieldName="Age"
               name="age"
               options={[
@@ -101,7 +101,7 @@ const Registration = () => {
               defaultValue={undefined}
               control={control}
             />
-            <RegistrationDropdown
+            <ApplicationDropdown
               fieldName="Dietary Restrictions"
               name="diet"
               options={[
@@ -118,7 +118,7 @@ const Registration = () => {
               defaultValue={undefined}
               control={control}
             />
-            <RegistrationDropdown
+            <ApplicationDropdown
               fieldName="How did you hear about us?"
               name="outreach"
               options={[
@@ -200,4 +200,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Application;

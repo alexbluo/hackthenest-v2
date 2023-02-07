@@ -32,7 +32,6 @@ const Home: NextPage = () => {
           <SponsorsSection />
         </main>
         <Footer />
-        <div className="h-screen w-screen" />
       </div>
     </>
   );

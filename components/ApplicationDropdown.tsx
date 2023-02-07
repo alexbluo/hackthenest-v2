@@ -1,7 +1,7 @@
 import { Control, Controller } from "react-hook-form";
 import Select, { SingleValue } from "react-select";
 // eslint-disable-next-line import/no-cycle
-import { SchemaType } from "../pages/registration";
+import { SchemaType } from "../pages/application";
 
 interface Option {
   value: string | undefined;
@@ -22,7 +22,7 @@ interface Props {
 }
 
 // TODO: fix border on focus
-const RegistrationDropdown = ({
+const ApplicationDropdown = ({
   fieldName,
   name,
   options,
@@ -63,7 +63,7 @@ const RegistrationDropdown = ({
                 padding: "4px",
                 cursor: "pointer",
               }),
-              option: (base, state) => ({
+              option: (base) => ({
                 ...base,
                 backgroundColor: "#181818",
                 padding: "8px",
@@ -112,4 +112,4 @@ const RegistrationDropdown = ({
   );
 };
 
-export default RegistrationDropdown;
+export default ApplicationDropdown;

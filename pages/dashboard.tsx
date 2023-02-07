@@ -28,9 +28,9 @@ const Dashboard = () => {
           <div className="pt-12">
             <Link
               className="rounded-md border py-2 px-12 text-lg text-gold"
-              href="/registration"
+              href="/application"
             >
-              Registration
+              Application
             </Link>
           </div>
         </div>

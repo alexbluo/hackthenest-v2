@@ -1,4 +1,4 @@
-// exact path to this is printed onto qr code (hackthenest.org/admin/[1-300])
+// QR CODE ID IS HASH OF USER EMAIL ON DASHBOARD AND EMAILED TO THEM
 
 const QR = () => {
   return (
