@@ -5,14 +5,14 @@ import Link from "next/link";
 const FrontSection = () => {
   return (
     <section className="min-h-screen pt-32" id="front">
-      <div className="absolute top-0 left-0 h-screen w-screen">
+      {/* <div className="absolute top-0 left-0 h-screen w-screen">
         <Image
           className="object-cover"
           src="/background.png"
           alt="placeholder"
           fill
         />
-      </div>
+      </div> */}
 
       <div className="mx-auto flex w-fit flex-col items-center justify-center gap-4 pt-16">
         <h1 className="gradient z-10 bg-white bg-clip-text pb-4 font-header text-7xl font-extrabold text-transparent">

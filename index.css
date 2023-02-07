@@ -14,33 +14,79 @@
   }
 }
 
+@property --deg1 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: -10deg;
+}
+
+@property --deg2 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 10deg;
+}
+
+@property --deg3 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 20deg;
+}
+
+@property --deg4 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: -22deg;
+}
+
+@keyframes wave {
+  0% {
+    --deg1: -10deg;
+    --deg2: 10deg;
+    --deg3: 20deg;
+    --deg4: 22deg;
+  }
+  50% {
+    --deg1: -6deg;
+    --deg2: 6deg;
+    --deg3: 16deg;
+    --deg4: 14deg;
+  }
+  100% {
+    --deg1: -10deg;
+    --deg2: 10deg;
+    --deg3: 20deg;
+    --deg4: 22deg;
+  }
+}
+
 .gradient {
   background-image: repeating-linear-gradient(
-      -10deg,
+      var(--deg1),
       #09cdf963 200px,
       #7fcec563 300px,
       #045de963 400px,
       #09c6f963 600px
     ),
     repeating-linear-gradient(
-      10deg,
+      var(--deg2),
       #09c5f969 150px,
       #045de981 250px,
       #7fcec581 350px,
       #09c6f969 450px
     ),
     repeating-linear-gradient(
-      20deg,
+      var(--deg3),
       #09c5f963 100px,
       #045de981 200px,
       #7fcec581 300px,
       #09c6f963 400px
     ),
     repeating-linear-gradient(
-      -22deg,
+      var(--deg4),
       #09c6f981 150px,
       #045de969 250px,
       #7fcec569 400px,
       #09c6f981 500px
     );
+  animation: wave 2s infinite ease-in-out;
 }
