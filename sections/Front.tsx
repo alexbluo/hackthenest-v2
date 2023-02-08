@@ -5,26 +5,28 @@ import Link from "next/link";
 const FrontSection = () => {
   return (
     <section className="min-h-screen pt-32" id="front">
-      {/* <div className="absolute top-0 left-0 h-screen w-screen">
+      <div className="absolute top-0 left-0 h-screen w-screen">
         <Image
           className="object-cover"
           src="/background.png"
           alt="placeholder"
           fill
         />
-      </div> */}
+      </div>
 
-      <div className="mx-auto flex w-fit flex-col items-center justify-center gap-4 pt-16">
-        <h1 className="gradient z-10 bg-white bg-clip-text pb-4 font-header text-7xl font-extrabold text-transparent">
+      <div className="mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-16">
+        <h1 className="gradient z-10 bg-white bg-clip-text font-header text-7xl font-bold text-transparent">
           Hack the Nest
         </h1>
-        <div className="z-10 w-full rounded-md bg-black py-4 px-6 text-justify">
-          <p className="gradient z-10 bg-clip-text text-lg font-medium text-black text-transparent">
-            April 15-16, 2023
+        {/* find diff fonts bc weights arent good */}
+        <div className="z-10 w-full px-6">
+          <p className="gradient z-10 bg-white bg-clip-text text-lg font-medium text-transparent">
+            April 15th - 16th, 2023
           </p>
         </div>
+        {/* bg clip border solid bg icon right + hover */}
         <Link
-          className="gradient z-10 mx-auto w-full rounded-md border border-black bg-white px-6 py-4 text-lg font-medium text-black"
+          className="gradient z-10 mx-auto w-full rounded-md bg-white px-6 py-4 text-lg font-medium text-black"
           href="/login"
         >
           Apply Now!

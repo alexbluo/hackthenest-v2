@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col justify-center gap-6">
-          <div className="flex h-8 flex-row gap-6">
+          <div className="flex h-8 flex-row-reverse gap-6">
             <a
               href="https://www.instagram.com/hackthenest_"
               target="_blank"
