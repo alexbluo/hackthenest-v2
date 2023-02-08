@@ -15,13 +15,12 @@ const useGradient = (): Gradient => {
     const browser = Bowser.getParser(window.navigator.userAgent);
 
     const browserName = browser.getBrowserName();
-    console.log(browserName)
     if (browserName === "Firefox") {
       setGradient("gradient-moz");
     } else if (browserName === "Safari") {
       setGradient("gradient-webkit");
     }
-  });
+  }, []);
 
   // not returning state is cleaner and makes more sense
   return gradient;

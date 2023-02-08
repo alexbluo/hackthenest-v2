@@ -12,14 +12,15 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col justify-center gap-6">
-          <div className="flex h-8 flex-row-reverse gap-6">
+          <div className="flex h-8 flex-row gap-6">
             <a
+              className="aspect-square h-full"
               href="https://www.instagram.com/hackthenest_"
               target="_blank"
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-gold"
+                className="h-full w-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -29,12 +30,13 @@ const Footer = () => {
 
             {/* TODO: check */}
             <a
+              className="aspect-square h-full"
               href="https://www.facebook.com/rhhshackthenest"
               target="_blank"
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-gold"
+                className="h-full w-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -43,12 +45,13 @@ const Footer = () => {
             </a>
 
             <a
+              className="aspect-square h-full"
               href="https://www.twitter.com/hackthenest"
               target="_blank"
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-gold"
+                className="h-full w-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -57,12 +60,13 @@ const Footer = () => {
             </a>
 
             <a
+              className="aspect-square h-full"
               href="https://www.linkedin.com/company/hackthenest/"
               target="_blank"
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-gold"
+                className="h-full w-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -71,12 +75,13 @@ const Footer = () => {
             </a>
 
             <a
+              className="aspect-square h-full"
               href="https://www.github.com/alexbluo/hack-the-nest-2023/"
               target="_blank"
               rel="noreferrer"
             >
               <svg
-                className="aspect-square h-full fill-gold"
+                className="h-full w-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 496 512"
               >

@@ -18,6 +18,7 @@ const SponsorsSection = () => {
         </a>
         !
       </p>
+      {/* TODO: stack vertically full width on mobile */}
       <div className="flex flex-col gap-6">
         {/* gold tier  */}
         <div className="grid gap-6" />
