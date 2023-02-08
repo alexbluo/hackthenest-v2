@@ -10,7 +10,7 @@
     @apply pb-8 font-header text-5xl font-bold text-gold;
   }
   input {
-    @apply outline-none;
+    @apply appearance-none;
   }
 }
 
@@ -35,7 +35,7 @@
 @property --deg4 {
   syntax: "<angle>";
   inherits: false;
-  initial-value: -22deg;
+  initial-value: 22deg;
 }
 
 @keyframes wave {
@@ -46,8 +46,8 @@
     --deg4: 22deg;
   }
   50% {
-    --deg1: -6deg;
-    --deg2: 6deg;
+    --deg1: -7deg;
+    --deg2: 7deg;
     --deg3: 16deg;
     --deg4: 14deg;
   }
@@ -88,5 +88,37 @@
       #7fcec569 400px,
       #09c6f981 500px
     );
-  animation: wave 2s infinite ease-in-out;
+  animation: wave 3s infinite ease-in-out;
+}
+
+.gradient-webkit {
+  background-image: -webkit-repeating-linear-gradient(
+      100deg,
+      #09cdf963 200px,
+      #7fcec563 300px,
+      #045de963 400px,
+      #09c6f963 600px
+    ),
+    -webkit-repeating-linear-gradient(120deg, #09c5f969 150px, #045de981 250px, #7fcec581
+          350px, #09c6f969 450px),
+    -webkit-repeating-linear-gradient(130deg, #09c5f963 100px, #045de981 200px, #7fcec581
+          300px, #09c6f963 400px),
+    -webkit-repeating-linear-gradient(132deg, #09c6f981 150px, #045de969 250px, #7fcec569
+          400px, #09c6f981 500px);
+}
+
+.gradient-moz {
+  background-image: -moz-repeating-linear-gradient(
+      100deg,
+      #09cdf963 200px,
+      #7fcec563 300px,
+      #045de963 400px,
+      #09c6f963 600px
+    ),
+    -moz-repeating-linear-gradient(120deg, #09c5f969 150px, #045de981 250px, #7fcec581
+          350px, #09c6f969 450px),
+    -moz-repeating-linear-gradient(130deg, #09c5f963 100px, #045de981 200px, #7fcec581
+          300px, #09c6f963 400px),
+    -moz-repeating-linear-gradient(132deg, #09c6f981 150px, #045de969 250px, #7fcec569
+          400px, #09c6f981 500px);
 }

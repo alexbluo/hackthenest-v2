@@ -55,7 +55,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
           `,
           }}
         />
-        <Component {...pageProps} />
+          <Component {...pageProps} />
       </QueryClientProvider>
     </SessionProvider>
   );

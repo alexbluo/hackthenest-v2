@@ -9,6 +9,7 @@ import FAQSection from "../sections/FAQ";
 import FrontSection from "../sections/Front";
 import ScheduleSection from "../sections/Schedule";
 import SponsorsSection from "../sections/Sponsors";
+import useGradient from "../utils/useGradient";
 
 const Home: NextPage = () => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -19,8 +20,8 @@ const Home: NextPage = () => {
         <title>Hack the Nest 2023</title>
       </Head>
       <div
-        className={classNames("gradient text-white", {
-          "fixed left-0 right-0 md:static": open,
+        className={classNames(useGradient(), "text-white", {
+          "fixed left-0 right-0 top-0 md:static": open,
         })}
       >
         <NavBar open={open} toggleOpen={toggleOpen} />
