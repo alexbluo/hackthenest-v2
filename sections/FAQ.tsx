@@ -12,7 +12,7 @@ const FAQSection = () => {
             innovative projects from scratch using software development
             principals. Aside from just being coding marathons/competitions,
             hackathons offer several fun side events, educational workshops,
-            sponsor fairs, and an overall great atmosphere to hang out in!
+            sponsor fairs, and an overall great atmosphere to hang out in.
           </FAQ>
           <FAQ question="How much does it cost?">
             Absolutely nothing! We&apos;ll take care of food, prizes, swag, and
@@ -25,26 +25,26 @@ const FAQSection = () => {
             with familiar companies.
           </FAQ>
           <FAQ question="Why is there an application?">
-            Although we strongly encourage students of all experience levels to
-            apply, we&apos;re unfortunately only able to accomodate a maximum
-            capacity of 250 hackers and must carefully manage our attendance due
-            to logistical limitations. The good news is that the application
-            only takes a few minutes and you can decide whether you are able to
-            come as the event approaches! Applications open February 18th and
-            close April 8th.
+            Although we&apos;d love to admit everyone, the reality is that
+            we&apos;re only able to logistically support a limited number of
+            hackers. The good news is that we&apos;ll likely not go too far over
+            this limit (if at all), so we strongly encourage everyone to apply -
+            it only takes a few minutes and you can always decide whether you
+            want to attend as the event approaches.
           </FAQ>
           <FAQ question="Do I have to make a project?">
-            You&apos;re not required to make a project to attend, but we
-            strongly encourage that you do in order to get the full hackathon
-            experience.
+            You&apos;re not required to make a project to attend but you should
+            if you want the full hackathon experience.
           </FAQ>
         </div>
         <div className="flex w-full flex-col gap-4">
           <FAQ question="Who is eligible to attend?">
-            Hack the Nest is open to all high school students from anywhere. If
-            you&apos;re not in high school but would still like to participate
-            then we&apos;d love to have you as a mentor or volunteer!
+            Hack the Nest is open to all high school students of all experience
+            levels from everywhere. If you&apos;re not in high school but would
+            still like to participate, we&apos;d love to have you as a mentor or
+            volunteer!
           </FAQ>
+          {/* TODO: replace this */}
           <FAQ question="How can I volunteer or mentor?">
             Details on volunteer and mentor registration will be released soon.
           </FAQ>
@@ -57,10 +57,10 @@ const FAQSection = () => {
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
             Due to limitations with our venue, hackers will return home around
-            9:00 - 10:00pm. We strongly encourage you to carpool with your group
-            and even stay over at a member&apos;s place. The hacking and fun
+            9:00 - 10:00pm. We suggest carpooling with your group and even
+            staying over at a member&apos;s place. The hacking and fun
             doesn&apos;t stop in the wee hours - we&apos;ll even be hosting
-            online video game tournaments.
+            online video game tournaments!
           </FAQ>
           <FAQ question="I have more questions!">
             Please direct any questions to hello@hackthenest.org and we&apos;ll

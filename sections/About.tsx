@@ -13,7 +13,7 @@ const AboutSection = () => {
           of hackers normally barred from hackathons.
         </div>
       </div>
-      {/* stats: 250+ hackers 36 hours hacking prizes workshops side events sponsors */}
+      {/* stats: 250+ hackers prizes workshops side events sponsors */}
     </section>
   );
 };
