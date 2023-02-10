@@ -55,7 +55,10 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
           `,
           }}
         />
+        {/* needed to create stacking context on gradient children */}
+        <div className="flex w-screen flex-col">
           <Component {...pageProps} />
+        </div>
       </QueryClientProvider>
     </SessionProvider>
   );

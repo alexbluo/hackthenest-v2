@@ -5,7 +5,7 @@ const SponsorsSection = () => {
     <section id="sponsors">
       <h2>Sponsors</h2>
       <p className="pb-6">
-        Interested in sponsoring? Take a look at our&nbsp;
+        Interested in sponsoring? Feel free to take a look at our&nbsp;
         <a
           className="font-bold text-blue-light underline"
           href="https://alexluo.notion.site/prospectus-c5fd45bdebaf4957abeb5add12706d58"
@@ -13,7 +13,7 @@ const SponsorsSection = () => {
           prospectus
         </a>
         &nbsp;and email&nbsp;
-        <a className="font-bold text-blue-light underline">
+        <a className="font-bold text-transparent underline">
           sponsor@hackthenest.org
         </a>
         !

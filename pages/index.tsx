@@ -20,19 +20,21 @@ const Home: NextPage = () => {
         <title>Hack the Nest 2023</title>
       </Head>
       <div
-        className={classNames(useGradient(), "text-white", {
+        className={classNames(useGradient(), "-z-20 text-white", {
           "fixed left-0 right-0 top-0 md:static": open,
         })}
       >
-        <NavBar open={open} toggleOpen={toggleOpen} />
-        <main>
-          <FrontSection />
-          <AboutSection />
-          <ScheduleSection />
-          <FAQSection />
-          <SponsorsSection />
-        </main>
-        <Footer />
+        <div className={`${useGradient()} z-10 bg-clip-text`}>
+            <NavBar open={open} toggleOpen={toggleOpen} />
+            <main>
+              <FrontSection />
+              <AboutSection />
+              <ScheduleSection />
+              <FAQSection />
+              <SponsorsSection />
+            </main>
+            <Footer />
+        </div>
       </div>
     </>
   );
