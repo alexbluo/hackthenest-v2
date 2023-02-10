@@ -1,9 +1,10 @@
 import Stat from "../components/Stat";
+import useGradient from "../utils/useGradient";
 
 const AboutSection = () => {
   return (
     <section id="about">
-      <h2>About</h2>
+      <h2 className={useGradient()}>About</h2>
       <div className="w-full pb-16 text-xl sm:w-3/4">
         This April, Hack the Nest invites 250 high school students to a 36-hour
         hackathon in the heart of Maryland. Our team has been working tirelessly
@@ -13,7 +14,7 @@ const AboutSection = () => {
         unforgettable experience for an audience normally barred from
         hackathons.
       </div>
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="250+" caption="hackers" />
         <Stat stat="$10000+" caption="prizes" />
         <Stat stat="12" caption="workshops and side events" />

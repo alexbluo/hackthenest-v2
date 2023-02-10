@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import useGradient from "../utils/useGradient";
 
 const FrontSection = () => {
   return (
     <section className="min-h-screen pt-32" id="front">
-      <div className="absolute top-0 left-0 -z-10 h-screen w-screen">
+      <div className="absolute top-0 left-0 h-screen w-screen">
         <Image
           className="object-cover"
           src="/background.png"
@@ -13,7 +14,9 @@ const FrontSection = () => {
         />
       </div>
 
-      <div className="mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-16">
+      <div
+        className={`${useGradient()} relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 bg-clip-text pt-16`}
+      >
         {/* TODO: https://www.youtube.com/watch?v=W5oawMJaXbU */}
         <h1 className="font-header text-7xl font-bold text-transparent">
           Hack the Nest
@@ -27,7 +30,7 @@ const FrontSection = () => {
           </div>
           {/* bg clip border solid bg icon right + hover */}
           <Link
-            className="mx-auto w-full rounded-md px-6 py-4 text-center text-lg font-medium text-black"
+            className={`${useGradient()} mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
             href="/login"
           >
             Apply Now!

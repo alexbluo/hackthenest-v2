@@ -1,3 +1,5 @@
+import useGradient from "../utils/useGradient";
+
 interface Props {
   stat: string;
   caption: string;
@@ -5,9 +7,11 @@ interface Props {
 
 const Stat = ({ stat, caption }: Props) => {
   return (
-    <div className="flex h-48 gap-4 p-8 bg-white text-center text-blue-light w-full flex-col items-center justify-center rounded-xl">
-      <h3 className="text-4xl">{stat}</h3>
-      <p className="">{caption}</p>
+    <div className="h-48 w-full rounded-xl bg-white p-8 text-center text-transparent">
+      <div className={`${useGradient()} bg-clip-text flex flex-col gap-4 justify-center items-center h-full`}>
+        <h3 className="text-4xl font-semibold">{stat}</h3>
+        <p className="">{caption}</p>
+      </div>
     </div>
   );
 };

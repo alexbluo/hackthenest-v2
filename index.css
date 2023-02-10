@@ -7,7 +7,7 @@
     @apply container py-8 lg:py-16;
   }
   h2 {
-    @apply pb-8 font-header text-5xl font-bold text-transparent;
+    @apply bg-clip-text pb-8 font-header text-5xl font-bold text-transparent;
   }
   input {
     @apply appearance-none;

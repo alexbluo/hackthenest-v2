@@ -1,9 +1,10 @@
 import FAQ from "../components/FAQ";
+import useGradient from "../utils/useGradient";
 
 const FAQSection = () => {
   return (
     <section id="faq">
-      <h2 className="">FAQ</h2>
+      <h2 className={useGradient()}>FAQ</h2>
       <div className="flex flex-col gap-4 md:flex-row md:gap-16">
         <div className="flex w-full flex-col gap-4">
           <FAQ question="What is a hackathon?">

@@ -1,9 +1,10 @@
 import Sponsor from "../components/Sponsor";
+import useGradient from "../utils/useGradient";
 
 const SponsorsSection = () => {
   return (
     <section id="sponsors">
-      <h2>Sponsors</h2>
+      <h2 className={useGradient()}>Sponsors</h2>
       <p className="pb-6">
         Interested in sponsoring? Feel free to take a look at our&nbsp;
         <a
