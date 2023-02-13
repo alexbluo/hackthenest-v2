@@ -56,7 +56,7 @@ const Application = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
-            <div className="flex gap-16">
+            <div className="flex gap-12 flex-col md:flex-row">
               <ApplicationInput
                 fieldName="First Name"
                 name="firstName"
@@ -111,7 +111,7 @@ const Application = () => {
                 { value: "halal", label: "Halal" },
                 { value: "glutenFree", label: "Gluten-free" },
                 { value: "dairyFree", label: "Dairy-free" },
-                { value: "nutAllergy", label: "nutAllergy" },
+                { value: "nutAllergy", label: "Nut Allergy" },
                 { value: "other", label: "Other" },
               ]}
               defaultValue={undefined}

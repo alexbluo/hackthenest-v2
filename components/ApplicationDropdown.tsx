@@ -38,7 +38,7 @@ const ApplicationDropdown = ({
         name={name}
         render={({ field: { onChange, value, ref } }) => (
           <Select
-            className="w-1/3 border-separate rounded"
+            className="w-full border-separate rounded"
             ref={ref}
             instanceId={name}
             options={options}

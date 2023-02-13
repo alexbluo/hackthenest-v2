@@ -30,7 +30,7 @@ const FrontSection = () => {
           </div>
           {/* bg clip border solid bg icon right + hover */}
           <Link
-            className={`${useGradient()} mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
+            className={`${useGradient()} shadow-md shadow-blue-light mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
             href="/login"
           >
             Apply Now!
