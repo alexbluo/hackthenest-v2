@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Hack the Nest 2023</title>
+        <title>Hack the Nest</title>
       </Head>
       <div
         className={classNames(useGradient(), "text-white", {

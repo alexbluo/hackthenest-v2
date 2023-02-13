@@ -8,13 +8,18 @@ const SponsorsSection = () => {
       <p className="pb-6">
         Interested in sponsoring? Feel free to take a look at our&nbsp;
         <a
-          className="font-bold text-blue-light underline"
+          className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
           href="https://alexluo.notion.site/prospectus-c5fd45bdebaf4957abeb5add12706d58"
+          target="_blank"
+          rel="noreferrer"
         >
           prospectus
         </a>
         &nbsp;and email&nbsp;
-        <a className="font-bold text-transparent underline">
+        <a
+          className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
+          href="mailto:sponsor@hackthenest.org"
+        >
           sponsor@hackthenest.org
         </a>
         !
