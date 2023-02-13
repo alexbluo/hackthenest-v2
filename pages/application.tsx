@@ -35,6 +35,7 @@ const Application = () => {
     handleSubmit,
     formState: { errors },
     control,
+    watch,
   } = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
@@ -56,7 +57,7 @@ const Application = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
-            <div className="flex gap-12 flex-col md:flex-row">
+            <div className="flex flex-col gap-12 md:flex-row">
               <ApplicationInput
                 fieldName="First Name"
                 name="firstName"
@@ -136,14 +137,16 @@ const Application = () => {
               control={control}
             />
             {/* TODO: display referral input if where === friends */}
-            <div>
-              <p>Referral Code</p>
-              <input
-                className="h-10 w-full border-b-2 border-grey bg-transparent bg-black shadow duration-200 ease-in-out focus:border-blue-light"
-                type="text"
-                placeholder="Type your answer here..."
-              />
-            </div>
+            {watch("outreach") === "friendFamily" && (
+              <div>
+                <p>Referral Code</p>
+                <input
+                  className="h-10 w-full border-b-2 border-grey bg-transparent bg-black shadow duration-200 ease-in-out focus:border-blue-light"
+                  type="text"
+                  placeholder="Type your answer here..."
+                />
+              </div>
+            )}
             <div>
               <p>
                 I have read and agree to the&nbsp;
