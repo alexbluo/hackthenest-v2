@@ -9,9 +9,10 @@
   h2 {
     @apply bg-clip-text pb-8 font-header text-5xl font-bold text-transparent;
   }
-  input {
-    @apply appearance-none;
-  }
+}
+
+input:focus {
+  outline: 0px none transparent;
 }
 
 @property --deg1 {

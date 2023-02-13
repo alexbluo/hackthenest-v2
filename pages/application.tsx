@@ -42,7 +42,7 @@ const Application = () => {
 
   const onSubmit: SubmitHandler<SchemaType> = (data) => {
     console.log(data);
-    router.push("/dashboard");
+    // router.push("/dashboard");
   };
 
   return (
@@ -72,7 +72,6 @@ const Application = () => {
                 error={errors}
               />
             </div>
-
             <ApplicationInput
               fieldName="Email"
               name="email"
@@ -83,7 +82,7 @@ const Application = () => {
             <ApplicationInput
               fieldName="Phone Number"
               name="phoneNumber"
-              placeholder="xxx-xxx-xxxx (not to be confused with your ssn!)"
+              placeholder="000-000-0000"
               register={register}
               error={errors}
             />
@@ -190,7 +189,6 @@ const Application = () => {
                 type="checkbox"
                 {...register("privacy")}
               />
-              {/* {errors.privacy && <p>{errors.privacy.message}</p>} */}
             </div>
             <button className="rounded-lg border px-12 py-4">Submit</button>
           </div>
