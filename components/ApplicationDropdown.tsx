@@ -21,7 +21,6 @@ interface Props {
   control: Control<SchemaType>;
 }
 
-// TODO: fix border on focus
 const ApplicationDropdown = ({
   fieldName,
   name,

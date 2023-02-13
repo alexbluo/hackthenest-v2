@@ -12,7 +12,7 @@ const Sponsor = ({ src, alt, href, tier }: Props) => {
   return (
     <a
       className={classNames(
-        "h-52 cursor-pointer rounded-xl p-4 sm:p-8",
+        "h-52 cursor-pointer rounded-xl p-8",
         { "bg-bronze": tier === "bronze" },
         { "bg-grey": tier === "silver" },
         { "bg-gold": tier === "gold" },

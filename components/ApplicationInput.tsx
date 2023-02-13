@@ -15,7 +15,6 @@ interface Props {
   error: any;
 }
 
-// TODO: remove wacko default styling on firefox
 const ApplicationInput = ({
   fieldName,
   name,

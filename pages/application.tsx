@@ -136,7 +136,6 @@ const Application = () => {
               defaultValue={undefined}
               control={control}
             />
-            {/* TODO: display referral input if where === friends */}
             {watch("outreach") === "friendFamily" && (
               <div>
                 <p>Referral Code</p>
