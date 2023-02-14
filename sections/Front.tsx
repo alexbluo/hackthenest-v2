@@ -11,6 +11,7 @@ const FrontSection = () => {
           src="/background.png"
           alt="placeholder"
           fill
+          priority
         />
       </div>
 
