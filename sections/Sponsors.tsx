@@ -29,9 +29,9 @@ const SponsorsSection = () => {
         {/* gold tier  */}
         <div className="grid gap-6" />
         {/* silver tier */}
-        <div className="grid sm:grid-cols-2 gap-6" />
+        <div className="grid gap-6 sm:grid-cols-2" />
         {/* bronze tier */}
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-3">
           <Sponsor
             src="/wolfram.png"
             alt="Wolfram bronze sponsorship"
