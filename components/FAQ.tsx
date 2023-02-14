@@ -54,6 +54,9 @@ const FAQ = ({ question, children }: Props) => {
       </button>
       <motion.div
         className="text-md overflow-y-hidden pt-2"
+        initial={{
+          height: 0,
+        }}
         animate={open ? "open" : "closed"}
         variants={{ closed: { height: 0 }, open: { height: "auto" } }}
         transition={{

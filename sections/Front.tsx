@@ -5,16 +5,6 @@ import useGradient from "../utils/useGradient";
 const FrontSection = () => {
   return (
     <section className="min-h-screen pt-32" id="front">
-      <div className="absolute top-0 left-0 h-screen w-screen">
-        <Image
-          className="object-cover"
-          src="/background.png"
-          alt="placeholder"
-          fill
-          priority
-        />
-      </div>
-
       <div
         className={`${useGradient()} relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 bg-clip-text pt-16`}
       >
@@ -31,7 +21,7 @@ const FrontSection = () => {
           </div>
           {/* bg clip border solid bg icon right + hover */}
           <Link
-            className={`${useGradient()} shadow-md shadow-blue-light mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
+            className={`${useGradient()} shadow-md shadow-blue-mid mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
             href="/login"
           >
             Apply Now!

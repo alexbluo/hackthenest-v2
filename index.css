@@ -89,7 +89,7 @@ input:focus {
       #7fcec569 400px,
       #09c6f981 500px
     );
-  animation: wave 3s infinite ease-in-out;
+  animation: wave 2.5s infinite ease-in-out;
 }
 
 .gradient-webkit {

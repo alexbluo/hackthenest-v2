@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto py-12 lg:py-16">
+    <footer className="container mx-auto py-12 lg:py-16 z-0 relative">
       <div className="flex flex-row justify-between">
         {/* the div directly below is necessary https://stackoverflow.com/questions/33636796/chrome-safari-not-filling-100-height-of-flex-parent */}
         <div>
