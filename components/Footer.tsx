@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="container mx-auto py-12 lg:py-16">
       <div className="flex flex-row justify-between">
         {/* the div directly below is necessary https://stackoverflow.com/questions/33636796/chrome-safari-not-filling-100-height-of-flex-parent */}
-        <div className="flex">
-          <div className="relative aspect-square h-full">
+        <div>
+          <div className="relative aspect-square h-full hidden sm:block">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </div>
         </div>

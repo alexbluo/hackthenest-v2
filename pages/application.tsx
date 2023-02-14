@@ -43,7 +43,7 @@ const Application = () => {
 
   const onSubmit: SubmitHandler<SchemaType> = (data) => {
     console.log(data);
-    // router.push("/dashboard");
+    router.push("/dashboard");
   };
 
   return (

@@ -19,7 +19,7 @@ const FrontSection = () => {
         className={`${useGradient()} relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 bg-clip-text pt-16`}
       >
         {/* TODO: https://www.youtube.com/watch?v=W5oawMJaXbU */}
-        <h1 className="font-header text-7xl font-bold text-transparent">
+        <h1 className="font-header text-7xl font-bold text-center text-transparent">
           Hack the Nest
         </h1>
         <div className="flex w-fit flex-col gap-8">
