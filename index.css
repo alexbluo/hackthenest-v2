@@ -60,6 +60,15 @@ input:focus {
   }
 }
 
+@keyframes flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100000px;
+  }
+}
+
 .gradient {
   background-image: repeating-linear-gradient(
       var(--deg1),
@@ -89,7 +98,8 @@ input:focus {
       #7fcec569 400px,
       #09c6f981 500px
     );
-  animation: wave 2.5s infinite ease-in-out;
+    background-size: 100% 1000%;
+  animation: wave 2.5s infinite ease-in-out, flow 1000s infinite ease-in-out;
 }
 
 .gradient-webkit {
@@ -106,6 +116,7 @@ input:focus {
           300px, #09c6f963 400px),
     -webkit-repeating-linear-gradient(132deg, #09c6f981 150px, #045de969 250px, #7fcec569
           400px, #09c6f981 500px);
+  animation: flow 2.5s infinite ease-in-out;
 }
 
 .gradient-moz {
@@ -122,4 +133,5 @@ input:focus {
           300px, #09c6f963 400px),
     -moz-repeating-linear-gradient(132deg, #09c6f981 150px, #045de969 250px, #7fcec569
           400px, #09c6f981 500px);
+  animation: flow 2.5s infinite ease-in-out;
 }
