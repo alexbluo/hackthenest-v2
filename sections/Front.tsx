@@ -9,7 +9,7 @@ const FrontSection = () => {
         className={`${useGradient()} relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 bg-clip-text pt-16`}
       >
         {/* TODO: https://www.youtube.com/watch?v=W5oawMJaXbU */}
-        <h1 className="font-header text-7xl font-bold text-center text-transparent">
+        <h1 className="text-center font-header text-7xl font-bold text-transparent">
           Hack the Nest
         </h1>
         <div className="flex w-fit flex-col gap-8">
@@ -21,7 +21,7 @@ const FrontSection = () => {
           </div>
           {/* bg clip border solid bg icon right + hover */}
           <Link
-            className={`${useGradient()} shadow-md shadow-blue-mid mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
+            className={`${useGradient()} mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black shadow-md shadow-blue-mid`}
             href="/login"
           >
             Apply Now!

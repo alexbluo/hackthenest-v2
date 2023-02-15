@@ -21,20 +21,21 @@ const Home: NextPage = () => {
         <title>Hack the Nest</title>
       </Head>
       <div
-        className={classNames(useGradient(), "text-white relative", {
+        className={classNames(useGradient(), "relative text-white", {
           "fixed left-0 right-0 top-0 md:static": open,
         })}
       >
-        {/* <div className="absolute top-0 left-0 h-full w-screen">
+        <div className="absolute top-0 left-0 h-full w-screen">
           <Image
             className="object-cover sm:object-fill"
             src="/background.png"
             alt="placeholder"
             fill
+            priority
           />
-        </div> */}
+        </div>
         <NavBar open={open} toggleOpen={toggleOpen} />
-        <main className="z-0 relative">
+        <main className="relative z-0">
           <FrontSection />
           <AboutSection />
           <ScheduleSection />

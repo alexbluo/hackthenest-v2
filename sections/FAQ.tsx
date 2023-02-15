@@ -26,16 +26,16 @@ const FAQSection = () => {
             with familiar companies.
           </FAQ>
           <FAQ question="Why is there an application?">
-            Although we&apos;d love to admit everyone, the reality is that
-            we&apos;re only able to logistically support a limited number of
-            hackers. The good news is that we&apos;ll likely not go too far over
-            this limit (if at all), so we strongly encourage everyone to apply -
-            it only takes a few minutes and you can always decide whether you
-            want to attend as the event approaches.
+            Although we&apos;d love to admit everyone, we only have enough
+            resources to support a limited number of hackers. The good news is
+            that we&apos;ll likely not go too far over this limit (if at all),
+            so we strongly encourage everyone to apply - it only takes a few
+            minutes and you can always decide whether you are able to attend as
+            the event approaches.
           </FAQ>
           <FAQ question="Do I have to make a project?">
-            You&apos;re not required to make a project to attend but you should
-            if you want the full hackathon experience.
+            You&apos;re not required to make a project to attend, but we
+            recommend that you do in order to get the full hackathon experience.
           </FAQ>
         </div>
         <div className="flex w-full flex-col gap-4">
