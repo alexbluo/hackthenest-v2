@@ -60,15 +60,6 @@ input:focus {
   }
 }
 
-@keyframes flow {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 100000px;
-  }
-}
-
 .gradient {
   background-image: repeating-linear-gradient(
       var(--deg1),
@@ -98,8 +89,7 @@ input:focus {
       #7fcec569 400px,
       #09c6f981 500px
     );
-    background-size: 100% 1000%;
-  animation: wave 2.5s infinite ease-in-out, flow 1000s infinite ease-in-out;
+  animation: wave 2s infinite ease-in-out;
 }
 
 .gradient-webkit {
