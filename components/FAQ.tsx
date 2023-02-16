@@ -21,7 +21,7 @@ const FAQ = ({ question, children }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col duration-200 rounded-md ${open && "bg-black/50"}`}>
       <button
         className="flex cursor-pointer select-none items-center justify-between text-xl"
         onClick={() => setOpen(!open)}
@@ -37,10 +37,6 @@ const FAQ = ({ question, children }: Props) => {
           <Path
             animate={open ? "open" : "closed"}
             d="M 12 4 L 12 20"
-            // variants={{
-            //   closed: { rotate: 0 },
-            //   open: { rotate: 90 },
-            // }}
             variants={{
               closed: { d: "M 12 4 L 12 20" },
               open: { d: "M 12 12 L 12 12" },

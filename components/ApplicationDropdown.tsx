@@ -48,7 +48,7 @@ const ApplicationDropdown = ({
             styles={{
               control: (base, state) => ({
                 ...base,
-                backgroundColor: "#181818",
+                backgroundColor: "#1a1a1a",
                 // color: "#fff482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// fff",
                 borderTopWidth: 0,
                 borderLeftWidth: 0,
@@ -64,7 +64,7 @@ const ApplicationDropdown = ({
               }),
               option: (base) => ({
                 ...base,
-                backgroundColor: "#181818",
+                backgroundColor: "#1a1a1a",
                 padding: "8px",
                 cursor: "pointer",
               }),
@@ -74,7 +74,7 @@ const ApplicationDropdown = ({
               }),
               menu: (base) => ({
                 ...base,
-                backgroundColor: "#181818",
+                backgroundColor: "#1a1a1a",
                 borderColor: "#2386bf",
                 borderWidth: "2px",
                 marginTop: 0,

@@ -47,7 +47,7 @@ const SponsorsSection = () => {
           <Sponsor
             src="/nsp.png"
             alt="No Starch Press Bronze Sponsorships"
-            href="https://www.wolframalpha.com/"
+            href="https://nostarch.com/"
             tier="bronze"
           />
         </div>

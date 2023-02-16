@@ -15,10 +15,10 @@ module.exports = {
       "blue-dark": "#005274",
       gold: "#ffbd59",
       bronze: "#cd8031",
-      black: "#181818",
+      black: "#1a1a1a",
       grey: "#808080",
       white: "#ffffff",
-      transparent: "transparent"
+      transparent: "transparent",
     },
     container: {
       center: true,
