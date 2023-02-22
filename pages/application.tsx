@@ -55,7 +55,7 @@ const Application = () => {
         <h2 className={useGradient()}>Application</h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-12 md:grid-cols-2">
             <ApplicationInput
               fieldName="First Name"
               name="firstName"
@@ -216,12 +216,12 @@ const Application = () => {
                   &nbsp;and the MLH Privacy Policy.
                 </span>
               </div>
+            </div>
             <button
-              className={`${useGradient()} mx-auto w-full rounded-md bg-white px-6 py-4 h-fit text-center text-lg font-medium text-black shadow-md shadow-blue-mid`}
+              className={`${useGradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black shadow-md shadow-blue-mid`}
             >
               Submit
             </button>
-            </div>
           </div>
         </form>
       </section>

@@ -49,12 +49,11 @@ const ApplicationDropdown = ({
               control: (base, state) => ({
                 ...base,
                 backgroundColor: "#1a1a1a",
-                // color: "#fff482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// 482386bf,,// fff",
                 borderTopWidth: 0,
                 borderLeftWidth: 0,
                 borderRightWidth: 0,
-                borderBottomWidth: state.menuIsOpen ? 0 : "2px",
-                borderColor: "#808080",
+                borderBottomWidth: "2px",
+                borderColor: state.menuIsOpen ? "#ffffff00" : "#808080",
                 boxShadow: "none",
                 borderRadius: 0,
                 minHeight: 0,
@@ -62,12 +61,16 @@ const ApplicationDropdown = ({
                 paddingTop: "4px",
                 paddingBottom: "4px",
                 cursor: "pointer",
+                "&:hover": {
+                  borderColor: state.menuIsOpen ? "#ffffff00" : "#2396bf",
+                },
               }),
-              option: (base) => ({
-                ...base,
-                // backgroundColor: "#1a1a1a",
+              option: () => ({
                 padding: "8px",
                 cursor: "pointer",
+                "&:hover": {
+                  backgroundColor: "#2396bf",
+                },
               }),
               valueContainer: (base) => ({
                 ...base,
@@ -82,10 +85,7 @@ const ApplicationDropdown = ({
                 marginBottom: 0,
                 borderRadius: 0,
               }),
-              menuList: () => ({
-                paddingTop: 0,
-                paddingBottom: 0,
-              }),
+              menuList: () => ({}),
               indicatorSeparator: () => ({
                 width: 0,
               }),
@@ -104,11 +104,12 @@ const ApplicationDropdown = ({
                 ...base,
                 color: "#ffffff",
                 padding: 0,
+                margin: 0,
               }),
               placeholder: (base) => ({
                 ...base,
                 padding: 0,
-                margin:0
+                margin: 0,
               }),
             }}
           />
