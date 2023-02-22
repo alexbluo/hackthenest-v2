@@ -7,21 +7,18 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import ApplicationDropdown from "../components/ApplicationDropdown";
 import ApplicationInput from "../components/ApplicationInput";
-
-// add school field
-// types - esp on data in onsubmit function
-// validation:
-// - email, phone number, school, etc.
-// pt 2: backend
-// async save
+import useGradient from "../utils/useGradient";
 
 const schema = z.object({
   firstName: z.string().min(1, { message: "This field is required" }),
   lastName: z.string().min(1, { message: "This field is required" }),
-  email: z.string().min(1, { message: "This field is required" }),
-  phoneNumber: z.string().min(1, { message: "This field is required" }),
+  phone: z.string().min(1, { message: "This field is required" }),
+  country: z.string().min(1),
   age: z.string().min(1),
+  yog: z.string().min(1),
+  school: z.string().min(1),
   diet: z.string().min(1),
+  shirt: z.string().min(1),
   outreach: z.string().min(1),
   conduct: z.literal(true),
   privacy: z.literal(true),
@@ -55,37 +52,37 @@ const Application = () => {
           </Link>
         </nav>
 
+        <h2 className={useGradient()}>Application</h2>
+
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex flex-col gap-12">
-            <div className="flex flex-col gap-12 md:flex-row">
-              <ApplicationInput
-                fieldName="First Name"
-                name="firstName"
-                placeholder="Bumble"
-                register={register}
-                error={errors}
-              />
-              <ApplicationInput
-                fieldName="Last Name"
-                name="lastName"
-                placeholder="Bee"
-                register={register}
-                error={errors}
-              />
-            </div>
+          <div className="grid md:grid-cols-2 gap-12">
             <ApplicationInput
-              fieldName="Email"
-              name="email"
-              placeholder="bumble@bee.com"
+              fieldName="First Name"
+              name="firstName"
+              placeholder="Bumble"
+              register={register}
+              error={errors}
+            />
+            <ApplicationInput
+              fieldName="Last Name"
+              name="lastName"
+              placeholder="Bee"
               register={register}
               error={errors}
             />
             <ApplicationInput
               fieldName="Phone Number"
-              name="phoneNumber"
-              placeholder="000-000-0000"
+              name="phone"
+              placeholder="123-456-7890"
               register={register}
               error={errors}
+            />
+            <ApplicationDropdown
+              fieldName="Country of Residence"
+              name="country"
+              options={[]}
+              defaultValue={undefined}
+              control={control}
             />
             <ApplicationDropdown
               fieldName="Age"
@@ -102,10 +99,29 @@ const Application = () => {
               control={control}
             />
             <ApplicationDropdown
+              fieldName="Year of Graduation"
+              name="yog"
+              options={[
+                { value: 2023, label: "2023" },
+                { value: 2024, label: "2024" },
+                { value: 2025, label: "2025" },
+                { value: 2026, label: "2026" },
+              ]}
+              defaultValue={undefined}
+              control={control}
+            />
+            <ApplicationDropdown
+              fieldName="School"
+              name="school"
+              options={[]}
+              defaultValue={undefined}
+              control={control}
+            />
+            <ApplicationDropdown
               fieldName="Dietary Restrictions"
               name="diet"
               options={[
-                { value: undefined, label: "None" },
+                { value: null, label: "None" },
                 { value: "vegan", label: "Vegan" },
                 { value: "vegetarian", label: "Vegetarian" },
                 { value: "kosher", label: "Kosher" },
@@ -115,6 +131,13 @@ const Application = () => {
                 { value: "nutAllergy", label: "Nut Allergy" },
                 { value: "other", label: "Other" },
               ]}
+              defaultValue={undefined}
+              control={control}
+            />
+            <ApplicationDropdown
+              fieldName="Shirt Size"
+              name="shirt"
+              options={[]}
               defaultValue={undefined}
               control={control}
             />
@@ -146,53 +169,59 @@ const Application = () => {
                 />
               </div>
             )}
-            <div>
-              <p>
-                I have read and agree to the&nbsp;
-                <a
-                  href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  MLH Code of Conduct
-                </a>
-              </p>
-              <input
-                placeholder="Select an option..."
-                className="h-6 w-6 rounded"
-                type="checkbox"
-                {...register("conduct")}
-              />
+            <div className="flex flex-col gap-6">
+              <div>
+                <input
+                  className="mr-1 rounded"
+                  type="checkbox"
+                  {...register("conduct")}
+                />
+                <span>
+                  I have read and agree to the&nbsp;
+                  <a
+                    href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    MLH Code of Conduct
+                  </a>
+                </span>
+              </div>
+              <div>
+                <input
+                  className="mr-1 rounded"
+                  type="checkbox"
+                  {...register("privacy")}
+                />
+                <span>
+                  I authorize you to share my application/registration
+                  information with Major League Hacking for event
+                  administration, ranking, and MLH administration in-line with
+                  the&nbsp;
+                  <a
+                    href="https://mlh.io/privacy"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    MLH Privacy Policy
+                  </a>
+                  . I further agree to the terms of both the&nbsp;
+                  <a
+                    href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    MLH Contest Terms and Conditions
+                  </a>
+                  &nbsp;and the MLH Privacy Policy.
+                </span>
+              </div>
+            <button
+              className={`${useGradient()} mx-auto w-full rounded-md bg-white px-6 py-4 h-fit text-center text-lg font-medium text-black shadow-md shadow-blue-mid`}
+            >
+              Submit
+            </button>
             </div>
-            <div>
-              <p>
-                I authorize you to share my application/registration information
-                with Major League Hacking for event administration, ranking, and
-                MLH administration in-line with the&nbsp;
-                <a
-                  href="https://mlh.io/privacy"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  MLH Privacy Policy
-                </a>
-                . I further agree to the terms of both the&nbsp;
-                <a
-                  href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  MLH Contest Terms and Conditions
-                </a>
-                &nbsp;and the MLH Privacy Policy.
-              </p>
-              <input
-                className="h-6 w-6 rounded"
-                type="checkbox"
-                {...register("privacy")}
-              />
-            </div>
-            <button className="rounded-lg border px-12 py-4">Submit</button>
           </div>
         </form>
       </section>

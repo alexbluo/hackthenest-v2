@@ -4,7 +4,7 @@ import Select, { SingleValue } from "react-select";
 import { SchemaType } from "../pages/application";
 
 interface Option {
-  value: string | undefined;
+  value: string | number | null | undefined;
   label: string;
 }
 
@@ -59,12 +59,13 @@ const ApplicationDropdown = ({
                 borderRadius: 0,
                 minHeight: 0,
                 alignItems: "center",
-                padding: "4px",
+                paddingTop: "4px",
+                paddingBottom: "4px",
                 cursor: "pointer",
               }),
               option: (base) => ({
                 ...base,
-                backgroundColor: "#1a1a1a",
+                // backgroundColor: "#1a1a1a",
                 padding: "8px",
                 cursor: "pointer",
               }),
@@ -102,6 +103,12 @@ const ApplicationDropdown = ({
               singleValue: (base) => ({
                 ...base,
                 color: "#ffffff",
+                padding: 0,
+              }),
+              placeholder: (base) => ({
+                ...base,
+                padding: 0,
+                margin:0
               }),
             }}
           />

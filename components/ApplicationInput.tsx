@@ -27,7 +27,7 @@ const ApplicationInput = ({
     <div className="w-full">
       <p>{fieldName}</p>
       <input
-        className="w-full border-b-2 border-grey bg-transparent bg-black p-1 placeholder-grey duration-200 ease-in-out focus:border-blue-mid"
+        className="w-full border-b-2 border-grey bg-transparent bg-black py-1 placeholder-grey duration-200 ease-in-out focus:border-blue-mid"
         type="text"
         placeholder={placeholder}
         {...register(name)}
