@@ -1,15 +1,18 @@
-import { useSession, signOut } from "next-auth/react";
+import { GetServerSidePropsContext } from "next";
+import { unstable_getServerSession } from "next-auth";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { authOptions } from "./api/auth/[...nextauth]";
 
 // https://www.npmjs.com/package/react-qr-code
 const Dashboard = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
-  return status === "authenticated" ? (
+  return (
     <div className="bg-black">
       <section className="h-screen pt-32">
-        <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
+        <nav className="container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
           <Link className="relative z-50 aspect-square h-3/5" href="/">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </Link>
@@ -37,7 +40,30 @@ const Dashboard = () => {
         </div>
       </section>
     </div>
-  ) : null;
+)
+};
+
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
 };
 
 export default Dashboard;

@@ -176,6 +176,7 @@ const Application = () => {
                   type="checkbox"
                   {...register("conduct")}
                 />
+                {/* TODO: change link style */}
                 <span>
                   I have read and agree to the&nbsp;
                   <a
@@ -218,7 +219,7 @@ const Application = () => {
               </div>
             </div>
             <button
-              className={`${useGradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black shadow-md shadow-blue-mid`}
+              className={`${useGradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
             >
               Submit
             </button>

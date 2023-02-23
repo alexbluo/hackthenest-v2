@@ -11,6 +11,7 @@ datasource db {
 model User {
   id           Int           @id @default(autoincrement())
   email        String
+  password     String?
   rsvp         Boolean
   hackerApp    HackerApp?
   volunteerApp VolunteerApp?
@@ -36,7 +37,7 @@ model VolunteerApp {
   lastName  String
   phone     String
   age       Int
-  role      String // volunteer or mentor
+  role      String // volunteer, mentor, judge, sponsor
   diet      String
   shirt     String
   user      User   @relation(fields: [userId], references: [id])

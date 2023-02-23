@@ -41,7 +41,7 @@ const FAQSection = () => {
         <div className="flex w-full flex-col gap-4">
           <FAQ question="Who is eligible to attend?">
             Hack the Nest is open to all high school students of all experience
-            levels from everywhere. If you&apos;re not in high school but would
+            levels from anywhere. If you&apos;re not in high school but would
             still like to participate, we&apos;d love to have you as a mentor or
             volunteer!
           </FAQ>
