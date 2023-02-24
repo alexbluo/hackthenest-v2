@@ -36,6 +36,7 @@ const FrontSection = () => {
         <Image
           src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-yellow.svg"
           alt="Major League Hacking 2023 Hackathon Season"
+          sizes="100px"
           fill
         />
       </a>

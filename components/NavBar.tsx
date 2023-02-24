@@ -13,7 +13,7 @@ const NavBar = ({ open, toggleOpen }: Props) => {
   return (
     <nav className="bg-transparent container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between">
       <div className="relative z-50 aspect-square h-3/5">
-        <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
+        <Image src="/logo-colored.png" alt="Hack the Nest Logo" sizes="76.8px" fill />
       </div>
 
       <ul className="hidden gap-12 text-gold sm:flex">

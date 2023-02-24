@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           <Image
             className="object-cover sm:object-fill"
             src="/background.png"
-            alt="placeholder"
+            alt="Website background"
             fill
             priority
           />

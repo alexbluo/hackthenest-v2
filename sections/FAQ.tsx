@@ -1,13 +1,14 @@
 import FAQ from "../components/FAQ";
 import useGradient from "../utils/useGradient";
 
+// TODO: one open at a time, move q and a to object and map with key
 const FAQSection = () => {
   return (
     <section id="faq">
       <div className="sm:ounded-full -m-8 mb-8 inline-block rounded-r-full bg-black py-2 px-8">
         <h2 className={useGradient()}>FAQ</h2>
       </div>
-      <div className="-m-8 flex flex-col gap-4 rounded-3xl bg-black py-6 px-8 md:flex-row md:gap-16">
+      <div className="-m-8 flex flex-col gap-4 sm:rounded-3xl bg-black py-6 px-8 md:flex-row md:gap-16">
         <div className="flex w-full flex-col gap-4">
           <FAQ question="What is a hackathon?">
             Hackathons are collaborative multi-day events where participants
