@@ -2,16 +2,16 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto py-12 lg:py-16 z-0 relative">
+    <footer className="container relative z-0 mx-auto py-12 lg:py-16">
       <div className="flex flex-row justify-between">
         {/* the div directly below is necessary https://stackoverflow.com/questions/33636796/chrome-safari-not-filling-100-height-of-flex-parent */}
         <div>
-          <div className="relative aspect-square h-full hidden sm:block">
+          <div className="relative aspect-square h-full">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-6">
+        <div className="-m-8 flex flex-col justify-center gap-6 rounded-l-3xl bg-black p-8 sm:rounded-3xl">
           <div className="flex h-8 flex-row gap-6">
             <a
               className="aspect-square h-full"

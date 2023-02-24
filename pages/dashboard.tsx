@@ -1,8 +1,8 @@
 import { GetServerSidePropsContext } from "next";
-import { unstable_getServerSession } from "next-auth";
-import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { signOut, useSession } from "next-auth/react";
 import { authOptions } from "./api/auth/[...nextauth]";
 
 // https://www.npmjs.com/package/react-qr-code
@@ -40,17 +40,13 @@ const Dashboard = () => {
         </div>
       </section>
     </div>
-)
+  );
 };
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
 
   if (!session) {
     return {

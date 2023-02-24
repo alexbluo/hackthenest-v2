@@ -1,8 +1,8 @@
 import { useState, ChangeEvent } from "react";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import { unstable_getServerSession } from "next-auth";
-import { getProviders, signIn } from "next-auth/react";
 import Image from "next/image";
+import { getServerSession } from "next-auth";
+import { getProviders, signIn } from "next-auth/react";
 import { authOptions } from "./api/auth/[...nextauth]";
 
 interface Credentials {
@@ -28,7 +28,7 @@ const Login = ({
         <div className="relative z-50 mx-auto aspect-square w-1/2">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
-        <h1 className="font-header text-5xl font-bold text-center text-gold">
+        <h1 className="text-center font-header text-5xl font-bold text-gold">
           Hack the Nest
         </h1>
         <input
@@ -100,11 +100,7 @@ export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const providers = await getProviders();
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
 
   if (session) {
     return {

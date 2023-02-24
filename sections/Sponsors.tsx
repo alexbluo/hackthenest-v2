@@ -4,7 +4,9 @@ import useGradient from "../utils/useGradient";
 const SponsorsSection = () => {
   return (
     <section id="sponsors">
-      <h2 className={useGradient()}>Sponsors</h2>
+      <div className="-m-8 mb-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
+        <h2 className={useGradient()}>Sponsors</h2>
+      </div>
       <p className="pb-6">
         Interested in sponsoring? Feel free to take a look at our&nbsp;
         <a

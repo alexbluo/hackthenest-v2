@@ -6,8 +6,8 @@ module.exports = {
   content: ["./components/**/*.tsx", "./pages/**/*.tsx", "./sections/**/*.tsx"],
   theme: {
     fontFamily: {
-      sans: ["neue-haas-grotesk-text", ...fontFamily.sans],
-      header: ["neue-haas-grotesk-display", ...fontFamily.sans],
+      sans: ["proxima-nova", ...fontFamily.sans],
+      header: ["proxima-nova", ...fontFamily.sans],
     },
     colors: {
       "blue-light": "#61a7cf",

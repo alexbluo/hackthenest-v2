@@ -14,7 +14,7 @@ const FrontSection = () => {
         </h1>
         <div className="flex w-fit flex-col gap-8">
           {/* find diff fonts bc weights arent good */}
-          <div className="flex gap-2 text-xl mx-auto">
+          <div className="mx-auto flex gap-2 text-xl">
             <h3 className="font-medium text-transparent">April 15-16, 2023</h3>
             <div className="font-black text-transparent">•</div>
             <h3 className="font-medium text-transparent">Venue TBD</h3>

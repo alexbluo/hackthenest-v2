@@ -4,8 +4,10 @@ import useGradient from "../utils/useGradient";
 const AboutSection = () => {
   return (
     <section id="about">
-      <h2 className={useGradient()}>About</h2>
-      <div className="w-full pb-16 text-xl sm:w-3/4">
+      <div className="-m-8 mb-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-full">
+        <h2 className={useGradient()}>About</h2>
+      </div>
+      <article className="-m-8 mb-16 w-full rounded-r-3xl bg-black px-8 py-6 text-xl sm:w-3/4 sm:rounded-3xl">
         This April, Hack the Nest invites 250 high school students to a 36-hour
         hackathon in the heart of Maryland. Our team has been working tirelessly
         to pack our schedule to the brim with educational workshops, exciting
@@ -13,7 +15,7 @@ const AboutSection = () => {
         or late-night debugging with cookies, our ultimate goal is to host an
         unforgettable experience for an audience normally barred from
         hackathons.
-      </div>
+      </article>
       <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="250+" caption="hackers" />
         <Stat stat="$10000+" caption="prizes" />

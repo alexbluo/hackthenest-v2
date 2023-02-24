@@ -21,7 +21,7 @@ const FAQ = ({ question, children }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <div className={`flex flex-col duration-200 rounded-md ${open && "bg-black/50"}`}>
+    <div className="flex flex-col">
       <button
         className="flex cursor-pointer select-none items-center justify-between text-xl"
         onClick={() => setOpen(!open)}
