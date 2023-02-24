@@ -17,6 +17,7 @@ module.exports = {
       bronze: "#cd8031",
       black: "#1a1a1a",
       grey: "#808080",
+      ice: "#b2e6fe",
       white: "#ffffff",
       transparent: "transparent",
     },

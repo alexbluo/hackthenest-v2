@@ -31,9 +31,9 @@ const SponsorsSection = () => {
         {/* gold tier  */}
         <div className="grid gap-6" />
         {/* silver tier */}
-        <div className="grid gap-6 sm:grid-cols-2" />
+        <div className="grid gap-6 grid-cols-2" />
         {/* bronze tier */}
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-6 grid-cols-3">
           <Sponsor
             src="/janestreet.png"
             alt="Jane Street bronze sponsorship"

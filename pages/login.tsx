@@ -28,7 +28,7 @@ const Login = ({
         <div className="relative z-50 mx-auto aspect-square w-1/2">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
-        <h1 className="text-center font-header text-5xl font-bold text-gold">
+        <h1 className="text-5xl font-black text-gold">
           Hack the Nest
         </h1>
         <input

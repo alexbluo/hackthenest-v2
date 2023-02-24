@@ -5,19 +5,17 @@ import useGradient from "../utils/useGradient";
 const FrontSection = () => {
   return (
     <section className="min-h-screen pt-32" id="front">
-      <div
-        className={`${useGradient()} relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 bg-clip-text pt-16`}
-      >
+      <div className="relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-16">
         {/* TODO: https://www.youtube.com/watch?v=W5oawMJaXbU */}
-        <h1 className="text-center font-header text-7xl font-bold text-transparent">
+        <h1 className="text-center text-7xl font-bold text-ice">
           Hack the Nest
         </h1>
         <div className="flex w-fit flex-col gap-8">
           {/* find diff fonts bc weights arent good */}
           <div className="mx-auto flex gap-2 text-xl">
-            <h3 className="font-medium text-transparent">April 15-16, 2023</h3>
-            <div className="font-black text-transparent">•</div>
-            <h3 className="font-medium text-transparent">Venue TBD</h3>
+            <h3 className="font-medium text-ice">April 15-16, 2023</h3>
+            <div className="font-black text-transparent ">•</div>
+            <h3 className="font-medium text-ice">Venue TBD</h3>
           </div>
           <Link
             className={`${useGradient()} mx-auto w-80 rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
