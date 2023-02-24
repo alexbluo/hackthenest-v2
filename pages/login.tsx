@@ -1,8 +1,8 @@
 import { useState, ChangeEvent } from "react";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import Image from "next/image";
 import { getServerSession } from "next-auth";
 import { getProviders, signIn } from "next-auth/react";
+import Image from "next/image";
 import { authOptions } from "./api/auth/[...nextauth]";
 
 interface Credentials {
@@ -28,9 +28,7 @@ const Login = ({
         <div className="relative z-50 mx-auto aspect-square w-1/2">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
-        <h1 className="text-5xl font-black text-gold">
-          Hack the Nest
-        </h1>
+        <h1 className="text-5xl font-black text-gold">Hack the Nest</h1>
         <input
           className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
           name="username"
