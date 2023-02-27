@@ -52,7 +52,7 @@ const Application = () => {
           </Link>
         </nav>
 
-        <h2 className={useGradient()}>Application</h2>
+        <h2 className={`${useGradient()} mb-8`}>Application</h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid gap-12 md:grid-cols-2">

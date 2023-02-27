@@ -4,7 +4,7 @@ import useGradient from "../utils/useGradient";
 const SponsorsSection = () => {
   return (
     <section id="sponsors">
-      <div className="-m-8 mb-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
+      <div className="-mx-8 mb-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className={useGradient()}>Sponsors</h2>
       </div>
       <p className="text-xl">

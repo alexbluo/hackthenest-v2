@@ -5,10 +5,10 @@ import useGradient from "../utils/useGradient";
 const FAQSection = () => {
   return (
     <section id="faq">
-      <div className="-mx-8 mb-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-full">
+      <div className="-mx-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-full">
         <h2 className={useGradient()}>FAQ</h2>
       </div>
-      <div className="-mx-8 flex flex-col gap-4 bg-black py-6 sm:rounded-3xl px-8 md:flex-row md:gap-16">
+      <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl md:flex-row md:gap-16">
         <div className="flex w-full flex-col gap-4">
           <FAQ question="What is a hackathon?">
             Hackathons are collaborative multi-day events where participants

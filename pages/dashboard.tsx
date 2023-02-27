@@ -29,7 +29,7 @@ const Dashboard = () => {
           <h1 className="text-3xl font-bold text-gold">
             Welcome back, {session!.user!.name}
           </h1>
-          <div className="pt-12">
+          <div className="flex gap-8 w-full">
             <Link
               className="rounded-md border py-2 px-12 text-lg text-gold"
               href="/application"
