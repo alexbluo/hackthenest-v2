@@ -50,10 +50,15 @@ const Application = () => {
           <Link className="relative z-50 aspect-square h-3/5" href="/">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </Link>
+
+          <Link className="text-lg font-medium text-gold" href="/dashboard">
+            Dashboard
+          </Link>
         </nav>
 
         <h2 className={`${useGradient()} mb-8`}>Application</h2>
 
+        {/* TODO: change back to full width */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid gap-12 md:grid-cols-2">
             <ApplicationInput
