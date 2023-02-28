@@ -15,7 +15,7 @@ const FAQSection = () => {
             (also called hackers) bring their ideas to life by building
             innovative projects from scratch using software development
             principals. Aside from just being coding marathons/competitions,
-            hackathons offer several fun side events, educational workshops,
+            hackathons offer several fun mini-events, educational workshops,
             sponsor fairs, and an overall great atmosphere to hang out in.
           </FAQ>
           <FAQ question="How much does it cost?">

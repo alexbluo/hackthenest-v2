@@ -8,6 +8,7 @@ module.exports = {
     fontFamily: {
       sans: ["proxima-nova", ...fontFamily.sans],
       header: ["neue-haas-grotesk-display", ...fontFamily.sans],
+      default: fontFamily.sans,
     },
     colors: {
       "blue-light": "#61a7cf",
@@ -18,8 +19,8 @@ module.exports = {
       black: "#1a1a1a",
       ice: "#b2e6fe",
       white: "#ffffff",
-      red: "#ed4337",
-      green: "#4bb543",
+      red: "#dc3545",
+      green: "#28a745",
       grey: "#808080",
       transparent: "transparent",
     },
