@@ -10,9 +10,9 @@ import ApplicationInput from "../components/ApplicationInput";
 import useGradient from "../utils/useGradient";
 
 const schema = z.object({
-  firstName: z.string().min(1, { message: "This field is required" }),
-  lastName: z.string().min(1, { message: "This field is required" }),
-  phone: z.string().min(1, { message: "This field is required" }),
+  firstName: z.string().min(1, { message: "*" }),
+  lastName: z.string().min(1, { message: "*" }),
+  phone: z.string().min(1, { message: "*" }),
   country: z.string().min(1),
   age: z.string().min(1),
   yog: z.string().min(1),
@@ -64,7 +64,7 @@ const Application = () => {
         {/* TODO: change back to full width */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
-            <div className="flex gap-12 flex-col sm:flex-row">
+            <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
                 fieldName="First Name"
                 name="firstName"
@@ -86,13 +86,6 @@ const Application = () => {
               placeholder="123-456-7890"
               register={register}
               error={errors}
-            />
-            <ApplicationDropdown
-              fieldName="Country of Residence"
-              name="country"
-              options={[]}
-              defaultValue={undefined}
-              control={control}
             />
             <ApplicationDropdown
               fieldName="Age"
@@ -128,6 +121,13 @@ const Application = () => {
               control={control}
             />
             <ApplicationDropdown
+              fieldName="Country of Residence"
+              name="country"
+              options={[]}
+              defaultValue={undefined}
+              control={control}
+            />
+            <ApplicationDropdown
               fieldName="Dietary Restrictions"
               name="diet"
               options={[
@@ -147,7 +147,13 @@ const Application = () => {
             <ApplicationDropdown
               fieldName="Shirt Size"
               name="shirt"
-              options={[]}
+              options={[
+                { value: "XS", label: "XS" },
+                { value: "SM", label: "SM" },
+                { value: "MD", label: "MD" },
+                { value: "LG", label: "LG" },
+                { value: "XL", label: "XL" },
+              ]}
               defaultValue={undefined}
               control={control}
             />
