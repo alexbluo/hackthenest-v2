@@ -1,8 +1,8 @@
 import { useState, ChangeEvent } from "react";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import Image from "next/image";
 import { getServerSession } from "next-auth";
 import { getProviders, signIn } from "next-auth/react";
+import Image from "next/image";
 import { authOptions } from "./api/auth/[...nextauth]";
 
 interface Credentials {
@@ -29,7 +29,7 @@ const Login = ({
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
         <h1 className="text-5xl font-black text-gold">Hack the Nest</h1>
-        <input
+        {/* <input
           className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
           name="email"
           onChange={handleChange}
@@ -42,9 +42,9 @@ const Login = ({
           onChange={handleChange}
           type="password"
           placeholder="Password"
-        />
+        /> */}
 
-        <button
+        {/* <button
           className="flex w-full items-center justify-between rounded-md border bg-gold px-6 py-4"
           onClick={() =>
             signIn("credentials", { ...credentials, callbackUrl: "/dashboard" })
@@ -64,7 +64,7 @@ const Login = ({
           <div className="h-fit w-full border border-grey" />
           <p className="text-white">or</p>
           <div className="h-fit w-full border border-grey" />
-        </div>
+        </div> */}
 
         <button
           className="flex w-full items-center justify-between rounded-md border bg-blue-light px-6 py-4"

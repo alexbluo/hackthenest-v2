@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["proxima-nova", ...fontFamily.sans],
-      header: ["proxima-nova", ...fontFamily.sans],
+      header: ["neue-haas-grotesk-display", ...fontFamily.sans],
     },
     colors: {
       "blue-light": "#61a7cf",

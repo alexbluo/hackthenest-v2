@@ -51,7 +51,10 @@ const Application = () => {
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </Link>
 
-          <Link className="text-lg font-medium text-gold" href="/dashboard">
+          <Link
+            className="font-header text-lg font-medium text-gold"
+            href="/dashboard"
+          >
             Dashboard
           </Link>
         </nav>
@@ -60,21 +63,23 @@ const Application = () => {
 
         {/* TODO: change back to full width */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid gap-12 md:grid-cols-2">
-            <ApplicationInput
-              fieldName="First Name"
-              name="firstName"
-              placeholder="Bumble"
-              register={register}
-              error={errors}
-            />
-            <ApplicationInput
-              fieldName="Last Name"
-              name="lastName"
-              placeholder="Bee"
-              register={register}
-              error={errors}
-            />
+          <div className="flex flex-col gap-12">
+            <div className="flex gap-12 flex-col sm:flex-row">
+              <ApplicationInput
+                fieldName="First Name"
+                name="firstName"
+                placeholder="Bumble"
+                register={register}
+                error={errors}
+              />
+              <ApplicationInput
+                fieldName="Last Name"
+                name="lastName"
+                placeholder="Bee"
+                register={register}
+                error={errors}
+              />
+            </div>
             <ApplicationInput
               fieldName="Phone Number"
               name="phone"

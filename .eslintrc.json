@@ -25,6 +25,7 @@
     "react/self-closing-comp": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
     "react/function-component-definition": [
       "error",
       {
@@ -34,7 +35,7 @@
     ],
     "no-restricted-syntax": "off",
     "import/order": [
-      "error",
+      "warn",
       {
         "groups": ["builtin", "external", "internal"],
         "pathGroups": [

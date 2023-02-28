@@ -62,7 +62,7 @@ const ApplicationDropdown = ({
                 paddingBottom: "4px",
                 cursor: "pointer",
                 "&:hover": {
-                  borderColor: state.menuIsOpen ? "#ffffff00" : "#2396bf",
+                  borderColor: state.menuIsOpen ? "#ffffff00" : "#808080",
                 },
               }),
               option: () => ({

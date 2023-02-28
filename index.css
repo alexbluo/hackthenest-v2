@@ -7,7 +7,7 @@
     @apply container py-8 lg:py-16;
   }
   h2 {
-    @apply bg-clip-text text-5xl font-bold text-transparent;
+    @apply font-header bg-clip-text text-5xl font-bold text-transparent;
   }
 }
 

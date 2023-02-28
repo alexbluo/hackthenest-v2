@@ -1,14 +1,17 @@
-import { GetServerSidePropsContext } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import axios from "axios";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { getServerSession } from "next-auth";
 import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
 import QRCode from "react-qr-code";
-import { authOptions } from "./api/auth/[...nextauth]";
 import useGradient from "../utils/useGradient";
+import { authOptions } from "./api/auth/[...nextauth]";
 
 // https://www.npmjs.com/package/react-qr-code
-const Dashboard = () => {
+const Dashboard = ({}: InferGetServerSidePropsType<
+  typeof getServerSideProps
+>) => {
   const { data: session } = useSession();
 
   return (
@@ -20,7 +23,7 @@ const Dashboard = () => {
           </Link>
 
           <button
-            className="text-lg font-medium text-gold"
+            className="text-lg font-medium text-gold font-header"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
             Logout
@@ -98,6 +101,10 @@ export const getServerSideProps = async (
       },
     };
   }
+
+  // const user = await axios.get("/api/user", {
+  //   params: { email: session.user?.email },
+  // });
 
   return {
     props: { session },

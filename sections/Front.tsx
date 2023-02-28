@@ -12,13 +12,13 @@ const FrontSection = () => {
         </h1>
         <div className="flex w-fit flex-col gap-8">
           {/* find diff fonts bc weights arent good */}
-          <div className="mx-auto flex gap-2 text-xl">
-            <h3 className="font-medium text-ice">April 15-16, 2023</h3>
+          <div className="mx-auto flex gap-2 font-header text-xl">
+            <h3 className="font-medium text-ice">4.15.23 - 4.16.23</h3>
             <div className="font-black text-transparent ">•</div>
             <h3 className="font-medium text-ice">Venue TBD</h3>
           </div>
           <Link
-            className={`${useGradient()} mx-auto w-80 rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
+            className={`${useGradient()} mx-auto w-80 rounded-md bg-white px-6 py-4 text-center font-header text-lg font-medium text-black`}
             href="/login"
           >
             Apply Now!

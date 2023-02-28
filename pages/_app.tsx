@@ -56,7 +56,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
           }}
         />
         {/* needed to create stacking context on gradient children */}
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </QueryClientProvider>
     </SessionProvider>
   );

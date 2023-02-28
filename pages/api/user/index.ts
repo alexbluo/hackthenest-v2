@@ -1,9 +1,15 @@
+import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 
-// get user data by query
+const prisma = new PrismaClient();
+
+// check if user is authenticated with getserversession
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req);
-  console.log(res);
+  const { email } = req.query;
+
+  // const user = await prisma.user.;
+
+  res.json({ hi: "lol" });
 };
 
 export default handler;

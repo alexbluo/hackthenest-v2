@@ -12,7 +12,7 @@ import ScheduleSection from "../sections/Schedule";
 import SponsorsSection from "../sections/Sponsors";
 import useGradient from "../utils/useGradient";
 
-const Home: NextPage = () => {
+const Index: NextPage = () => {
   const [open, toggleOpen] = useCycle(false, true);
 
   return (
@@ -48,4 +48,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Index;

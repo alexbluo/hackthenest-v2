@@ -9,7 +9,7 @@ const NavItem = ({ to, children }: Props) => {
   return (
     <li>
       <Link
-        className="cursor-pointer text-lg font-medium"
+        className="cursor-pointer text-lg font-medium font-header"
         to={to}
         duration={600}
         smooth="easeInOutQuart"
