@@ -1,5 +1,5 @@
-import FAQ from "../components/FAQ";
-import useGradient from "../utils/useGradient";
+import useGradient from "../../utils/useGradient";
+import FAQ from "../FAQ";
 
 // TODO: one open at a time, move q and a to object and map with key
 const FAQSection = () => {

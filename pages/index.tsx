@@ -5,11 +5,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import AboutSection from "../sections/About";
-import FAQSection from "../sections/FAQ";
-import FrontSection from "../sections/Front";
-import ScheduleSection from "../sections/Schedule";
-import SponsorsSection from "../sections/Sponsors";
+import AboutSection from "../components/sections/About";
+import FAQSection from "../components/sections/FAQ";
+import FrontSection from "../components/sections/Front";
+import ScheduleSection from "../components/sections/Schedule";
+import SponsorsSection from "../components/sections/Sponsors";
 import useGradient from "../utils/useGradient";
 
 const Index: NextPage = () => {

@@ -1,5 +1,5 @@
-import Stat from "../components/Stat";
-import useGradient from "../utils/useGradient";
+import useGradient from "../../utils/useGradient";
+import Stat from "../Stat";
 
 const AboutSection = () => {
   return (

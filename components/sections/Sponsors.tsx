@@ -1,5 +1,5 @@
-import Sponsor from "../components/Sponsor";
-import useGradient from "../utils/useGradient";
+import useGradient from "../../utils/useGradient";
+import Sponsor from "../Sponsor";
 
 const SponsorsSection = () => {
   return (

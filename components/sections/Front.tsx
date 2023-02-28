@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import useGradient from "../utils/useGradient";
+import useGradient from "../../utils/useGradient";
 
 const FrontSection = () => {
   return (

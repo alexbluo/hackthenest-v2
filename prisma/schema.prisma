@@ -21,10 +21,10 @@ model HackerApp {
   firstName String
   lastName  String
   phone     String
-  country   String
   age       Int
   yog       Int
   school    String
+  country   String
   diet      String
   shirt     String
   outreach  String

@@ -40,12 +40,12 @@ const Dashboard = ({}: InferGetServerSidePropsType<
             <QRCode className="rounded-md bg-white p-4" value="1" />
           </div>
           <div className="flex w-full flex-col gap-8">
-            <DashboardButton name="Hacker Application" status="COMPLETE" />
             <DashboardButton
-              name="Volunteer Application"
+              name="Hacker Application"
               href="/application"
               status="INCOMPLETE"
             />
+            <DashboardButton name="Volunteer Application" status="COMPLETE" />
             <DashboardButton name="RSVP" status="UNAVAILABLE" />
           </div>
         </div>

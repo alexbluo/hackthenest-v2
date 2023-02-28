@@ -38,7 +38,6 @@ const Application = () => {
     handleSubmit,
     formState: { errors },
     control,
-    watch,
   } = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
