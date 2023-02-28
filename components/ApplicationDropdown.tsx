@@ -1,4 +1,4 @@
-import { Control, Controller } from "react-hook-form";
+import { Control, Controller, FieldError } from "react-hook-form";
 import Select, { SingleValue } from "react-select";
 // eslint-disable-next-line import/no-cycle
 import { SchemaType } from "../pages/application";
@@ -19,6 +19,8 @@ interface Props {
   defaultValue: string | true | undefined;
   // control from RHF
   control: Control<SchemaType>;
+  // error message
+  error: FieldError | undefined;
 }
 
 const ApplicationDropdown = ({
@@ -27,10 +29,13 @@ const ApplicationDropdown = ({
   options,
   defaultValue,
   control,
+  error,
 }: Props) => {
   return (
     <div>
-      <p>{fieldName}</p>
+      <h3>
+        {fieldName} {error && <span className="text-red">*</span>}
+      </h3>
       <Controller
         control={control}
         defaultValue={defaultValue}

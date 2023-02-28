@@ -8,7 +8,7 @@ const SponsorsSection = () => {
         <h2 className={useGradient()}>Sponsors</h2>
       </div>
       <p className="text-xl">
-        Interested in sponsoring? Feel free to take a look at our&nbsp;
+        Interested in sponsoring? Feel free to take a look at our{" "}
         <a
           className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
           href="https://alexluo.notion.site/prospectus-c5fd45bdebaf4957abeb5add12706d58"
@@ -16,8 +16,8 @@ const SponsorsSection = () => {
           rel="noreferrer"
         >
           prospectus
-        </a>
-        &nbsp;and email&nbsp;
+        </a>{" "}
+        and email{" "}
         <a
           className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
           href="mailto:sponsor@hackthenest.org"
@@ -31,9 +31,9 @@ const SponsorsSection = () => {
         {/* gold tier  */}
         <div className="grid gap-6" />
         {/* silver tier */}
-        <div className="grid gap-6 grid-cols-2" />
+        <div className="grid grid-cols-2 gap-6" />
         {/* bronze tier */}
-        <div className="grid gap-6 grid-cols-3">
+        <div className="grid grid-cols-3 gap-6">
           <Sponsor
             src="/janestreet.png"
             alt="Jane Street bronze sponsorship"

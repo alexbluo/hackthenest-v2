@@ -16,9 +16,11 @@ module.exports = {
       gold: "#ffbd59",
       bronze: "#cd8031",
       black: "#1a1a1a",
-      grey: "#808080",
       ice: "#b2e6fe",
       white: "#ffffff",
+      red: "#ed4337",
+      green: "#4bb543",
+      grey: "#808080",
       transparent: "transparent",
     },
     container: {

@@ -5,6 +5,7 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import QRCode from "react-qr-code";
+import DashboardButton from "../components/DashboardButton";
 import useGradient from "../utils/useGradient";
 import { authOptions } from "./api/auth/[...nextauth]";
 
@@ -23,7 +24,7 @@ const Dashboard = ({}: InferGetServerSidePropsType<
           </Link>
 
           <button
-            className="text-lg font-medium text-gold font-header"
+            className="font-header text-lg font-medium text-gold"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
             Logout
@@ -34,53 +35,18 @@ const Dashboard = ({}: InferGetServerSidePropsType<
         <h3 className="mb-4 text-3xl font-bold text-gold">
           Welcome back, {session?.user?.name}
         </h3>
-        <div className="flex w-full flex-col gap-8 sm:flex-row">
+        <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="h-full">
             <QRCode className="rounded-md bg-white p-4" value="1" />
           </div>
           <div className="flex w-full flex-col gap-8">
-            <div className="flex w-full">
-              <Link
-                className={`${useGradient()} w-full rounded-l-md py-4 text-center text-lg text-black`}
-                href="/application"
-              >
-                Hacker Application
-              </Link>
-              <Link
-                className="w-full rounded-r-md bg-gold py-4 text-center text-lg text-black"
-                href="/application"
-              >
-                COMPLETE
-              </Link>
-            </div>
-            <div className="flex w-full">
-              <Link
-                className={`${useGradient()} w-full rounded-l-md py-4 text-center text-lg text-black`}
-                href="/application"
-              >
-                Volunteer Application
-              </Link>
-              <Link
-                className="w-full rounded-r-md bg-gold py-4 text-center text-lg text-black"
-                href="/application"
-              >
-                INCOMPLETE
-              </Link>
-            </div>
-            <div className="flex w-full">
-              <Link
-                className="w-full rounded-l-md bg-grey py-4 text-center text-lg text-black"
-                href="/application"
-              >
-                RSVP
-              </Link>
-              <Link
-                className="w-full rounded-r-md bg-grey py-4 text-center text-lg text-black"
-                href="/application"
-              >
-                COMING SOON
-              </Link>
-            </div>
+            <DashboardButton name="Hacker Application" status="COMPLETE" />
+            <DashboardButton
+              name="Volunteer Application"
+              href="/application"
+              status="INCOMPLETE"
+            />
+            <DashboardButton name="RSVP" status="UNAVAILABLE" />
           </div>
         </div>
       </section>

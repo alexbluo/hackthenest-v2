@@ -12,14 +12,20 @@ import useGradient from "../utils/useGradient";
 const schema = z.object({
   firstName: z.string().min(1, { message: "*" }),
   lastName: z.string().min(1, { message: "*" }),
-  phone: z.string().min(1, { message: "*" }),
-  country: z.string().min(1),
-  age: z.string().min(1),
-  yog: z.string().min(1),
-  school: z.string().min(1),
-  diet: z.string().min(1),
-  shirt: z.string().min(1),
-  outreach: z.string().min(1),
+  phone: z
+    .string()
+    .min(1, { message: "*" })
+    .regex(
+      /^((\\([0-9]{3}\\)[ \\-]*)|([0-9]{3})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{4}?$/,
+      { message: "Invalid format" }
+    ),
+  age: z.string().min(1, { message: "*" }),
+  yog: z.string().min(1, { message: "*" }),
+  school: z.string().min(1, { message: "*" }),
+  country: z.string().min(1, { message: "*" }),
+  diet: z.string().min(1, { message: "*" }),
+  shirt: z.string().min(1, { message: "*" }),
+  outreach: z.string().min(1, { message: "*" }),
   conduct: z.literal(true),
   privacy: z.literal(true),
 });
@@ -62,7 +68,7 @@ const Application = () => {
         <h2 className={`${useGradient()} mb-8`}>Application</h2>
 
         {/* TODO: change back to full width */}
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="text-lg" onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
@@ -70,14 +76,14 @@ const Application = () => {
                 name="firstName"
                 placeholder="Bumble"
                 register={register}
-                error={errors}
+                error={errors.firstName}
               />
               <ApplicationInput
                 fieldName="Last Name"
                 name="lastName"
                 placeholder="Bee"
                 register={register}
-                error={errors}
+                error={errors.lastName}
               />
             </div>
             <ApplicationInput
@@ -85,7 +91,7 @@ const Application = () => {
               name="phone"
               placeholder="123-456-7890"
               register={register}
-              error={errors}
+              error={errors.phone}
             />
             <ApplicationDropdown
               fieldName="Age"
@@ -100,6 +106,7 @@ const Application = () => {
               ]}
               defaultValue={undefined}
               control={control}
+              error={errors.age}
             />
             <ApplicationDropdown
               fieldName="Year of Graduation"
@@ -112,6 +119,7 @@ const Application = () => {
               ]}
               defaultValue={undefined}
               control={control}
+              error={errors.yog}
             />
             <ApplicationDropdown
               fieldName="School"
@@ -119,6 +127,7 @@ const Application = () => {
               options={[]}
               defaultValue={undefined}
               control={control}
+              error={errors.school}
             />
             <ApplicationDropdown
               fieldName="Country of Residence"
@@ -126,6 +135,7 @@ const Application = () => {
               options={[]}
               defaultValue={undefined}
               control={control}
+              error={errors.country}
             />
             <ApplicationDropdown
               fieldName="Dietary Restrictions"
@@ -143,6 +153,7 @@ const Application = () => {
               ]}
               defaultValue={undefined}
               control={control}
+              error={errors.diet}
             />
             <ApplicationDropdown
               fieldName="Shirt Size"
@@ -156,6 +167,7 @@ const Application = () => {
               ]}
               defaultValue={undefined}
               control={control}
+              error={errors.shirt}
             />
             <ApplicationDropdown
               fieldName="How did you hear about us?"
@@ -174,63 +186,59 @@ const Application = () => {
               ]}
               defaultValue={undefined}
               control={control}
+              error={errors.outreach}
             />
-            {watch("outreach") === "friendFamily" && (
-              <div>
-                <p>Referral Code</p>
-                <input
-                  className="h-10 w-full border-b-2 border-grey bg-transparent bg-black shadow duration-200 ease-in-out focus:border-blue-light"
-                  type="text"
-                  placeholder="Type your answer here..."
-                />
-              </div>
-            )}
             <div className="flex flex-col gap-6">
-              <div>
+              <div className="flex items-center gap-4">
                 <input
-                  className="mr-1 rounded"
+                  className="h-4 w-4 appearance-none rounded-sm bg-white checked:bg-blue-light"
                   type="checkbox"
                   {...register("conduct")}
                 />
                 {/* TODO: change link style */}
-                <span>
-                  I have read and agree to the&nbsp;
+                <span className="w-full">
+                  I have read and agree to the{" "}
                   <a
+                    className="underline"
                     href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
                     target="_blank"
                     rel="noreferrer"
                   >
                     MLH Code of Conduct
-                  </a>
+                  </a>{" "}
+                  {errors.conduct && <span className="text-red">*</span>}
                 </span>
               </div>
-              <div>
+              <div className="flex w-full items-center gap-4">
                 <input
-                  className="mr-1 rounded"
+                  className="h-4 w-4 appearance-none rounded-sm bg-white checked:bg-blue-light"
                   type="checkbox"
                   {...register("privacy")}
                 />
-                <span>
+                <span className="w-full">
                   I authorize you to share my application/registration
                   information with Major League Hacking for event
                   administration, ranking, and MLH administration in-line with
-                  the&nbsp;
+                  the MLH Privacy Policy. I further agree to the terms of both
+                  the{" "}
                   <a
-                    href="https://mlh.io/privacy"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    MLH Privacy Policy
-                  </a>
-                  . I further agree to the terms of both the&nbsp;
-                  <a
+                    className="underline"
                     href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
                     target="_blank"
                     rel="noreferrer"
                   >
                     MLH Contest Terms and Conditions
-                  </a>
-                  &nbsp;and the MLH Privacy Policy.
+                  </a>{" "}
+                  and the{" "}
+                  <a
+                    className="underline"
+                    href="https://mlh.io/privacy"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    MLH Privacy Policy
+                  </a>{" "}
+                  {errors.privacy && <span className="text-red">*</span>}
                 </span>
               </div>
             </div>
