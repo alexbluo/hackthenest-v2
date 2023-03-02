@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import { SessionProvider } from "next-auth/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import * as gtag from "../utils/gtag";
 import { GA_TRACKING_ID } from "../utils/gtag";

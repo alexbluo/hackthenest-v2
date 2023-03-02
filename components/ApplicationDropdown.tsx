@@ -1,5 +1,5 @@
-import { Control, Controller, FieldError } from "react-hook-form";
-import Select, { SingleValue } from "react-select";
+import { Control, Controller, FieldError, Merge } from "react-hook-form";
+import Select, { MultiValue, SingleValue } from "react-select";
 // eslint-disable-next-line import/no-cycle
 import { SchemaType } from "../pages/application";
 
@@ -19,8 +19,15 @@ interface Props {
   defaultValue: string | true | undefined;
   // control from RHF
   control: Control<SchemaType>;
+  // multiple select
+  isMulti?: boolean;
   // error message
-  error: FieldError | undefined;
+  error:
+    | Merge<
+        FieldError,
+        [(FieldError | undefined)?, ...(FieldError | undefined)[]]
+      >
+    | undefined;
 }
 
 const ApplicationDropdown = ({
@@ -29,6 +36,7 @@ const ApplicationDropdown = ({
   options,
   defaultValue,
   control,
+  isMulti,
   error,
 }: Props) => {
   return (
@@ -46,10 +54,13 @@ const ApplicationDropdown = ({
             ref={ref}
             instanceId={name}
             options={options}
+            isMulti={isMulti}
             value={options.find((el) => el.value === value)}
-            onChange={(newValue: SingleValue<Option>) =>
-              onChange(newValue?.value)
-            }
+            onChange={(newValue: any) => {
+              return isMulti
+                ? onChange(newValue?.map((o: Option) => o.value))
+                : onChange(newValue?.value);
+            }}
             styles={{
               control: (base, state) => ({
                 ...base,
@@ -90,7 +101,7 @@ const ApplicationDropdown = ({
                 marginBottom: 0,
                 borderRadius: 0,
               }),
-              menuList: () => ({}),
+              menuList: (base) => ({ ...base, padding: 0 }),
               indicatorSeparator: () => ({
                 width: 0,
               }),
@@ -115,6 +126,24 @@ const ApplicationDropdown = ({
                 ...base,
                 padding: 0,
                 margin: 0,
+              }),
+              multiValue: (base) => ({
+                ...base,
+                backgroundColor: "#2396bf",
+                color: "#ffffff",
+                gap: "4px",
+                margin: 0,
+                marginRight: "4px",
+                cursor: "default",
+              }),
+              multiValueRemove: () => ({
+                paddingRight: "4px",
+                cursor: "pointer",
+              }),
+              multiValueLabel: (base) => ({
+                ...base,
+                padding: 0,
+                color: "#ffffff",
               }),
             }}
           />

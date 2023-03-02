@@ -1,13 +1,13 @@
 import axios from "axios";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import { getServerSession } from "next-auth";
-import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { signOut, useSession } from "next-auth/react";
 import QRCode from "react-qr-code";
+import { authOptions } from "./api/auth/[...nextauth]";
 import DashboardButton from "../components/DashboardButton";
 import useGradient from "../utils/useGradient";
-import { authOptions } from "./api/auth/[...nextauth]";
 
 // https://www.npmjs.com/package/react-qr-code
 const Dashboard = ({}: InferGetServerSidePropsType<

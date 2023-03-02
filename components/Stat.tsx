@@ -5,7 +5,6 @@ interface Props {
   caption: string;
 }
 
-// TODO: test gradient bg and black text
 const Stat = ({ stat, caption }: Props) => {
   return (
     <div

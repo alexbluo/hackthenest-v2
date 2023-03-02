@@ -1,8 +1,8 @@
 import { useState, ChangeEvent } from "react";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import Image from "next/image";
 import { getServerSession } from "next-auth";
 import { getProviders, signIn } from "next-auth/react";
-import Image from "next/image";
 import { authOptions } from "./api/auth/[...nextauth]";
 
 interface Credentials {

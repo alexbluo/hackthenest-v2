@@ -25,7 +25,7 @@ model HackerApp {
   yog       Int
   school    String
   country   String
-  diet      String
+  diet      Diet[]
   shirt     String
   outreach  String
   user      User   @relation(fields: [userId], references: [id])
@@ -38,8 +38,16 @@ model VolunteerApp {
   phone     String
   age       Int
   role      String // volunteer, mentor, judge, sponsor
-  diet      String
+  diet      Diet[]
   shirt     String
   user      User   @relation(fields: [userId], references: [id])
   userId    Int    @unique
+}
+
+model Diet {
+  diet               String
+  hackerApp          HackerApp?    @relation(fields: [hackerAppUserId], references: [userId])
+  hackerAppUserId    Int           @unique
+  volunteerApp       VolunteerApp? @relation(fields: [volunteerAppUserId], references: [userId])
+  volunteerAppUserId Int           @unique
 }

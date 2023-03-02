@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import ApplicationDropdown from "../components/ApplicationDropdown";
 import ApplicationInput from "../components/ApplicationInput";
+import countries from "../utils/countries";
 import useGradient from "../utils/useGradient";
 
 const schema = z.object({
@@ -19,11 +20,11 @@ const schema = z.object({
       /^((\\([0-9]{3}\\)[ \\-]*)|([0-9]{3})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{4}?$/,
       { message: "Invalid format" }
     ),
-  age: z.string().min(1, { message: "*" }),
-  yog: z.string().min(1, { message: "*" }),
+  age: z.number().min(1, { message: "*" }),
+  yog: z.number().min(1, { message: "*" }),
   school: z.string().min(1, { message: "*" }),
   country: z.string().min(1, { message: "*" }),
-  diet: z.string().min(1, { message: "*" }),
+  diet: z.string().array().nonempty({ message: "*" }),
   shirt: z.string().min(1, { message: "*" }),
   outreach: z.string().min(1, { message: "*" }),
   conduct: z.literal(true),
@@ -66,7 +67,6 @@ const Application = () => {
 
         <h2 className={`${useGradient()} mb-8`}>Application</h2>
 
-        {/* TODO: change back to full width */}
         <form className="text-lg" onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
@@ -92,16 +92,23 @@ const Application = () => {
               register={register}
               error={errors.phone}
             />
+            <ApplicationInput
+              fieldName="School"
+              name="school"
+              placeholder="Barry Benson High School"
+              register={register}
+              error={errors.school}
+            />
             <ApplicationDropdown
               fieldName="Age"
               name="age"
               options={[
-                { value: "13", label: "13" },
-                { value: "14", label: "14" },
-                { value: "15", label: "15" },
-                { value: "16", label: "16" },
-                { value: "17", label: "17" },
-                { value: "18", label: "18" },
+                { value: 13, label: "13" },
+                { value: 14, label: "14" },
+                { value: 15, label: "15" },
+                { value: 16, label: "16" },
+                { value: 17, label: "17" },
+                { value: 18, label: "18" },
               ]}
               defaultValue={undefined}
               control={control}
@@ -121,17 +128,9 @@ const Application = () => {
               error={errors.yog}
             />
             <ApplicationDropdown
-              fieldName="School"
-              name="school"
-              options={[]}
-              defaultValue={undefined}
-              control={control}
-              error={errors.school}
-            />
-            <ApplicationDropdown
               fieldName="Country of Residence"
               name="country"
-              options={[]}
+              options={countries}
               defaultValue={undefined}
               control={control}
               error={errors.country}
@@ -152,6 +151,7 @@ const Application = () => {
               ]}
               defaultValue={undefined}
               control={control}
+              isMulti
               error={errors.diet}
             />
             <ApplicationDropdown
@@ -173,7 +173,7 @@ const Application = () => {
               name="outreach"
               options={[
                 { value: "friendFamily", label: "Friend/Family" },
-                { value: "flier", label: "Flier" },
+                { value: "flyer", label: "Flyer" },
                 { value: "instagram", label: "Instagram" },
                 { value: "facebook", label: "Facebook" },
                 { value: "twitter", label: "Twitter" },
@@ -194,7 +194,6 @@ const Application = () => {
                   type="checkbox"
                   {...register("conduct")}
                 />
-                {/* TODO: change link style */}
                 <span className="w-full">
                   I have read and agree to the{" "}
                   <a
