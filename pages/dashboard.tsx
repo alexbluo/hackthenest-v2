@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { GetServerSidePropsContext } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
@@ -9,10 +9,7 @@ import { authOptions } from "./api/auth/[...nextauth]";
 import DashboardButton from "../components/DashboardButton";
 import useGradient from "../utils/useGradient";
 
-// https://www.npmjs.com/package/react-qr-code
-const Dashboard = ({}: InferGetServerSidePropsType<
-  typeof getServerSideProps
->) => {
+const Dashboard = () => {
   const { data: session } = useSession();
 
   return (
@@ -62,15 +59,15 @@ export const getServerSideProps = async (
   if (!session) {
     return {
       redirect: {
-        destination: "/",
+        destination: "/login",
         permanent: false,
       },
     };
   }
 
-  // const user = await axios.get("/api/user", {
-  //   params: { email: session.user?.email },
-  // });
+  await axios.post("http://localhost:3000/api/user/create", {
+    email: session.user?.email,
+  });
 
   return {
     props: { session },

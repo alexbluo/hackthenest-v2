@@ -1,10 +1,14 @@
 /* eslint-disable import/no-cycle */
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { getServerSession } from "next-auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
+import { authOptions } from "./api/auth/[...nextauth]";
 import ApplicationDropdown from "../components/ApplicationDropdown";
 import ApplicationInput from "../components/ApplicationInput";
 import countries from "../utils/countries";
@@ -33,7 +37,9 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const Application = () => {
+const Application = ({
+  user,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const {
     register,
     handleSubmit,
@@ -250,6 +256,29 @@ const Application = () => {
       </section>
     </div>
   );
+};
+
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const session = await getServerSession(context.req, context.res, authOptions);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  const { data } = await axios.get(
+    `http://localhost:3000/api/user/${session.user?.email}`
+  );
+
+  return {
+    props: { user: data },
+  };
 };
 
 export default Application;

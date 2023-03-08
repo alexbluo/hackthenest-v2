@@ -11,7 +11,6 @@ const FrontSection = () => {
           Hack the Nest
         </h1>
         <div className="flex w-fit flex-col gap-8">
-          {/* find diff fonts bc weights arent good */}
           <div className="mx-auto flex gap-4 font-header text-xl">
             <h3 className="font-medium">4.15.23 - 4.16.23</h3>
             <div className="">•</div>

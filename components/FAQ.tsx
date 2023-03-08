@@ -26,7 +26,7 @@ const FAQ = ({ question, children }: Props) => {
         className="flex cursor-pointer select-none items-center justify-between text-xl"
         onClick={() => setOpen(!open)}
       >
-        <h3 className="cursor-pointer select-none text-xl whitespace-pre-line">{question}</h3>
+        <h3 className="cursor-pointer select-none text-xl text-left whitespace-pre-line">{question}</h3>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
