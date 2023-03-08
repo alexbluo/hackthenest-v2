@@ -17,6 +17,7 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
       email,
     },
   });
+  console.log(user)
 
   res.json(user);
 };

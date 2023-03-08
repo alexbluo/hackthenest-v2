@@ -1,10 +1,10 @@
+import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 
-// edit user rsvp application etc
+const prisma = new PrismaClient();
+
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req);
-  console.log(res);
-  res.json("hi");
+
 };
 
 export default handler;

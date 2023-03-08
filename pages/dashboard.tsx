@@ -7,6 +7,7 @@ import { signOut, useSession } from "next-auth/react";
 import QRCode from "react-qr-code";
 import { authOptions } from "./api/auth/[...nextauth]";
 import DashboardButton from "../components/DashboardButton";
+import base from "../utils/base";
 import useGradient from "../utils/useGradient";
 
 const Dashboard = () => {
@@ -65,7 +66,7 @@ export const getServerSideProps = async (
     };
   }
 
-  await axios.post("http://localhost:3000/api/user/create", {
+  await axios.post(`${base}/api/user/create`, {
     email: session.user?.email,
   });
 

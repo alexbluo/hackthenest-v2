@@ -11,6 +11,7 @@ import * as z from "zod";
 import { authOptions } from "./api/auth/[...nextauth]";
 import ApplicationDropdown from "../components/ApplicationDropdown";
 import ApplicationInput from "../components/ApplicationInput";
+import base from "../utils/base";
 import countries from "../utils/countries";
 import useGradient from "../utils/useGradient";
 
@@ -272,9 +273,7 @@ export const getServerSideProps = async (
     };
   }
 
-  const { data } = await axios.get(
-    `http://localhost:3000/api/user/${session.user?.email}`
-  );
+  const { data } = await axios.get(`${base}/api/user/${session.user?.email}`);
 
   return {
     props: { user: data },

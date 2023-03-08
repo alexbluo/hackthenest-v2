@@ -5,7 +5,7 @@ import useGradient from "../../utils/useGradient";
 const FrontSection = () => {
   return (
     <section className="min-h-screen pt-32" id="front">
-      <div className="relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-16">
+      <div className="relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-24">
         {/* TODO: https://www.youtube.com/watch?v=W5oawMJaXbU */}
         <h1 className="text-center text-7xl font-extrabold text-ice">
           Hack the Nest
