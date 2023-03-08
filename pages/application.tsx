@@ -273,7 +273,11 @@ export const getServerSideProps = async (
     };
   }
 
-  const { data } = await axios.get(`${base}/api/user/${session.user?.email}`);
+  const { data } = await axios.get(`${base}/api/user/${session.user?.email}`, {
+    headers: {
+      cookie: context.req.headers.cookie || "",
+    },
+  });
 
   return {
     props: { user: data },

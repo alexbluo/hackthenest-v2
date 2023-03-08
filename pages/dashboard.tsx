@@ -66,9 +66,17 @@ export const getServerSideProps = async (
     };
   }
 
-  await axios.post(`${base}/api/user/create`, {
-    email: session.user?.email,
-  });
+  await axios.post(
+    `${base}/api/user/create`,
+    {
+      email: session.user?.email,
+    },
+    {
+      headers: {
+        cookie: context.req.headers.cookie || "",
+      },
+    }
+  );
 
   return {
     props: { session },
