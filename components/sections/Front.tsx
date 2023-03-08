@@ -11,7 +11,7 @@ const FrontSection = () => {
           Hack the Nest
         </h1>
         <div className="flex w-fit flex-col gap-8">
-          <div className="mx-auto flex gap-4 font-header text-xl">
+          {/* <div className="mx-auto flex gap-4 font-header text-xl">
             <h3 className="font-medium">4.15.23 - 4.16.23</h3>
             <div className="">•</div>
             <h3 className="font-medium">River Hill High School</h3>
@@ -21,7 +21,7 @@ const FrontSection = () => {
             href="/login"
           >
             Apply Now!
-          </Link>
+          </Link> */}
         </div>
       </div>
 
