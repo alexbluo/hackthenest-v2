@@ -23,22 +23,19 @@ const FAQSection = () => {
             more :&#41;
           </FAQ>
           <FAQ question="What if I don't know how to code?">
-            That&apos;s completely fine! In fact, many participants are first
-            time hackers and beginners. Hack the Nest is a great chance to
-            explore your interests while meeting new friends and interacting
-            with familiar companies.
+            That&apos;s completely fine - in fact, many participants are first
+            time hackers and beginners!
           </FAQ>
           <FAQ question="Why is there an application?">
-            Although we&apos;d love to admit everyone, we only have enough
-            resources to support a limited number of hackers. The good news is
-            that we&apos;ll likely not go too far over this limit (if at all),
-            so we strongly encourage everyone to apply - it only takes a few
-            minutes and you can always decide whether you are able to attend as
-            the event approaches.
+            The application isn&apos;t rigorous at all; we use the term more
+            like registration with the unlikely case that we shoot way over our
+            logistical limit. It only takes a few minutes to fill out and you
+            can always decide whether you want to go as the event approaches.
           </FAQ>
           <FAQ question="Do I have to make a project?">
             You&apos;re not required to make a project to attend, but we
-            recommend that you do in order to get the full hackathon experience.
+            strongly recommend that you do in order to get the full hackathon
+            experience.
           </FAQ>
         </div>
         <div className="flex w-full flex-col gap-4">
@@ -60,11 +57,11 @@ const FAQSection = () => {
             beforehand through our Discord.
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
-            Due to limitations with our venue, hackers will return home around
-            9:00 - 10:00pm. We suggest carpooling with your group and even
-            staying over at a member&apos;s place. The hacking and fun
-            doesn&apos;t stop in the wee hours - we&apos;ll even be hosting
-            online video game tournaments!
+            Due to limitations with our venue, hackers will return home for the
+            night. We suggest carpooling with your group and even staying over
+            at a member&apos;s place. The hacking and fun doesn&apos;t stop in
+            the wee hours - we&apos;ll even be hosting online video game
+            tournaments!
           </FAQ>
           <FAQ question="I have more questions!">
             Please direct any questions to hello@hackthenest.org and we&apos;ll

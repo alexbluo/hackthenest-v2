@@ -7,7 +7,7 @@
     @apply container py-8 lg:py-16;
   }
   h2 {
-    @apply font-header bg-clip-text text-5xl font-bold text-transparent;
+    @apply bg-clip-text font-header text-5xl font-bold text-transparent;
   }
 }
 
@@ -94,34 +94,34 @@ input:focus {
 
 .gradient-webkit {
   background-image: -webkit-repeating-linear-gradient(
-      100deg,
+      260deg,
       #09cdf963 200px,
       #7fcec563 300px,
       #045de963 400px,
       #09c6f963 600px
     ),
-    -webkit-repeating-linear-gradient(120deg, #09c5f969 150px, #045de981 250px, #7fcec581
+    -webkit-repeating-linear-gradient(280deg, #09c5f969 150px, #045de981 250px, #7fcec581
           350px, #09c6f969 450px),
-    -webkit-repeating-linear-gradient(130deg, #09c5f963 100px, #045de981 200px, #7fcec581
+    -webkit-repeating-linear-gradient(290deg, #09c5f963 100px, #045de981 200px, #7fcec581
           300px, #09c6f963 400px),
-    -webkit-repeating-linear-gradient(132deg, #09c6f981 150px, #045de969 250px, #7fcec569
+    -webkit-repeating-linear-gradient(292deg, #09c6f981 150px, #045de969 250px, #7fcec569
           400px, #09c6f981 500px);
   animation: flow 2.5s infinite ease-in-out;
 }
 
 .gradient-moz {
   background-image: -moz-repeating-linear-gradient(
-      100deg,
+      260deg,
       #09cdf963 200px,
       #7fcec563 300px,
       #045de963 400px,
       #09c6f963 600px
     ),
-    -moz-repeating-linear-gradient(120deg, #09c5f969 150px, #045de981 250px, #7fcec581
+    -moz-repeating-linear-gradient(280deg, #09c5f969 150px, #045de981 250px, #7fcec581
           350px, #09c6f969 450px),
-    -moz-repeating-linear-gradient(130deg, #09c5f963 100px, #045de981 200px, #7fcec581
+    -moz-repeating-linear-gradient(290deg, #09c5f963 100px, #045de981 200px, #7fcec581
           300px, #09c6f963 400px),
-    -moz-repeating-linear-gradient(132deg, #09c6f981 150px, #045de969 250px, #7fcec569
+    -moz-repeating-linear-gradient(292deg, #09c6f981 150px, #045de969 250px, #7fcec569
           400px, #09c6f981 500px);
   animation: flow 2.5s infinite ease-in-out;
 }
