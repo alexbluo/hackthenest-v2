@@ -1,4 +1,5 @@
 import useGradient from "../../utils/useGradient";
+import ScheduleBlock from "../ScheduleBlock";
 
 const ScheduleSection = () => {
   return (
@@ -10,6 +11,9 @@ const ScheduleSection = () => {
         Hack the Nest will begin morning of Saturday, April 15 and end evening
         of Sunday, April 16. Full details will be released soon!
       </p>
+      <ScheduleBlock name="test" time="9:00am - 10:00am">
+        description here
+      </ScheduleBlock>
     </section>
   );
 };

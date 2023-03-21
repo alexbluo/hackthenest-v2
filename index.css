@@ -125,3 +125,55 @@ input:focus {
           400px, #09c6f981 500px);
   animation: flow 2.5s infinite ease-in-out;
 }
+
+/* https://codepen.io/rauldronca/pen/PzMgzp */
+.button-thing {
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 20rem;
+  position: relative;
+  transition: all 0.5s;
+  background-color: #3498db;
+
+  &:active {
+    margin-left: 10px;
+    margin-top: 10px;
+    &::before {
+      bottom: -5px;
+      height: 5px;
+      left: 3px;
+    }
+
+    &::after {
+      right: -5px;
+      width: 5px;
+      bottom: -3px;
+    }
+  }
+}
+
+.button-thing::before {
+  position: absolute;
+  background-color: blue;
+  content: "";
+  bottom: -15px;
+  height: 15px;
+  width: 100%;
+  left: 8px;
+  transform: skewX(45deg);
+  background-color: darken(#3498db, 20%);
+}
+
+.button-thing::after {
+  position: absolute;
+  background-color: green;
+  content: "";
+  /* top:0; */
+  right:-15px;
+  height: 100%;
+  width: 15px;
+  bottom: -8px;
+  transform: skewY(45deg);
+  background-color: darken(#3498db, 30%);
+}
