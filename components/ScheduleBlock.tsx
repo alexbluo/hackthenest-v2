@@ -1,6 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 import { motion, TargetAndTransition, VariantLabels } from "framer-motion";
+import Modal from "./Modal";
 
 interface Props {
   name: string;
@@ -26,10 +27,14 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
     setStatus("pressed");
   };
 
+  const handleClose = () => {
+    setStatus(undefined);
+  };
+
   return (
     <div className={classNames("relative", { "ml-12": order === "even" })}>
       <motion.div
-        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-center bg-gold px-4 text-center text-lg"
+        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-center bg-blue-light px-4 text-center text-lg"
         animate={status}
         variants={{
           hover: {
@@ -43,6 +48,7 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         }}
         transition={{
           duration: 0.5,
+          ease: "easeIn",
         }}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
@@ -51,7 +57,7 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         {name}
       </motion.div>
       <motion.div
-        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center justify-center overflow-hidden whitespace-nowrap bg-blue-light text-center"
+        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center justify-center overflow-hidden whitespace-nowrap bg-blue-mid text-center"
         animate={status}
         variants={{
           hover: { width: "120px" },
@@ -59,6 +65,7 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         }}
         transition={{
           duration: 0.5,
+          ease: "easeIn",
         }}
       >
         {time}
@@ -72,8 +79,12 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         }}
         transition={{
           duration: 0.5,
+          ease: "easeIn",
         }}
       ></motion.div>
+      <Modal visible={status === "pressed"} onTap={handleClose}>
+        {children}
+      </Modal>
     </div>
     // <button className="button-thing">{name}</button>
   );
