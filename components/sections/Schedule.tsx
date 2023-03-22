@@ -7,8 +7,14 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className={useGradient()}>Schedule</h2>
       </div>
-      <div className="flex  justify-between mr-32 pt-40">
-        <div className="flex flex-col">
+      <div className="flex justify-between mr-32 pt-40">
+        <div className="flex flex-col even:text-blue-light">
+          <ScheduleBlock name="test" time="9:00am - 10:00am">
+            description here
+          </ScheduleBlock>
+          <ScheduleBlock name="test" time="9:00am - 10:00am">
+            description here
+          </ScheduleBlock>
           <ScheduleBlock name="test" time="9:00am - 10:00am">
             description here
           </ScheduleBlock>
