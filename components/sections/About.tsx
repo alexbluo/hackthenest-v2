@@ -8,7 +8,7 @@ const AboutSection = () => {
         <h2 className={useGradient()}>About</h2>
       </div>
       <article className="-mx-8 mb-8 w-full rounded-r-3xl bg-black p-8 text-xl sm:w-3/4 sm:rounded-3xl">
-        This April, Hack the Nest invites 250 high school students to a 36-hour
+        This September, Hack the Nest invites 300 high school students to a 36-hour
         hackathon in the heart of Maryland. Our team has been working tirelessly
         to pack our schedule to the brim with educational workshops, exciting
         mini-events, and enticing prizes. Whether it’s ping-pong without paddles
