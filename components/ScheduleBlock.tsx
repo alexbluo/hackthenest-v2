@@ -1,13 +1,15 @@
 import { useState } from "react";
+import classNames from "classnames";
 import { motion, TargetAndTransition, VariantLabels } from "framer-motion";
 
 interface Props {
   name: string;
   time: string;
+  order: "even" | "odd";
   children: string;
 }
 
-const ScheduleBlock = ({ name, time, children }: Props) => {
+const ScheduleBlock = ({ name, time, order, children }: Props) => {
   const [status, setStatus] = useState<
     boolean | TargetAndTransition | VariantLabels | undefined
   >(undefined);
@@ -25,9 +27,9 @@ const ScheduleBlock = ({ name, time, children }: Props) => {
   };
 
   return (
-    <div className="relative">
+    <div className={classNames("relative", { "ml-12": order === "even" })}>
       <motion.div
-        className="relative left-40 bottom-[92px] flex h-16 w-80 origin-bottom-left items-center justify-center bg-gold text-xl"
+        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-center bg-gold px-4 text-center text-lg"
         animate={status}
         variants={{
           hover: {
@@ -40,7 +42,7 @@ const ScheduleBlock = ({ name, time, children }: Props) => {
           },
         }}
         transition={{
-          duration: 1,
+          duration: 0.5,
         }}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
@@ -49,27 +51,27 @@ const ScheduleBlock = ({ name, time, children }: Props) => {
         {name}
       </motion.div>
       <motion.div
-        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center justify-center overflow-hidden whitespace-nowrap bg-blue-light"
+        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center justify-center overflow-hidden whitespace-nowrap bg-blue-light text-center"
         animate={status}
         variants={{
-          hover: { width: "7.5rem" },
+          hover: { width: "120px" },
           pressed: { width: 0 },
         }}
         transition={{
-          duration: 1,
+          duration: 0.5,
         }}
       >
         {time}
       </motion.div>
       <motion.div
-        className="absolute bottom-0 flex h-[92px] w-80 origin-bottom-left -skew-x-[60deg] items-center justify-center overflow-hidden whitespace-nowrap bg-blue-dark"
+        className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark "
         animate={status}
         variants={{
           hover: { height: "69px" },
           pressed: { height: 0 },
         }}
         transition={{
-          duration: 1,
+          duration: 0.5,
         }}
       ></motion.div>
     </div>
