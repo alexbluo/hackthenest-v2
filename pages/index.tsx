@@ -27,7 +27,7 @@ const Index: NextPage = () => {
       >
         <div className="absolute top-0 left-0 h-full w-screen">
           <Image
-            className="object-cover sm:object-fill"
+            className="object-cover"
             src="/background.png"
             alt="Website background"
             fill

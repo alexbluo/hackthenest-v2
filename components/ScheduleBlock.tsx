@@ -13,14 +13,14 @@ interface Props {
 const ScheduleBlock = ({ name, time, order, children }: Props) => {
   const [status, setStatus] = useState<
     boolean | TargetAndTransition | VariantLabels | undefined
-  >(undefined);
+  >("neutral");
 
   const handleHoverStart = () => {
     if (status !== "pressed") setStatus("hover");
   };
 
   const handleHoverEnd = () => {
-    if (status !== "pressed") setStatus(undefined);
+    if (status !== "pressed") setStatus("neutral");
   };
 
   const handleTap = () => {
@@ -28,15 +28,20 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
   };
 
   const handleClose = () => {
-    setStatus(undefined);
+    setStatus("neutral");
   };
 
   return (
     <div className={classNames("relative", { "ml-12": order === "even" })}>
-      <motion.div
-        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-center bg-blue-light px-4 text-center text-lg"
+      <motion.button
+        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center bg-blue-light px-8 text-lg"
         animate={status}
+        initial="pressed"
         variants={{
+          neutral: {
+            x: 0,
+            y: 0,
+          },
           hover: {
             x: "-40px",
             y: "23px",
@@ -46,6 +51,7 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
             y: "92px",
           },
         }}
+        exit="pressed"
         transition={{
           duration: 0.5,
           ease: "easeIn",
@@ -55,28 +61,34 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         onTap={handleTap}
       >
         {name}
-      </motion.div>
+      </motion.button>
       <motion.div
-        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center justify-center overflow-hidden whitespace-nowrap bg-blue-mid text-center"
+        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center overflow-hidden whitespace-nowrap bg-blue-mid"
         animate={status}
+        initial="pressed"
         variants={{
+          neutral: { width: "160px" },
           hover: { width: "120px" },
           pressed: { width: 0 },
         }}
+        exit="pressed"
         transition={{
           duration: 0.5,
           ease: "easeIn",
         }}
       >
-        {time}
+        <span className="pl-4"> {time}</span>
       </motion.div>
       <motion.div
         className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark "
         animate={status}
+        initial="pressed"
         variants={{
+          neutral: { height: "92px" },
           hover: { height: "69px" },
           pressed: { height: 0 },
         }}
+        exit="pressed"
         transition={{
           duration: 0.5,
           ease: "easeIn",
@@ -86,7 +98,6 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         {children}
       </Modal>
     </div>
-    // <button className="button-thing">{name}</button>
   );
 };
 
