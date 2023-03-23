@@ -10,10 +10,8 @@ const Stat = ({ stat, caption }: Props) => {
     <div
       className={`${useGradient()} h-36 w-full rounded-xl bg-white py-8 px-4 text-center text-black`}
     >
-      <div className="h-full bg-clip-text">
-        <h3 className="pb-2 font-header text-4xl font-semibold">{stat}</h3>
-        <p className="">{caption}</p>
-      </div>
+      <h3 className="pb-2 font-header text-4xl font-semibold">{stat}</h3>
+      <h4 className="">{caption}</h4>
     </div>
   );
 };
