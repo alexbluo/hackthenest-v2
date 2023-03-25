@@ -3,11 +3,12 @@ import { AnimatePresence, motion, TapInfo } from "framer-motion";
 
 interface Props {
   visible: boolean;
+  width: number;
   children: ReactNode;
   onTap: (event: MouseEvent | TouchEvent | PointerEvent, info: TapInfo) => void;
 }
 
-const Modal = ({ visible, children, onTap }: Props) => {
+const Modal = ({ visible, width, children, onTap }: Props) => {
   return (
     <AnimatePresence>
       {visible && (
@@ -19,12 +20,18 @@ const Modal = ({ visible, children, onTap }: Props) => {
             }}
             animate={{
               opacity: 1,
+              transition: {
+                duration: 0.4,
+                ease: "easeInOut",
+              },
             }}
             exit={{
               opacity: 0,
-            }}
-            transition={{
-              duration: 0.5,
+              transition: {
+                duration: 0.4,
+                ease: "easeInOut",
+                delay: 0.8,
+              },
             }}
             onTap={onTap}
           ></motion.div>
@@ -35,31 +42,41 @@ const Modal = ({ visible, children, onTap }: Props) => {
             }}
             animate={{
               opacity: 1,
+              transition: {
+                duration: 0.4,
+                ease: "easeInOut",
+              },
             }}
             exit={{
               opacity: 0,
-            }}
-            transition={{
-              duration: 0.5,
+              transition: {
+                duration: 0.4,
+                ease: "easeInOut",
+                delay: 0.8,
+              },
             }}
           >
             {children}
           </motion.div>
           <div className="fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 rounded-full">
-            <svg className="overflow-visible" width={200} height={100}>
+            <svg className="overflow-visible" width={width} height={width / 2}>
               <motion.rect
                 className="origin-center fill-transparent stroke-gold"
-                width={200}
-                height={100}
+                width={width}
+                height={width / 2}
                 strokeWidth="4px"
                 rx="1.5rem"
-                strokeDasharray={600}
-                strokeDashoffset={600}
+                strokeDasharray={width * 3}
+                strokeDashoffset={width * 3}
                 animate={{
-                    strokeDashoffset: 0,
-                    transition: {
-                      duration: 4,
-                  },
+                  strokeDashoffset: 0,
+                }}
+                exit={{
+                  strokeDashoffset: width * 3,
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeInOut",
                 }}
               ></motion.rect>
             </svg>

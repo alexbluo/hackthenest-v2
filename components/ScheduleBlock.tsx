@@ -6,11 +6,12 @@ import Modal from "./Modal";
 interface Props {
   name: string;
   time: string;
+  width: number;
   order: "even" | "odd";
   children: string;
 }
 
-const ScheduleBlock = ({ name, time, order, children }: Props) => {
+const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
   const [status, setStatus] = useState<
     boolean | TargetAndTransition | VariantLabels | undefined
   >("neutral");
@@ -33,8 +34,8 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
 
   return (
     <div className={classNames("relative", { "ml-12": order === "even" })}>
-      <motion.button
-        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center bg-blue-light px-8 text-lg"
+      <motion.div
+        className="relative bg-opacity-90 cursor-pointer left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-center bg-blue-light px-4 text-center text-lg"
         animate={status}
         initial="pressed"
         variants={{
@@ -45,6 +46,7 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
           hover: {
             x: "-40px",
             y: "23px",
+            // backdropFilter: "brightness(90%)",
           },
           pressed: {
             x: "-160px",
@@ -53,8 +55,8 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         }}
         exit="pressed"
         transition={{
-          duration: 0.5,
-          ease: "easeIn",
+          duration: 0.4,
+          ease: "easeInOut",
         }}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
@@ -73,8 +75,8 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         }}
         exit="pressed"
         transition={{
-          duration: 0.5,
-          ease: "easeIn",
+          duration: 0.4,
+          ease: "easeInOut",
         }}
       >
         <span className="pl-4"> {time}</span>
@@ -90,11 +92,11 @@ const ScheduleBlock = ({ name, time, order, children }: Props) => {
         }}
         exit="pressed"
         transition={{
-          duration: 0.5,
-          ease: "easeIn",
+          duration: 0.4,
+          ease: "easeInOut",
         }}
       ></motion.div>
-      <Modal visible={status === "pressed"} onTap={handleClose}>
+      <Modal visible={status === "pressed"} width={width} onTap={handleClose}>
         {children}
       </Modal>
     </div>

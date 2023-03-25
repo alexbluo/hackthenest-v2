@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import useGradient from "../../utils/useGradient";
+import useModalWidth from "../../utils/useWindowDimensions";
 import ScheduleBlock from "../ScheduleBlock";
 
 interface Block {
@@ -76,6 +77,7 @@ const ScheduleSection = () => {
   useEffect(() => {
     console.log(day);
   }, [day]);
+  const width = useModalWidth();
 
   return (
     <section className="" id="schedule">
@@ -95,6 +97,43 @@ const ScheduleSection = () => {
             9.23.23
           </div>
           <div className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark "></div>
+          {saturday.map(({ name, time, description }, i) => {
+            return (
+              <ScheduleBlock
+                name={name}
+                time={time}
+                width={width}
+                order={i % 2 === 0 ? "even" : "odd"}
+                key={name}
+              >
+                {description}
+              </ScheduleBlock>
+            );
+          })}
+        </div>
+        <div className="flex flex-col">
+          <div className="relative">
+            <div className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-center bg-gold px-4 text-center text-xl font-medium">
+              Sunday
+            </div>
+            <div className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center justify-center overflow-hidden whitespace-nowrap bg-blue-light text-center">
+              9.24.23
+            </div>
+            <div className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark "></div>
+          </div>
+          {sunday.map(({ name, time, description }, i) => {
+            return (
+              <ScheduleBlock
+                name={name}
+                time={time}
+                width={width}
+                order={i % 2 === 0 ? "even" : "odd"}
+                key={name}
+              >
+                {description}
+              </ScheduleBlock>
+            );
+          })}
         </div>
         <AnimatePresence exitBeforeEnter>
           {day === "sat"
