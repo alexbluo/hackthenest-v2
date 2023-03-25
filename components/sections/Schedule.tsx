@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import useGradient from "../../utils/useGradient";
-import useModalWidth from "../../utils/useWindowDimensions";
+import useScheduleWidth from "../../utils/useScheduleWidth";
 import ScheduleBlock from "../ScheduleBlock";
 
 interface Block {
@@ -73,11 +73,11 @@ const sunday: Block[] = [
 
 const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("sat", "sun");
+  const width = useScheduleWidth();
 
   useEffect(() => {
     console.log(day);
   }, [day]);
-  const width = useModalWidth();
 
   return (
     <section className="" id="schedule">

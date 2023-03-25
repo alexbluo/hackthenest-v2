@@ -42,6 +42,7 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
           neutral: {
             x: 0,
             y: 0,
+            filter: "brightness(1)",
           },
           hover: {
             x: "-40px",

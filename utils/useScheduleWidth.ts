@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useModalWidth = () => {
+const useScheduleWidth = () => {
   const getWindowDimensions = () => {
     if (typeof window === "undefined") return 0;
     if (window.innerWidth > 768) return window.innerWidth * 0.5;
@@ -27,4 +27,4 @@ const useModalWidth = () => {
   return windowDimensions;
 };
 
-export default useModalWidth;
+export default useScheduleWidth;
