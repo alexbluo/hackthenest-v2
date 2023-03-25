@@ -34,8 +34,8 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
 
   return (
     <div className={classNames("relative", { "ml-12": order === "even" })}>
-      <motion.div
-        className="relative bg-opacity-90 cursor-pointer left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-center bg-blue-light px-4 text-center text-lg"
+      <motion.button
+        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center bg-blue-light px-8 text-lg"
         animate={status}
         initial="pressed"
         variants={{
@@ -46,11 +46,12 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
           hover: {
             x: "-40px",
             y: "23px",
-            // backdropFilter: "brightness(90%)",
+            filter: "brightness(0.75)",
           },
           pressed: {
             x: "-160px",
             y: "92px",
+            filter: "brightness(0.5)",
           },
         }}
         exit="pressed"
@@ -79,7 +80,7 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
           ease: "easeInOut",
         }}
       >
-        <span className="pl-4"> {time}</span>
+        <span className="pl-4">{time}</span>
       </motion.div>
       <motion.div
         className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark "
