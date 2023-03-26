@@ -25,7 +25,7 @@ const NavBar = ({ open, toggleOpen }: Props) => {
         />
       </div>
 
-      <ul className="hidden gap-12 text-gold sm:flex">
+      <ul className="hidden gap-12 text-gold md:flex">
         <NavItem to="about">About</NavItem>
         <NavItem to="schedule">Schedule</NavItem>
         <NavItem to="faq">FAQ</NavItem>
@@ -40,7 +40,7 @@ const NavBar = ({ open, toggleOpen }: Props) => {
 
       <MobileMenuToggle open={open} handleClick={() => toggleOpen()} />
 
-      <MobileMenu open={open} />
+      <MobileMenu open={open} session={session} />
     </nav>
   );
 };
