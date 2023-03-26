@@ -6,7 +6,7 @@ const FAQSection = () => {
   return (
     <section id="faq">
       <div className="-mx-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-full">
-        <h2 className={useGradient()}>FAQ</h2>
+        <h2 className={useGradient()}>faq</h2>
       </div>
       <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl md:flex-row md:gap-16">
         <div className="flex w-full flex-col gap-4">
@@ -30,7 +30,7 @@ const FAQSection = () => {
             The application isn&apos;t rigorous at all; we use the term more
             like registration with the unlikely case that we shoot way over our
             logistical limit. It only takes a few minutes to fill out and you
-            can always decide whether you want to go as the event approaches.
+            can always change your mind about attending as the event approaches.
           </FAQ>
           <FAQ question="Do I have to make a project?">
             You&apos;re not required to make a project to attend, but we
@@ -52,9 +52,9 @@ const FAQSection = () => {
           <FAQ question="How do teams work?">
             There are up to four people per team and you get to choose who you
             work with, so bring your friends along! Don&apos;t worry if you
-            don&apos;t have a team; we&apos;ll have a team formation session at
-            the beginning of the event, and you can always find a team
-            beforehand through our Discord.
+            don&apos;t have a team; we have a dedicated team formation Discord
+            channel as well as a team formation session at the beginning of the
+            event.
           </FAQ>
           <FAQ question="What are the overnight arrangements?">
             Due to limitations with our venue, hackers will return home for the

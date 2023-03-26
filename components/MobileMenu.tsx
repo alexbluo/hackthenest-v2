@@ -19,15 +19,15 @@ const MobileMenu = ({ open, session }: Props) => {
           exit={{ opacity: 0 }}
         >
           <ul className="flex h-screen flex-col items-center justify-center gap-8 text-gold">
-            <NavItem to="about">About</NavItem>
-            <NavItem to="schedule">Schedule</NavItem>
-            <NavItem to="faq">FAQ</NavItem>
-            <NavItem to="sponsors">Sponsors</NavItem>
+            <NavItem to="about">about</NavItem>
+            <NavItem to="schedule">schedule</NavItem>
+            <NavItem to="faq">faq</NavItem>
+            <NavItem to="sponsors">sponsors</NavItem>
             <Link
               className="cursor-pointer font-header text-lg font-medium"
               href={session ? "/dashboard" : "/login"}
             >
-              {session ? "Dashboard" : "Login"}
+              {session ? "dashboard" : "login"}
             </Link>
           </ul>
         </motion.div>

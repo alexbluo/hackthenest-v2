@@ -5,7 +5,7 @@ const SponsorsSection = () => {
   return (
     <section id="sponsors">
       <div className="-mx-8 mb-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
-        <h2 className={useGradient()}>Sponsors</h2>
+        <h2 className={useGradient()}>sponsors</h2>
       </div>
       <p className="text-xl">
         Interested in sponsoring? Feel free to take a look at our{" "}

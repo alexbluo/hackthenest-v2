@@ -25,11 +25,11 @@ const Dashboard = () => {
             className="font-header text-lg font-medium text-gold"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
-            Logout
+            logout
           </button>
         </nav>
 
-        <h2 className={`${useGradient()} mb-8`}>Dashboard</h2>
+        <h2 className={`${useGradient()} mb-8`}>dashboard</h2>
         <h3 className="mb-4 text-3xl font-bold text-gold">
           Welcome back, {session?.user?.name}
         </h3>

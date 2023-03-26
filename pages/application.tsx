@@ -68,17 +68,17 @@ const Application = ({
             className="font-header text-lg font-medium text-gold"
             href="/dashboard"
           >
-            Dashboard
+            dashboard
           </Link>
         </nav>
 
-        <h2 className={`${useGradient()} mb-8`}>Application</h2>
+        <h2 className={`${useGradient()} mb-8`}>application</h2>
 
         <form className="text-lg" onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
-                fieldName="First Name"
+                fieldName="first name"
                 name="firstName"
                 placeholder="Bumble"
                 register={register}
@@ -93,21 +93,21 @@ const Application = ({
               />
             </div>
             <ApplicationInput
-              fieldName="Phone Number"
+              fieldName="phone number"
               name="phone"
               placeholder="123-456-7890"
               register={register}
               error={errors.phone}
             />
             <ApplicationInput
-              fieldName="School"
+              fieldName="school"
               name="school"
               placeholder="Barry Benson High School"
               register={register}
               error={errors.school}
             />
             <ApplicationDropdown
-              fieldName="Age"
+              fieldName="age"
               name="age"
               options={[
                 { value: 13, label: "13" },
@@ -122,7 +122,7 @@ const Application = ({
               error={errors.age}
             />
             <ApplicationDropdown
-              fieldName="Year of Graduation"
+              fieldName="year of graduation"
               name="yog"
               options={[
                 { value: 2023, label: "2023" },
@@ -135,7 +135,7 @@ const Application = ({
               error={errors.yog}
             />
             <ApplicationDropdown
-              fieldName="Country of Residence"
+              fieldName="country of residence"
               name="country"
               options={countries}
               defaultValue={undefined}
@@ -143,7 +143,7 @@ const Application = ({
               error={errors.country}
             />
             <ApplicationDropdown
-              fieldName="Dietary Restrictions"
+              fieldName="dietary restrictions"
               name="diet"
               options={[
                 { value: null, label: "None" },
@@ -162,7 +162,7 @@ const Application = ({
               error={errors.diet}
             />
             <ApplicationDropdown
-              fieldName="Shirt Size"
+              fieldName="shirt size"
               name="shirt"
               options={[
                 { value: "XS", label: "XS" },
@@ -176,7 +176,7 @@ const Application = ({
               error={errors.shirt}
             />
             <ApplicationDropdown
-              fieldName="How did you hear about us?"
+              fieldName="how did you hear about us?"
               name="outreach"
               options={[
                 { value: "friendFamily", label: "Friend/Family" },

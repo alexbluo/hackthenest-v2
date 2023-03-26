@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="about">
       <div className="-mx-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-full">
-        <h2 className={useGradient()}>About</h2>
+        <h2 className={useGradient()}>about</h2>
       </div>
       <article className="-mx-8 mb-8 w-full rounded-r-3xl bg-black p-8 text-xl sm:w-3/4 sm:rounded-3xl">
         This September, Hack the Nest invites 300 high school students to a 36-hour
