@@ -9,6 +9,12 @@ interface Props {
 }
 
 const Modal = ({ visible, width, children, onTap }: Props) => {
+  if (width > 768) {
+    width *= 0.5;
+  } else {
+    width *= 0.8;
+  }
+
   return (
     <AnimatePresence>
       {visible && (

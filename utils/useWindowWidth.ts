@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
 
-const useScheduleWidth = () => {
-  const getWindowDimensions = () => {
+const useWindowWidth = () => {
+  const getWindowWidth = () => {
     if (typeof window === "undefined") return 0;
-    if (window.innerWidth > 768) return window.innerWidth * 0.5;
-    return window.innerWidth * 0.8;
+    return window.innerWidth;
   };
 
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
+  const [windowDimensions, setWindowDimensions] = useState(getWindowWidth());
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleResize = () => {
-        setWindowDimensions(getWindowDimensions());
+        setWindowDimensions(getWindowWidth());
       };
 
       window.addEventListener("resize", handleResize);
@@ -27,4 +24,4 @@ const useScheduleWidth = () => {
   return windowDimensions;
 };
 
-export default useScheduleWidth;
+export default useWindowWidth;
