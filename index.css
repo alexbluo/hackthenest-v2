@@ -125,3 +125,7 @@ input:focus {
           400px, #09c6f981 500px);
   animation: flow 2.5s infinite ease-in-out;
 }
+
+.safari-svg-border-fix {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}

@@ -58,29 +58,31 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
           >
             {children}
           </motion.div>
-          <div className="fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 rounded-full">
-            <svg className="overflow-visible" width={width} height={width / 2}>
-              <motion.rect
-                className="origin-center fill-transparent stroke-gold"
-                width={width}
-                height={width / 2}
-                strokeWidth="4px"
-                rx="1.5rem"
-                strokeDasharray={width * 3}
-                strokeDashoffset={width * 3}
-                animate={{
-                  strokeDashoffset: 0,
-                }}
-                exit={{
-                  strokeDashoffset: width * 3,
-                }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeInOut",
-                }}
-              ></motion.rect>
-            </svg>
-          </div>
+          <svg
+            className="fixed top-1/2 left-1/2 z-50 -translate-y-1/2 -translate-x-1/2 overflow-visible"
+            width={width}
+            height={width / 2}
+          >
+            <motion.rect
+              className=" fill-transparent stroke-gold"
+              width={width}
+              height={width / 2}
+              strokeWidth="4px"
+              rx="24px"
+              strokeDasharray={width * 3}
+              strokeDashoffset={width * 3}
+              animate={{
+                strokeDashoffset: 0,
+              }}
+              exit={{
+                strokeDashoffset: width * 3,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+            ></motion.rect>
+          </svg>
         </>
       )}
     </AnimatePresence>

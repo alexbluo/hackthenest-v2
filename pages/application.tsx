@@ -85,7 +85,7 @@ const Application = ({
                 error={errors.firstName}
               />
               <ApplicationInput
-                fieldName="Last Name"
+                fieldName="last name"
                 name="lastName"
                 placeholder="Bee"
                 register={register}

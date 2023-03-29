@@ -75,10 +75,6 @@ const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("sat", "sun");
   const width = useScheduleWidth();
 
-  useEffect(() => {
-    console.log(day);
-  }, [day]);
-
   return (
     <section className="" id="schedule">
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
