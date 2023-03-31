@@ -62,8 +62,8 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
         }}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
-        // onFocus={handleHoverStart}
-        onFocusCapture={handleHoverStart}
+        onFocus={handleHoverStart}
+        onBlur={handleHoverEnd}
         onTap={handleTap}
       >
         {name}

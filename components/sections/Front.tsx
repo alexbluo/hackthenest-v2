@@ -1,11 +1,11 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useGradient from "../../utils/useGradient";
 import jumboAnimation from "../../utils/useJumboAnimation";
 
 const targetName = "Hack the Nest";
-const targetDate = "9.23.23. - 9.24.23";
+const targetDate = "9.23.23 - 9.24.23";
 const targetLocation = "Glenelg High School";
 
 const FrontSection = () => {
@@ -13,7 +13,7 @@ const FrontSection = () => {
   const [date, setDate] = useState<string>(targetDate);
   const [location, setLocation] = useState<string>(targetLocation);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     jumboAnimation(name, setName, targetName);
     jumboAnimation(date, setDate, targetDate);
     jumboAnimation(location, setLocation, targetLocation);
