@@ -5,11 +5,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import AboutSection from "../components/sections/About";
-import FAQSection from "../components/sections/FAQ";
-import FrontSection from "../components/sections/Front";
-import ScheduleSection from "../components/sections/Schedule";
-import SponsorsSection from "../components/sections/Sponsors";
+import AboutSection from "../components/sections/AboutSection";
+import FAQSection from "../components/sections/FAQSection";
+import FrontSection from "../components/sections/FrontSection";
+import ScheduleSection from "../components/sections/ScheduleSection";
+import SponsorsSection from "../components/sections/SponsorsSection";
 import useGradient from "../utils/useGradient";
 
 // TODO: handle tab focus styles
@@ -28,7 +28,7 @@ const Index: NextPage = () => {
       >
         <div className="absolute top-0 left-0 h-full w-screen">
           <Image
-            className="object-cover"
+            className="object-cover object-top"
             src="/background.png"
             alt="Website background"
             fill

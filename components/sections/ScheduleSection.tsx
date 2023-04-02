@@ -2,6 +2,7 @@ import React from "react";
 import { AnimatePresence, motion, useCycle, useAnimate } from "framer-motion";
 import useGradient from "../../utils/useGradient";
 import useWindowWidth from "../../utils/useWindowWidth";
+import WaitClientLoad from "../../utils/WaitClientLoad";
 import ScheduleBlock from "../ScheduleBlock";
 
 interface Block {
@@ -107,57 +108,59 @@ const ScheduleSection = () => {
         <h2 className={useGradient()}>schedule</h2>
       </div>
       {/* TODO: one column with click top to go next align left and full on mobile */}
-      {width > 768 ? (
-        <AnimatePresence mode="wait">
-          <div className="mr-40 flex flex-col pt-40">
-            <div className="relative">
-              <motion.button
-                className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center justify-between bg-gold px-8 text-xl font-medium"
-                onTap={() => cycleDay()}
-                whileTap="spin"
-              >
-                {day === "sat" ? "Saturday" : "Sunday"}
-                <RotateIcon />
-              </motion.button>
-              <div className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center overflow-hidden whitespace-nowrap bg-blue-mid">
-                <span className="pl-4">
-                  {day === "sat" ? "9.23.23" : "9.24.24"}
-                </span>
+      <WaitClientLoad>
+        {width > 768 ? (
+          <AnimatePresence mode="wait">
+            <motion.div className="mr-40 flex flex-col pt-40">
+              <div className="relative">
+                <motion.button
+                  className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between bg-gold px-8 text-xl font-medium"
+                  onTap={() => cycleDay()}
+                  whileTap="spin"
+                >
+                  {day === "sat" ? "Saturday" : "Sunday"}
+                  <RotateIcon />
+                </motion.button>
+                <div className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center overflow-hidden whitespace-nowrap bg-blue-mid">
+                  <span className="pl-4">
+                    {day === "sat" ? "9.23.23" : "9.24.24"}
+                  </span>
+                </div>
+                <div className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark"></div>
               </div>
-              <div className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark"></div>
-            </div>
-            {day === "sat"
-              ? saturday.map(({ name, time, description }, i) => {
-                  return (
-                    <ScheduleBlock
-                      name={name}
-                      time={time}
-                      width={width}
-                      order={i % 2 === 0 ? "even" : "odd"}
-                      key={name + time + description}
-                    >
-                      {description}
-                    </ScheduleBlock>
-                  );
-                })
-              : sunday.map(({ name, time, description }, i) => {
-                  return (
-                    <ScheduleBlock
-                      name={name}
-                      time={time}
-                      width={width}
-                      order={i % 2 === 0 ? "even" : "odd"}
-                      key={name + time + description}
-                    >
-                      {description}
-                    </ScheduleBlock>
-                  );
-                })}
-          </div>
-        </AnimatePresence>
-      ) : (
-        <div></div>
-      )}
+              {day === "sat"
+                ? saturday.map(({ name, time, description }, i) => {
+                    return (
+                      <ScheduleBlock
+                        name={name}
+                        time={time}
+                        width={width}
+                        order={i % 2 === 0 ? "even" : "odd"}
+                        key={name + time + description}
+                      >
+                        {description}
+                      </ScheduleBlock>
+                    );
+                  })
+                : sunday.map(({ name, time, description }, i) => {
+                    return (
+                      <ScheduleBlock
+                        name={name}
+                        time={time}
+                        width={width}
+                        order={i % 2 === 0 ? "even" : "odd"}
+                        key={name + time + description}
+                      >
+                        {description}
+                      </ScheduleBlock>
+                    );
+                  })}
+            </motion.div>
+          </AnimatePresence>
+        ) : (
+          <div></div>
+        )}
+      </WaitClientLoad>
     </section>
   );
 };

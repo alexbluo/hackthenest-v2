@@ -46,7 +46,7 @@ const jumboAnimation = (
     if (iteration >= targetString.length) clearInterval(interval);
 
     iteration += 1 / 2;
-  }, 80);
+  }, 50);
 };
 
 export default jumboAnimation;
