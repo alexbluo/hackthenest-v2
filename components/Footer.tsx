@@ -11,7 +11,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="-m-8 flex flex-col justify-center gap-6 rounded-l-3xl bg-black p-8 sm:rounded-3xl">
+        <div className="flex flex-col justify-center gap-6">
           <div className="flex h-8 flex-row gap-6">
             <a
               className="aspect-square h-full"
