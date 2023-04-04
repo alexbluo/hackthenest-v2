@@ -32,12 +32,12 @@ const FrontSection = () => {
             <div className="">•</div>
             <h3 className="font-medium">{location}</h3>
           </div>
-          <Link
+          {/* <Link
             className={`${useGradient()} mx-auto w-80 rounded-md bg-white px-6 py-4 text-center font-header text-lg font-medium text-black`}
             href="/login"
           >
             Apply Now!
-          </Link>
+          </Link> */}
         </div>
       </div>
 
