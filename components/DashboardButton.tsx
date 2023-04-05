@@ -10,10 +10,10 @@ interface Props {
 
 const DashboardButton = ({ name, href, status }: Props) => {
   return (
-    <div className="flex w-full">
+    <div className="flex w-full gap-[2px] overflow-hidden rounded-lg border-2 bg-white border-white">
       <Link
         className={classNames(
-          "w-full rounded-l-md py-4 text-center text-lg text-black",
+          "w-full py-4 text-center text-lg text-black",
           { [useGradient()]: status === "INCOMPLETE" },
           { "cursor-default bg-grey": status === "COMPLETE" },
           { "cursor-default bg-grey": status === "UNAVAILABLE" }
@@ -24,7 +24,7 @@ const DashboardButton = ({ name, href, status }: Props) => {
       </Link>
       <div
         className={classNames(
-          "w-full rounded-r-md bg-gold py-4 text-center text-lg text-black",
+          "w-full bg-gold py-4 text-center text-lg text-black",
           { "bg-gold": status === "INCOMPLETE" },
           { "bg-green": status === "COMPLETE" },
           { "bg-grey": status === "UNAVAILABLE" }
