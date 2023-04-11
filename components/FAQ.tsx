@@ -1,52 +1,60 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 const Path = (props: any) => {
-  return (
-    <motion.path
-      className="stroke-white"
-      strokeWidth="3"
-      strokeLinecap="round"
-      {...props}
-    />
-  );
+  return <motion.path strokeWidth="3" strokeLinecap="round" {...props} />;
 };
 
 interface Props {
   question: string;
+  open: boolean;
   children: string;
+  onClick: () => void;
 }
 
-const FAQ = ({ question, children }: Props) => {
-  const [open, setOpen] = useState<boolean>(false);
-
+const FAQ = ({ question, open, children, onClick }: Props) => {
   return (
     <div className="flex flex-col">
       <button
         className="flex cursor-pointer select-none items-center justify-between text-xl"
-        onClick={() => setOpen(!open)}
+        onClick={onClick}
       >
-        <h3 className="cursor-pointer select-none text-xl text-left whitespace-pre-line">{question}</h3>
-        <svg
+        <motion.h3
+          className="cursor-pointer select-none whitespace-pre-line text-left text-xl"
+          animate={open ? "open" : "closed"}
+          variants={{ open: { color: "#ffbd59" } }}
+          transition={{
+            ease: "easeIn",
+            duration: 0.2,
+          }}
+        >
+          {question}
+        </motion.h3>
+        <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           height="24"
           width="24"
+          animate={open ? "open" : "closed"}
+          transition={{
+            ease: "easeIn",
+            duration: 0.2,
+          }}
         >
-          <Path d="M 4 12 L 20 12" />
           <Path
-            animate={open ? "open" : "closed"}
-            d="M 12 4 L 12 20"
+            d="M 4 12 L 20 12"
             variants={{
-              closed: { d: "M 12 4 L 12 20" },
-              open: { d: "M 12 12 L 12 12" },
-            }}
-            transition={{
-              ease: "easeIn",
-              duration: 0.2,
+              closed: { stroke: "#ffffff" },
+              open: { stroke: "#ffbd59" },
             }}
           />
-        </svg>
+          <Path
+            d="M 12 4 L 12 20"
+            variants={{
+              closed: { d: "M 12 4 L 12 20", stroke: "#ffffff" },
+              open: { d: "M 12 12 L 12 12", stroke: "#ffbd59" },
+            }}
+          />
+        </motion.svg>
       </button>
       <motion.div
         className="text-md overflow-y-hidden pt-2"

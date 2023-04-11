@@ -1,73 +1,101 @@
+import { useState } from "react";
 import useGradient from "../../utils/useGradient";
 import FAQ from "../FAQ";
 
+interface Question {
+  question: string;
+  answer: string;
+}
+
+interface QuestionList {
+  [key: string]: Question[];
+}
+
+// shallow key is column
+const questions: QuestionList = {
+  0: [
+    {
+      question: "What is a hackathon?",
+      answer:
+        "Hackathons are collaborative multi-day events where participants (also called hackers) bring their ideas to life by building innovative projects from scratch using software development principals. Aside from just being coding marathons/competitions, hackathons offer several fun mini-events, educational workshops, sponsor fairs, and an overall great atmosphere to hang out in.",
+    },
+    {
+      question: "How much does it cost?",
+      answer:
+        "Absolutely nothing! We'll take care of food, prizes, swag, and more :)",
+    },
+    {
+      question: "What if I don't know how to code?",
+      answer:
+        "That's completely fine - in fact, many participants are first time hackers and beginners!",
+    },
+    {
+      question: "Why is there an application?",
+      answer:
+        "The application isn't rigorous at all; we use the term more like registration with the unlikely case that we shoot way over our logistical limit. It only takes a few minutes to fill out and you can always change your mind about attending as the event approaches.",
+    },
+    {
+      question: "Do I have to make a project?",
+      answer:
+        "You're not required to make a project to attend, but we recommend that you do in order to get the full hackathon experience.",
+    },
+  ],
+  1: [
+    {
+      question: "Who is eligible to attend?",
+      answer:
+        "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school but would still like to participate, we'd love to have you as a mentor, volunteer, or sponsor!",
+    },
+    {
+      question: "How can I volunteer or mentor?",
+      answer:
+        "Details on volunteer and mentor registration will be released soon.",
+    },
+    {
+      question: "How do teams work?",
+      answer:
+        "There are up to four people per team and you get to choose who you work with, so bring your friends along! Don't worry if you don't have a team; we have a dedicated team formation Discord channel as well as a team formation session at the beginning of the event.",
+    },
+    {
+      question: "What are the overnight arrangements?",
+      answer:
+        "Due to limitations with our venue, hackers will return home for the night. We suggest carpooling with your group and even staying over at a member's place. The hacking and fun doesn't stop in the wee hours - we'll even be hosting online video game tournaments!",
+    },
+    {
+      question: "I have more questions!",
+      answer:
+        "Please direct any additional questions to hello@hackthenest.org and we'll get back to you as soon as possible!",
+    },
+  ],
+};
+
 // TODO: one open at a time, move q and a to object and map with key
 const FAQSection = () => {
+  const [open, setOpen] = useState<string | undefined>(undefined);
+
   return (
-    <section id="faq">
-      <div className="-mx-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-bl-none sm:rounded-full">
+    <section id="faq" className="">
+      <div className="-mx-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-full sm:rounded-bl-none">
         <h2 className={useGradient()}>faq</h2>
       </div>
       <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl sm:rounded-tl-none md:flex-row md:gap-16">
-        <div className="flex w-full flex-col gap-4">
-          <FAQ question="What is a hackathon?">
-            Hackathons are collaborative multi-day events where participants
-            (also called hackers) bring their ideas to life by building
-            innovative projects from scratch using software development
-            principals. Aside from just being coding marathons/competitions,
-            hackathons offer several fun mini-events, educational workshops,
-            sponsor fairs, and an overall great atmosphere to hang out in.
-          </FAQ>
-          <FAQ question="How much does it cost?">
-            Absolutely nothing! We&apos;ll take care of food, prizes, swag, and
-            more :&#41;
-          </FAQ>
-          <FAQ question="What if I don't know how to code?">
-            That&apos;s completely fine - in fact, many participants are first
-            time hackers and beginners!
-          </FAQ>
-          <FAQ question="Why is there an application?">
-            The application isn&apos;t rigorous at all; we use the term more
-            like registration with the unlikely case that we shoot way over our
-            logistical limit. It only takes a few minutes to fill out and you
-            can always change your mind about attending as the event approaches.
-          </FAQ>
-          <FAQ question="Do I have to make a project?">
-            You&apos;re not required to make a project to attend, but we
-            strongly recommend that you do in order to get the full hackathon
-            experience.
-          </FAQ>
-        </div>
-        <div className="flex w-full flex-col gap-4">
-          <FAQ question="Who is eligible to attend?">
-            Hack the Nest is open to all high school students of all experience
-            levels from anywhere. If you&apos;re not in high school but would
-            still like to participate, we&apos;d love to have you as a mentor or
-            volunteer!
-          </FAQ>
-          {/* TODO: replace this */}
-          <FAQ question="How can I volunteer or mentor?">
-            Details on volunteer and mentor registration will be released soon.
-          </FAQ>
-          <FAQ question="How do teams work?">
-            There are up to four people per team and you get to choose who you
-            work with, so bring your friends along! Don&apos;t worry if you
-            don&apos;t have a team; we have a dedicated team formation Discord
-            channel as well as a team formation session at the beginning of the
-            event.
-          </FAQ>
-          <FAQ question="What are the overnight arrangements?">
-            Due to limitations with our venue, hackers will return home for the
-            night. We suggest carpooling with your group and even staying over
-            at a member&apos;s place. The hacking and fun doesn&apos;t stop in
-            the wee hours - we&apos;ll even be hosting online video game
-            tournaments!
-          </FAQ>
-          <FAQ question="I have more questions!">
-            Please direct any questions to hello@hackthenest.org and we&apos;ll
-            get back to you as soon as possible!
-          </FAQ>
-        </div>
+        {Object.keys(questions).map((column) => (
+          <div className="flex w-full flex-col gap-4" key={column}>
+            {questions[column].map(({ question, answer }) => (
+              <FAQ
+                question={question}
+                open={open === question}
+                onClick={() => {
+                  console.log(open, question, open === question);
+                  setOpen(open === question ? undefined : question);
+                }}
+                key={question}
+              >
+                {answer}
+              </FAQ>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );

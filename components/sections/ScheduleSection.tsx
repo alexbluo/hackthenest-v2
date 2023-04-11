@@ -72,6 +72,7 @@ const sunday: Block[] = [
   },
 ];
 
+// TODO: manual animate function
 const RotateIcon = React.memo(() => {
   return (
     <motion.svg
