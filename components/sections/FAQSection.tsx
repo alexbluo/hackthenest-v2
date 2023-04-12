@@ -69,7 +69,6 @@ const questions: QuestionList = {
   ],
 };
 
-// TODO: one open at a time, move q and a to object and map with key
 const FAQSection = () => {
   const [open, setOpen] = useState<string | undefined>(undefined);
 
@@ -85,10 +84,9 @@ const FAQSection = () => {
               <FAQ
                 question={question}
                 open={open === question}
-                onClick={() => {
-                  console.log(open, question, open === question);
-                  setOpen(open === question ? undefined : question);
-                }}
+                onClick={() =>
+                  setOpen(open === question ? undefined : question)
+                }
                 key={question}
               >
                 {answer}

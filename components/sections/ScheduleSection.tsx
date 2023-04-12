@@ -108,7 +108,6 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className={useGradient()}>schedule</h2>
       </div>
-      {/* TODO: one column with click top to go next align left and full on mobile */}
       <WaitClientLoad>
         {width > 768 ? (
           <AnimatePresence mode="wait">

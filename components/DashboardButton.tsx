@@ -10,7 +10,7 @@ interface Props {
 
 const DashboardButton = ({ name, href, status }: Props) => {
   return (
-    <div className="flex w-full gap-[2px] overflow-hidden rounded-lg border-2 bg-white border-white">
+    <div className="flex w-full overflow-hidden rounded-md">
       <Link
         className={classNames(
           "w-full py-4 text-center text-lg text-black",

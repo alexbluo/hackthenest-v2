@@ -34,8 +34,8 @@ const Dashboard = () => {
           Welcome back, {session?.user?.name}
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
-          <div className="h-full">
-            <QRCode className="rounded-md bg-white p-4" value="1" />
+          <div className="p-4 rounded-md bg-white">
+            <QRCode className="mx-auto" size={212} value="1" />
           </div>
           <div className="flex w-full flex-col gap-8">
             <DashboardButton

@@ -12,7 +12,6 @@ import ScheduleSection from "../components/sections/ScheduleSection";
 import SponsorsSection from "../components/sections/SponsorsSection";
 import useGradient from "../utils/useGradient";
 
-// TODO: handle tab focus styles
 const Index: NextPage = () => {
   const [open, toggleOpen] = useCycle(false, true);
 
@@ -39,7 +38,7 @@ const Index: NextPage = () => {
         <main className="relative z-0">
           <FrontSection />
           <AboutSection />
-          <ScheduleSection />
+          {/* <ScheduleSection /> */}
           <FAQSection />
           <SponsorsSection />
         </main>
