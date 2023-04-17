@@ -57,6 +57,8 @@ export const getServerSideProps = async (
 ) => {
   const session = await getServerSession(context.req, context.res, authOptions);
 
+  // if user === admin redirect admin dashboard
+
   if (!session) {
     return {
       redirect: {

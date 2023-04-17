@@ -12,6 +12,7 @@ model User {
   id           Int           @id @default(autoincrement())
   email        String        @unique
   password     String?
+  checks       Check[]
   rsvp         Boolean       @default(false)
   hackerApp    HackerApp?
   volunteerApp VolunteerApp?
@@ -38,6 +39,7 @@ model VolunteerApp {
   phone     String
   age       Int
   role      String // volunteer, mentor, judge, sponsor
+  origin    String // school/company
   diet      Diet[]
   shirt     String
   user      User   @relation(fields: [userId], references: [id])
@@ -50,4 +52,10 @@ model Diet {
   hackerAppUserId    Int           @unique
   volunteerApp       VolunteerApp? @relation(fields: [volunteerAppUserId], references: [userId])
   volunteerAppUserId Int           @unique
+}
+
+model Check {
+  check  String
+  User   User   @relation(fields: [userId], references: [id])
+  userId Int    @unique
 }

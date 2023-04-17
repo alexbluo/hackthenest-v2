@@ -1,9 +1,7 @@
-import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
+import { prisma } from "../../../db";
 import { authOptions } from "../auth/[...nextauth]";
-
-const prisma = new PrismaClient();
 
 interface NextApiRequestType extends NextApiRequest {
   body: {

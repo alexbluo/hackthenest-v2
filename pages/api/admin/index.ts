@@ -6,9 +6,13 @@ import { authOptions } from "../auth/[...nextauth]";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getServerSession(req, res, authOptions);
 
-  // if (!session || session?.user?.email !== email) {
-  //   res.status(400).json({ error: "unauthorized user" });
-  // }
+  if (!session || session?.user?.email !== "ADMIN") {
+    res.status(400).end();
+  }
+
+  const user = await prisma.user.findMany();
+
+  res.json(user);
 };
 
 export default handler;

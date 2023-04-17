@@ -1,9 +1,7 @@
-import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
+import { prisma } from "../../../db";
 import { authOptions } from "../auth/[...nextauth]";
-
-const prisma = new PrismaClient();
 
 interface NextApiRequestType extends NextApiRequest {
   query: {
@@ -16,6 +14,8 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
   const { email } = req.query;
 
   if (!session || session?.user?.email !== email) {
+    // TODO: check if exists and return bool for user/pass login/creation
+    
     res.status(400).end();
   }
 
