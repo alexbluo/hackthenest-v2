@@ -1,7 +1,9 @@
+import axios from "axios";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
+import base from "../../../utils/base";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -24,8 +26,18 @@ export const authOptions: NextAuthOptions = {
         password: { label: "password", type: "password" },
       },
       authorize: async (credentials, req) => {
-        console.log(credentials);
-        console.log(req);
+        console.log(credentials)
+        // if (!credentials?.email || !credentials.password) return null;
+
+        // const user = await axios.get(`${base}/api/user/${credentials?.email}`);
+
+        // // if user exists return credentials, otherwise create new user
+        // if (user) {
+
+        // } else {
+
+        // }
+
         return null;
       },
     }),

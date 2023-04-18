@@ -1,28 +1,68 @@
-import { useState, ChangeEvent } from "react";
+import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import { getServerSession } from "next-auth";
 import { getProviders, signIn } from "next-auth/react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
 import { authOptions } from "./api/auth/[...nextauth]";
 
-interface Credentials {
-  username: string;
-  password: string;
-}
+const schema = z
+  .object({
+    email: z.string().email(),
+    password: z.string().min(8, { message: "minimum 8 characters" }),
+    confirmPassword: z.string(),
+  })
+  .superRefine(({ password, confirmPassword }, ctx) => {
+    if (!confirmPassword && password !== confirmPassword) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "passwords do not match",
+        path: ["confirmPassword"],
+      });
+    }
+  });
+
+type SchemaType = z.infer<typeof schema>;
 
 const Login = ({
   providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const [credentials, setCredentials] = useState<Credentials>({
-    username: "",
-    password: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SchemaType>({
+    resolver: zodResolver(schema),
   });
-  const [passInputVisible, setPassInputVisible] = useState<boolean>(false);
+  const [loginState, setLoginState] = useState<
+    "initial" | "logging" | "registering"
+  >("initial");
 
-  const handleContinueSubmit = () => {
-    
+  const onSubmit: SubmitHandler<SchemaType> = async (credentials) => {
+    console.log("hi");
+    if (loginState === "initial") {
+      const { data } = await axios.get(`/api/user/${credentials.email}`);
 
-    signIn("credentials", { ...credentials, callbackUrl: "/dashboard" });
+      if (!data) {
+        // if user doesnt exist
+        setLoginState("registering");
+      } else {
+        setLoginState("logging");
+      }
+    } else if (loginState === "logging") {
+      signIn("credentials", {
+        ...credentials,
+        callbackUrl: "/dashboard",
+      });
+    } else if (loginState === "registering") {
+      await axios.post("/api/user/create", {
+        email: "",
+        password: "",
+      });
+    }
   };
 
   return (
@@ -32,38 +72,33 @@ const Login = ({
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
         <h1 className="text-5xl font-black text-gold">Hack the Nest</h1>
-        <input
-          className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
-          name="email"
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setCredentials({ ...credentials, username: e.target.value })
-          }
-          type="email"
-          placeholder="Email"
-        />
-        <input
-          className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
-          name="password"
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setCredentials({ ...credentials, password: e.target.value })
-          }
-          type="password"
-          placeholder="Password"
-        />
-
-        <button
-          className="flex w-full items-center justify-between rounded-md border bg-gold px-6 py-4"
-          onClick={handleContinueSubmit}
+        <form
+          className="flex w-full flex-col gap-4"
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <p>Continue</p>
-          <svg
-            className="h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-          >
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-          </svg>
-        </button>
+          <input
+            className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
+            type="email"
+            placeholder="Email"
+            {...register("email")}
+          />
+          <input
+            className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
+            type="password"
+            placeholder="Password"
+            {...register("password")}
+          />
+          <button className="flex w-full items-center justify-between rounded-md border bg-gold px-6 py-4">
+            <p>Continue</p>
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+            </svg>
+          </button>
+        </form>
 
         <div className="flex w-full items-center gap-2">
           <div className="h-fit w-full border border-grey" />
