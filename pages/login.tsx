@@ -13,17 +13,7 @@ const schema = z
   .object({
     email: z.string().email(),
     password: z.string().min(8, { message: "minimum 8 characters" }),
-    confirmPassword: z.string(),
   })
-  .superRefine(({ password, confirmPassword }, ctx) => {
-    if (!confirmPassword && password !== confirmPassword) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "passwords do not match",
-        path: ["confirmPassword"],
-      });
-    }
-  });
 
 type SchemaType = z.infer<typeof schema>;
 
@@ -38,29 +28,37 @@ const Login = ({
     resolver: zodResolver(schema),
   });
   const [loginState, setLoginState] = useState<
-    "initial" | "logging" | "registering"
+    "initial" | "loggingIn" | "creatingPassword"
   >("initial");
 
-  const onSubmit: SubmitHandler<SchemaType> = async (credentials) => {
+  const onSubmit: SubmitHandler<SchemaType> = async ({ email, password }) => {
     console.log("hi");
+    // TODO: WHAT IF THE UESR EXISTS BUT DOESNT HAVE A PASSWORD???
+    // TODO: if already exists from oauth then cannot let user create password
     if (loginState === "initial") {
-      const { data } = await axios.get(`/api/user/${credentials.email}`);
+      const {
+        data: { userExists, passwordExists },
+      } = await axios.get(`/api/user/exists`, {
+        params: {
+          email,
+        },
+      });
 
-      if (!data) {
-        // if user doesnt exist
-        setLoginState("registering");
+      if (!userExists) {
+        setLoginState("creatingPassword");
       } else {
-        setLoginState("logging");
+        setLoginState("loggingIn");
       }
-    } else if (loginState === "logging") {
+    } else if (loginState === "loggingIn") {
       signIn("credentials", {
-        ...credentials,
+        email,
+        password,
         callbackUrl: "/dashboard",
       });
-    } else if (loginState === "registering") {
-      await axios.post("/api/user/create", {
-        email: "",
-        password: "",
+    } else if (loginState === "creatingPassword") {
+      await axios.post("/api/user/upsert", {
+        email,
+        password,
       });
     }
   };

@@ -9,7 +9,7 @@ datasource db {
 }
 
 model User {
-  id           Int           @id @default(autoincrement())
+  id           String        @id
   email        String        @unique
   password     String?
   checks       Check[]
@@ -30,7 +30,7 @@ model HackerApp {
   shirt     String
   outreach  String
   user      User   @relation(fields: [userId], references: [id])
-  userId    Int    @unique
+  userId    String @unique
 }
 
 model VolunteerApp {
@@ -43,19 +43,19 @@ model VolunteerApp {
   diet      Diet[]
   shirt     String
   user      User   @relation(fields: [userId], references: [id])
-  userId    Int    @unique
+  userId    String @unique
 }
 
 model Diet {
-  diet               String
+  diet               String        @unique
   hackerApp          HackerApp?    @relation(fields: [hackerAppUserId], references: [userId])
-  hackerAppUserId    Int           @unique
+  hackerAppUserId    String        @unique
   volunteerApp       VolunteerApp? @relation(fields: [volunteerAppUserId], references: [userId])
-  volunteerAppUserId Int           @unique
+  volunteerAppUserId String        @unique
 }
 
 model Check {
-  check  String
+  check  String @unique
   User   User   @relation(fields: [userId], references: [id])
-  userId Int    @unique
+  userId String @unique
 }

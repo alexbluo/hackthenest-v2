@@ -1,8 +1,10 @@
 import axios from "axios";
+import bcrypt from "bcrypt";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
+import { prisma } from "../../../db";
 import base from "../../../utils/base";
 
 export const authOptions: NextAuthOptions = {
@@ -26,19 +28,23 @@ export const authOptions: NextAuthOptions = {
         password: { label: "password", type: "password" },
       },
       authorize: async (credentials, req) => {
-        console.log(credentials)
-        // if (!credentials?.email || !credentials.password) return null;
+        if (!credentials?.email || !credentials?.password) return null;
 
-        // const user = await axios.get(`${base}/api/user/${credentials?.email}`);
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email },
+        });
 
-        // // if user exists return credentials, otherwise create new user
-        // if (user) {
+        // return user if user and password already exist and passwords match, otherwise return null
+        if (user?.password) {
+          const match = await bcrypt.compare(credentials.password, user.password);
 
-        // } else {
+          return match ? user : null;
+        }
 
-        // }
+        // otherwise create new user with password
 
-        return null;
+
+        return user;
       },
     }),
   ],

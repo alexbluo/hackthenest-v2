@@ -1,0 +1,1 @@
+// status bar colored green orange red

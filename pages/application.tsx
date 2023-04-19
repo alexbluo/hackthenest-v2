@@ -273,6 +273,7 @@ export const getServerSideProps = async (
     };
   }
 
+  // TODO: request and return app endpoint instead
   const { data } = await axios.get(`${base}/api/user/${session.user?.email}`, {
     headers: {
       cookie: context.req.headers.cookie || "",

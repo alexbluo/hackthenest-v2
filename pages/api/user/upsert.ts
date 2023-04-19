@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { prisma } from "../../../db";
@@ -10,7 +11,7 @@ interface NextApiRequestType extends NextApiRequest {
   };
 }
 
-// create a new email/password, id, etc
+// TODO: REJECT NON-POST
 const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
   const session = await getServerSession(req, res, authOptions);
   const { email, password } = req.body;
@@ -19,13 +20,15 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
     res.status(400).end();
   }
 
+  // hash email for id
+  const hashedEmail = await bcrypt.hash(email, 8);
+  // hash plaintext password for storage
+  const hashedPassword = password ? await bcrypt.hash(password, 10) : null;
+
   const user = await prisma.user.upsert({
     where: { email },
-    update: {},
-    create: {
-      email,
-      password,
-    },
+    update: { password: hashedPassword },
+    create: { id: hashedEmail, email },
   });
 
   res.status(200).json(user);

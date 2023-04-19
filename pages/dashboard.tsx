@@ -69,7 +69,7 @@ export const getServerSideProps = async (
   }
 
   await axios.post(
-    `${base}/api/user/create`,
+    `${base}/api/user/upsert`,
     {
       email: session.user?.email,
     },
