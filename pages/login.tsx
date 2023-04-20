@@ -69,7 +69,7 @@ const Login = ({
         <div className="relative z-50 mx-auto aspect-square w-1/2">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
-        <h1 className="text-5xl font-black text-gold">Hack the Nest</h1>
+        <h1 className="text-5xl font-extrabold text-gold font-header">Hack the Nest</h1>
         <form
           className="flex w-full flex-col gap-4"
           onSubmit={handleSubmit(onSubmit)}
@@ -77,13 +77,13 @@ const Login = ({
           <input
             className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
             type="email"
-            placeholder="Email"
+            placeholder="email"
             {...register("email")}
           />
           <input
             className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
             type="password"
-            placeholder="Password"
+            placeholder="password"
             {...register("password")}
           />
           <button className="flex w-full items-center justify-between rounded-md border bg-gold px-6 py-4">

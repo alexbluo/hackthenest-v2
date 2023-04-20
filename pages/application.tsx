@@ -38,9 +38,7 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const Application = ({
-  user,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Application = () => {
   const {
     register,
     handleSubmit,
@@ -59,7 +57,7 @@ const Application = ({
   return (
     <div className="bg-black text-white">
       <section className="min-h-screen pt-32">
-        <nav className="container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
+        <nav className="container absolute left-0 right-0 top-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
           <Link className="relative z-50 aspect-square h-3/5" href="/">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </Link>
@@ -74,7 +72,10 @@ const Application = ({
 
         <h2 className={`${useGradient()} mb-8`}>application</h2>
 
-        <form className="text-lg" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="-mx-8 p-8 text-lg"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
@@ -194,8 +195,8 @@ const Application = ({
               control={control}
               error={errors.outreach}
             />
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4 leading-none">
                 <input
                   className="h-4 w-4 appearance-none rounded-sm bg-white checked:bg-blue-light"
                   type="checkbox"
@@ -214,7 +215,7 @@ const Application = ({
                   {errors.conduct && <span className="text-red">*</span>}
                 </span>
               </div>
-              <div className="flex w-full items-center gap-4">
+              <div className="flex w-full leading-none gap-4">
                 <input
                   className="h-4 w-4 appearance-none rounded-sm bg-white checked:bg-blue-light"
                   type="checkbox"
@@ -274,14 +275,8 @@ export const getServerSideProps = async (
   }
 
   // TODO: request and return app endpoint instead
-  const { data } = await axios.get(`${base}/api/user/${session.user?.email}`, {
-    headers: {
-      cookie: context.req.headers.cookie || "",
-    },
-  });
-
   return {
-    props: { user: data },
+    props: { },
   };
 };
 

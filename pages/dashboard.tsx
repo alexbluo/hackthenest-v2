@@ -31,7 +31,7 @@ const Dashboard = () => {
 
         <h2 className={`${useGradient()} mb-8`}>dashboard</h2>
         <h3 className="mb-4 text-3xl font-bold text-gold">
-          Welcome back, {session?.user?.name}
+          welcome back, {session?.user?.name}
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="p-4 rounded-md bg-white">
