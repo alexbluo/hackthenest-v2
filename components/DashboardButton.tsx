@@ -10,7 +10,7 @@ interface Props {
 
 const DashboardButton = ({ name, href, status }: Props) => {
   return (
-    <div className="flex w-full overflow-hidden rounded-md">
+    <div className="flex w-full overflow-hidden rounded-md gap-1 bg-black">
       <Link
         className={classNames(
           "w-full py-4 text-center text-lg text-black",
@@ -24,7 +24,7 @@ const DashboardButton = ({ name, href, status }: Props) => {
       </Link>
       <div
         className={classNames(
-          "w-full bg-gold py-4 text-center text-lg text-black",
+          "w-full bg-gold py-4 cursor-default text-center text-lg text-black",
           { "bg-gold": status === "INCOMPLETE" },
           { "bg-green": status === "COMPLETE" },
           { "bg-grey": status === "UNAVAILABLE" }

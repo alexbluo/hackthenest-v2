@@ -16,7 +16,7 @@ const Dashboard = () => {
   return (
     <div className="bg-black">
       <section className="min-h-screen pt-32">
-        <nav className="container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
+        <nav className="container absolute left-0 right-0 top-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
           <Link className="relative z-50 aspect-square h-3/5" href="/">
             <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
           </Link>
@@ -30,11 +30,11 @@ const Dashboard = () => {
         </nav>
 
         <h2 className={`${useGradient()} mb-8`}>dashboard</h2>
-        <h3 className="mb-4 text-3xl font-bold text-gold">
-          welcome back, {session?.user?.name}
+        <h3 className="mb-8 text-3xl font-bold text-gold">
+          welcome back, {session?.user?.name || session?.user?.email}
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
-          <div className="p-4 rounded-md bg-white">
+          <div className="rounded-md bg-white p-4">
             <QRCode className="mx-auto" size={212} value="1" />
           </div>
           <div className="flex w-full flex-col gap-8">
@@ -80,9 +80,7 @@ export const getServerSideProps = async (
     }
   );
 
-  return {
-    props: { session },
-  };
+  return { props: {} };
 };
 
 export default Dashboard;

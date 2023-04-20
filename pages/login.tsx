@@ -9,11 +9,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { authOptions } from "./api/auth/[...nextauth]";
 
-const schema = z
-  .object({
-    email: z.string().email(),
-    password: z.string().min(8, { message: "minimum 8 characters" }),
-  })
+const schema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8, { message: "minimum 8 characters" }),
+});
 
 type SchemaType = z.infer<typeof schema>;
 
@@ -28,7 +27,7 @@ const Login = ({
     resolver: zodResolver(schema),
   });
   const [loginState, setLoginState] = useState<
-    "initial" | "loggingIn" | "creatingPassword"
+    "initial" | "logging" | "registering"
   >("initial");
 
   const onSubmit: SubmitHandler<SchemaType> = async ({ email, password }) => {
@@ -44,18 +43,18 @@ const Login = ({
         },
       });
 
-      if (!userExists) {
-        setLoginState("creatingPassword");
+      if (userExists) {
+        setLoginState("logging");
       } else {
-        setLoginState("loggingIn");
+        setLoginState("registering");
       }
-    } else if (loginState === "loggingIn") {
+    } else if (loginState === "logging") {
       signIn("credentials", {
         email,
         password,
         callbackUrl: "/dashboard",
       });
-    } else if (loginState === "creatingPassword") {
+    } else if (loginState === "registering") {
       await axios.post("/api/user/upsert", {
         email,
         password,
@@ -69,19 +68,21 @@ const Login = ({
         <div className="relative z-50 mx-auto aspect-square w-1/2">
           <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
         </div>
-        <h1 className="text-5xl font-extrabold text-gold font-header">Hack the Nest</h1>
+        <h1 className="font-header text-5xl font-extrabold text-gold">
+          Hack the Nest
+        </h1>
         <form
           className="flex w-full flex-col gap-4"
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
-            className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
+            className="w-full rounded-md border bg-white px-6 py-4 text-black placeholder:text-black"
             type="email"
             placeholder="email"
             {...register("email")}
           />
           <input
-            className="w-full rounded-md border bg-white py-4 px-6 text-black placeholder:text-black"
+            className="w-full rounded-md border bg-white px-6 py-4 text-black placeholder:text-black"
             type="password"
             placeholder="password"
             {...register("password")}
