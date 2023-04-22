@@ -12,6 +12,7 @@ import ScheduleSection from "../components/sections/ScheduleSection";
 import SponsorsSection from "../components/sections/SponsorsSection";
 import useGradient from "../utils/useGradient";
 
+// TODO: SEO and sitemaps https://nextjs.org/learn/seo/crawling-and-indexing
 const Index: NextPage = () => {
   const [open, toggleOpen] = useCycle(false, true);
 

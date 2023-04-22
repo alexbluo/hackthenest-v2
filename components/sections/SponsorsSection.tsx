@@ -7,7 +7,7 @@ const SponsorsSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
         <h2 className={useGradient()}>sponsors</h2>
       </div>
-      <p className="-mx-8 mb-8 rounded-3xl rounded-tl-none bg-black p-8 text-xl">
+      <p className="-mx-8 mb-8 rounded-3xl rounded-tl-none sm:w-fit bg-black p-8 text-xl">
         Interested in sponsoring? Feel free to take a look at our{" "}
         <a
           className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
