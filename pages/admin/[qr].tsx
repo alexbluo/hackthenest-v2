@@ -1,5 +1,3 @@
-// QR CODE ID IS HASH OF USER EMAIL ON DASHBOARD AND EMAILED TO THEM
-
 const QR = () => {
   return (
     <div className="bg-blue-dark">

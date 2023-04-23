@@ -1,11 +1,7 @@
-import axios from "axios";
-import bcrypt from "bcrypt";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import { prisma } from "../../../db";
-import base from "../../../utils/base";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -19,32 +15,26 @@ export const authOptions: NextAuthOptions = {
     }),
     CredentialsProvider({
       type: "credentials",
-      // TODO: change to email and check if email === "admin" && password === env
       credentials: {
-        email: {
-          label: "email",
-          type: "email",
+        username: {
+          label: "username",
+          type: "text",
         },
         password: { label: "password", type: "password" },
       },
-      authorize: async (credentials, req) => {
-        if (!credentials?.email || !credentials?.password) return null;
+      authorize: async (credentials) => {
+        if (!credentials?.username || !credentials?.password) return null;
 
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
-        });
-
-        // return user if user and password already exist and passwords match, otherwise return null
-        if (user?.password) {
-          const match = await bcrypt.compare(credentials.password, user.password);
-
-          return match ? user : null;
+        if (
+          credentials.username === "ADMIN" &&
+          credentials.password === process.env.ADMIN_PASSWORD
+        ) {
+          console.log("admin passed");
+          return { id: "ADMIN", name: "ADMIN" };
         }
 
-        // otherwise create new user with password
-
-
-        return user;
+        console.log("admin lol try again");
+        return null;
       },
     }),
   ],

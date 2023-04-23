@@ -2,7 +2,7 @@
 
 ## Overview
 
-This April, Hack the Nest invites 250 young developers on the east
+This September, Hack the Nest invites 300 young developers on the east
 coast to a 36-hour hackathon in the heart of Maryland. Our team has
 been working tirelessly alongside our administration to pack our
 schedule to the brim with educational workshops, exciting side events,
