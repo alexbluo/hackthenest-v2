@@ -29,11 +29,9 @@ export const authOptions: NextAuthOptions = {
           credentials.username === "ADMIN" &&
           credentials.password === process.env.ADMIN_PASSWORD
         ) {
-          console.log("admin passed");
           return { id: "ADMIN", name: "ADMIN" };
         }
 
-        console.log("admin lol try again");
         return null;
       },
     }),

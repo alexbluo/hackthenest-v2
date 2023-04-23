@@ -12,11 +12,17 @@ interface NextApiRequestType extends NextApiRequest {
 
 // TODO: REJECT NON-POST
 const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
+  if (req.method !== "POST") {
+    res.status(300).end();
+    return;
+  }
+
   const session = await getServerSession(req, res, authOptions);
   const { email } = req.body;
 
   if (session?.user?.email !== email) {
     res.status(400).end();
+    return;
   }
 
   // hash email for id
