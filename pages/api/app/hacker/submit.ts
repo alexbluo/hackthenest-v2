@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { prisma } from "../../../db";
-import { authOptions } from "../auth/[...nextauth]";
+import { prisma } from "../../../../db";
+import { authOptions } from "../../auth/[...nextauth]";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
@@ -10,16 +10,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const session = await getServerSession(req, res, authOptions);
+  const email = session?.user?.email;
 
-  if (session?.user?.name !== "ADMIN") {
+  if (!email) {
     res.status(400).end();
     return;
   }
 
-  //
-  const user = await prisma.user.findMany();
+  const app = prisma.hackerApp.findUnique({ where: {} });
 
-  res.json(user);
+  res.status(200).json(app);
 };
 
 export default handler;

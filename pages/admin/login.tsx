@@ -78,6 +78,7 @@ const AdminLogin = () => {
   );
 };
 
+// TODO: https://nextjs.org/docs/advanced-features/middleware header setting and redirects
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
@@ -91,14 +92,15 @@ export const getServerSideProps = async (
       },
     };
   }
-  // if (session) {
-  //   return {
-  //     redirect: {
-  //       destination: "/dashboard",
-  //       permanent: false,
-  //     },
-  //   };
-  // }
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/dashboard",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {},

@@ -56,6 +56,7 @@ export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const session = await getServerSession(context.req, context.res, authOptions);
+  console.log(session);
 
   // if user === admin redirect admin dashboard
 
@@ -69,10 +70,8 @@ export const getServerSideProps = async (
   }
 
   await axios.post(
-    `${base}/api/user/upsert`,
-    {
-      email: session.user?.email,
-    },
+    `${base}/api/user/create`,
+    null,
     {
       headers: {
         cookie: context.req.headers.cookie || "",

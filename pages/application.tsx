@@ -14,6 +14,7 @@ import ApplicationInput from "../components/ApplicationInput";
 import base from "../utils/base";
 import countries from "../utils/countries";
 import useGradient from "../utils/useGradient";
+import { useEffect } from "react";
 
 const schema = z.object({
   firstName: z.string().min(1, { message: "*" }),
@@ -44,14 +45,18 @@ const Application = () => {
     handleSubmit,
     formState: { errors },
     control,
+    setValue,
   } = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
   const router = useRouter();
 
+  useEffect(() => {}, []);
+
   const onSubmit: SubmitHandler<SchemaType> = (data) => {
     console.log(data);
-    router.push("/dashboard");
+
+    // router.push("/dashboard");
   };
 
   return (
@@ -72,10 +77,7 @@ const Application = () => {
 
         <h2 className={`${useGradient()} mb-8`}>application</h2>
 
-        <form
-          className="-mx-8 p-8 text-lg"
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <form className="-mx-8 p-8 text-lg" onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
@@ -215,7 +217,7 @@ const Application = () => {
                   {errors.conduct && <span className="text-red">*</span>}
                 </span>
               </div>
-              <div className="flex w-full leading-none gap-4">
+              <div className="flex w-full gap-4 leading-none">
                 <input
                   className="h-4 w-4 appearance-none rounded-sm bg-white checked:bg-blue-light"
                   type="checkbox"
@@ -260,6 +262,7 @@ const Application = () => {
   );
 };
 
+// TODO: create folder for application/hacker application/volunteer
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
@@ -274,9 +277,12 @@ export const getServerSideProps = async (
     };
   }
 
-  // TODO: request and return app endpoint instead
+  const { data: app } = await axios.get(`${base}/api/app/hacker`);
+
+  console.log(app)
+
   return {
-    props: { },
+    props: {},
   };
 };
 

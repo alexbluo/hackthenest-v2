@@ -4,23 +4,16 @@ import { getServerSession } from "next-auth";
 import { prisma } from "../../../db";
 import { authOptions } from "../auth/[...nextauth]";
 
-interface NextApiRequestType extends NextApiRequest {
-  body: {
-    email: string;
-  };
-}
-
-// TODO: REJECT NON-POST
-const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
     res.status(300).end();
     return;
   }
 
   const session = await getServerSession(req, res, authOptions);
-  const { email } = req.body;
+  const email = session?.user?.email;
 
-  if (session?.user?.email !== email) {
+  if (!email) {
     res.status(400).end();
     return;
   }

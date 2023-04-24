@@ -11,7 +11,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const session = await getServerSession(req, res, authOptions);
 
-  if (session?.user?.email !== "ADMIN") {
+  if (session?.user?.name !== "ADMIN") {
     res.status(400).end();
     return;
   }
@@ -19,7 +19,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   //
   const user = await prisma.user.findMany();
 
-  res.json(user);
+  res.status(200).json(user);
 };
 
 export default handler;
