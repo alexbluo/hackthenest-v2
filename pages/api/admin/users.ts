@@ -16,8 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  //
-  const user = await prisma.user.findMany();
+  const user = await prisma.user.findMany({});
 
   res.status(200).json(user);
 };

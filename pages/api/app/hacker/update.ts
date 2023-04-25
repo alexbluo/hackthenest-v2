@@ -3,7 +3,12 @@ import { getServerSession } from "next-auth";
 import { prisma } from "../../../../db";
 import { authOptions } from "../../auth/[...nextauth]";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+interface NextApiRequestType extends NextApiRequest {
+  body: {
+  };
+}
+
+const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
   if (req.method !== "POST") {
     res.status(300).end();
     return;
@@ -17,7 +22,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  const app = prisma.hackerApp.findUnique({ where: {} });
+  // const {  } = req.body;
+
+  const app = prisma.hackerApp.upsert({ where: {}, update: {}, create: {} });
 
   res.status(200).json(app);
 };

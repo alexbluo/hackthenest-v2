@@ -7,7 +7,12 @@ const Footer = () => {
         {/* the div directly below is necessary https://stackoverflow.com/questions/33636796/chrome-safari-not-filling-100-height-of-flex-parent */}
         <div>
           <div className="relative aspect-square h-full">
-            <Image src="/logo-colored.png" alt="Hack the Nest Logo" fill />
+            <Image
+              src="/logo-colored.png"
+              alt="Hack the Nest Logo"
+              sizes="108px"
+              fill
+            />
           </div>
         </div>
 

@@ -23,7 +23,13 @@ const Sponsor = ({ src, alt, href, tier }: Props) => {
       rel="noreferrer"
     >
       <div className="relative h-full">
-        <Image src={src} alt={alt} style={{ objectFit: "contain" }} fill />
+        <Image
+          src={src}
+          alt={alt}
+          style={{ objectFit: "contain" }}
+          sizes="33vw"
+          fill
+        />
       </div>
     </a>
   );

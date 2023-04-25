@@ -15,7 +15,7 @@ const NavBar = ({ open, toggleOpen }: Props) => {
   const { data: session } = useSession();
 
   return (
-    <nav className="container absolute top-0 left-0 right-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
+    <nav className="container absolute left-0 right-0 top-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
       <div className="relative z-50 aspect-square h-3/5">
         <Image
           src="/logo-colored.png"

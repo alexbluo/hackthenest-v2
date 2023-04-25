@@ -19,9 +19,9 @@ const AdminLogin = () => {
           <Image
             src="/logo-colored.png"
             alt="Hack the Nest Logo"
+            sizes="160px"
             fill
             priority
-            sizes="160px"
           />
         </div>
         <h1 className="font-header text-5xl font-extrabold text-gold">
@@ -78,7 +78,6 @@ const AdminLogin = () => {
   );
 };
 
-// TODO: https://nextjs.org/docs/advanced-features/middleware header setting and redirects
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
@@ -96,7 +95,7 @@ export const getServerSideProps = async (
   if (session) {
     return {
       redirect: {
-        destination: "/dashboard",
+        destination: "/",
         permanent: false,
       },
     };

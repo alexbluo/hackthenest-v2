@@ -14,9 +14,9 @@ const Login = ({
           <Image
             src="/logo-colored.png"
             alt="Hack the Nest Logo"
+            sizes="160px"
             fill
             priority
-            sizes="160px"
           />
         </div>
         <h1 className="font-header text-5xl font-extrabold text-gold">
