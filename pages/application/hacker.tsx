@@ -1,4 +1,5 @@
 /* eslint-disable import/no-cycle */
+import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
@@ -8,13 +9,12 @@ import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
-import { authOptions } from "./api/auth/[...nextauth]";
-import ApplicationDropdown from "../components/ApplicationDropdown";
-import ApplicationInput from "../components/ApplicationInput";
-import base from "../utils/base";
-import countries from "../utils/countries";
-import useGradient from "../utils/useGradient";
-import { useEffect } from "react";
+import { authOptions } from "../api/auth/[...nextauth]";
+import ApplicationDropdown from "../../components/ApplicationDropdown";
+import ApplicationInput from "../../components/ApplicationInput";
+import base from "../../utils/base";
+import countries from "../../utils/countries";
+import useGradient from "../../utils/useGradient";
 
 const schema = z.object({
   firstName: z.string().min(1, { message: "*" }),
@@ -39,19 +39,26 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const Application = () => {
+const HackerApplication = ({
+  app,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
+    getValues,
     setValue,
   } = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
+
   const router = useRouter();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setValue("firstName", "Alex");
+    console.log(app);
+  }, []);
 
   const onSubmit: SubmitHandler<SchemaType> = (data) => {
     console.log(data);
@@ -277,13 +284,15 @@ export const getServerSideProps = async (
     };
   }
 
-  const { data: app } = await axios.get(`${base}/api/app/hacker`);
-
-  console.log(app)
+  const { data: app } = await axios.get(`${base}/api/app/hacker`, {
+    headers: {
+      cookie: context.req.headers.cookie || "",
+    },
+  });
 
   return {
-    props: {},
+    props: { app },
   };
 };
 
-export default Application;
+export default HackerApplication;

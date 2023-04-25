@@ -1,7 +1,7 @@
 import { Control, Controller, FieldError, Merge } from "react-hook-form";
 import Select, { MultiValue, SingleValue } from "react-select";
 // eslint-disable-next-line import/no-cycle
-import { SchemaType } from "../pages/application";
+import { SchemaType } from "../pages/application/hacker";
 
 interface Option {
   value: string | number | null | undefined;

@@ -17,7 +17,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  const app = prisma.hackerApp.findUnique({where: {}});
+  const app = prisma.user.findUnique({
+    where: { email },
+    select: { hackerApp: true },
+  });
 
   res.status(200).json(app);
 };

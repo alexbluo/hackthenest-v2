@@ -40,7 +40,7 @@ const Dashboard = () => {
           <div className="flex w-full flex-col gap-8">
             <DashboardButton
               name="Hacker Application"
-              href="/application"
+              href="/application/hacker"
               status="INCOMPLETE"
             />
             <DashboardButton name="Volunteer Application" status="COMPLETE" />

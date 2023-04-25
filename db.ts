@@ -4,7 +4,6 @@ const globalForPrisma = global as unknown as {
   prisma: PrismaClient | undefined 
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export const prisma =
   globalForPrisma.prisma ??
   new PrismaClient({
