@@ -6,7 +6,6 @@ const numBank = "1234567890";
 
 // https://www.youtube.com/watch?v=W5oawMJaXbU
 const jumboAnimation = (
-  stateString: string,
   setStateString: Dispatch<SetStateAction<string>>,
   targetString: string
 ) => {
@@ -20,24 +19,30 @@ const jumboAnimation = (
           index < iteration ||
           letter === " " ||
           letter === "-" ||
-          letter === "."
+          letter === "." ||
+          letter === ","
         ) {
           return letter;
         }
 
-        if (/^\d+$/.test(letter)) {
-          return numBank[Math.floor(Math.random() * numBank.length)];
+        let r = letter;
+        while (r === letter) {
+          if (/^\d+$/.test(letter)) {
+            r = numBank[Math.floor(Math.random() * numBank.length)];
+          } else if (letter === letter.toUpperCase()) {
+            r =
+              upperLetterBank[
+                Math.floor(Math.random() * upperLetterBank.length)
+              ].toUpperCase();
+          } else if (letter === letter.toLowerCase()) {
+            r =
+              lowerLetterBank[
+                Math.floor(Math.random() * lowerLetterBank.length)
+              ];
+          }
         }
 
-        if (letter === letter.toUpperCase()) {
-          return upperLetterBank[
-            Math.floor(Math.random() * upperLetterBank.length)
-          ].toUpperCase();
-        }
-
-        return lowerLetterBank[
-          Math.floor(Math.random() * lowerLetterBank.length)
-        ];
+        return r;
       })
       .join("");
 

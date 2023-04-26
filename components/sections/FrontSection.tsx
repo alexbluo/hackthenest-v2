@@ -14,9 +14,9 @@ const FrontSection = () => {
   const [location, setLocation] = useState<string>(targetLocation);
 
   useEffect(() => {
-    jumboAnimation(name, setName, targetName);
-    jumboAnimation(date, setDate, targetDate);
-    jumboAnimation(location, setLocation, targetLocation);
+    jumboAnimation(setName, targetName);
+    jumboAnimation(setDate, targetDate);
+    jumboAnimation(setLocation, targetLocation);
   }, []);
 
   return (
