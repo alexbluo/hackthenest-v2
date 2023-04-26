@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { prisma } from "../../../../db";
+import { SchemaType } from "../../../application/hacker";
 import { authOptions } from "../../auth/[...nextauth]";
 
 interface NextApiRequestType extends NextApiRequest {
-  body: {
-  };
+  body: SchemaType;
 }
 
 const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
@@ -22,9 +22,14 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
     return;
   }
 
-  // const {  } = req.body;
+  const { body } = req;
+  console.log("body", body);
 
-  const app = prisma.hackerApp.upsert({ where: {}, update: {}, create: {} });
+  const app = prisma.user.upsert({
+    where: { email },
+    update: { hackerApp: { update: {} } },
+    create: { hackerApp: { create: {} } },
+  });
 
   res.status(200).json(app);
 };

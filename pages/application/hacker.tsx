@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useMutation } from "react-query";
 import * as z from "zod";
 import ApplicationDropdown from "../../components/ApplicationDropdown";
 import ApplicationInput from "../../components/ApplicationInput";
@@ -24,14 +25,14 @@ const schema = z.object({
     .min(1, { message: "*" })
     .regex(
       /^((\\([0-9]{3}\\)[ \\-]*)|([0-9]{3})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{4}?$/,
-      { message: "Invalid format" }
+      { message: "* [invalid format]" }
     ),
-  age: z.number().min(1, { message: "*" }),
-  yog: z.number().min(1, { message: "*" }),
+  age: z.number().min(2, { message: "*" }),
+  yog: z.number().min(4, { message: "*" }),
   school: z.string().min(1, { message: "*" }),
   country: z.string().min(1, { message: "*" }),
-  diet: z.string().array().nonempty({ message: "*" }),
-  shirt: z.string().min(1, { message: "*" }),
+  diet: z.string().array(),
+  shirt: z.string().min(2, { message: "*" }),
   outreach: z.string().min(1, { message: "*" }),
   conduct: z.literal(true),
   privacy: z.literal(true),
@@ -39,31 +40,56 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const HackerApplication = ({
+const HackerApp = ({
   app,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isDirty, errors },
     control,
     getValues,
     setValue,
+    reset,
   } = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
 
   const router = useRouter();
 
+  const { mutate: save } = useMutation(
+    async (data: SchemaType) => {
+      const res = await axios.post("/api/app/hacker/save", { data });
+
+      return res.data;
+    },
+    { onSuccess: () => reset({}, { keepValues: true, keepErrors: true }) }
+  );
+
+  const { mutate: submit } = useMutation(async (data: SchemaType) => {
+    const res = await axios.post("/api/app/hacker/submit", { data });
+
+    return res.data;
+  });
+
   useEffect(() => {
-    setValue("firstName", "Alex");
-    console.log(app);
+    for (const [key, value] of Object.entries(app) as [
+      keyof SchemaType,
+      string
+    ][]) {
+      setValue(key, value);
+    }
+
+    // check if form updated every 2 secs and save if updated
+    setInterval(() => {
+      if (isDirty) save(getValues());
+    }, 2000);
   }, []);
 
   const onSubmit: SubmitHandler<SchemaType> = (data) => {
-    console.log(data);
-
-    // router.push("/dashboard");
+    console.log("submit", data);
+    submit(data);
+    router.push("/dashboard");
   };
 
   return (
@@ -89,7 +115,7 @@ const HackerApplication = ({
 
         <h2 className={`${useGradient()} mb-8`}>application</h2>
 
-        <form className="-mx-8 p-8 text-lg" onSubmit={handleSubmit(onSubmit)}>
+        <form className="-mx-8 p-8 text-lg bg-blue-dark/10 rounded-3xl" onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
@@ -212,7 +238,7 @@ const HackerApplication = ({
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4 leading-none">
                 <input
-                  className="h-4 w-4 appearance-none rounded-sm bg-white checked:bg-blue-light"
+                  className="h-4 w-4 cursor-pointer appearance-none rounded-sm bg-white checked:bg-blue-light"
                   type="checkbox"
                   {...register("conduct")}
                 />
@@ -231,7 +257,7 @@ const HackerApplication = ({
               </div>
               <div className="flex w-full gap-4 leading-none">
                 <input
-                  className="h-4 w-4 appearance-none rounded-sm bg-white checked:bg-blue-light"
+                  className="h-4 w-4 cursor-pointer appearance-none rounded-sm bg-white checked:bg-blue-light"
                   type="checkbox"
                   {...register("privacy")}
                 />
@@ -274,7 +300,6 @@ const HackerApplication = ({
   );
 };
 
-// TODO: create folder for application/hacker application/volunteer
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
@@ -289,7 +314,7 @@ export const getServerSideProps = async (
     };
   }
 
-  const { data: app } = await axios.get(`${base}/api/app/hacker`, {
+  const { data: app } = await axios.get<SchemaType>(`${base}/api/app/hacker`, {
     headers: {
       cookie: context.req.headers.cookie || "",
     },
@@ -300,4 +325,4 @@ export const getServerSideProps = async (
   };
 };
 
-export default HackerApplication;
+export default HackerApp;

@@ -64,7 +64,7 @@ const ApplicationDropdown = ({
             styles={{
               control: (base, state) => ({
                 ...base,
-                backgroundColor: "#1a1a1a",
+                backgroundColor: "transparent",
                 borderTopWidth: 0,
                 borderLeftWidth: 0,
                 borderRightWidth: 0,
@@ -144,6 +144,10 @@ const ApplicationDropdown = ({
                 ...base,
                 padding: 0,
                 color: "#ffffff",
+              }),
+              clearIndicator: (base) => ({
+                ...base,
+                padding: 0,
               }),
             }}
           />
