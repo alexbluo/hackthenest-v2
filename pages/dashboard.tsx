@@ -1,3 +1,4 @@
+import { User } from "@prisma/client";
 import axios from "axios";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
@@ -83,11 +84,15 @@ export const getServerSideProps = async (
     };
   }
 
-  const user = await axios.post(`${base}/api/user/create`, null, {
-    headers: {
-      cookie: context.req.headers.cookie || "",
-    },
-  });
+  const { data: user } = await axios.post<User>(
+    `${base}/api/user/create`,
+    null,
+    {
+      headers: {
+        cookie: context.req.headers.cookie || "",
+      },
+    }
+  );
 
   return { props: { user } };
 };
