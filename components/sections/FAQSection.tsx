@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import useGradient from "../../utils/useGradient";
 import FAQ from "../FAQ";
 
 interface Question {
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 interface QuestionList {
@@ -47,19 +47,29 @@ const questions: QuestionList = {
         "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school but would still like to participate, we'd love to have you as a mentor, volunteer, or sponsor!",
     },
     {
-      question: "How can I volunteer or mentor?",
-      answer:
-        "Details on volunteer and mentor registration will be released soon.",
-    },
-    {
       question: "How do teams work?",
       answer:
         "There are up to four people per team and you get to choose who you work with, so bring your friends along! Don't worry if you don't have a team; we have a dedicated team formation Discord channel as well as a team formation session at the beginning of the event.",
     },
     {
+      question: "Where is the hackathon being held?",
+      answer: (
+        <>
+          Hack the Nest is being held in-person at{" "}
+          <a
+            className="cursor-pointer text-blue-light underline"
+            href="https://www.google.com/maps/dir/?api=1&destination=21680+Ridgetop+Circle+150+Sterling+Va+20166&travelmode=driving"
+          >
+            21680 Ridgetop Circle, #150 Sterling, Va 20166
+          </a>{" "}
+          thanks to our generous sponsor theCoderSchool!
+        </>
+      ),
+    },
+    {
       question: "What are the overnight arrangements?",
       answer:
-        "Due to limitations with our venue, hackers will return home for the night. We suggest carpooling with your group and even staying over at a member's place. The hacking and fun doesn't stop in the wee hours - we'll even be hosting online video game tournaments!",
+        "We will have a dedicated sleeping room and a limited supply of airbeds and sleeping bags on a first come first serve basis. Feel free to bring your own blanket, bed, or... bouncy castle?",
     },
     {
       question: "I have more questions!",
@@ -74,7 +84,7 @@ const FAQSection = () => {
 
   return (
     <section id="faq" className="">
-      <div className="-mx-8 inline-block rounded-r-full bg-black py-2 px-8 sm:rounded-full sm:rounded-bl-none">
+      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
         <h2 className={useGradient()}>faq</h2>
       </div>
       <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl sm:rounded-tl-none md:flex-row md:gap-16">
