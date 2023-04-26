@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
@@ -10,7 +10,9 @@ import DashboardButton from "../components/DashboardButton";
 import base from "../utils/base";
 import useGradient from "../utils/useGradient";
 
-const Dashboard = () => {
+const Dashboard = ({
+  user,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const { data: session } = useSession();
 
   return (
@@ -40,7 +42,7 @@ const Dashboard = () => {
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="rounded-md bg-white p-4">
-            <QRCode className="mx-auto" size={212} value="1" />
+            <QRCode className="mx-auto" size={212} value={user.id} />
           </div>
           <div className="flex w-full flex-col gap-8">
             <DashboardButton
@@ -63,8 +65,6 @@ export const getServerSideProps = async (
   const session = await getServerSession(context.req, context.res, authOptions);
   console.log(session);
 
-  // if user === admin redirect admin dashboard
-
   if (!session) {
     return {
       redirect: {
@@ -74,13 +74,22 @@ export const getServerSideProps = async (
     };
   }
 
-  await axios.post(`${base}/api/user/create`, null, {
+  if (session?.user?.name === "ADMIN") {
+    return {
+      redirect: {
+        destination: "/admin",
+        permanent: false,
+      },
+    };
+  }
+
+  const user = await axios.post(`${base}/api/user/create`, null, {
     headers: {
       cookie: context.req.headers.cookie || "",
     },
   });
 
-  return { props: {} };
+  return { props: { user } };
 };
 
 export default Dashboard;

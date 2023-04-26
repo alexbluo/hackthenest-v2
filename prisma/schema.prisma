@@ -8,6 +8,7 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+// TODO: separate rsvp model with waiver uploads?
 model User {
   id           String        @id
   email        String        @unique

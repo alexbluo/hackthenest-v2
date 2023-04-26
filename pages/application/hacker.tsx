@@ -115,7 +115,10 @@ const HackerApp = ({
 
         <h2 className={`${useGradient()} mb-8`}>application</h2>
 
-        <form className="-mx-8 p-8 text-lg bg-blue-mid/20 rounded-3xl" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="-mx-8 rounded-3xl bg-blue-mid/20 p-8 text-lg"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
@@ -309,6 +312,15 @@ export const getServerSideProps = async (
     return {
       redirect: {
         destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  if (session?.user?.name === "ADMIN") {
+    return {
+      redirect: {
+        destination: "/admin",
         permanent: false,
       },
     };
