@@ -43,7 +43,7 @@ const Dashboard = ({
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="rounded-md bg-white p-4">
-            <QRCode className="mx-auto" size={212} value={user.id} />
+            <QRCode className="mx-auto" size={212} value={user.email} />
           </div>
           <div className="flex w-full flex-col gap-8">
             <DashboardButton
@@ -64,7 +64,6 @@ export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const session = await getServerSession(context.req, context.res, authOptions);
-  console.log(session);
 
   if (!session) {
     return {

@@ -17,9 +17,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  const app = prisma.user.findUnique({
-    where: { email },
-    select: { hackerApp: true },
+  const app = await prisma.hackerApp.findUnique({
+    where: { userEmail: email },
   });
 
   res.status(200).json(app);

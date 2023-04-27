@@ -11,12 +11,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const session = await getServerSession(req, res, authOptions);
 
-  if (session?.user?.name !== "ADMIN") {
-    res.status(400).end();
-    return;
-  }
+  // if (session?.user?.name !== "ADMIN") {
+  //   res.status(400).end();
+  //   return;
+  // }
 
-  const user = await prisma.user.findMany({});
+  const user = await prisma.user.findMany({
+    include: { hackerApp: true, volunteerApp: true },
+  });
 
   res.status(200).json(user);
 };

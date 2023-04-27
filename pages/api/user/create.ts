@@ -24,7 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const user = await prisma.user.upsert({
     where: { email },
     update: {},
-    create: { id: hashedEmail, email },
+    create: { email, qr: hashedEmail },
   });
 
   res.status(200).json(user);

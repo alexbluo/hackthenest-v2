@@ -63,7 +63,9 @@ const HackerApp = ({
 
       return res.data;
     },
-    { onSuccess: () => reset({}, { keepValues: true, keepErrors: true }) }
+    {
+      onSuccess: () => reset({}, { keepValues: true, keepErrors: true }),
+    }
   );
 
   const { mutate: submit } = useMutation(async (data: SchemaType) => {

@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 const Path = (props: any) => {
@@ -7,7 +8,7 @@ const Path = (props: any) => {
 interface Props {
   question: string;
   open: boolean;
-  children: string;
+  children: ReactNode;
   onClick: () => void;
 }
 
