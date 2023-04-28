@@ -36,14 +36,13 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
     conduct,
     privacy,
   } = req.body.data;
-  console.log(lastName);
 
   const app = await prisma.hackerApp.upsert({
     where: {
       userEmail: email,
     },
     update: {
-      firstName: "ok",
+      firstName,
       lastName,
       phone,
       age,
@@ -53,8 +52,8 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
       diet: {
         connectOrCreate:
           diet?.map((d) => ({
-            where: { diet: d },
-            create: { diet: d },
+            where: { diet: d, hackerAppUserEmail: email },
+            create: { diet: d, hackerAppUserEmail: email },
           })) || [],
       },
       shirt,
@@ -85,7 +84,6 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
       userEmail: email,
     },
   });
-  // console.log(app);
 
   res.status(200).json(app);
 };

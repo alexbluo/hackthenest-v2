@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useMutation } from "react-query";
 import * as z from "zod";
 import ApplicationDropdown from "../../components/ApplicationDropdown";
 import ApplicationInput from "../../components/ApplicationInput";
@@ -46,51 +45,29 @@ const HackerApp = ({
   const {
     register,
     handleSubmit,
-    formState: { isDirty, errors },
+    formState: { errors },
     control,
     getValues,
-    setValue,
-    reset,
   } = useForm<SchemaType>({
+    defaultValues: app,
     resolver: zodResolver(schema),
   });
 
   const router = useRouter();
 
-  const { mutate: save } = useMutation(
-    async (data: SchemaType) => {
-      const res = await axios.post("/api/app/hacker/save", { data });
-
-      return res.data;
-    },
-    {
-      onSuccess: () => reset({}, { keepValues: true, keepErrors: true }),
-    }
-  );
-
-  const { mutate: submit } = useMutation(async (data: SchemaType) => {
-    const res = await axios.post("/api/app/hacker/submit", { data });
-
-    return res.data;
-  });
-
   useEffect(() => {
-    for (const [key, value] of Object.entries(app) as [
-      keyof SchemaType,
-      string
-    ][]) {
-      setValue(key, value);
-    }
+    const interval =setInterval(async () => {
+      await axios.post("/api/app/hacker/save", { data: getValues() });
+    }, 4000);
 
-    // check if form updated every 2 secs and save if updated
-    setInterval(() => {
-      if (isDirty) save(getValues());
-    }, 2000);
+    return () => clearInterval(interval)
   }, []);
 
-  const onSubmit: SubmitHandler<SchemaType> = (data) => {
+  const onSubmit: SubmitHandler<SchemaType> = async (data) => {
     console.log("submit", data);
-    submit(data);
+
+    const res = await axios.post("/api/app/hacker/submit", { data });
+
     router.push("/dashboard");
   };
 
@@ -333,6 +310,7 @@ export const getServerSideProps = async (
       cookie: context.req.headers.cookie || "",
     },
   });
+  console.log({ props: { app } });
 
   return {
     props: { app },

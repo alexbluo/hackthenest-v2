@@ -82,6 +82,7 @@ export const getServerSideProps = async (
       },
     };
   }
+  console.time()
 
   const { data: user } = await axios.post<User>(
     `${base}/api/user/create`,
@@ -92,6 +93,7 @@ export const getServerSideProps = async (
       },
     }
   );
+    console.timeEnd();
 
   return { props: { user } };
 };

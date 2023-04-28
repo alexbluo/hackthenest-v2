@@ -19,20 +19,21 @@ model User {
 }
 
 model HackerApp {
-  firstName String?
-  lastName  String?
-  phone     String?
-  age       Int?
-  yog       Int?
-  school    String?
-  country   String?
-  diet      Diet[]
-  shirt     String?
-  outreach  String?
-  conduct   Boolean?
-  privacy   Boolean?
-  user      User     @relation(fields: [userEmail], references: [email])
-  userEmail String   @id
+  firstName  String?
+  lastName   String?
+  phone      String?
+  age        Int?
+  yog        Int?
+  school     String?
+  country    String?
+  diet       Diet[]
+  shirt      String?
+  experience String?
+  outreach   String?
+  conduct    Boolean?
+  privacy    Boolean?
+  user       User     @relation(fields: [userEmail], references: [email])
+  userEmail  String   @id
 }
 
 model VolunteerApp {
