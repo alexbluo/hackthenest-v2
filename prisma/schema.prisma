@@ -26,7 +26,7 @@ model HackerApp {
   yog        Int?
   school     String?
   country    String?
-  diet       Diet[]
+  diet       String?
   shirt      String?
   experience String?
   outreach   String?
@@ -37,24 +37,16 @@ model HackerApp {
 }
 
 model VolunteerApp {
-  firstName String
-  lastName  String
-  phone     String
-  age       Int
-  role      String // volunteer, mentor, judge, sponsor
-  origin    String // school/company
-  diet      Diet[]
-  shirt     String
+  firstName String?
+  lastName  String?
+  phone     String?
+  age       Int?
+  role      String? // volunteer, mentor, judge, sponsor
+  origin    String? // school/company
+  diet      String?
+  shirt     String?
   user      User   @relation(fields: [userEmail], references: [email])
   userEmail String @id
-}
-
-model Diet {
-  diet                  String        @id
-  hackerApp             HackerApp?    @relation(fields: [hackerAppUserEmail], references: [userEmail])
-  hackerAppUserEmail    String        @unique
-  volunteerApp          VolunteerApp? @relation(fields: [volunteerAppUserEmail], references: [userEmail])
-  volunteerAppUserEmail String        @unique
 }
 
 model Check {

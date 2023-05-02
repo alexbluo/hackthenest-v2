@@ -30,7 +30,7 @@ const schema = z.object({
   yog: z.number().min(4, { message: "*" }),
   school: z.string().min(1, { message: "*" }),
   country: z.string().min(1, { message: "*" }),
-  diet: z.string().array(),
+  diet: z.string().min(1, { message: "*" }),
   shirt: z.string().min(2, { message: "*" }),
   outreach: z.string().min(1, { message: "*" }),
   conduct: z.literal(true),
@@ -56,11 +56,11 @@ const HackerApp = ({
   const router = useRouter();
 
   useEffect(() => {
-    const interval =setInterval(async () => {
+    const interval = setInterval(async () => {
       await axios.post("/api/app/hacker/save", { data: getValues() });
     }, 4000);
 
-    return () => clearInterval(interval)
+    return () => clearInterval(interval);
   }, []);
 
   const onSubmit: SubmitHandler<SchemaType> = async (data) => {
@@ -169,7 +169,6 @@ const HackerApp = ({
               fieldName="dietary restrictions"
               name="diet"
               options={[
-                { value: null, label: "None" },
                 { value: "vegan", label: "Vegan" },
                 { value: "vegetarian", label: "Vegetarian" },
                 { value: "kosher", label: "Kosher" },
@@ -181,7 +180,6 @@ const HackerApp = ({
               ]}
               defaultValue={undefined}
               control={control}
-              isMulti
               error={errors.diet}
             />
             <ApplicationDropdown
@@ -310,7 +308,6 @@ export const getServerSideProps = async (
       cookie: context.req.headers.cookie || "",
     },
   });
-  console.log({ props: { app } });
 
   return {
     props: { app },

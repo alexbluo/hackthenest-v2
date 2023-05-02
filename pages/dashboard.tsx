@@ -48,7 +48,7 @@ const Dashboard = ({
           <div className="flex w-full flex-col gap-8">
             <DashboardButton
               name="Hacker Application"
-              href="/application/hacker"
+              href="/app/hacker"
               status="INCOMPLETE"
             />
             <DashboardButton name="Volunteer Application" status="COMPLETE" />
@@ -82,7 +82,6 @@ export const getServerSideProps = async (
       },
     };
   }
-  console.time()
 
   const { data: user } = await axios.post<User>(
     `${base}/api/user/create`,
@@ -93,7 +92,6 @@ export const getServerSideProps = async (
       },
     }
   );
-    console.timeEnd();
 
   return { props: { user } };
 };

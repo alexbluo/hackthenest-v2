@@ -1,7 +1,7 @@
 import { Control, Controller, FieldError, Merge } from "react-hook-form";
-import Select, { MultiValue, SingleValue } from "react-select";
+import Select from "react-select";
 // eslint-disable-next-line import/no-cycle
-import { SchemaType } from "../pages/application/hacker";
+import { SchemaType } from "../pages/app/hacker";
 
 interface Option {
   value: string | number | null | undefined;
@@ -46,21 +46,16 @@ const ApplicationDropdown = ({
       </h3>
       <Controller
         control={control}
-        defaultValue={defaultValue}
         name={name}
+        defaultValue={defaultValue}
         render={({ field: { onChange, value, ref } }) => (
           <Select
             className="w-full border-separate rounded"
             ref={ref}
             instanceId={name}
             options={options}
-            isMulti={isMulti}
             value={options.find((el) => el.value === value)}
-            onChange={(newValue: any) => {
-              return isMulti
-                ? onChange(newValue?.map((o: Option) => o.value))
-                : onChange(newValue?.value);
-            }}
+            onChange={(newValue: any) => onChange(newValue?.value)}
             styles={{
               control: (base, state) => ({
                 ...base,

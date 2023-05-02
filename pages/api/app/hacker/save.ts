@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { prisma } from "../../../../db";
-import { SchemaType } from "../../../application/hacker";
+import { SchemaType } from "../../../app/hacker";
 import { authOptions } from "../../auth/[...nextauth]";
 
 interface NextApiRequestType extends NextApiRequest {
@@ -49,13 +49,7 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
       yog,
       school,
       country,
-      diet: {
-        connectOrCreate:
-          diet?.map((d) => ({
-            where: { diet: d, hackerAppUserEmail: email },
-            create: { diet: d, hackerAppUserEmail: email },
-          })) || [],
-      },
+      diet,
       shirt,
       outreach,
       conduct,
@@ -70,13 +64,7 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
       yog,
       school,
       country,
-      diet: {
-        connectOrCreate:
-          diet?.map((d) => ({
-            where: { diet: d },
-            create: { diet: d },
-          })) || [],
-      },
+      diet,
       shirt,
       outreach,
       conduct,

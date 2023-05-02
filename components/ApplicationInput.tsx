@@ -1,6 +1,6 @@
 import { FieldError, UseFormRegister } from "react-hook-form";
 // eslint-disable-next-line import/no-cycle
-import { SchemaType } from "../pages/application/hacker";
+import { SchemaType } from "../pages/app/hacker";
 
 interface Props {
   // display name

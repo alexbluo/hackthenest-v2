@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { prisma } from "../../../../db";
-import { SchemaType } from "../../../application/hacker";
+import { SchemaType } from "../../../app/hacker";
 import { authOptions } from "../../auth/[...nextauth]";
 
 interface NextApiRequestType extends NextApiRequest {
