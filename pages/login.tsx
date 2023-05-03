@@ -58,6 +58,7 @@ const Login = ({
   );
 };
 
+// TODO: look logs and fix cold starts
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {

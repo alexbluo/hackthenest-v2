@@ -9,6 +9,7 @@ datasource db {
 }
 
 // TODO: separate rsvp model with waiver uploads?
+// TODO: add submitted boolean check
 model User {
   email        String        @id
   qr           String        @unique

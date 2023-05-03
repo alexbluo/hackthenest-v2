@@ -5,7 +5,7 @@ import { SchemaType } from "../../../app/hacker";
 import { authOptions } from "../../auth/[...nextauth]";
 
 interface NextApiRequestType extends NextApiRequest {
-  body: SchemaType;
+  body: { data: SchemaType };
 }
 
 const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
@@ -22,7 +22,19 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
     return;
   }
 
-  const app = prisma.hackerApp.findUnique({ where: {} });
+  const app = await prisma.hackerApp.upsert({
+    where: {
+      userEmail: email,
+    },
+    update: {
+      ...req.body.data,
+      userEmail: email,
+    },
+    create: {
+      ...req.body.data,
+      userEmail: email,
+    },
+  });
 
   res.status(200).json(app);
 };

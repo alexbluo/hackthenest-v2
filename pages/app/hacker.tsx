@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
@@ -17,24 +17,25 @@ import useGradient from "../../utils/useGradient";
 import { authOptions } from "../api/auth/[...nextauth]";
 
 const schema = z.object({
-  firstName: z.string().min(1, { message: "*" }),
-  lastName: z.string().min(1, { message: "*" }),
+  firstName: z.string().min(1, { message: "*" }).optional(),
+  lastName: z.string().min(1, { message: "*" }).optional(),
   phone: z
     .string()
-    .min(1, { message: "*" })
     .regex(
-      /^((\\([0-9]{3}\\)[ \\-]*)|([0-9]{3})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{4}?$/,
-      { message: "* [invalid format]" }
-    ),
-  age: z.number().min(2, { message: "*" }),
-  yog: z.number().min(4, { message: "*" }),
-  school: z.string().min(1, { message: "*" }),
-  country: z.string().min(1, { message: "*" }),
-  diet: z.string().min(1, { message: "*" }),
-  shirt: z.string().min(2, { message: "*" }),
-  outreach: z.string().min(1, { message: "*" }),
-  conduct: z.literal(true),
-  privacy: z.literal(true),
+      /[0-9]{9}/,
+      { message: "*" }
+    )
+    .optional(),
+  age: z.number().min(2, { message: "*" }).optional(),
+  yog: z.number().min(4, { message: "*" }).optional(),
+  // check capitalized
+  school: z.string().min(1, { message: "*" }).optional(),
+  country: z.string().min(1, { message: "*" }).optional(),
+  diet: z.string().min(1, { message: "*" }).optional(),
+  shirt: z.string().min(2, { message: "*" }).optional(),
+  outreach: z.string().min(1, { message: "*" }).optional(),
+  conduct: z.literal(true).optional(),
+  privacy: z.literal(true).optional(),
 });
 
 export type SchemaType = z.infer<typeof schema>;
@@ -45,9 +46,10 @@ const HackerApp = ({
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isDirty, errors },
     control,
     getValues,
+    reset,
   } = useForm<SchemaType>({
     defaultValues: app,
     resolver: zodResolver(schema),
@@ -56,12 +58,23 @@ const HackerApp = ({
   const router = useRouter();
 
   useEffect(() => {
-    const interval = setInterval(async () => {
-      await axios.post("/api/app/hacker/save", { data: getValues() });
-    }, 4000);
+    try {
+      const existentValues = Object.fromEntries(
+        Object.entries(getValues()).filter(([k, v]) => v !== null && v !== "")
+      );
+      schema.parse(existentValues);
+    } catch (err) {
+      return () => null;
+    }
+    if (!isDirty) return () => null;
 
-    return () => clearInterval(interval);
-  }, []);
+    const interval = setTimeout(async () => {
+      await axios.post("/api/app/hacker/save", { data: getValues() });
+      reset({}, { keepValues: true });
+    }, 2000);
+
+    return () => clearTimeout(interval);
+  }, [getValues, isDirty, reset]);
 
   const onSubmit: SubmitHandler<SchemaType> = async (data) => {
     console.log("submit", data);

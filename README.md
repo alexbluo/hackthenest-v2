@@ -3,7 +3,7 @@
 ## Overview
 
 This September, Hack the Nest invites 300 young developers on the east
-coast to a 36-hour hackathon in the heart of Maryland. Our team has
+coast to a 36-hour hackathon in the heart of the DMV area. Our team has
 been working tirelessly alongside our administration to pack our
 schedule to the brim with educational workshops, exciting side events,
 and exotic prizes. Whether it’s ping-pong without paddles or
@@ -23,7 +23,7 @@ from hackathons. This website serves as both an informational asset to potential
 | Axios + React Query |   Fetching and Caching    |
 |       Prisma        |            ORM            |
 |      NextAuth       |      Authentication       |
-|    MailChimp API    |     Email Automation      |
+|    Postmark    |     Email Automation      |
 |       Vercel        |     Hosting Platform      |
 
 ## Sourcing Documentation
@@ -36,7 +36,7 @@ from hackathons. This website serves as both an informational asset to potential
 - [Node.js](https://nodejs.org/en/docs/)
 - [TailwindCSS](https://tailwindcss.com/docs/installation)
 - [Prisma](https://www.prisma.io/docs)
-- [MailChimp API](https://mailchimp.com/developer/)
+- [Postmark](https://postmarkapp.com/developer)
 - [React Query](https://react-query.tanstack.com/overview)
 - [NextAuth](https://next-auth.js.org/getting-started/example)
 - [autoprefixer](https://github.com/postcss/autoprefixer)
