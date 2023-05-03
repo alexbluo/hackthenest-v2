@@ -21,10 +21,7 @@ const schema = z.object({
   lastName: z.string().min(1, { message: "*" }).optional(),
   phone: z
     .string()
-    .regex(
-      /[0-9]{9}/,
-      { message: "*" }
-    )
+    .regex(/^\d{10}$/, { message: "*" })
     .optional(),
   age: z.number().min(2, { message: "*" }).optional(),
   yog: z.number().min(4, { message: "*" }).optional(),
@@ -50,9 +47,11 @@ const HackerApp = ({
     control,
     getValues,
     reset,
+    setFocus,
   } = useForm<SchemaType>({
     defaultValues: app,
     resolver: zodResolver(schema),
+    shouldFocusError: false,
   });
 
   const router = useRouter();
@@ -60,7 +59,7 @@ const HackerApp = ({
   useEffect(() => {
     try {
       const existentValues = Object.fromEntries(
-        Object.entries(getValues()).filter(([k, v]) => v !== null && v !== "")
+        Object.entries(getValues()).filter(([k, v]) => !!v && v !== "")
       );
       schema.parse(existentValues);
     } catch (err) {
@@ -76,9 +75,14 @@ const HackerApp = ({
     return () => clearTimeout(interval);
   }, [getValues, isDirty, reset]);
 
-  const onSubmit: SubmitHandler<SchemaType> = async (data) => {
-    console.log("submit", data);
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      const firstError = Object.keys(errors)[0] as keyof SchemaType;
+      setFocus(firstError);
+    }
+  }, [errors, setFocus]);
 
+  const onSubmit: SubmitHandler<SchemaType> = async (data) => {
     const res = await axios.post("/api/app/hacker/submit", { data });
 
     router.push("/dashboard");
@@ -131,7 +135,7 @@ const HackerApp = ({
             <ApplicationInput
               fieldName="phone number"
               name="phone"
-              placeholder="123-456-7890"
+              placeholder="1234567890"
               register={register}
               error={errors.phone}
             />

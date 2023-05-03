@@ -15,6 +15,7 @@ interface Props {
   error: FieldError | undefined;
 }
 
+// 1 px higher bottom border on focus, animate from left
 const ApplicationInput = ({
   fieldName,
   name,

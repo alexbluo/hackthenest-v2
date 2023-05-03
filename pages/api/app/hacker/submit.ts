@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
+import { ServerClient } from "postmark";
 import { prisma } from "../../../../db";
 import { SchemaType } from "../../../app/hacker";
 import { authOptions } from "../../auth/[...nextauth]";
@@ -35,6 +36,17 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
       userEmail: email,
     },
   });
+
+  // transactional email
+  // TODO: fix vs code env recognition
+  const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
+
+  // client.sendEmail({
+  //   From: "hello@hackthenest.org",
+  //   To: "hello@hackthenest.org",
+  //   Subject: "Test",
+  //   TextBody: "Hello from Postmark!",
+  // });
 
   res.status(200).json(app);
 };
