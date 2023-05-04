@@ -3,7 +3,12 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
-  content: ["./components/**/*.tsx", "./pages/**/*.tsx", "./sections/**/*.tsx"],
+  content: [
+    "./components/**/*.tsx",
+    "./pages/**/*.tsx",
+    "./sections/**/*.tsx",
+    "./emails/templates/*.html",
+  ],
   theme: {
     fontFamily: {
       sans: ["proxima-nova", ...fontFamily.sans],

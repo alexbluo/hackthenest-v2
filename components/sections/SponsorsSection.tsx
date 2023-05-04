@@ -7,7 +7,7 @@ const SponsorsSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
         <h2 className={useGradient()}>sponsors</h2>
       </div>
-      <p className="-mx-8 mb-8 rounded-3xl rounded-tl-none sm:w-fit bg-black p-8 text-xl">
+      <p className="-mx-8 mb-8 rounded-3xl rounded-tl-none bg-black p-8 text-xl sm:w-fit">
         Interested in sponsoring? Feel free to take a look at our{" "}
         <a
           className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
@@ -28,13 +28,25 @@ const SponsorsSection = () => {
       </p>
       <div className="flex flex-col gap-6">
         {/* gold tier  */}
+        <Sponsor
+          src="/theCoderSchool.png"
+          alt="theCoderSchool gold sponsorship"
+          href="https://www.thecoderschool.com/"
+          tier="gold"
+        />
         <div className="grid gap-6" />
         {/* silver tier */}
         <div className="grid grid-cols-2 gap-6" />
         {/* bronze tier */}
         <div className="grid grid-cols-3 gap-6">
           <Sponsor
-            src="/janestreet.png"
+            src="/c-hit.png"
+            alt="C-HIT bronze sponsorship"
+            href="https://www.c-hit.com/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/jane-street.png"
             alt="Jane Street bronze sponsorship"
             href="https://www.janestreet.com/"
             tier="bronze"
@@ -46,7 +58,7 @@ const SponsorsSection = () => {
             tier="bronze"
           />
           <Sponsor
-            src="/nsp.png"
+            src="/no-starch-press.png"
             alt="No Starch Press Bronze Sponsorships"
             href="https://nostarch.com/"
             tier="bronze"
