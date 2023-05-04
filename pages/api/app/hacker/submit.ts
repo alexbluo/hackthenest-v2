@@ -38,7 +38,6 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
   });
 
   // transactional email
-  // TODO: fix vs code env recognition
   const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
   // client.sendEmail({
