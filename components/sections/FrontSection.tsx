@@ -27,10 +27,10 @@ const FrontSection = () => {
           {name}
         </h1>
         <div className="flex w-fit flex-col gap-8">
-          <div className="mx-auto flex gap-2 font-header text-xl before:content-['']">
-            <h3 className="font-medium">{date}</h3>
-            <div className="">•</div>
-            <h3 className="font-medium">{location}</h3>
+          <div className="mx-auto flex gap-2 font-header text-xl font-medium text-ice before:content-['']">
+            <h3>{date}</h3>
+            <div>•</div>
+            <h3>{location}</h3>
           </div>
           <Link
             className={`${useGradient()} mx-auto w-80 rounded-md bg-white px-6 py-4 text-center font-header text-lg font-medium text-black`}

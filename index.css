@@ -15,7 +15,7 @@ input:focus {
   outline: 0px none transparent;
 }
 
-input[type=checkbox]:focus {
+input[type="checkbox"]:focus {
   outline: 1px solid;
 }
 

@@ -23,13 +23,14 @@ const schema = z.object({
     .string()
     .regex(/^\d{10}$/, { message: "*" })
     .optional(),
-  age: z.number().min(2, { message: "*" }).optional(),
-  yog: z.number().min(4, { message: "*" }).optional(),
+  age: z.number().min(1, { message: "*" }).optional(),
+  yog: z.number().min(1, { message: "*" }).optional(),
   // check capitalized
   school: z.string().min(1, { message: "*" }).optional(),
   country: z.string().min(1, { message: "*" }).optional(),
   diet: z.string().min(1, { message: "*" }).optional(),
-  shirt: z.string().min(2, { message: "*" }).optional(),
+  shirt: z.string().min(1, { message: "*" }).optional(),
+  experience: z.number().min(1, {message: "*"}).optional(),
   outreach: z.string().min(1, { message: "*" }).optional(),
   conduct: z.literal(true).optional(),
   privacy: z.literal(true).optional(),
@@ -75,6 +76,7 @@ const HackerApp = ({
     return () => clearTimeout(interval);
   }, [getValues, isDirty, reset]);
 
+  // set focus to top-most error field on submission
   useEffect(() => {
     if (Object.keys(errors).length > 0) {
       const firstError = Object.keys(errors)[0] as keyof SchemaType;

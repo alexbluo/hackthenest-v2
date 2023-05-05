@@ -8,6 +8,7 @@ interface NextApiRequestType extends NextApiRequest {
   body: { data: SchemaType };
 }
 
+// TODO: check database limitations, backup
 const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
   if (req.method !== "POST") {
     res.status(300).end();

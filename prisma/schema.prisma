@@ -29,7 +29,7 @@ model HackerApp {
   country    String?
   diet       String?
   shirt      String?
-  experience String?
+  experience Int?
   outreach   String?
   conduct    Boolean?
   privacy    Boolean?

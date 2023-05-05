@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 const lowerLetterBank = "abcdefhiklmnorstuvwxz";
+// TODO: change to only upper case?
 const upperLetterBank = "ABCDEFGIJKLMNOPQRSTUVWXYZ";
 const numBank = "1234567890";
 

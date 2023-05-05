@@ -20,9 +20,7 @@ const FAQ = ({ question, open, children, onClick }: Props) => {
         onClick={onClick}
       >
         <motion.h3
-          className="cursor-pointer select-none whitespace-pre-line text-left text-xl"
-          animate={open ? "open" : "closed"}
-          variants={{ open: { color: "#ffbd59" } }}
+          className="cursor-pointer text-white select-none whitespace-pre-line text-left text-xl"
           transition={{
             ease: "easeIn",
             duration: 0.2,
@@ -31,6 +29,7 @@ const FAQ = ({ question, open, children, onClick }: Props) => {
           {question}
         </motion.h3>
         <motion.svg
+        className="stroke-gold"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           height="24"
@@ -41,18 +40,12 @@ const FAQ = ({ question, open, children, onClick }: Props) => {
             duration: 0.2,
           }}
         >
-          <Path
-            d="M 4 12 L 20 12"
-            variants={{
-              closed: { stroke: "#ffffff" },
-              open: { stroke: "#ffbd59" },
-            }}
-          />
+          <Path d="M 4 12 L 20 12" />
           <Path
             d="M 12 4 L 12 20"
             variants={{
-              closed: { d: "M 12 4 L 12 20", stroke: "#ffffff" },
-              open: { d: "M 12 12 L 12 12", stroke: "#ffbd59" },
+              closed: { d: "M 12 4 L 12 20" },
+              open: { d: "M 12 12 L 12 12" },
             }}
           />
         </motion.svg>

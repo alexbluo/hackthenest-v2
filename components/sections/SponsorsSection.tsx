@@ -10,7 +10,7 @@ const SponsorsSection = () => {
       <p className="-mx-8 mb-8 rounded-3xl rounded-tl-none bg-black p-8 text-xl sm:w-fit">
         Interested in sponsoring? Feel free to take a look at our{" "}
         <a
-          className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
+          className="bg-clip-text font-semibold text-gold underline underline-offset-2"
           href="/prospectus.pdf"
           target="_blank"
           rel="noreferrer"
@@ -19,7 +19,7 @@ const SponsorsSection = () => {
         </a>{" "}
         and email{" "}
         <a
-          className={`${useGradient()} bg-clip-text font-bold text-transparent underline`}
+          className="font-semibold text-gold underline underline-offset-2"
           href="mailto:sponsor@hackthenest.org"
         >
           sponsor@hackthenest.org
