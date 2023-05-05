@@ -27,17 +27,19 @@ const SponsorsSection = () => {
         !
       </p>
       <div className="flex flex-col gap-6">
-        {/* gold tier  */}
-        <Sponsor
-          src="/theCoderSchool.png"
-          alt="theCoderSchool gold sponsorship"
-          href="https://www.thecoderschool.com/"
-          tier="gold"
-        />
-        <div className="grid gap-6" />
-        {/* silver tier */}
-        <div className="grid grid-cols-2 gap-6" />
-        {/* bronze tier */}
+        {/* gold */}
+        <div className="grid gap-6">
+          <Sponsor
+            src="/theCoderSchool.png"
+            alt="theCoderSchool gold sponsorship"
+            href="https://www.thecoderschool.com/"
+            tier="gold"
+          />
+        </div>
+
+        {/* silver */}
+        {/* <div className="grid grid-cols-2 gap-6"></div> */}
+        {/* bronze */}
         <div className="grid grid-cols-3 gap-6">
           <Sponsor
             src="/c-hit.png"
