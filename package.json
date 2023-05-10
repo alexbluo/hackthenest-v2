@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
+    "emails": "npx tailwindcss -i ./emails/tailwind.css -o ./emails/styles.css -c ./emails/tailwind.config.js --watch",
     "build": "next build",
     "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
