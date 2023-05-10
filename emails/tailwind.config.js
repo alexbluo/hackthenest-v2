@@ -26,6 +26,7 @@ module.exports = {
     },
     container: {
       center: true,
+      // TODO: add margin
       padding: {
         DEFAULT: "2rem",
         sm: "4rem",

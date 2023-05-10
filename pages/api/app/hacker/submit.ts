@@ -40,11 +40,14 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
   // transactional email
   const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
-  client.sendEmail({
+  client.sendEmailWithTemplate({
     From: "hello@hackthenest.org",
     To: "hello@hackthenest.org",
-    Subject: "Test",
-    TextBody: "Hello from Postmark!",
+    TemplateId: 1,
+    TemplateModel: {
+
+    },
+    MessageStream: "outbound",
     TrackOpens: true,
   });
 

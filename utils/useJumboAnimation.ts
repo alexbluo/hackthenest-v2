@@ -1,8 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 const lowerLetterBank = "abcdefhiklmnorstuvwxz";
-// TODO: change to only upper case?
-const upperLetterBank = "ABCDEFGIJKLMNOPQRSTUVWXYZ";
+const upperLetterBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numBank = "1234567890";
 
 // https://www.youtube.com/watch?v=W5oawMJaXbU
@@ -34,7 +33,7 @@ const jumboAnimation = (
             r =
               upperLetterBank[
                 Math.floor(Math.random() * upperLetterBank.length)
-              ].toUpperCase();
+              ]
           } else if (letter === letter.toLowerCase()) {
             r =
               lowerLetterBank[

@@ -22,8 +22,9 @@ const Index: NextPage = () => {
         <title>Hack the Nest</title>
       </Head>
       <div
-        className={classNames(useGradient(), "relative text-white", {
-          "fixed left-0 right-0 top-0 md:static": open,
+        className={classNames(useGradient(), "text-white", {
+          relative: !open,
+          "fixed left-0 right-0 top-0": open,
         })}
       >
         <div className="absolute left-0 top-0 h-full w-screen">
