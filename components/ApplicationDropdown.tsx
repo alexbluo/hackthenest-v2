@@ -19,8 +19,6 @@ interface Props {
   defaultValue: string | true | undefined;
   // control from RHF
   control: Control<SchemaType>;
-  // multiple select
-  isMulti?: boolean;
   // error message
   error:
     | Merge<
@@ -36,7 +34,6 @@ const ApplicationDropdown = ({
   options,
   defaultValue,
   control,
-  isMulti,
   error,
 }: Props) => {
   return (
