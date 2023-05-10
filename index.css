@@ -64,6 +64,27 @@ input[type="checkbox"]:focus {
   }
 }
 
+@keyframes text {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+.text-gradient {
+  background-image: linear-gradient(
+    to right,
+    #045de9,
+    #09cdf9,
+    #7fcec5,
+    #045de9
+  );
+  background-size: 200%;
+  animation: text 3s linear infinite;
+}
+
 .gradient {
   background-image: repeating-linear-gradient(
       var(--deg1),

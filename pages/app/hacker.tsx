@@ -30,7 +30,7 @@ const schema = z.object({
   country: z.string().min(1, { message: "*" }).optional(),
   diet: z.string().min(1, { message: "*" }).optional(),
   shirt: z.string().min(1, { message: "*" }).optional(),
-  experience: z.number().min(1, {message: "*"}).optional(),
+  experience: z.number().min(1, { message: "*" }).optional(),
   outreach: z.string().min(1, { message: "*" }).optional(),
   conduct: z.literal(true).optional(),
   privacy: z.literal(true).optional(),
@@ -111,7 +111,7 @@ const HackerApp = ({
           </Link>
         </nav>
 
-        <h2 className={`${useGradient()} mb-8`}>application</h2>
+        <h2 className="text-gradient mb-8">application</h2>
 
         <form
           className="-mx-8 rounded-3xl bg-blue-mid/20 p-8 text-lg"

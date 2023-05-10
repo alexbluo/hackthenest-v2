@@ -1,5 +1,4 @@
 import { ReactNode, useState } from "react";
-import useGradient from "../../utils/useGradient";
 import FAQ from "../FAQ";
 
 interface Question {
@@ -85,7 +84,7 @@ const FAQSection = () => {
   return (
     <section id="faq" className="">
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
-        <h2 className={useGradient()}>faq</h2>
+        <h2 className="text-gradient">faq</h2>
       </div>
       <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl sm:rounded-tl-none md:flex-row md:gap-16">
         {Object.keys(questions).map((column) => (

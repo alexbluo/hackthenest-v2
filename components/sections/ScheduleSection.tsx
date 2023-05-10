@@ -1,6 +1,5 @@
 import React from "react";
 import { AnimatePresence, motion, useCycle, useAnimate } from "framer-motion";
-import useGradient from "../../utils/useGradient";
 import useWindowWidth from "../../utils/useWindowWidth";
 import WaitClientLoad from "../../utils/WaitClientLoad";
 import ScheduleBlock from "../ScheduleBlock";
@@ -106,7 +105,7 @@ const ScheduleSection = () => {
   return (
     <section id="schedule">
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
-        <h2 className={useGradient()}>schedule</h2>
+        <h2 className="text-gradient">schedule</h2>
       </div>
       <WaitClientLoad>
         {width > 768 ? (

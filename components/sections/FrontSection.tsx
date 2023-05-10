@@ -23,7 +23,7 @@ const FrontSection = () => {
     <section className="min-h-screen pt-32" id="front">
       <div className="relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-24">
         {/* https://stackoverflow.com/questions/66457359/how-to-keep-a-paragraph-height-even-when-there-is-no-text-in-it */}
-        <h1 className="h-fit text-center text-7xl font-extrabold text-ice before:inline-block before:content-['']">
+        <h1 className="text-gradient h-fit bg-clip-text text-center text-7xl font-extrabold text-transparent before:inline-block before:content-['']">
           {name}
         </h1>
         <div className="flex w-fit flex-col gap-8">

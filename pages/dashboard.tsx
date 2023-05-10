@@ -9,7 +9,6 @@ import QRCode from "react-qr-code";
 import { authOptions } from "./api/auth/[...nextauth]";
 import DashboardButton from "../components/DashboardButton";
 import base from "../utils/base";
-import useGradient from "../utils/useGradient";
 
 const Dashboard = ({
   user,
@@ -37,7 +36,7 @@ const Dashboard = ({
           </button>
         </nav>
 
-        <h2 className={`${useGradient()} mb-8`}>dashboard</h2>
+        <h2 className="text-gradient mb-8">dashboard</h2>
         <h3 className="mb-8 text-3xl font-bold text-gold">
           welcome back, {session?.user?.name || session?.user?.email}
         </h3>
