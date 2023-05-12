@@ -21,7 +21,7 @@ const FAQ = ({ question, open, children, onClick }: Props) => {
         onClick={onClick}
       >
         <motion.h3
-          className="cursor-pointer text-white select-none whitespace-pre-line text-left text-xl"
+          className="cursor-pointer select-none whitespace-pre-line text-left text-xl font-medium text-white"
           transition={{
             ease: "easeIn",
             duration: 0.2,
@@ -30,7 +30,6 @@ const FAQ = ({ question, open, children, onClick }: Props) => {
           {question}
         </motion.h3>
         <motion.svg
-        className="stroke-gold"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           height="24"
@@ -39,6 +38,12 @@ const FAQ = ({ question, open, children, onClick }: Props) => {
           transition={{
             ease: "easeIn",
             duration: 0.2,
+          }}
+          variants={{
+            closed: {
+              stroke: "#ffffff",
+            },
+            open: { stroke: "#ffbd59" },
           }}
         >
           <Path d="M 4 12 L 20 12" />
