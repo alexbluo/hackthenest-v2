@@ -13,15 +13,15 @@ const Path = (props: any) => {
 
 interface Props {
   open: boolean;
-  handleClick: () => void;
+  onClick: () => void;
 }
 
-const MobileMenuToggle = ({ open, handleClick }: Props) => {
+const MobileMenuToggle = ({ open, onClick }: Props) => {
   return (
     <motion.button
       className="z-50 block md:hidden"
       animate={open ? "open" : "closed"}
-      onClick={handleClick}
+      onClick={onClick}
     >
       <svg className="stroke-gold" width="24" height="24" viewBox="0 0 24 24">
         <Path

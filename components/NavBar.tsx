@@ -38,9 +38,9 @@ const NavBar = ({ open, toggleOpen }: Props) => {
         </Link>
       </ul>
 
-      <MobileMenuToggle open={open} handleClick={() => toggleOpen()} />
+      <MobileMenuToggle open={open} onClick={() => toggleOpen()} />
 
-      <MobileMenu open={open} session={session} />
+      <MobileMenu open={open} session={session} onClick={() => toggleOpen()} />
     </nav>
   );
 };

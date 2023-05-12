@@ -12,6 +12,7 @@ interface Props {
   onClick: () => void;
 }
 
+// TODO: only gold icon on opened
 const FAQ = ({ question, open, children, onClick }: Props) => {
   return (
     <div className="flex flex-col">
