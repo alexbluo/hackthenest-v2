@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
@@ -210,6 +210,20 @@ const HackerApp = ({
                 { value: "MD", label: "MD" },
                 { value: "LG", label: "LG" },
                 { value: "XL", label: "XL" },
+              ]}
+              defaultValue={undefined}
+              control={control}
+              error={errors.shirt}
+            />
+            <ApplicationDropdown
+              fieldName="how many hackathons have you been to?"
+              name="experience"
+              options={[
+                { value: 0, label: "This is my first one!" },
+                { value: 1, label: "1" },
+                { value: 2, label: "2" },
+                { value: 3, label: "3" },
+                { value: 4, label: "4+" },
               ]}
               defaultValue={undefined}
               control={control}
