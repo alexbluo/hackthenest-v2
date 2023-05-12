@@ -34,13 +34,14 @@ const Index: NextPage = () => {
             alt="Website background"
             fill
             priority
+            unoptimized
           />
         </div>
         <NavBar open={open} toggleOpen={toggleOpen} />
         <main className="relative z-0">
           <FrontSection />
           <AboutSection />
-          {/* <ScheduleSection /> */}
+          <ScheduleSection />
           <FAQSection />
           <SponsorsSection />
         </main>

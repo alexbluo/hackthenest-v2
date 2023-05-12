@@ -7,6 +7,7 @@ const AboutSection = () => {
         <h2 className="text-gradient">about</h2>
       </div>
       <article className="-mx-8 mb-8 rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none">
+        {/* TODO: change text */}
         This September, Hack the Nest invites 300 high school students to a
         36-hour hackathon in the heart of the DMV area. Our team has been
         working tirelessly to pack our schedule to the brim with educational

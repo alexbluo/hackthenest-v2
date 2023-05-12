@@ -7,7 +7,7 @@ interface Props {
   name: string;
   time: string;
   width: number;
-  order: "even" | "odd";
+  order: number;
   children: string;
 }
 
@@ -20,6 +20,7 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
     if (status !== "pressed") setStatus("hover");
   };
 
+  // TODO: add settimeout debounce
   const handleHoverEnd = () => {
     if (status !== "pressed") setStatus("neutral");
   };
@@ -33,7 +34,7 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
   };
 
   return (
-    <div className={classNames("relative", { "ml-12": order === "even" })}>
+    <div className={classNames("relative", { "ml-12": order % 2 === 0 })}>
       <motion.button
         className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center bg-blue-light px-8 text-lg"
         animate={status}

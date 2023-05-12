@@ -110,7 +110,7 @@ const ScheduleSection = () => {
       <WaitClientLoad>
         {width > 768 ? (
           <AnimatePresence mode="wait">
-            <motion.div className="mr-40 flex flex-col pt-40">
+            <motion.div className="flex flex-col pt-40">
               <div className="relative">
                 <motion.button
                   className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between bg-gold px-8 text-xl font-medium"
@@ -127,33 +127,37 @@ const ScheduleSection = () => {
                 </div>
                 <div className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark"></div>
               </div>
-              {day === "sat"
-                ? saturday.map(({ name, time, description }, i) => {
-                    return (
-                      <ScheduleBlock
-                        name={name}
-                        time={time}
-                        width={width}
-                        order={i % 2 === 0 ? "even" : "odd"}
-                        key={name + time + description}
-                      >
-                        {description}
-                      </ScheduleBlock>
-                    );
-                  })
-                : sunday.map(({ name, time, description }, i) => {
-                    return (
-                      <ScheduleBlock
-                        name={name}
-                        time={time}
-                        width={width}
-                        order={i % 2 === 0 ? "even" : "odd"}
-                        key={name + time + description}
-                      >
-                        {description}
-                      </ScheduleBlock>
-                    );
-                  })}
+              <motion.div
+                variants={{ pressed: { transition: { staggerChildren: 0.5 } } }}
+              >
+                {day === "sat"
+                  ? saturday.map(({ name, time, description }, i) => {
+                      return (
+                        <ScheduleBlock
+                          name={name}
+                          time={time}
+                          width={width}
+                          order={i}
+                          key={name + time + description}
+                        >
+                          {description}
+                        </ScheduleBlock>
+                      );
+                    })
+                  : sunday.map(({ name, time, description }, i) => {
+                      return (
+                        <ScheduleBlock
+                          name={name}
+                          time={time}
+                          width={width}
+                          order={i}
+                          key={name + time + description}
+                        >
+                          {description}
+                        </ScheduleBlock>
+                      );
+                    })}
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         ) : (
