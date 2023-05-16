@@ -39,11 +39,11 @@ const Index: NextPage = () => {
         </div>
         <NavBar open={open} toggleOpen={toggleOpen} />
         <main className="relative z-0">
-          <FrontSection />
-          <AboutSection />
+          {/* <FrontSection /> */}
+          {/* <AboutSection /> */}
           <ScheduleSection />
-          <FAQSection />
-          <SponsorsSection />
+          {/* <FAQSection /> */}
+          {/* <SponsorsSection /> */}
         </main>
         <Footer />
       </div>

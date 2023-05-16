@@ -1,42 +1,39 @@
-import { useState } from "react";
+import { ReactNode } from "react";
 import classNames from "classnames";
-import { motion, TargetAndTransition, VariantLabels } from "framer-motion";
+import { motion } from "framer-motion";
 import Modal from "./Modal";
 
 interface Props {
-  name: string;
+  name: ReactNode;
   time: string;
   width: number;
   order: number;
-  children: string;
+  status: "neutral" | "hover" | "pressed";
+  cycle: boolean;
+  children?: string;
+  handleHoverStart: () => void;
+  handleHoverEnd: () => void;
+  handleTap: () => void;
+  handleClose: () => void;
 }
 
-const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
-  const [status, setStatus] = useState<
-    boolean | TargetAndTransition | VariantLabels | undefined
-  >("neutral");
-
-  const handleHoverStart = () => {
-    if (status !== "pressed") setStatus("hover");
-  };
-
-  // TODO: add settimeout debounce
-  const handleHoverEnd = () => {
-    if (status !== "pressed") setStatus("neutral");
-  };
-
-  const handleTap = () => {
-    setStatus("pressed");
-  };
-
-  const handleClose = () => {
-    setStatus("neutral");
-  };
-
+const ScheduleBlock = ({
+  name,
+  time,
+  width,
+  order,
+  status,
+  cycle,
+  children,
+  handleHoverStart,
+  handleHoverEnd,
+  handleTap,
+  handleClose,
+}: Props) => {
   return (
     <div className={classNames("relative", { "ml-12": order % 2 === 0 })}>
       <motion.button
-        className="relative left-40 bottom-[92px] flex h-16 w-96 origin-bottom-left items-center bg-blue-light px-8 text-lg"
+        className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between bg-blue-light px-8 text-lg"
         animate={status}
         initial="pressed"
         variants={{
@@ -61,9 +58,9 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
           duration: 0.4,
           ease: "easeInOut",
         }}
+        onFocus={handleHoverStart}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
-        onFocus={handleHoverStart}
         onBlur={handleHoverEnd}
         onTap={handleTap}
       >
@@ -101,7 +98,11 @@ const ScheduleBlock = ({ name, time, width, order, children }: Props) => {
           ease: "easeInOut",
         }}
       ></motion.div>
-      <Modal visible={status === "pressed"} width={width} onTap={handleClose}>
+      <Modal
+        visible={status === "pressed" && !cycle}
+        width={width}
+        onTap={handleClose}
+      >
         {children}
       </Modal>
     </div>
