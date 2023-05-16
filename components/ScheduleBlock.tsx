@@ -9,7 +9,6 @@ interface Props {
   width: number;
   order: number;
   status: "neutral" | "hover" | "pressed";
-  cycle: boolean;
   children?: string;
   handleHoverStart: () => void;
   handleHoverEnd: () => void;
@@ -23,7 +22,6 @@ const ScheduleBlock = ({
   width,
   order,
   status,
-  cycle,
   children,
   handleHoverStart,
   handleHoverEnd,
@@ -99,7 +97,7 @@ const ScheduleBlock = ({
         }}
       ></motion.div>
       <Modal
-        visible={status === "pressed" && !cycle}
+        visible={status === "pressed" && order !== 0}
         width={width}
         onTap={handleClose}
       >

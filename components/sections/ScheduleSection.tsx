@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion, useCycle, useAnimate } from "framer-motion";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
 import useWindowWidth from "../../utils/useWindowWidth";
 import WaitClientLoad from "../../utils/WaitClientLoad";
 import ScheduleBlock from "../ScheduleBlock";
@@ -103,6 +103,8 @@ const ScheduleSection = () => {
     if (day === "Sunday") setBlocks(sunday);
   }, [day]);
 
+  // have to use callbacks in setState
+  // https://stackoverflow.com/questions/33613728/what-happens-when-using-this-setstate-multiple-times-in-react-component
   const handleHoverStart = (i: number) => {
     setBlocks((prev) => {
       return prev.map((block, pos) => {
@@ -115,18 +117,18 @@ const ScheduleSection = () => {
     });
   };
 
-  // have to use callbacks in setState
-  // https://stackoverflow.com/questions/33613728/what-happens-when-using-this-setstate-multiple-times-in-react-component
   const handleHoverEnd = (i: number) => {
-    setBlocks((prev) => {
-      return prev.map((block, pos) => {
-        if (pos === i && block.status !== "pressed") {
-          return { ...block, status: "neutral" };
-        }
+    setTimeout(() => {
+      setBlocks((prev) => {
+        return prev.map((block, pos) => {
+          if (pos === i && block.status !== "pressed") {
+            return { ...block, status: "neutral" };
+          }
 
-        return block;
+          return block;
+        });
       });
-    });
+    }, 100);
   };
 
   const handleTap = (i: number) => {
@@ -169,7 +171,6 @@ const ScheduleSection = () => {
                       width={width}
                       order={i}
                       status={status}
-                      cycle={i === 0}
                       handleHoverStart={() => handleHoverStart(i)}
                       handleHoverEnd={() => handleHoverEnd(i)}
                       handleTap={() => handleTap(i)}
