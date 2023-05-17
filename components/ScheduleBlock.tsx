@@ -8,7 +8,7 @@ interface Props {
   time: string;
   width: number;
   order: number;
-  status: "neutral" | "hover" | "pressed";
+  status: "neutral" | "hover" | "pressed" | "flush";
   children?: string;
   handleHoverStart: () => void;
   handleHoverEnd: () => void;
@@ -29,11 +29,11 @@ const ScheduleBlock = ({
   handleClose,
 }: Props) => {
   return (
-    <div className={classNames("relative", { "ml-12": order % 2 === 0 })}>
+    <li className={classNames("relative", { "sm:ml-12": order % 2 === 0 })}>
       <motion.button
         className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between bg-blue-light px-8 text-lg"
         animate={status}
-        initial="pressed"
+        initial="flush"
         variants={{
           neutral: {
             x: 0,
@@ -46,12 +46,17 @@ const ScheduleBlock = ({
             filter: "brightness(0.75)",
           },
           pressed: {
-            x: "-160px",
-            y: "92px",
+            x: "-120px",
+            y: "69px",
             filter: "brightness(0.5)",
           },
+          flush: {
+            x: "-160px",
+            y: "92px",
+            filter: "brightness(0.25)",
+          },
         }}
-        exit="pressed"
+        exit="flush"
         transition={{
           duration: 0.4,
           ease: "easeInOut",
@@ -67,13 +72,14 @@ const ScheduleBlock = ({
       <motion.div
         className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center overflow-hidden whitespace-nowrap bg-blue-mid"
         animate={status}
-        initial="pressed"
+        initial="flush"
         variants={{
           neutral: { width: "160px" },
           hover: { width: "120px" },
-          pressed: { width: 0 },
+          pressed: { width: "40px" },
+          flush: { width: 0 },
         }}
-        exit="pressed"
+        exit="flush"
         transition={{
           duration: 0.4,
           ease: "easeInOut",
@@ -84,13 +90,14 @@ const ScheduleBlock = ({
       <motion.div
         className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark "
         animate={status}
-        initial="pressed"
+        initial="flush"
         variants={{
           neutral: { height: "92px" },
           hover: { height: "69px" },
-          pressed: { height: 0 },
+          pressed: { height: "23px" },
+          flush: { height: 0 },
         }}
-        exit="pressed"
+        exit="flush"
         transition={{
           duration: 0.4,
           ease: "easeInOut",
@@ -103,7 +110,7 @@ const ScheduleBlock = ({
       >
         {children}
       </Modal>
-    </div>
+    </li>
   );
 };
 
