@@ -29,7 +29,7 @@ const Dashboard = ({
           </Link>
 
           <button
-            className="font-header text-lg font-medium text-gold"
+            className="font-mono text-lg font-medium text-gold"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
             logout
@@ -42,7 +42,7 @@ const Dashboard = ({
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="rounded-md bg-white p-4">
-            <QRCode className="mx-auto" size={212} value={user.email} />
+            <QRCode className="mx-auto" size={224} value={user.email} />
           </div>
           <div className="flex w-full flex-col gap-8">
             <DashboardButton

@@ -31,7 +31,7 @@ const NavBar = ({ open, toggleOpen }: Props) => {
         <NavItem to="faq">faq</NavItem>
         <NavItem to="sponsors">sponsors</NavItem>
         <Link
-          className="cursor-pointer font-header text-lg font-medium"
+          className="cursor-pointer font-mono text-lg font-medium"
           href={session ? "/dashboard" : "/login"}
         >
           {session ? "dashboard" : "login"}

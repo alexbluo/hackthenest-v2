@@ -11,7 +11,7 @@ const NavItem = ({ to, children, onClick }: Props) => {
   return (
     <li>
       <Link
-        className="cursor-pointer font-header text-lg font-medium"
+        className="cursor-pointer font-mono text-lg font-medium"
         to={to}
         duration={600}
         smooth="easeInOutQuart"

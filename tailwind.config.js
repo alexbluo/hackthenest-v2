@@ -6,9 +6,10 @@ module.exports = {
   content: ["./components/**/*.tsx", "./pages/**/*.tsx", "./sections/**/*.tsx"],
   theme: {
     fontFamily: {
-      sans: ["proxima-nova", ...fontFamily.sans],
-      header: ["neue-haas-grotesk-display", ...fontFamily.sans],
-      default: fontFamily.sans,
+      sans: ["var(--font-source-sans)", ...fontFamily.sans],
+      mono: ["var(--font-source-mono)", ...fontFamily.mono],
+      circular: ["var(--font-flow-circular)"],
+      default: ["var(--font-source-sans)", ...fontFamily.sans]
     },
     colors: {
       "blue-light": "#61a7cf",
@@ -20,7 +21,7 @@ module.exports = {
       ice: "#b2e6fe",
       white: "#ffffff",
       red: "#dc3545",
-      green: "#28a745",
+      green: "#00c777",
       grey: "#808080",
       transparent: "transparent",
     },

@@ -104,7 +104,7 @@ const HackerApp = ({
           </Link>
 
           <Link
-            className="font-header text-lg font-medium text-gold"
+            className="font-mono text-lg font-medium text-gold"
             href="/dashboard"
           >
             dashboard

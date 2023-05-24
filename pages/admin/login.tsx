@@ -24,7 +24,7 @@ const AdminLogin = () => {
             priority
           />
         </div>
-        <h1 className="font-header text-5xl font-extrabold text-gold">
+        <h1 className="font-mono text-5xl font-extrabold text-gold">
           Admin Login
         </h1>
         <form
