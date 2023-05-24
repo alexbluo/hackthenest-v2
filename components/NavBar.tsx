@@ -26,15 +26,15 @@ const NavBar = ({ open, toggleOpen }: Props) => {
       </div>
 
       <ul className="hidden gap-12 text-gold md:flex">
-        <NavItem to="about">about</NavItem>
-        <NavItem to="schedule">schedule</NavItem>
-        <NavItem to="faq">faq</NavItem>
-        <NavItem to="sponsors">sponsors</NavItem>
+        <NavItem to="about">About</NavItem>
+        <NavItem to="schedule">Schedule</NavItem>
+        <NavItem to="faq">FAQ</NavItem>
+        <NavItem to="sponsors">Sponsors</NavItem>
         <Link
           className="cursor-pointer font-mono text-lg font-medium"
           href={session ? "/dashboard" : "/login"}
         >
-          {session ? "dashboard" : "login"}
+          {session ? "Dashboard" : "Login"}
         </Link>
       </ul>
 

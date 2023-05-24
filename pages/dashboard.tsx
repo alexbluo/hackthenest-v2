@@ -32,13 +32,13 @@ const Dashboard = ({
             className="font-mono text-lg font-medium text-gold"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
-            logout
+            Logout
           </button>
         </nav>
 
-        <h2 className="text-gradient mb-8">dashboard</h2>
-        <h3 className="mb-8 text-3xl font-bold text-gold">
-          welcome back, {session?.user?.name || session?.user?.email}
+        <h2 className="text-gradient mb-8">Dashboard</h2>
+        <h3 className="mb-8 text-3xl font-semibold text-gold">
+          Welcome back, {session?.user?.name || session?.user?.email}
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="rounded-md bg-white p-4">

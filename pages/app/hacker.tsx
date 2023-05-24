@@ -107,11 +107,11 @@ const HackerApp = ({
             className="font-mono text-lg font-medium text-gold"
             href="/dashboard"
           >
-            dashboard
+            Dashboard
           </Link>
         </nav>
 
-        <h2 className="text-gradient mb-8">application</h2>
+        <h2 className="text-gradient mb-8">Application</h2>
 
         <form
           className="-mx-8 rounded-3xl bg-blue-mid/20 p-8 text-lg"
@@ -120,14 +120,14 @@ const HackerApp = ({
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-12 sm:flex-row">
               <ApplicationInput
-                fieldName="first name"
+                fieldName="First Name"
                 name="firstName"
                 placeholder="Bumble"
                 register={register}
                 error={errors.firstName}
               />
               <ApplicationInput
-                fieldName="last name"
+                fieldName="Last Name"
                 name="lastName"
                 placeholder="Bee"
                 register={register}
@@ -135,21 +135,21 @@ const HackerApp = ({
               />
             </div>
             <ApplicationInput
-              fieldName="phone number"
+              fieldName="Phone Number"
               name="phone"
               placeholder="1234567890"
               register={register}
               error={errors.phone}
             />
             <ApplicationInput
-              fieldName="school"
+              fieldName="School"
               name="school"
               placeholder="Barry Benson High School"
               register={register}
               error={errors.school}
             />
             <ApplicationDropdown
-              fieldName="age"
+              fieldName="Age"
               name="age"
               options={[
                 { value: 13, label: "13" },
@@ -164,7 +164,7 @@ const HackerApp = ({
               error={errors.age}
             />
             <ApplicationDropdown
-              fieldName="year of graduation"
+              fieldName="Year of Graduation"
               name="yog"
               options={[
                 { value: 2023, label: "2023" },
@@ -177,7 +177,7 @@ const HackerApp = ({
               error={errors.yog}
             />
             <ApplicationDropdown
-              fieldName="country of residence"
+              fieldName="Country of Residence"
               name="country"
               options={countries}
               defaultValue={undefined}
@@ -185,7 +185,7 @@ const HackerApp = ({
               error={errors.country}
             />
             <ApplicationDropdown
-              fieldName="dietary restrictions"
+              fieldName="Dietary Restrictions"
               name="diet"
               options={[
                 { value: "vegan", label: "Vegan" },
@@ -202,7 +202,7 @@ const HackerApp = ({
               error={errors.diet}
             />
             <ApplicationDropdown
-              fieldName="shirt size"
+              fieldName="Shirt Size"
               name="shirt"
               options={[
                 { value: "XS", label: "XS" },
@@ -216,10 +216,10 @@ const HackerApp = ({
               error={errors.shirt}
             />
             <ApplicationDropdown
-              fieldName="how many hackathons have you been to?"
+              fieldName="How many hackathons have you been to?"
               name="experience"
               options={[
-                { value: 0, label: "This is my first one!" },
+                { value: 0, label: "This is my first one :D" },
                 { value: 1, label: "1" },
                 { value: 2, label: "2" },
                 { value: 3, label: "3" },
@@ -230,7 +230,7 @@ const HackerApp = ({
               error={errors.shirt}
             />
             <ApplicationDropdown
-              fieldName="how did you hear about us?"
+              fieldName="How did you hear about us?"
               name="outreach"
               options={[
                 { value: "friendFamily", label: "Friend/Family" },
