@@ -19,7 +19,7 @@ const Login = ({
             priority
           />
         </div>
-        <h1 className="font-mono text-5xl tracking-tighter font-bold text-gold">
+        <h1 className="font-mono text-5xl font-bold text-gold">
           Hack the Nest
         </h1>
 

@@ -5,6 +5,8 @@ import {
   Source_Code_Pro,
   Flow_Circular,
   Source_Sans_Pro,
+  IBM_Plex_Mono,
+  IBM_Plex_Sans,
 } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -14,15 +16,16 @@ import * as gtag from "../utils/gtag";
 import { GA_TRACKING_ID } from "../utils/gtag";
 import "../index.css";
 
-const source_code_pro = Source_Code_Pro({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-source-mono",
+  weight: ["400", "700"],
+  variable: "--font-mono",
 });
 
-const rubik = Source_Sans_Pro({
+const sans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
-  variable: "--font-source-sans",
+  variable: "--font-sans",
 });
 
 const flow_circular = Flow_Circular({
@@ -68,7 +71,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
         }}
       />
       <div
-        className={`${source_code_pro.variable} ${rubik.variable} ${flow_circular.variable} font-sans`}
+        className={`${mono.variable} ${sans.variable} ${flow_circular.variable} font-sans`}
       >
         <Component {...pageProps} />
       </div>

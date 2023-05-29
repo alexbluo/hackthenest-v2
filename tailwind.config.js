@@ -6,10 +6,10 @@ module.exports = {
   content: ["./components/**/*.tsx", "./pages/**/*.tsx", "./sections/**/*.tsx"],
   theme: {
     fontFamily: {
-      sans: ["var(--font-source-sans)", ...fontFamily.sans],
-      mono: ["var(--font-source-mono)", ...fontFamily.mono],
+      sans: ["var(--font-sans)", ...fontFamily.sans],
+      mono: ["var(--font-mono)", ...fontFamily.mono],
       circular: ["var(--font-flow-circular)"],
-      default: ["var(--font-source-sans)", ...fontFamily.sans]
+      default: ["var(--font-sans)", ...fontFamily.sans],
     },
     colors: {
       "blue-light": "#61a7cf",
