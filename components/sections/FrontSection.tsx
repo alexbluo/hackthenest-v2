@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useGradient from "../../utils/useGradient";
-import jumboAnimation from "../../utils/useJumboAnimation";
+import jumboAnimation from "../../utils/jumboAnimation";
 
 const targetName = "Hack the Nest";
 const targetDate = "9.23.23 - 9.24.23";

@@ -6,17 +6,13 @@ interface Question {
   answer: ReactNode;
 }
 
-interface QuestionList {
-  [key: string]: Question[];
-}
-
-// shallow key is column
-const questions: QuestionList = {
-  0: [
+// shallow index is column
+const questions: Question[][] = [
+  [
     {
       question: "What is a hackathon?",
       answer:
-        "Hackathons are collaborative multi-day events where participants (also called hackers) bring their ideas to life by building innovative projects from scratch using software development principals. Aside from just being coding marathons/competitions, hackathons offer several fun mini-events, educational workshops, sponsor fairs, and an overall great atmosphere to hang out in.",
+        "Hackathons are collaborative multi-day events where participants (also called hackers) bring their ideas to life by building innovative projects from scratch using software development principals. Aside from just being coding events/competitions, hackathons offer several fun mini-events, educational workshops, sponsor fairs, and an overall great atmosphere to hang out in!",
     },
     {
       question: "How much does it cost?",
@@ -31,7 +27,7 @@ const questions: QuestionList = {
     {
       question: "Why is there an application?",
       answer:
-        "The application isn't rigorous at all; we use the term more like registration with the unlikely case that we shoot way over our logistical limit. It only takes a few minutes to fill out and you can always change your mind about attending as the event approaches.",
+        "The application isn't rigorous at all; we use the term more like registration in the unlikely case that we shoot way over our logistical limit. It only takes a few minutes to fill out and you can always change your mind about attending as the event approaches.",
     },
     {
       question: "Do I have to make a project?",
@@ -39,7 +35,7 @@ const questions: QuestionList = {
         "You're not required to make a project to attend, but we recommend that you do in order to get the full hackathon experience.",
     },
   ],
-  1: [
+  [
     {
       question: "Who is eligible to attend?",
       answer:
@@ -65,6 +61,7 @@ const questions: QuestionList = {
         </>
       ),
     },
+    // add transportation
     {
       question: "What are the overnight arrangements?",
       answer:
@@ -76,7 +73,7 @@ const questions: QuestionList = {
         "Please direct any additional questions to hello@hackthenest.org and we'll get back to you as soon as possible!",
     },
   ],
-};
+];
 
 const FAQSection = () => {
   const [open, setOpen] = useState<string | undefined>(undefined);
@@ -87,9 +84,10 @@ const FAQSection = () => {
         <h2 className="text-gradient">FAQ</h2>
       </div>
       <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl sm:rounded-tl-none md:flex-row md:gap-16">
-        {Object.keys(questions).map((column) => (
-          <div className="flex w-full flex-col gap-4" key={column}>
-            {questions[column].map(({ question, answer }) => (
+        {questions.map((column, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <div className="flex w-full flex-col gap-4" key={i}>
+            {column.map(({ question, answer }) => (
               <FAQ
                 question={question}
                 open={open === question}
