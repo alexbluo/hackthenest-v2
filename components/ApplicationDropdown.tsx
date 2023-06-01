@@ -77,7 +77,7 @@ const ApplicationDropdown = ({
                 padding: "8px",
                 cursor: "pointer",
                 "&:hover": {
-                  backgroundColor: "#2396bf",
+                  backgroundColor: "#2386bf",
                 },
               }),
               valueContainer: (base) => ({
@@ -89,7 +89,7 @@ const ApplicationDropdown = ({
                 backgroundColor: "#1a1a1a",
                 borderColor: "#2386bf",
                 borderWidth: "2px",
-                marginTop: 0,
+                marginTop: "-2px",
                 marginBottom: 0,
                 borderRadius: 0,
               }),
@@ -121,7 +121,7 @@ const ApplicationDropdown = ({
               }),
               multiValue: (base) => ({
                 ...base,
-                backgroundColor: "#2396bf",
+                backgroundColor: "#2386bf",
                 color: "#ffffff",
                 gap: "4px",
                 margin: 0,

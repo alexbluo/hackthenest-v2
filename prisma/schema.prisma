@@ -8,12 +8,10 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-// TODO: separate rsvp model with waiver uploads?
-// TODO: add submitted boolean check
 model User {
   email        String        @id
   qr           String        @unique
-  checks       Check[]
+  check        Boolean       @default(false)
   rsvp         Boolean       @default(false)
   hackerApp    HackerApp?
   volunteerApp VolunteerApp?
@@ -48,10 +46,4 @@ model VolunteerApp {
   shirt     String?
   user      User   @relation(fields: [userEmail], references: [email])
   userEmail String @id
-}
-
-model Check {
-  check     String @id
-  User      User   @relation(fields: [userEmail], references: [email])
-  userEmail String @unique
 }
