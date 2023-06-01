@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import useGradient from "../../utils/useGradient";
 import jumboAnimation from "../../utils/jumboAnimation";
+import useGradient from "../../utils/useGradient";
 
 const targetName = "Hack the Nest";
 const targetDate = "9.23.23 - 9.24.23";
@@ -27,13 +27,13 @@ const FrontSection = () => {
           {name}
         </h1>
         <div className="flex w-fit flex-col gap-8">
-          <div className="mx-auto flex gap-2 font-mono font-medium text-xl text-ice before:content-['']">
+          <div className="mx-auto flex gap-2 font-mono text-xl font-medium text-ice before:content-['']">
             <h3>{date}</h3>
             <div>•</div>
             <h3>{location}</h3>
           </div>
           <Link
-            className={`${useGradient()} mx-auto w-80 rounded-md bg-white font-semibold px-6 py-4 text-center text-lg text-black text-opacity-90`}
+            className={`${useGradient()} mx-auto w-80 rounded-md bg-white px-6 py-4 text-center text-lg font-semibold text-black text-opacity-90`}
             href="/login"
           >
             Apply Now!

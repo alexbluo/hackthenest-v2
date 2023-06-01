@@ -4,18 +4,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <div class="container bg-grey/10">
+    <div class="mx-auto w-[48rem] bg-grey/10 p-8">
       <!-- take screenshot with new font, just bg, logo, and title -->
       <header>
-        <img class="h-40 w-full" src="" alt="Hack the Nest banner" />
+        <img
+          class="w-full"
+          src="https://hackthenest.org/banner.png"
+          alt="Hack the Nest banner"
+        />
       </header>
 
-      <main class="py-12">{{{ @content }}}</main>
+      <main class="py-8">{{{ @content }}}</main>
 
-      <footer class="flex flex-col items-center justify-center pb-12">
+      <footer class="flex flex-col items-center justify-center gap-4 pt-8">
         <div class="flex h-8 gap-6">
           <a
             class="aspect-square h-full"
@@ -85,12 +95,14 @@
             </svg>
           </a>
         </div>
-        <p>© Hack the Nest 2023</p>
-        <p>
-          This email was sent to {{ email }}. Click
-          <a class="underline" href="{{{ pm:unsubscribe }}}">here</a> to
-          unsubscribe.
-        </p>
+        <div class="text-center">
+          <p>© Hack the Nest 2023</p>
+          <p>
+            This email was sent to {{ email }}. Click
+            <a class="underline" href="{{{ pm:unsubscribe }}}">here</a> to
+            unsubscribe.
+          </p>
+        </div>
       </footer>
     </div>
   </body>

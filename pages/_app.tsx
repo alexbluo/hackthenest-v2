@@ -2,9 +2,7 @@
 import { useEffect } from "react";
 import { AppProps } from "next/app";
 import {
-  Source_Code_Pro,
   Flow_Circular,
-  Source_Sans_Pro,
   IBM_Plex_Mono,
   IBM_Plex_Sans,
 } from "next/font/google";

@@ -10,7 +10,7 @@ client.sendEmailBatchWithTemplates([
     From: "hello@hackthenest.org",
     To: "hello@hackthenest.org",
     TemplateId: 1,
-    TemplateModel: { name: "Alex", email: "alex@gmail.com" },
+    TemplateModel: { name: "Alex", email: "alexluo92823@gmail.com" },
     TrackOpens: true,
   },
 ]);
