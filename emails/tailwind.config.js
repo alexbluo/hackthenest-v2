@@ -5,11 +5,6 @@ module.exports = {
   mode: "jit",
   content: ["./emails/templates/*.html"],
   theme: {
-    fontFamily: {
-      sans: ["proxima-nova", ...fontFamily.sans],
-      header: ["neue-haas-grotesk-display", ...fontFamily.sans],
-      default: fontFamily.sans,
-    },
     colors: {
       "blue-light": "#61a7cf",
       "blue-mid": "#2386bf",
