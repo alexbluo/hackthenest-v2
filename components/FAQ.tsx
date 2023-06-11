@@ -20,7 +20,7 @@ const FAQ = ({ question, open, children, onClick }: Props) => {
         onClick={onClick}
       >
         <motion.h3
-          className="cursor-pointer select-none whitespace-pre-line text-left text-xl font-medium text-white"
+          className="cursor-pointer select-none whitespace-pre-line text-left text-xl text-white"
           transition={{
             ease: "easeIn",
             duration: 0.2,

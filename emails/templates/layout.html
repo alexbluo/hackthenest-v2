@@ -16,7 +16,7 @@
       -o-tab-size: 4;
       tab-size: 4;
       /* 3 */
-      font-family: "Helvetica Neue", Arial, Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-family: "Helvetica", Arial, Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       /* 4 */
       font-feature-settings: normal;
       /* 5 */
@@ -72,15 +72,6 @@ Remove the default font size and weight for headings.
     h6 {
       font-size: inherit;
       font-weight: inherit;
-    }
-
-    /*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-    a {
-      color: inherit;
-      text-decoration: inherit;
     }
 
     /*
@@ -392,9 +383,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 </head>
 
 <body>
-  <div style="background-color: #fafafa; padding: 2rem;">
+  <div style="background-color: #fafafa;">
     <div
-      style="max-width: 48rem; margin-left: auto; margin-right: auto; background-color: #000000; padding: 2rem; color: #ffffff; border-radius: 1.5rem;">
+      style="max-width: 40rem; margin-left: auto; margin-right: auto; background-color: #000000; padding: 2rem; color: #ffffff;">
       <header>
         <img style="width: 100%; border-radius: 0.75rem;" src="https://hackthenest.org/banner.png"
           alt="Hack the Nest banner" />
@@ -405,31 +396,31 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
   </div>
   <footer style="margin-left: auto; margin-right: auto;">
     <div
-      style="margin-left: auto; margin-right: auto; display: flex; width: fit-content; height: 2rem; column-gap: 1.5rem; padding-top: 1rem; padding-bottom: 1rem;">
-      <a style="height: 2rem; width: 2rem;" href="https://www.instagram.com/hackthenest_" target="_blank"
+      style="margin-left: auto; margin-right: auto; display: flex; width: fit-content; height: 1.5rem; column-gap: 1.5rem; padding-top: 2rem; padding-bottom: 1rem;">
+      <a style="height: 1.5rem; width: 1.5rem;" href="https://www.instagram.com/hackthenest_" target="_blank"
         rel="noreferrer">
-        <img style="height: 2rem; width: 2rem;" src="hackthenest.org/instagram.png" />
+        <img style="height: 1.5rem; width: 1.5rem;" src="hackthenest.org/instagram.png" />
       </a>
 
-      <a style="height: 2rem; width: 2rem;" href="https://www.facebook.com/hackthenestdmv/" target="_blank"
+      <a style="height: 1.5rem; width: 1.5rem;" href="https://www.facebook.com/hackthenestdmv/" target="_blank"
         rel="noreferrer">
-        <img style="height: 2rem; width: 2rem;" src="hackthenest.org/facebook.png" />
+        <img style="height: 1.5rem; width: 1.5rem;" src="hackthenest.org/facebook.png" />
       </a>
 
-      <a style="height: 2rem; width: 2rem;" href="https://www.twitter.com/hackthenest" target="_blank" rel="noreferrer">
-        <img style="height: 2rem; width: 2rem;" src="hackthenest.org/twitter.png" />
+      <a style="height: 1.5rem; width: 1.5rem;" href="https://www.twitter.com/hackthenest" target="_blank" rel="noreferrer">
+        <img style="height: 1.5rem; width: 1.5rem;" src="hackthenest.org/twitter.png" />
       </a>
 
-      <a style="height: 2rem; width: 2rem;" href="https://www.linkedin.com/company/hackthenest/" target="_blank"
+      <a style="height: 1.5rem; width: 1.5rem;" href="https://www.linkedin.com/company/hackthenest/" target="_blank"
         rel="noreferrer">
-        <img style="height: 2rem; width: 2rem;" src="hackthenest.org/linkedin.png" />
+        <img style="height: 1.5rem; width: 1.5rem;" src="hackthenest.org/linkedin.png" />
       </a>
     </div>
-    <div style="text-align: center; color: #c9c9c9">
+    <div style="text-align: center;">
       <p>© Hack the Nest 2023</p>
       <p>
         This email was sent to {{ email }}. Click
-        <a style="text-decoration: underline; color: #2386bf;" href="{{{ pm:unsubscribe }}}">here</a> to
+        <a style="text-decoration: underline;" href="{{{ pm:unsubscribe }}}">here</a> to
         unsubscribe.
       </p>
     </div>
