@@ -37,15 +37,15 @@ const handler = async (req: NextApiRequestType, res: NextApiResponse) => {
     },
   });
 
-  // transactional email
   const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
   client.sendEmailWithTemplate({
     From: "hello@hackthenest.org",
-    To: "hello@hackthenest.org",
-    TemplateId: 1,
+    To: email,
+    TemplateAlias: "hackerConfirmation",
     TemplateModel: {
-
+      name: app.firstName,
+      email: app.userEmail,
     },
     MessageStream: "outbound",
     TrackOpens: true,

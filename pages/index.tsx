@@ -37,7 +37,7 @@ const Index: NextPage = () => {
             unoptimized
           />
         </div>
-        {/* <NavBar open={open} toggleOpen={toggleOpen} /> */}
+        <NavBar open={open} toggleOpen={toggleOpen} />
         <main className="relative z-0">
           <FrontSection />
           <AboutSection />

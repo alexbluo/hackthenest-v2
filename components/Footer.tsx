@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="flex flex-col justify-center gap-4">
           <div className="flex h-8 flex-row gap-6">
             <a
-              className="aspect-square h-full"
+              className="h-8 w-8"
               href="https://www.instagram.com/hackthenest_"
               target="_blank"
               rel="noreferrer"
@@ -33,22 +33,22 @@ const Footer = () => {
 
             {/* TODO: check */}
             <a
-              className="aspect-square h-full"
-              href="https://www.facebook.com/rhhshackthenest"
+              className="h-8 w-8"
+              href="https://www.facebook.com/hackthenestdmv"
               target="_blank"
               rel="noreferrer"
             >
               <svg
                 className="h-full w-full fill-gold"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
+                viewBox="0 0 448 512"
               >
-                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                <path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
               </svg>
             </a>
 
             <a
-              className="aspect-square h-full"
+              className="h-8 w-8"
               href="https://www.twitter.com/hackthenest"
               target="_blank"
               rel="noreferrer"
@@ -63,7 +63,7 @@ const Footer = () => {
             </a>
 
             <a
-              className="aspect-square h-full"
+              className="h-8 w-8"
               href="https://www.linkedin.com/company/hackthenest/"
               target="_blank"
               rel="noreferrer"

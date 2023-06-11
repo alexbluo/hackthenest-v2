@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FieldError, UseFormRegister } from "react-hook-form";
 // eslint-disable-next-line import/no-cycle
@@ -40,7 +40,7 @@ const ApplicationInput = ({
         onBlur={() => setFocus("unfocused")}
       />
       <motion.svg
-        className="z-50 -my-[2px] h-1 w-full stroke-blue-light"
+        className="z-50 -my-[2px] h-1 w-full stroke-blue-mid"
         animate={focus}
       >
         <motion.line
