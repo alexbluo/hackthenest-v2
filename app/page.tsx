@@ -21,10 +21,10 @@ const Index: NextPage = () => {
         <title>Hack the Nest</title>
       </head>
       <div
-        // className={classNames(useGradient(), "text-white", {
-        //   relative: !open,
-        //   "fixed left-0 right-0 top-0": open,
-        // })}
+      // className={classNames(useGradient(), "text-white", {
+      //   relative: !open,
+      //   "fixed left-0 right-0 top-0": open,
+      // })}
       >
         <div className="absolute left-0 top-0 h-full w-full">
           <Image

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Flow_Circular, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
-import Head from "next/head";
 import { SessionProvider } from "next-auth/react";
 import "../index.css";
 import GoogleAnalytics from "utils/GoogleAnalytics";

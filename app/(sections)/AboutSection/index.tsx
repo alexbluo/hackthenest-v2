@@ -17,10 +17,10 @@ const AboutSection = () => {
         normally barred from hackathons.
       </article>
       <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat stat="300+" caption="hackers" />
+        <Stat stat="36" caption="hours" />
+        <Stat stat="300" caption="hackers" />
         <Stat stat="$10000+" caption="prizes" />
-        <Stat stat="16" caption="workshops and mini-events" />
-        <Stat stat="12" caption="sponsors" />
+        <Stat stat="16" caption="workshops & mini-events" />
       </div>
     </section>
   );
