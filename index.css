@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: edit scroll bar */
 @layer base {
   section {
     @apply container py-8 lg:py-16;

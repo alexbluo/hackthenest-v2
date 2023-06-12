@@ -36,14 +36,14 @@ model HackerApp {
 }
 
 model VolunteerApp {
-  firstName String?
-  lastName  String?
-  phone     String?
-  age       Int?
-  role      String? // volunteer, mentor, judge, sponsor
-  origin    String? // school/company
-  diet      String?
-  shirt     String?
-  user      User   @relation(fields: [userEmail], references: [email])
-  userEmail String @id
+  firstName   String?
+  lastName    String?
+  phone       String?
+  age         Int?
+  role        String? // volunteer, mentor, judge, sponsor
+  affiliation String? // school/company
+  diet        String?
+  shirt       String?
+  user        User    @relation(fields: [userEmail], references: [email])
+  userEmail   String  @id
 }
