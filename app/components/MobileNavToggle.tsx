@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 const Path = (props: any) => {
@@ -13,15 +15,15 @@ const Path = (props: any) => {
 
 interface Props {
   open: boolean;
-  onClick: () => void;
+  toggleOpen: () => void;
 }
 
-const MobileMenuToggle = ({ open, onClick }: Props) => {
+const MobileNavToggle = ({ open, toggleOpen }: Props) => {
   return (
     <motion.button
       className="z-50 block md:hidden"
       animate={open ? "open" : "closed"}
-      onClick={onClick}
+      onClick={toggleOpen}
     >
       <svg className="stroke-gold" width="24" height="24" viewBox="0 0 24 24">
         <Path
@@ -49,4 +51,4 @@ const MobileMenuToggle = ({ open, onClick }: Props) => {
   );
 };
 
-export default MobileMenuToggle;
+export default MobileNavToggle;

@@ -1,8 +1,8 @@
-import { NextPage } from "next";
 import Image from "next/image";
+import useGradient from "utils/useGradient";
+import HomeWrapper from "./HomeWrapper";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import HomeWrapper from "./HomeWrapper";
 import AboutSection from "../sections/AboutSection";
 import FAQSection from "../sections/FAQSection";
 import FrontSection from "../sections/FrontSection";
@@ -13,11 +13,15 @@ import SponsorsSection from "../sections/SponsorsSection";
 const Home = () => {
   return (
     <HomeWrapper>
-      <FrontSection />
-      <AboutSection />
-      <ScheduleSection />
-      <FAQSection />
-      <SponsorsSection />
+      <NavBar />
+      <main className="relative z-0">
+        <FrontSection />
+        <AboutSection />
+        {/* <ScheduleSection /> */}
+        <FAQSection />
+        <SponsorsSection />
+      </main>
+      <Footer />
     </HomeWrapper>
   );
 };

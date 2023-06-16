@@ -1,4 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
+"use client";
+
 import { Link } from "react-scroll";
 
 interface Props {
@@ -11,7 +14,7 @@ const NavItem = ({ to, children, onClick }: Props) => {
   return (
     <li>
       <Link
-        className="cursor-pointer font-mono text-md font-medium"
+        className="text-md cursor-pointer font-mono font-medium"
         to={to}
         duration={600}
         smooth="easeInOutQuart"
