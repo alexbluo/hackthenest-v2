@@ -3,7 +3,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
-  content: ["./components/**/*.tsx", "./pages/**/*.tsx", "./sections/**/*.tsx"],
+  content: ["./app/**/*.tsx"],
   theme: {
     fontFamily: {
       sans: ["var(--font-sans)", ...fontFamily.sans],

@@ -4,15 +4,16 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import QRCode from "react-qr-code";
+import { authOptions } from "app/auth/[...nextauth]/route";
+import base from "utils/base";
 import DashboardButton from "./DashboardButton";
-import base from "../../utils/base";
 
-const Dashboard = ({
+const Dashboard = async ({
   user,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const { data: session } = useSession();
+  const session = await getServerSession(authOptions);
 
   return (
     <div className="bg-black">

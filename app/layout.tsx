@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { ReactNode } from "react";
+import { Metadata } from "next";
 import { Flow_Circular, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
-import { SessionProvider } from "next-auth/react";
 import "../index.css";
 import GoogleAnalytics from "utils/GoogleAnalytics";
 
@@ -22,18 +23,19 @@ const flow_circular = Flow_Circular({
   variable: "--font-flow-circular",
 });
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+export const metadata: Metadata = {
+  title: "Hack the Nest",
+  description: "...",
+};
+
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en">
+    <html
+      className={`${mono.variable} ${sans.variable} ${flow_circular.variable} font-sans`}
+      lang="en"
+    >
       <GoogleAnalytics />
-      <head>
-        <link rel="icon" href="/logo-colored.png" />
-      </head>
-      <body
-        className={`${mono.variable} ${sans.variable} ${flow_circular.variable} font-sans`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 };

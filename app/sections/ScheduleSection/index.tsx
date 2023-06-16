@@ -1,8 +1,10 @@
+"use client";
+
 import React, { ReactNode, useState } from "react";
 import { motion, useCycle } from "framer-motion";
+import useWindowWidth from "utils/useWindowWidth";
+import WaitClientLoad from "utils/WaitClientLoad";
 import ScheduleBlock from "./ScheduleBlock";
-import useWindowWidth from "../../../utils/useWindowWidth";
-import WaitClientLoad from "../../../utils/WaitClientLoad";
 
 interface Block {
   name: ReactNode;
@@ -117,6 +119,7 @@ const sunday: Block[] = [
   },
 ];
 
+// TODO add loading placeholder height or something to fix split second background size change on page load
 const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("Saturday", "Sunday");
   const [blocks, setBlocks] = useState(saturday);

@@ -14,13 +14,13 @@ interface Props {
 
 const FAQ = ({ question, open, children, onClick }: Props) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-white">
       <button
         className="flex cursor-pointer select-none items-center justify-between text-xl"
         onClick={onClick}
       >
         <motion.h3
-          className="cursor-pointer select-none whitespace-pre-line text-left text-xl text-white"
+          className="cursor-pointer select-none whitespace-pre-line text-left text-xl"
           transition={{
             ease: "easeIn",
             duration: 0.2,

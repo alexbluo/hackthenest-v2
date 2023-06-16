@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "app/auth/[...nextauth]/route";
 import MobileMenu from "./MobileMenu";
 import MobileMenuToggle from "./MobileMenuToggle";
 import NavItem from "./NavItem";
@@ -11,8 +12,8 @@ interface Props {
   toggleOpen: () => void;
 }
 
-const NavBar = ({ open, toggleOpen }: Props) => {
-  const { data: session } = useSession();
+const NavBar = async ({ open, toggleOpen }: Props) => {
+  const session = await getServerSession(authOptions);
 
   return (
     <nav className="container absolute left-0 right-0 top-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
@@ -30,17 +31,17 @@ const NavBar = ({ open, toggleOpen }: Props) => {
         <NavItem to="schedule">Schedule</NavItem>
         <NavItem to="faq">FAQ</NavItem>
         <NavItem to="sponsors">Sponsors</NavItem>
-        <Link
+        {/* <Link
           className="cursor-pointer font-mono text-lg font-medium"
           href={session ? "/dashboard" : "/login"}
         >
           {session ? "Dashboard" : "Login"}
-        </Link>
+        </Link> */}
       </ul>
 
       <MobileMenuToggle open={open} onClick={() => toggleOpen()} />
 
-      <MobileMenu open={open} session={session} onClick={() => toggleOpen()} />
+      {/* <MobileMenu open={open} session={session} onClick={() => toggleOpen()} /> */}
     </nav>
   );
 };

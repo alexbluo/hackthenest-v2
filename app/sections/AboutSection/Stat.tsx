@@ -1,3 +1,5 @@
+"use client";
+
 import useGradient from "../../../utils/useGradient";
 
 interface Props {

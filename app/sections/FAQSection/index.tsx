@@ -9,6 +9,7 @@ interface Question {
 }
 
 // shallow index is column
+// TODO: transportation (buses but not reimbursements), prizes (tracks, preview)
 const questions: Question[][] = [
   [
     {
@@ -39,9 +40,9 @@ const questions: Question[][] = [
   ],
   [
     {
-      question: "Who is eligible to attend?",
+      question: "Can I attend?",
       answer:
-        "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school but would still like to participate, we'd love to have you as a mentor, volunteer, or sponsor!",
+        "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school, we'd love to have you as a mentor, volunteer, or sponsor!",
     },
     {
       question: "How do teams work?",
@@ -63,7 +64,6 @@ const questions: Question[][] = [
         </>
       ),
     },
-    // add transportation
     {
       question: "What are the overnight arrangements?",
       answer:
