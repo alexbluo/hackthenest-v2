@@ -9,12 +9,12 @@ import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
-import ApplicationInput from "../ApplicationInput";
-import ApplicationDropdown from "../ApplicationDropdown";
+import { authOptions } from "app/auth/[...nextauth]/route";
 import base from "utils/base";
 import countries from "utils/countries";
-import useGradient from "utils/useGradient";
-import { authOptions } from "app/auth/[...nextauth]/route";
+import { gradient } from "utils/gradient";
+import ApplicationDropdown from "../ApplicationDropdown";
+import ApplicationInput from "../ApplicationInput";
 
 const schema = z.object({
   firstName: z.string().min(1, { message: "*" }).optional(),
@@ -302,7 +302,7 @@ const HackerApp = ({
               </div>
             </div>
             <button
-              className={`${useGradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
+              className={`${await gradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
             >
               Submit
             </button>

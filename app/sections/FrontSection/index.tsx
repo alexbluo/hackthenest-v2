@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { gradient } from "utils/gradient";
 import jumboAnimation from "utils/jumboAnimation";
-import useGradient from "utils/useGradient";
 
 const targetName = "Hack the Nest";
 const targetDate = "9.23.23 - 9.24.23";
 const targetLocation = "Sterling, VA";
 
-const FrontSection = () => {
+const FrontSection = async () => {
   const [name, setName] = useState<string>(targetName);
   const [date, setDate] = useState<string>(targetDate);
   const [location, setLocation] = useState<string>(targetLocation);
@@ -35,7 +35,7 @@ const FrontSection = () => {
             <span className="whitespace-nowrap">{location}</span>
           </div>
           <Link
-            className={`${useGradient()} mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black text-opacity-90`}
+            className={`${await gradient()} mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black text-opacity-90`}
             href="/login"
           >
             Apply Now!

@@ -9,10 +9,9 @@ import NavItem from "./NavItem";
 
 interface Props {
   session: Session | null;
-  onClick: () => void;
 }
 
-const MobileNav = ({ session, onClick }: Props) => {
+const MobileNav = ({ session }: Props) => {
   const [open, toggleOpen] = useCycle(false, true);
 
   useLayoutEffect(() => {
@@ -35,16 +34,16 @@ const MobileNav = ({ session, onClick }: Props) => {
             exit={{ opacity: 0 }}
           >
             <ul className="flex h-screen flex-col items-center justify-center gap-8 text-gold">
-              <NavItem to="about" onClick={onClick}>
+              <NavItem to="about" onClick={toggleOpen}>
                 about
               </NavItem>
-              <NavItem to="schedule" onClick={onClick}>
+              <NavItem to="schedule" onClick={toggleOpen}>
                 schedule
               </NavItem>
-              <NavItem to="faq" onClick={onClick}>
+              <NavItem to="faq" onClick={toggleOpen}>
                 faq
               </NavItem>
-              <NavItem to="sponsors" onClick={onClick}>
+              <NavItem to="sponsors" onClick={toggleOpen}>
                 sponsors
               </NavItem>
               <Link

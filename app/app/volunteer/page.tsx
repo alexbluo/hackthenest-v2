@@ -13,7 +13,7 @@ import ApplicationDropdown from "../../app/components/ApplicationDropdown";
 import ApplicationInput from "../../app/components/ApplicationInput";
 import base from "../../utils/base";
 import countries from "../../utils/countries";
-import useGradient from "../../utils/useGradient";
+import { gradient } from "../../utils/gradient";
 import { authOptions } from "../api/auth/[...nextauth]";
 
 const schema = z.object({
@@ -302,7 +302,7 @@ const HackerApp = ({
               </div>
             </div>
             <button
-              className={`${useGradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
+              className={`${await gradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
             >
               Submit
             </button>

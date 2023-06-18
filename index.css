@@ -85,7 +85,38 @@ input[type="checkbox"]:focus {
   animation: text 3s linear infinite;
 }
 
-.gradient {
+.bg-gradient-stationary {
+    background-image: repeating-linear-gradient(
+      -10deg,
+      #09cdf963 200px,
+      #7fcec563 300px,
+      #045de963 400px,
+      #09c6f963 600px
+    ),
+    repeating-linear-gradient(
+      10deg,
+      #09c5f969 150px,
+      #045de981 250px,
+      #7fcec581 350px,
+      #09c6f969 450px
+    ),
+    repeating-linear-gradient(
+      20deg,
+      #09c5f963 100px,
+      #045de981 200px,
+      #7fcec581 300px,
+      #09c6f963 400px
+    ),
+    repeating-linear-gradient(
+      22deg,
+      #09c6f981 150px,
+      #045de969 250px,
+      #7fcec569 400px,
+      #09c6f981 500px
+    );
+}
+
+.bg-gradient-animated {
   background-image: repeating-linear-gradient(
       var(--deg1),
       #09cdf963 200px,
@@ -115,40 +146,6 @@ input[type="checkbox"]:focus {
       #09c6f981 500px
     );
   animation: wave 2s infinite ease-in-out;
-}
-
-.gradient-webkit {
-  background-image: -webkit-repeating-linear-gradient(
-      260deg,
-      #09cdf963 200px,
-      #7fcec563 300px,
-      #045de963 400px,
-      #09c6f963 600px
-    ),
-    -webkit-repeating-linear-gradient(280deg, #09c5f969 150px, #045de981 250px, #7fcec581
-          350px, #09c6f969 450px),
-    -webkit-repeating-linear-gradient(290deg, #09c5f963 100px, #045de981 200px, #7fcec581
-          300px, #09c6f963 400px),
-    -webkit-repeating-linear-gradient(292deg, #09c6f981 150px, #045de969 250px, #7fcec569
-          400px, #09c6f981 500px);
-  animation: flow 2.5s infinite ease-in-out;
-}
-
-.gradient-moz {
-  background-image: -moz-repeating-linear-gradient(
-      260deg,
-      #09cdf963 200px,
-      #7fcec563 300px,
-      #045de963 400px,
-      #09c6f963 600px
-    ),
-    -moz-repeating-linear-gradient(280deg, #09c5f969 150px, #045de981 250px, #7fcec581
-          350px, #09c6f969 450px),
-    -moz-repeating-linear-gradient(290deg, #09c5f963 100px, #045de981 200px, #7fcec581
-          300px, #09c6f963 400px),
-    -moz-repeating-linear-gradient(292deg, #09c6f981 150px, #045de969 250px, #7fcec569
-          400px, #09c6f981 500px);
-  animation: flow 2.5s infinite ease-in-out;
 }
 
 .safari-svg-border-fix {

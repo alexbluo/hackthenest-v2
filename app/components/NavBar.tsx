@@ -7,10 +7,6 @@ import NavItem from "./NavItem";
 
 const NavBar = async () => {
   const session = await getServerSession();
-  console.log(session);
-  // const data = await fetch("/session")
-  //   .then((res) => res.json())
-  //   .then((json) => console.log(json));
 
   return (
     <nav className="container absolute left-0 right-0 top-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
@@ -28,17 +24,15 @@ const NavBar = async () => {
         <NavItem to="schedule">Schedule</NavItem>
         <NavItem to="faq">FAQ</NavItem>
         <NavItem to="sponsors">Sponsors</NavItem>
-        {/* <Link
+        <Link
           className="cursor-pointer font-mono text-lg font-medium"
           href={session ? "/dashboard" : "/login"}
         >
           {session ? "Dashboard" : "Login"}
-        </Link> */}
+        </Link>
       </ul>
 
       <MobileNav session={session} />
-
-      {/* <MobileMenu open={open} session={session} onClick={() => toggleOpen()} /> */}
     </nav>
   );
 };

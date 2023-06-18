@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
-import useGradient from "../../utils/useGradient";
+import { gradient } from "../../utils/gradient";
 
 interface Props {
   name: string;
@@ -14,7 +14,7 @@ const DashboardButton = ({ name, href, status }: Props) => {
       <Link
         className={classNames(
           "flex h-full w-full items-center justify-center text-lg text-black",
-          { [useGradient()]: status === "INCOMPLETE" },
+          { [gradient]: status === "INCOMPLETE" },
           { "cursor-default bg-grey": status === "COMPLETE" },
           { "cursor-default bg-grey": status === "UNAVAILABLE" }
         )}
