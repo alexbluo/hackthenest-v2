@@ -9,12 +9,11 @@ import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
-import ApplicationDropdown from "../../app/components/ApplicationDropdown";
-import ApplicationInput from "../../app/components/ApplicationInput";
-import base from "../../utils/base";
-import countries from "../../utils/countries";
-import { gradient } from "../../utils/gradient";
-import { authOptions } from "../api/auth/[...nextauth]";
+import { authOptions } from "app/auth/[...nextauth]/route";
+import base from "utils/base";
+import countries from "utils/countries";
+import ApplicationDropdown from "../ApplicationDropdown";
+import ApplicationInput from "../ApplicationInput";
 
 const schema = z.object({
   firstName: z.string().min(1, { message: "*" }).optional(),
@@ -38,7 +37,7 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const HackerApp = ({
+const HackerApp = async ({
   app,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const {
@@ -111,7 +110,7 @@ const HackerApp = ({
           </Link>
         </nav>
 
-        <h2 className="text-gradient mb-8">Application</h2>
+        <h2 className="gradient-text mb-8">Application</h2>
 
         <form
           className="-mx-8 rounded-3xl bg-blue-mid/20 p-8 text-lg"
@@ -301,9 +300,7 @@ const HackerApp = ({
                 </span>
               </div>
             </div>
-            <button
-              className={`${await gradient()} mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black`}
-            >
+            <button className="gradient-bg mx-auto h-fit w-full self-end rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black">
               Submit
             </button>
           </div>

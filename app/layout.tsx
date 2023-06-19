@@ -30,20 +30,14 @@ export const metadata: Metadata = {
 
 // can maybe add client usesession like https://stackoverflow.com/questions/75404618/glitch-with-nextauth-session-nextjs-13 with separate client component for provider
 // dont know if necessary tho
-const RootLayout = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html
       className={`${mono.variable} ${sans.variable} ${flow_circular.variable} font-sans`}
       lang="en"
     >
       <GoogleAnalytics />
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 };

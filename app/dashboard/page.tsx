@@ -24,7 +24,7 @@ const Dashboard = async () => {
     <div className="bg-black">
       <AuthNav />
       <section className="min-h-screen pt-32">
-        <h2 className="text-gradient mb-8">Dashboard</h2>
+        <h2 className="gradient-text mb-8">Dashboard</h2>
         <h3 className="mb-8 text-3xl font-semibold text-gold">
           Welcome back, {session?.user?.name || session?.user?.email}
         </h3>

@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import Link from "next/link";
-import { gradient } from "../../utils/gradient";
 
 interface Props {
   name: string;

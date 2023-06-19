@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { prisma } from "../../../db";
+import { prisma } from "db";
 
 const POST = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getServerSession();
@@ -15,4 +15,4 @@ const POST = async (req: NextApiRequest, res: NextApiResponse) => {
   res.json(user);
 };
 
-export default handler;
+export default POST;

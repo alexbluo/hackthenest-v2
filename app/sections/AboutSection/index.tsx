@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <section id="about">
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
-        <h2 className="text-gradient">About</h2>
+        <h2 className="gradient-text">About</h2>
       </div>
       <article className="-mx-8 mb-8 rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none">
         {/* TODO: change text */}

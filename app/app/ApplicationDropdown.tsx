@@ -1,7 +1,7 @@
 import { Control, Controller, FieldError, Merge } from "react-hook-form";
 import Select from "react-select";
 // eslint-disable-next-line import/no-cycle
-import { SchemaType } from "../../pages/app/hacker";
+import { SchemaType } from "./hacker/page";
 
 interface Option {
   value: string | number | null | undefined;

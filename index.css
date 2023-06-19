@@ -19,51 +19,6 @@ input[type="checkbox"]:focus {
   outline: 1px solid;
 }
 
-@property --deg1 {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: -10deg;
-}
-
-@property --deg2 {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 10deg;
-}
-
-@property --deg3 {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 20deg;
-}
-
-@property --deg4 {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 22deg;
-}
-
-@keyframes wave {
-  0% {
-    --deg1: -10deg;
-    --deg2: 10deg;
-    --deg3: 20deg;
-    --deg4: 22deg;
-  }
-  50% {
-    --deg1: -7deg;
-    --deg2: 7deg;
-    --deg3: 16deg;
-    --deg4: 14deg;
-  }
-  100% {
-    --deg1: -10deg;
-    --deg2: 10deg;
-    --deg3: 20deg;
-    --deg4: 22deg;
-  }
-}
-
 @keyframes text {
   from {
     background-position: 0% center;
@@ -73,7 +28,19 @@ input[type="checkbox"]:focus {
   }
 }
 
-.text-gradient {
+@keyframes wave {
+  0% {
+    background-position: 0 0%;
+  }
+  50% {
+    background-position: 0 2%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
+
+.gradient-text {
   background-image: linear-gradient(
     to right,
     #045de9,
@@ -85,8 +52,8 @@ input[type="checkbox"]:focus {
   animation: text 3s linear infinite;
 }
 
-.bg-gradient-stationary {
-    background-image: repeating-linear-gradient(
+.gradient-bg {
+  background-image: repeating-linear-gradient(
       -10deg,
       #09cdf963 200px,
       #7fcec563 300px,
@@ -114,38 +81,8 @@ input[type="checkbox"]:focus {
       #7fcec569 400px,
       #09c6f981 500px
     );
-}
-
-.bg-gradient-animated {
-  background-image: repeating-linear-gradient(
-      var(--deg1),
-      #09cdf963 200px,
-      #7fcec563 300px,
-      #045de963 400px,
-      #09c6f963 600px
-    ),
-    repeating-linear-gradient(
-      var(--deg2),
-      #09c5f969 150px,
-      #045de981 250px,
-      #7fcec581 350px,
-      #09c6f969 450px
-    ),
-    repeating-linear-gradient(
-      var(--deg3),
-      #09c5f963 100px,
-      #045de981 200px,
-      #7fcec581 300px,
-      #09c6f963 400px
-    ),
-    repeating-linear-gradient(
-      var(--deg4),
-      #09c6f981 150px,
-      #045de969 250px,
-      #7fcec569 400px,
-      #09c6f981 500px
-    );
-  animation: wave 2s infinite ease-in-out;
+  background-size: 100% 200%;
+  animation: wave 3s infinite ease-in-out;
 }
 
 .safari-svg-border-fix {

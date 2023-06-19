@@ -3,14 +3,13 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { gradient } from "utils/gradient";
 import jumboAnimation from "utils/jumboAnimation";
 
 const targetName = "Hack the Nest";
 const targetDate = "9.23.23 - 9.24.23";
 const targetLocation = "Sterling, VA";
 
-const FrontSection = async () => {
+const FrontSection = () => {
   const [name, setName] = useState<string>(targetName);
   const [date, setDate] = useState<string>(targetDate);
   const [location, setLocation] = useState<string>(targetLocation);
@@ -25,7 +24,7 @@ const FrontSection = async () => {
     <section className="min-h-screen px-0 pt-32 sm:px-8" id="front">
       <div className="relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-12 sm:pt-24">
         {/* https://stackoverflow.com/questions/66457359/how-to-keep-a-paragraph-height-even-when-there-is-no-text-in-it */}
-        <h1 className="text-gradient h-fit bg-clip-text text-center font-mono text-7xl font-black text-transparent before:inline-block before:content-['']">
+        <h1 className="gradient-text h-fit bg-clip-text text-center font-mono text-7xl font-black text-transparent before:inline-block before:content-['']">
           {name}
         </h1>
         <div className="flex w-fit flex-col justify-center gap-8">
@@ -35,7 +34,7 @@ const FrontSection = async () => {
             <span className="whitespace-nowrap">{location}</span>
           </div>
           <Link
-            className={`${await gradient()} mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black text-opacity-90`}
+            className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black text-opacity-90"
             href="/login"
           >
             Apply Now!

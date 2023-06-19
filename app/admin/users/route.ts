@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { prisma } from "../../../db";
-import { authOptions } from "../auth/[...nextauth]";
+import { prisma } from "db";
+import { authOptions } from "app/auth/[...nextauth]/route";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "GET") {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FieldError, UseFormRegister } from "react-hook-form";
 // eslint-disable-next-line import/no-cycle
-import { SchemaType } from "../../pages/app/hacker";
+import { SchemaType } from "./hacker/page";
 
 interface Props {
   // display name
