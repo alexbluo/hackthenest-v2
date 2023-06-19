@@ -106,11 +106,11 @@ const HackerApp = ({
             className="font-mono text-lg font-medium text-gold"
             href="/dashboard"
           >
-            Dashboard
+            dashboard
           </Link>
         </nav>
 
-        <h2 className="gradient-text mb-8">Application</h2>
+        <h2 className="gradient-text mb-8">hacker app</h2>
 
         <form
           className="-mx-8 rounded-3xl bg-blue-mid/20 p-8 text-lg"

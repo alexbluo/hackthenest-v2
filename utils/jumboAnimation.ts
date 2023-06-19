@@ -5,6 +5,7 @@ const upperLetterBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numBank = "1234567890";
 
 // https://www.youtube.com/watch?v=W5oawMJaXbU
+// change to hook
 const jumboAnimation = (
   setStateString: Dispatch<SetStateAction<string>>,
   targetString: string
