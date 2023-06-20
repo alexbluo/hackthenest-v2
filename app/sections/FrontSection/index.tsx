@@ -1,23 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import jumboAnimation from "utils/jumboAnimation";
-
-const targetName = "Hack the Nest";
-const targetDate = "9.23.23 - 9.24.23";
-const targetLocation = "Sterling, VA";
+import useHackerText from "utils/useHackerText";
 
 const FrontSection = () => {
-  const [name, setName] = useState<string>(targetName);
-  const [date, setDate] = useState<string>(targetDate);
-  const [location, setLocation] = useState<string>(targetLocation);
+  const [name, animateName] = useHackerText("Hack the Nest");
+  const [date, animateDate] = useHackerText("9.23.23 - 9.24.23");
+  const [location, animateLocation] = useHackerText("Sterling, VA");
+  const [apply, animateApply] = useHackerText("Apply Now!");
 
   useEffect(() => {
-    jumboAnimation(setName, targetName);
-    jumboAnimation(setDate, targetDate);
-    jumboAnimation(setLocation, targetLocation);
+    animateName();
+    animateDate();
+    animateLocation();
   }, []);
 
   return (
@@ -34,10 +31,11 @@ const FrontSection = () => {
             <span className="whitespace-nowrap">{location}</span>
           </div>
           <Link
-            className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center text-lg font-medium text-black text-opacity-90"
+            className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black text-opacity-90 shadow-lg duration-200 ease-in-out hover:shadow-blue-light"
             href="/login"
+            onMouseOver={() => animateApply({duration: 500})}
           >
-            Apply Now!
+            {apply}
           </Link>
         </div>
       </div>
