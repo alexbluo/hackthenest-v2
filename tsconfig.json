@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,11 +25,24 @@
       }
     ]
   },
-  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "middleware.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "paths": {
-    "@/app/**/*": ["app/**/*"],
-    "@/utils/*": ["utils/*"],
-    "@/db.ts": ["db.ts"]
+    "@/app/**/*": [
+      "app/**/*"
+    ],
+    "@/utils/*": [
+      "utils/*"
+    ],
+    "@/db.ts": [
+      "db.ts"
+    ]
   }
 }

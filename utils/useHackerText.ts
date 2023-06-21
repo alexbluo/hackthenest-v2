@@ -64,7 +64,6 @@ const useHackerText = (initialText: string): [string, AnimateTextAction] => {
       if (iteration >= finalText.length) clearInterval(interval);
 
       iteration += 1 / iterations;
-      console.log(iteration);
     }, duration / finalText.length);
   };
 

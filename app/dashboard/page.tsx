@@ -1,10 +1,7 @@
 import bcrypt from "bcrypt";
-import Image from "next/image";
-import Link from "next/link";
 import { getServerSession } from "next-auth";
-import { signOut } from "next-auth/react";
 import QRCode from "react-qr-code";
-import { authOptions } from "app/auth/[...nextauth]/route";
+import { authOptions } from "app/api/auth/[...nextauth]/route";
 import AuthNav from "app/components/AuthNav";
 import { prisma } from "db";
 import DashboardButton from "./DashboardButton";

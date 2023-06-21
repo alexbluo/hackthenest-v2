@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
 import { signIn } from "next-auth/react";
-import { authOptions } from "app/auth/[...nextauth]/route";
+import { authOptions } from "app/api/auth/[...nextauth]/route";
 
 const AdminLogin = () => {
   const [password, setPassword] = useState<string>("");

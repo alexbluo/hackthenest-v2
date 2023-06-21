@@ -1,15 +1,14 @@
+"use client";
+
 /* eslint-disable import/no-cycle */
 import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { getServerSession } from "next-auth";
+import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
-import { authOptions } from "app/auth/[...nextauth]/route";
 import base from "utils/base";
 import countries from "utils/countries";
 import ApplicationDropdown from "../ApplicationDropdown";
@@ -24,7 +23,7 @@ const schema = z.object({
     .optional(),
   age: z.number().min(1, { message: "*" }).optional(),
   yog: z.number().min(1, { message: "*" }).optional(),
-  // check capitalized
+  // TODO: check capitalized - refine + split + every
   school: z.string().min(1, { message: "*" }).optional(),
   country: z.string().min(1, { message: "*" }).optional(),
   diet: z.string().min(1, { message: "*" }).optional(),
@@ -37,9 +36,9 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const HackerApp = ({
-  app,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const HackerApp = () => {
+  
+
   const {
     register,
     handleSubmit,
@@ -310,38 +309,38 @@ const HackerApp = ({
   );
 };
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  const session = await getServerSession(context.req, context.res, authOptions);
+// export const getServerSideProps = async (
+//   context: GetServerSidePropsContext
+// ) => {
+//   const session = await getServerSession(context.req, context.res, authOptions);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/login",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  if (session?.user?.name === "ADMIN") {
-    return {
-      redirect: {
-        destination: "/admin",
-        permanent: false,
-      },
-    };
-  }
+//   if (session?.user?.name === "ADMIN") {
+//     return {
+//       redirect: {
+//         destination: "/admin",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  const { data: app } = await axios.get<SchemaType>(`${base}/api/app/hacker`, {
-    headers: {
-      cookie: context.req.headers.cookie || "",
-    },
-  });
+//   const { data: app } = await axios.get<SchemaType>(`${base}/api/app/hacker`, {
+//     headers: {
+//       cookie: context.req.headers.cookie || "",
+//     },
+//   });
 
-  return {
-    props: { app },
-  };
-};
+//   return {
+//     props: { app },
+//   };
+// };
 
 export default HackerApp;

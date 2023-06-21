@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { getServerSession } from "next-auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
-import { authOptions } from "app/auth/[...nextauth]/route";
+import { authOptions } from "app/api/auth/[...nextauth]/route";
 import base from "utils/base";
 import countries from "utils/countries";
 import ApplicationDropdown from "../ApplicationDropdown";
@@ -37,7 +37,7 @@ const schema = z.object({
 
 export type SchemaType = z.infer<typeof schema>;
 
-const HackerApp = async ({
+const HackerApp = ({
   app,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const {

@@ -13,7 +13,7 @@ const DashboardButton = ({ name, href, status }: Props) => {
       <Link
         className={classNames(
           "flex h-full w-full items-center justify-center text-lg text-black",
-          { [gradient]: status === "INCOMPLETE" },
+          { "gradient-bg": status === "INCOMPLETE" },
           { "cursor-default bg-grey": status === "COMPLETE" },
           { "cursor-default bg-grey": status === "UNAVAILABLE" }
         )}

@@ -21,7 +21,7 @@ const AuthNav = () => {
         className="font-mono text-lg font-medium text-gold"
         onClick={() => signOut({ callbackUrl: "/" })}
       >
-        Logout
+        logout
       </button>
     </nav>
   );

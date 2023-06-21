@@ -1,22 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getServerSession } from "next-auth";
-import { prisma } from "db";
-import { SchemaType } from "app/app/hacker/page";
-import { authOptions } from "app/auth/[...nextauth]/route";
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "app/api/auth/[...nextauth]/route";
+import { SchemaType } from "app/app/hacker/page";
+import { prisma } from "db";
 
 interface NextApiRequestType extends NextApiRequest {
   body: { data: SchemaType };
 }
 
-const POST = async (req: NextApiRequestType) => {
+export const POST = async (req: NextApiRequestType, res: NextApiResponse) => {
   const session = await getServerSession(req, res, authOptions);
-  const email = session?.user?.email;
-
-  if (!email) {
-    res.status(400).end();
-    return;
-  }
+  const { email } = session!.user;
 
   const app = await prisma.hackerApp.upsert({
     where: {
@@ -34,5 +29,3 @@ const POST = async (req: NextApiRequestType) => {
 
   return NextResponse.json(app);
 };
-
-export POST;

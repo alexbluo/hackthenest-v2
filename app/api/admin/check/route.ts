@@ -1,18 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
+import { authOptions } from "app/api/auth/[...nextauth]/route";
 import { prisma } from "db";
 
 const POST = async (req: NextApiRequest, res: NextApiResponse) => {
-  const session = await getServerSession();
-
-  if (session?.user?.name !== "ADMIN") {
-    res.status(400).end();
-    return;
-  }
+  const session = await getServerSession(req, res, authOptions);
 
   const user = await prisma.user.findMany();
 
-  res.json(user);
+  return NextResponse.json(user);
 };
 
 export default POST;
