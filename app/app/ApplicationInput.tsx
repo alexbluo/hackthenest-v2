@@ -1,18 +1,17 @@
 import { useState } from "react";
+import { HackerApp } from "@prisma/client";
 import { motion } from "framer-motion";
 import { FieldError, UseFormRegister } from "react-hook-form";
-// eslint-disable-next-line import/no-cycle
-import { SchemaType } from "./hacker/page";
 
 interface Props {
   // display name
   fieldName: string;
   // internal name
-  name: keyof SchemaType;
+  name: keyof HackerApp;
   // placeholder display text
   placeholder: string;
   // register function from RHF
-  register: UseFormRegister<SchemaType>;
+  register: UseFormRegister<HackerApp>;
   // error message
   error: FieldError | undefined;
 }

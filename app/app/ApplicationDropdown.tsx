@@ -1,7 +1,6 @@
+import { HackerApp } from "@prisma/client";
 import { Control, Controller, FieldError, Merge } from "react-hook-form";
 import Select from "react-select";
-// eslint-disable-next-line import/no-cycle
-import { SchemaType } from "./hacker/page";
 
 interface Option {
   value: string | number | null | undefined;
@@ -12,13 +11,13 @@ interface Props {
   // displayed above field
   fieldName: string;
   // internal name
-  name: keyof SchemaType;
+  name: keyof HackerApp;
   // options list
   options: Option[];
   // default value - also controls placeholder
   defaultValue: string | true | undefined;
   // control from RHF
-  control: Control<SchemaType>;
+  control: Control<HackerApp>;
   // error message
   error:
     | Merge<

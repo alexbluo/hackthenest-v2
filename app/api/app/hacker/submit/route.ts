@@ -1,13 +1,13 @@
+import { HackerApp } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { ServerClient } from "postmark";
 import { authOptions } from "app/api/auth/[...nextauth]/route";
-import { SchemaType } from "app/app/hacker/page";
 import { prisma } from "db";
 
 interface NextApiRequestType extends NextApiRequest {
-  body: { data: SchemaType };
+  body: { data: HackerApp };
 }
 
 const POST = async (req: NextApiRequestType, res: NextApiResponse) => {
