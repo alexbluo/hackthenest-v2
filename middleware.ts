@@ -1,35 +1,47 @@
-import { redirect } from "next/navigation";
-import { NextResponse } from "next/server";
-import { withAuth } from "next-auth/middleware";
+import { redirect, useRouter } from "next/navigation";
+import { NextRequest, NextResponse } from "next/server";
+import { getToken } from "next-auth/jwt";
+import { authOptions } from "app/api/auth/[...nextauth]/route";
 
-// TODO: test
-export default withAuth((req) => {
-  const { nextUrl: url, nextauth: auth } = req;
+export const middleware = async (req: NextRequest) => {
+  const { nextUrl: url } = req;
+  const token = await getToken({ req });
 
-  if (url.basePath.startsWith("/api/admin")) {
-    if (auth.token?.email !== "ADMIN") {
+  if (url.pathname.startsWith("/api/admin")) {
+    if (token?.email !== "ADMIN") {
       return NextResponse.json(null, { status: 400 });
     }
   }
 
-  if (url.basePath.startsWith("/api")) {
-    if (!auth.token) return NextResponse.json(null, { status: 400 });
+  if (url.pathname.startsWith("/api") && !url.pathname.startsWith("/api/auth")) {
+    if (!token) return NextResponse.json(null, { status: 400 });
   }
 
-  if (url.basePath.startsWith("/admin")) {
-    if (!auth.token && !url.basePath.startsWith("/admin/login")) {
-      redirect("/admin/login")
+  if (url.pathname.startsWith("/admin")) {
+    if (!url.pathname.startsWith("/admin/login") && token?.email !== "ADMIN") {
+      url.pathname = "/admin/login";
+      return NextResponse.redirect(url);
+    }
+    if (url.pathname.startsWith("/admin/login") && token?.email === "ADMIN") {
+      url.pathname = "/admin";
+      return NextResponse.redirect(url);
     }
   }
 
   if (
-    url.basePath.startsWith("/dashboard") ||
-    url.basePath.startsWith("/app")
+    url.pathname.startsWith("/dashboard") ||
+    url.pathname.startsWith("/app")
   ) {
-    if (!auth.token) redirect("/login");
-    if (auth.token.email === "ADMIN") redirect("/admin");
+    if (!token) {
+      url.pathname = "/login";
+      return NextResponse.redirect(url);
+    }
+    if (token.email === "ADMIN") {
+      url.pathname = "/admin";
+      return NextResponse.redirect(url);
+    }
   }
-});
+};
 
 export const config = {
   matcher: ["/api/:path*", "/admin/:path*", "/dashboard/:path*", "/app/:path*"],

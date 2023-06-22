@@ -29,7 +29,7 @@ const authOptions: AuthOptions = {
           credentials.username === "ADMIN" &&
           credentials.password === process.env.ADMIN_PASSWORD
         ) {
-          return { id: "ADMIN", name: "ADMIN" };
+          return { id: "ADMIN", email: "ADMIN", name: "ADMIN" };
         }
 
         return null;

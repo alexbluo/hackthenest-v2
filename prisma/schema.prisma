@@ -12,7 +12,7 @@ model User {
   email        String        @id
   qr           String        @unique
   check        Boolean       @default(false)
-  rsvp         Boolean       @default(false)
+  completed    Completed[]
   hackerApp    HackerApp?
   volunteerApp VolunteerApp?
 }
@@ -46,4 +46,16 @@ model VolunteerApp {
   shirt       String?
   user        User    @relation(fields: [userEmail], references: [email])
   userEmail   String  @id
+}
+
+enum Item {
+  HACKERAPP
+  VOLUNTEERAPP
+  RSVP
+}
+
+model Completed {
+  item      Item    @id
+  User      User?   @relation(fields: [userEmail], references: [email])
+  userEmail String?
 }

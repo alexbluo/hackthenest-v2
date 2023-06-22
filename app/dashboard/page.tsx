@@ -23,7 +23,7 @@ const Dashboard = async () => {
       <section className="min-h-screen pt-32">
         <h2 className="gradient-text mb-8">dashboard</h2>
         <h3 className="mb-8 text-3xl font-semibold text-gold">
-          Welcome back, {session?.user?.name || session?.user?.email}
+          welcome back, {session?.user?.name || session?.user?.email}
         </h3>
         <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="rounded-md bg-white p-4">
@@ -35,7 +35,6 @@ const Dashboard = async () => {
               href="/app/hacker"
               status="INCOMPLETE"
             />
-            {/* TODO: iscomplete util */}
             <DashboardButton name="Volunteer Application" status="COMPLETE" />
             <DashboardButton name="RSVP" status="UNAVAILABLE" />
           </div>

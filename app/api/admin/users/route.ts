@@ -7,6 +7,6 @@ export const GET = async () => {
     include: { hackerApp: true, volunteerApp: true },
   });
 
-  NextResponse.json(user);
+  return NextResponse.json(user);
 };
 

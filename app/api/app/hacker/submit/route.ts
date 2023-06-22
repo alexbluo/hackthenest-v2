@@ -14,6 +14,7 @@ export const POST = async (req: NextApiRequestType) => {
   const session = await getServerSession(authOptions);
   const { email } = session!.user;
 
+  // TODO: change status
   const app = await prisma.hackerApp.upsert({
     where: {
       userEmail: email,
