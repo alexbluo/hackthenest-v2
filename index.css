@@ -15,8 +15,9 @@ input:focus {
   outline: 0px none transparent;
 }
 
-input[type="checkbox"]:focus {
-  outline: 1px solid;
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
 }
 
 @keyframes text {
