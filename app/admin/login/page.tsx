@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { GetServerSidePropsContext } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { getServerSession } from "next-auth";
 import { signIn } from "next-auth/react";
-import { authOptions } from "app/api/auth/[...nextauth]/route";
 
 const AdminLogin = () => {
   const [password, setPassword] = useState<string>("");
@@ -78,32 +75,4 @@ const AdminLogin = () => {
   );
 };
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  const session = await getServerSession(context.req, context.res, authOptions);
-
-  if (session?.user?.name === "ADMIN") {
-    return {
-      redirect: {
-        destination: "/admin",
-        permanent: false,
-      },
-    };
-  }
-
-  if (session) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
-};
-
-export default AdminLogin;
+export default AdminLogin

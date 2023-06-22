@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { getProviders, signIn } from "next-auth/react";
+import { getProviders } from "next-auth/react";
 import LoginButton from "./LoginButton";
 
-// TODO: move login buttons to component
+// TODO: add admin redirects
 const Login = async () => {
   const providers = await getProviders();
 

@@ -1,5 +1,5 @@
 import { HackerApp } from "@prisma/client";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { ServerClient } from "postmark";
@@ -10,8 +10,8 @@ interface NextApiRequestType extends NextApiRequest {
   body: { data: HackerApp };
 }
 
-const POST = async (req: NextApiRequestType, res: NextApiResponse) => {
-  const session = await getServerSession(req, res, authOptions);
+export const POST = async (req: NextApiRequestType) => {
+  const session = await getServerSession(authOptions);
   const { email } = session!.user;
 
   const app = await prisma.hackerApp.upsert({
@@ -44,5 +44,3 @@ const POST = async (req: NextApiRequestType, res: NextApiResponse) => {
 
   return NextResponse.json(app);
 };
-
-export default POST;
