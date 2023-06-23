@@ -1,7 +1,5 @@
-import { redirect, useRouter } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
-import { authOptions } from "app/api/auth/[...nextauth]/route";
 
 export const middleware = async (req: NextRequest) => {
   const { nextUrl: url } = req;
@@ -13,7 +11,10 @@ export const middleware = async (req: NextRequest) => {
     }
   }
 
-  if (url.pathname.startsWith("/api") && !url.pathname.startsWith("/api/auth")) {
+  if (
+    url.pathname.startsWith("/api") &&
+    !url.pathname.startsWith("/api/auth")
+  ) {
     if (!token) return NextResponse.json(null, { status: 400 });
   }
 
@@ -24,6 +25,17 @@ export const middleware = async (req: NextRequest) => {
     }
     if (url.pathname.startsWith("/admin/login") && token?.email === "ADMIN") {
       url.pathname = "/admin";
+      return NextResponse.redirect(url);
+    }
+  }
+
+  if (url.pathname.startsWith("/login")) {
+    if (token?.email === "ADMIN") {
+      url.pathname = "/admin";
+      return NextResponse.redirect(url);
+    }
+    if (token) {
+      url.pathname = "/dashboard";
       return NextResponse.redirect(url);
     }
   }
@@ -44,5 +56,11 @@ export const middleware = async (req: NextRequest) => {
 };
 
 export const config = {
-  matcher: ["/api/:path*", "/admin/:path*", "/dashboard/:path*", "/app/:path*"],
+  matcher: [
+    "/api/:path*",
+    "/admin/:path*",
+    "/login",
+    "/dashboard/:path*",
+    "/app/:path*",
+  ],
 };

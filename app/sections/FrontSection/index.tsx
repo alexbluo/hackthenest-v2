@@ -15,6 +15,7 @@ const FrontSection = () => {
     animateName();
     animateDate();
     animateLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -31,9 +32,9 @@ const FrontSection = () => {
             <span className="whitespace-nowrap">{location}</span>
           </div>
           <Link
-            className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black text-opacity-90 shadow-lg duration-200 ease-in-out hover:shadow-blue-light"
+            className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black text-opacity-90 shadow-md shadow-grey duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
             href="/login"
-            onMouseOver={() => animateApply({duration: 500})}
+            onMouseOver={() => animateApply({ duration: 500 })}
           >
             {apply}
           </Link>

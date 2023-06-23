@@ -13,18 +13,17 @@ from hackathons. This website serves as both an informational asset to potential
 
 ## Tech Stack
 
-|     Technology      |          Purpose          |
-| :-----------------: | :-----------------------: |
-|        MySQL        |           DBMS            |
-|       Next.js       | Full Stack Meta Framework |
-|      React.js       |    Frontend Framework     |
-|       Node.js       |      Backend Runtime      |
-|     TailwindCSS     |       CSS Framework       |
-| Axios + React Query |   Fetching and Caching    |
-|       Prisma        |            ORM            |
-|      NextAuth       |      Authentication       |
-|    Postmark    |     Email Automation      |
-|       Vercel        |     Hosting Platform      |
+| Technology  |          Purpose          |
+| :---------: | :-----------------------: |
+|    MySQL    |           DBMS            |
+|   Next.js   | Full Stack Meta Framework |
+|  React.js   |    Frontend Framework     |
+|   Node.js   |      Backend Runtime      |
+| TailwindCSS |       CSS Framework       |
+|   Prisma    |            ORM            |
+|  NextAuth   |      Authentication       |
+|  Postmark   |     Email Automation      |
+|   Vercel    |     Hosting Platform      |
 
 ## Sourcing Documentation
 
@@ -37,10 +36,8 @@ from hackathons. This website serves as both an informational asset to potential
 - [TailwindCSS](https://tailwindcss.com/docs/installation)
 - [Prisma](https://www.prisma.io/docs)
 - [Postmark](https://postmarkapp.com/developer)
-- [React Query](https://react-query.tanstack.com/overview)
 - [NextAuth](https://next-auth.js.org/getting-started/example)
 - [autoprefixer](https://github.com/postcss/autoprefixer)
-- [axios](https://axios-http.com/docs/intro)
 - [classnames](https://github.com/JedWatson/classnames)
 - [postcss](https://github.com/postcss/postcss)
 - [react-select](https://react-select.com/home)

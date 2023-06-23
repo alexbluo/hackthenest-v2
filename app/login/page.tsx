@@ -1,21 +1,9 @@
 import Image from "next/image";
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
 import { getProviders } from "next-auth/react";
-import { authOptions } from "app/api/auth/[...nextauth]/route";
 import LoginButton from "./LoginButton";
 
 const Login = async () => {
   const providers = await getProviders();
-  const session = await getServerSession(authOptions);
-
-  if (session?.user.email === "ADMIN") {
-    redirect("/admin");
-  }
-
-  if (session) {
-    redirect("/dashboard");
-  }
 
   return (
     <div className="w-screen bg-black">
