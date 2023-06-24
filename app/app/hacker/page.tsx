@@ -15,9 +15,11 @@ const HackerApp = async () => {
   });
   if (completed(user!.completed, "HACKERAPP")) redirect("/dashboard");
 
-  const app = await prisma.hackerApp.findUniqueOrThrow({
-    where: { userEmail: email },
-  });
+  // because undefined !== null...
+  const app =
+    (await prisma.hackerApp.findUnique({
+      where: { userEmail: email },
+    })) || undefined;
 
   return (
     <>

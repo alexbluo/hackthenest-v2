@@ -39,7 +39,7 @@ export const schema = z.object({
 });
 
 interface Props {
-  app: HackerApp;
+  app?: HackerApp;
 }
 
 const AppForm = ({ app }: Props) => {

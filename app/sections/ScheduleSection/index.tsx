@@ -1,9 +1,8 @@
-"use client";
+"use client"
 
 import React, { ReactNode, useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import useWindowWidth from "utils/useWindowWidth";
-import WaitClientLoad from "utils/WaitClientLoad";
 import ScheduleBlock from "./ScheduleBlock";
 
 interface Block {
@@ -216,7 +215,6 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className="gradient-text">schedule</h2>
       </div>
-      <WaitClientLoad>
         {/* {width > 768 ? ( */}
         <motion.ul className="flex flex-col pt-40">
           {blocks.map(({ name, time, description, status }, i) => {
@@ -241,7 +239,6 @@ const ScheduleSection = () => {
         {/* ) : (
           <div></div> */}
         {/* )} */}
-      </WaitClientLoad>
     </section>
   );
 };
