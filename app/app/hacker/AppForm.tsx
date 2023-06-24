@@ -15,12 +15,20 @@ export const schema = z.object({
   lastName: z.string().min(1, { message: "*" }).optional(),
   phone: z
     .string()
-    .regex(/^\d{10}$/, { message: "*" })
+    .min(1, { message: "*" })
+    .regex(/^\d{10}$/, { message: "please check formatting" })
     .optional(),
   age: z.number().min(1, { message: "*" }).optional(),
   yog: z.number().min(1, { message: "*" }).optional(),
   // TODO: check capitalized - refine + split + every
-  school: z.string().min(1, { message: "*" }).optional(),
+  school: z
+    .string()
+    .min(1, { message: "*" })
+    .refine(
+      (val) => val.split(" ").every((character) => character.match(/^[A-Z]*$/)),
+      { message: "please capitalize each word" }
+    )
+    .optional(),
   country: z.string().min(1, { message: "*" }).optional(),
   diet: z.string().min(1, { message: "*" }).optional(),
   shirt: z.string().min(1, { message: "*" }).optional(),

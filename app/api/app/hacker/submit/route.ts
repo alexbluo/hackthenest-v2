@@ -10,7 +10,6 @@ export const POST = async (req: NextRequest) => {
   const session = await getServerSession(authOptions);
   const { email } = session!.user;
 
-  // TODO: change status
   const app = await prisma.hackerApp.upsert({
     where: {
       userEmail: email,
@@ -22,6 +21,18 @@ export const POST = async (req: NextRequest) => {
     create: {
       ...body,
       userEmail: email,
+    },
+  });
+
+  await prisma.user.update({
+    where: { email },
+    data: {
+      completed: {
+        connectOrCreate: {
+          where: { item: "HACKERAPP" },
+          create: { item: "HACKERAPP" },
+        },
+      },
     },
   });
 

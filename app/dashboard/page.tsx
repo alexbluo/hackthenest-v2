@@ -4,6 +4,7 @@ import QRCode from "react-qr-code";
 import { authOptions } from "app/api/auth/[...nextauth]/route";
 import AuthNav from "app/components/AuthNav";
 import { prisma } from "db";
+import completed from "utils/completed";
 import DashboardButton from "./DashboardButton";
 
 const Dashboard = async () => {
@@ -15,6 +16,7 @@ const Dashboard = async () => {
     where: { email },
     update: {},
     create: { email, qr: hashedEmail },
+    include: { completed: true },
   });
 
   return (
@@ -33,9 +35,17 @@ const Dashboard = async () => {
             <DashboardButton
               name="Hacker Application"
               href="/app/hacker"
-              status="INCOMPLETE"
+              status={
+                completed(user.completed, "HACKERAPP")
+                  ? "COMPLETE"
+                  : "INCOMPLETE"
+              }
             />
-            <DashboardButton name="Volunteer Application" status="COMPLETE" />
+            <DashboardButton
+              name="Volunteer Application"
+              href="/app/hacker"
+              status="UNAVAILABLE"
+            />
             <DashboardButton name="RSVP" status="UNAVAILABLE" />
           </div>
         </div>

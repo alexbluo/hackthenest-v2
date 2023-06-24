@@ -17,7 +17,6 @@ const useHackerText = (initialText: string): [string, AnimateTextAction] => {
   const [text, setText] = useState(initialText);
 
   const animateText: AnimateTextAction = (
-    // might need to add default params twice
     { finalText = initialText, duration = 800, iterations = 2 } = {
       finalText: initialText,
       duration: 800,

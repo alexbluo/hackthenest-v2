@@ -5,11 +5,11 @@ export const middleware = async (req: NextRequest) => {
   const { nextUrl: url } = req;
   const token = await getToken({ req });
 
-  if (url.pathname.startsWith("/api/admin")) {
-    if (token?.email !== "ADMIN") {
-      return NextResponse.json(null, { status: 400 });
-    }
-  }
+  // if (url.pathname.startsWith("/api/admin")) {
+  //   if (token?.email !== "ADMIN") {
+  //     return NextResponse.json(null, { status: 400 });
+  //   }
+  // }
 
   if (
     url.pathname.startsWith("/api") &&

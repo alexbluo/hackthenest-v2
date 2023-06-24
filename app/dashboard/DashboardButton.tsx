@@ -1,5 +1,7 @@
+"use client";
+
 import classNames from "classnames";
-import Link from "next/link";
+import { redirect, useRouter } from "next/navigation";
 
 interface Props {
   name: string;
@@ -7,21 +9,27 @@ interface Props {
   status: "COMPLETE" | "INCOMPLETE" | "UNAVAILABLE";
 }
 
-// TODO add 
 const DashboardButton = ({ name, href, status }: Props) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (!href) return;
+    if (status === "INCOMPLETE") router.push(href);
+  };
+
   return (
     <div className="flex h-16 w-full items-center gap-1 overflow-hidden rounded-md bg-black">
-      <Link
+      <button
         className={classNames(
           "flex h-full w-full items-center justify-center text-lg text-black",
           { "gradient-bg": status === "INCOMPLETE" },
           { "cursor-default bg-grey": status === "COMPLETE" },
           { "cursor-default bg-grey": status === "UNAVAILABLE" }
         )}
-        href={href || "/dashboard"}
+        onClick={handleClick}
       >
         {name}
-      </Link>
+      </button>
       <div
         className={classNames(
           "h-full w-16 cursor-default bg-gold py-4 text-center text-lg text-black",
