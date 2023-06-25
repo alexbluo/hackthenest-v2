@@ -13,7 +13,7 @@ const HackerApp = async () => {
     where: { email },
     include: { completed: true },
   });
-  if (completed(user!.completed, "HACKERAPP")) redirect("/dashboard");
+  // if (completed(user!.completed, "HACKERAPP")) redirect("/dashboard");
 
   // because undefined !== null...
   const app =

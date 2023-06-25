@@ -10,23 +10,22 @@ import countries from "utils/countries";
 import ApplicationDropdown from "../ApplicationDropdown";
 import ApplicationInput from "../ApplicationInput";
 
-export const schema = z.object({
+const schema = z.object({
   firstName: z.string().min(1, { message: "*" }).optional(),
   lastName: z.string().min(1, { message: "*" }).optional(),
   phone: z
     .string()
-    .min(1, { message: "*" })
-    .regex(/^\d{10}$/, { message: "please check formatting" })
+    .min(1, {message: "*"})
+    .regex(/^\d{10}$/, { message: "* please check formatting" })
     .optional(),
   age: z.number().min(1, { message: "*" }).optional(),
   yog: z.number().min(1, { message: "*" }).optional(),
-  // TODO: check capitalized - refine + split + every
   school: z
     .string()
     .min(1, { message: "*" })
     .refine(
-      (val) => val.split(" ").every((character) => character.match(/^[A-Z]*$/)),
-      { message: "please capitalize each word" }
+      (val) => val.split(" ").every((word) => word[0].match(/^[A-Z]*$/)),
+      { message: "* please capitalize each word" }
     )
     .optional(),
   country: z.string().min(1, { message: "*" }).optional(),
@@ -60,14 +59,11 @@ const AppForm = ({ app }: Props) => {
   const router = useRouter();
 
   useEffect(() => {
-    try {
-      const existentValues = Object.fromEntries(
-        Object.entries(getValues()).filter(([k, v]) => !!v && v !== "")
-      );
-      schema.parse(existentValues);
-    } catch (err) {
-      return () => null;
-    }
+    const existentValues = Object.fromEntries(
+      Object.entries(getValues()).filter(([k, v]) => !!v && v !== "")
+    );
+    schema.safeParse(existentValues);
+
     if (!isDirty) return () => null;
 
     const interval = setTimeout(async () => {
@@ -174,6 +170,7 @@ const AppForm = ({ app }: Props) => {
           fieldName="Dietary Restrictions"
           name="diet"
           options={[
+            { value: "None", label: "None" },
             { value: "vegan", label: "Vegan" },
             { value: "vegetarian", label: "Vegetarian" },
             { value: "kosher", label: "Kosher" },

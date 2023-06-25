@@ -36,9 +36,9 @@ const Dashboard = async () => {
               name="Hacker Application"
               href="/app/hacker"
               status={
-                completed(user.completed, "HACKERAPP")
-                  ? "COMPLETE"
-                  : "INCOMPLETE"
+                // completed(user.completed, "HACKERAPP")
+                //   ? "COMPLETE" :
+                "INCOMPLETE"
               }
             />
             <DashboardButton
