@@ -12,6 +12,7 @@ const SponsorsSection = () => {
           className="bg-clip-text font-semibold text-gold underline underline-offset-2"
           href="/prospectus.pdf"
           target="_blank"
+          aria-label="Prospectus"
           rel="noreferrer"
         >
           prospectus
@@ -20,6 +21,7 @@ const SponsorsSection = () => {
         <a
           className="font-semibold text-gold underline underline-offset-2"
           href="mailto:sponsor@hackthenest.org"
+          aria-label="Sponsor email"
         >
           sponsor@hackthenest.org
         </a>

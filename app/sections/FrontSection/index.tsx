@@ -46,6 +46,7 @@ const FrontSection = () => {
         className="absolute right-4 top-0 z-50 hidden aspect-[571/1000] w-[10%] min-w-[60px] max-w-[100px] lg:block "
         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=yellow"
         target="_blank"
+        aria-label="MLH"
         rel="noreferrer"
       >
         <Image

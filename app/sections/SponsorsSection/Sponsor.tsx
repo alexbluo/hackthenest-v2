@@ -20,6 +20,7 @@ const Sponsor = ({ src, alt, href, tier }: Props) => {
       )}
       href={href}
       target="_blank"
+      aria-label="Sponsor link"
       rel="noreferrer"
     >
       <div className="relative h-full">

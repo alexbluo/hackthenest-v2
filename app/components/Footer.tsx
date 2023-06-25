@@ -20,6 +20,7 @@ const Footer = () => {
               className="h-8 w-8"
               href="https://www.instagram.com/hackthenest_"
               target="_blank"
+              aria-label="Instagram"
               rel="noreferrer"
             >
               <svg
@@ -35,6 +36,7 @@ const Footer = () => {
               className="h-8 w-8"
               href="https://www.facebook.com/hackthenestdmv"
               target="_blank"
+              aria-label="Facebook"
               rel="noreferrer"
             >
               <svg
@@ -50,6 +52,7 @@ const Footer = () => {
               className="h-8 w-8"
               href="https://www.twitter.com/hackthenest"
               target="_blank"
+              aria-label="Twitter"
               rel="noreferrer"
             >
               <svg
@@ -65,6 +68,7 @@ const Footer = () => {
               className="h-8 w-8"
               href="https://www.linkedin.com/company/hackthenest/"
               target="_blank"
+              aria-label="LinkedIn"
               rel="noreferrer"
             >
               <svg

@@ -1,0 +1,20 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hackthenest.org</loc>
+  </url>
+  <url>
+    <loc>https://hackthenest.org/#about</loc>
+  </url>
+  <url>
+    <loc>https://hackthenest.org/#schedule</loc>
+  </url>
+  <url>
+    <loc>https://hackthenest.org/#faq</loc>
+  </url>
+  <url>
+    <loc>https://hackthenest.org/#sponsors</loc>
+  </url>
+  <url>
+    <loc>https://hackthenest.org/login</loc>
+  </url>
+</urlset>

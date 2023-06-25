@@ -15,7 +15,7 @@ const schema = z.object({
   lastName: z.string().min(1, { message: "*" }).optional(),
   phone: z
     .string()
-    .min(1, {message: "*"})
+    .min(1, { message: "*" })
     .regex(/^\d{10}$/, { message: "* please check formatting" })
     .optional(),
   age: z.number().min(1, { message: "*" }).optional(),
@@ -266,6 +266,7 @@ const AppForm = ({ app }: Props) => {
                 className="underline"
                 href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
                 target="_blank"
+                aria-label="MLH Contest Terms and Conditions"
                 rel="noreferrer"
               >
                 MLH Contest Terms and Conditions
@@ -275,6 +276,7 @@ const AppForm = ({ app }: Props) => {
                 className="underline"
                 href="https://mlh.io/privacy"
                 target="_blank"
+                aria-label="MLH Privacy Policy"
                 rel="noreferrer"
               >
                 MLH Privacy Policy
