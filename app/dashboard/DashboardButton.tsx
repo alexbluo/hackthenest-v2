@@ -1,7 +1,7 @@
 "use client";
 
 import classNames from "classnames";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface Props {
   name: string;
@@ -21,7 +21,7 @@ const DashboardButton = ({ name, href, status }: Props) => {
     <div className="flex h-16 w-full items-center gap-1 overflow-hidden rounded-md bg-black">
       <button
         className={classNames(
-          "flex h-full w-full items-center justify-center text-lg text-black",
+          "flex h-full w-full items-center px-6 text-lg text-black",
           { "gradient-bg": status === "INCOMPLETE" },
           { "cursor-default bg-grey": status === "COMPLETE" },
           { "cursor-default bg-grey": status === "UNAVAILABLE" }

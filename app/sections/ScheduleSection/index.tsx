@@ -213,7 +213,7 @@ const ScheduleSection = () => {
   return (
     <section id="schedule">
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
-        <h2 className="gradient-text">schedule</h2>
+        <h2 className="gradient-text">Schedule</h2>
       </div>
         {/* {width > 768 ? ( */}
         <motion.ul className="flex flex-col pt-40">

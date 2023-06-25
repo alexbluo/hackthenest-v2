@@ -23,7 +23,7 @@ const HackerApp = async () => {
 
   return (
     <>
-      <h2 className="gradient-text mb-8">hacker app</h2>
+      <h2 className="gradient-text mb-8">Hacker App</h2>
       <AppForm app={app} />
     </>
   );

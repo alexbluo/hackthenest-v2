@@ -35,22 +35,22 @@ const MobileNav = ({ session }: Props) => {
           >
             <ul className="flex h-screen flex-col items-center justify-center gap-8 text-gold">
               <NavItem to="about" onClick={toggleOpen}>
-                about
+                About
               </NavItem>
-              <NavItem to="schedule" onClick={toggleOpen}>
-                schedule
-              </NavItem>
+              {/* <NavItem to="schedule" onClick={toggleOpen}>
+                Schedule
+              </NavItem> */}
               <NavItem to="faq" onClick={toggleOpen}>
-                faq
+                FAQ
               </NavItem>
               <NavItem to="sponsors" onClick={toggleOpen}>
-                sponsors
+                Sponsors
               </NavItem>
               <Link
                 className="cursor-pointer font-mono text-lg font-medium"
                 href={session ? "/dashboard" : "/login"}
               >
-                {session ? "dashboard" : "login"}
+                {session ? "Dashboard" : "Login"}
               </Link>
             </ul>
           </motion.div>
