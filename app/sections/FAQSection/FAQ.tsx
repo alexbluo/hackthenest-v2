@@ -12,6 +12,7 @@ interface Props {
   onClick: () => void;
 }
 
+// TODO; add hacker text on hover
 const FAQ = ({ question, open, children, onClick }: Props) => {
   return (
     <div className="flex flex-col text-white">
