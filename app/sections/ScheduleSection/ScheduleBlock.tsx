@@ -54,6 +54,7 @@ const ScheduleBlock = ({
             x: "-160px",
             y: "92px",
             filter: "brightness(0.25)",
+            // transitionEnd: { display: "none" },
           },
         }}
         exit="flush"

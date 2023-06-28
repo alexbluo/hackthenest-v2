@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { ReactNode, useState } from "react";
 import { motion, useCycle } from "framer-motion";
@@ -12,6 +12,7 @@ interface Block {
   status: "neutral" | "hover" | "pressed" | "flush";
 }
 
+// make sure to maintain key uniqueness (name + time + description)
 const saturday: Block[] = [
   {
     name: (
@@ -66,6 +67,12 @@ const saturday: Block[] = [
     description: "description here",
     status: "neutral",
   },
+  // {
+  //   name: "Ding Dong",
+  //   time: "9:00am - 10:00am",
+  //   description: "description here",
+  //   status: "neutral",
+  // },
 ];
 
 const sunday: Block[] = [
@@ -124,6 +131,7 @@ const ScheduleSection = () => {
   const [blocks, setBlocks] = useState(saturday);
   const width = useWindowWidth();
 
+  // flush randomly consistently persists if cycled right after page load for some reason...
   const staggerOutIn = () => {
     const incoming = day === "Saturday" ? sunday : saturday;
     cycleDay();
@@ -143,6 +151,33 @@ const ScheduleSection = () => {
 
           return block;
         });
+
+        // TODO: wip to fix uneven lengths, might need animatepresence
+        //   const newBlocks: Block[] = [];
+
+        //   prev.forEach((_, i) => {
+        //     const block = prev[i];
+
+        //     if (i >= incoming.length && iteration >= incoming.length) {
+        //       return;
+        //     }
+
+        //     if (i === iteration) {
+        //       newBlocks.push({ ...block, status: "flush" });
+        //       return;
+        //     }
+        //     // set incoming block when old one finishes animating
+        //     if (i === iteration - 4) {
+        //       newBlocks.push(incoming[iteration - 4]);
+        //       return;
+        //     }
+
+        //     if (block) {
+        //       newBlocks.push(block);
+        //     }
+        //   });
+
+        //   return newBlocks;
       });
 
       iteration += 1;
@@ -215,30 +250,30 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className="gradient-text">Schedule</h2>
       </div>
-        {/* {width > 768 ? ( */}
-        <motion.ul className="flex flex-col pt-40">
-          {blocks.map(({ name, time, description, status }, i) => {
-            return (
-              <ScheduleBlock
-                name={name}
-                time={time}
-                width={width}
-                order={i}
-                status={status}
-                handleHoverStart={() => handleHoverStart(i)}
-                handleHoverEnd={() => handleHoverEnd(i)}
-                handleTap={() => handleTap(i)}
-                handleClose={() => handleClose(i)}
-                key={name + time + description}
-              >
-                {description}
-              </ScheduleBlock>
-            );
-          })}
-        </motion.ul>
-        {/* ) : (
+      {/* {width > 768 ? ( */}
+      <motion.ul className="flex flex-col pt-40">
+        {blocks.map(({ name, time, description, status }, i) => {
+          return (
+            <ScheduleBlock
+              name={name}
+              time={time}
+              width={width}
+              order={i}
+              status={status}
+              handleHoverStart={() => handleHoverStart(i)}
+              handleHoverEnd={() => handleHoverEnd(i)}
+              handleTap={() => handleTap(i)}
+              handleClose={() => handleClose(i)}
+              key={name + time + description}
+            >
+              {description}
+            </ScheduleBlock>
+          );
+        })}
+      </motion.ul>
+      {/* ) : (
           <div></div> */}
-        {/* )} */}
+      {/* )} */}
     </section>
   );
 };
