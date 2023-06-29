@@ -202,6 +202,7 @@ const AppForm = ({ app }: Props) => {
           fieldName="How many hackathons have you been to?"
           name="experience"
           options={[
+            // TODO: error on 0
             { value: 0, label: "This is my first one :D" },
             { value: 1, label: "1" },
             { value: 2, label: "2" },

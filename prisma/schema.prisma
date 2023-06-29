@@ -55,7 +55,6 @@ enum Item {
 }
 
 model Completed {
-  item      Item    @id
-  User      User?   @relation(fields: [userEmail], references: [email])
-  userEmail String?
+  item Item   @id
+  User User[]
 }

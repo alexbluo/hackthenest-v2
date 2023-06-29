@@ -7,5 +7,5 @@ export const GET = async () => {
     include: { completed: true, hackerApp: true, volunteerApp: true },
   });
 
-  return NextResponse.json(user);
+  return NextResponse.json(user, { headers: { "cache-control": "no-store" } });
 };
