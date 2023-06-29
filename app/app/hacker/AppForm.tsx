@@ -91,7 +91,7 @@ const AppForm = ({ app }: Props) => {
       body: JSON.stringify(data),
     });
 
-    router.push("/dashboard");
+    router.push("/dashboard?confirm=hackerapp");
   };
 
   return (

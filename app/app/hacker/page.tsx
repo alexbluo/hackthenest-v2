@@ -20,7 +20,7 @@ const HackerApp = async () => {
   const app =
     (await prisma.hackerApp.findUnique({
       where: { userEmail: email },
-    })) || undefined;
+    })) ?? undefined;
 
   return (
     <>

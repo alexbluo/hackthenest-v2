@@ -5,11 +5,16 @@ import { authOptions } from "app/api/auth/[...nextauth]/route";
 import AuthNav from "app/components/AuthNav";
 import { prisma } from "db";
 import completed from "utils/completed";
+import Confirmation from "./Confirmation";
 import DashboardButton from "./DashboardButton";
 
-const Dashboard = async () => {
+interface Props {
+  searchParams: { confirm: string | undefined };
+}
+
+const Dashboard = async ({ searchParams }: Props) => {
   const session = await getServerSession(authOptions);
-  const email = session?.user?.email as string;
+  const { email } = session!.user!;
   const hashedEmail = await bcrypt.hash(email, 8);
 
   const user = await prisma.user.upsert({
@@ -25,8 +30,11 @@ const Dashboard = async () => {
       <section className="min-h-screen pt-32">
         <h2 className="gradient-text mb-8">Dashboard</h2>
         <h3 className="mb-8 text-3xl font-semibold text-gold">
-          Welcome back, {session?.user?.name || session?.user?.email}
+          Welcome back, {session?.user?.name ?? session?.user?.email}
         </h3>
+
+        <Confirmation confirm={searchParams.confirm} />
+
         <div className="flex w-full flex-col gap-8 lg:flex-row">
           <div className="rounded-md bg-white p-4">
             <QRCode className="mx-auto" size={224} value={user.email} />
