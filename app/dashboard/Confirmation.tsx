@@ -3,7 +3,7 @@
 import { delay, motion } from "framer-motion";
 
 interface Props {
-  confirm: string;
+  confirm: string | undefined;
 }
 
 const Confirmation = ({ confirm }: Props) => {
