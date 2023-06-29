@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import useWindowWidth from "utils/useWindowWidth";
 import Modal from "../../components/Modal";
 
@@ -15,7 +15,7 @@ const Stat = ({ stat, caption, children }: Props) => {
   const width = useWindowWidth();
 
   return (
-    <>
+    <div>
       <button
         className="gradient-bg h-36 w-full cursor-pointer rounded-xl bg-white px-4 py-10 text-center text-black shadow-md shadow-black duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
         onClick={() => setOpen(true)}
@@ -29,7 +29,7 @@ const Stat = ({ stat, caption, children }: Props) => {
         </h3>
         <p>{children}</p>
       </Modal>
-    </>
+    </div>
   );
 };
 

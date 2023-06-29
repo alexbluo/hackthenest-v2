@@ -20,7 +20,8 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
   return (
     <AnimatePresence>
       {visible && (
-        <>
+        <div>
+          {/* background */}
           <motion.div
             className="fixed left-0 top-0 z-50 flex h-screen w-screen cursor-pointer items-center justify-center bg-black/95"
             initial={{
@@ -43,6 +44,7 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
             }}
             onTap={onTap}
           ></motion.div>
+          {/* content window */}
           <motion.div
             className="shadow-logo fixed left-1/2 top-1/2 z-50 aspect-[2] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-blue-light p-8 text-left text-lg text-white shadow-lg md:w-1/2"
             initial={{
@@ -66,6 +68,7 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
           >
             {children}
           </motion.div>
+          {/* animated border */}
           <svg
             className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 overflow-visible"
             width={width}
@@ -91,7 +94,7 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
               }}
             ></motion.rect>
           </svg>
-        </>
+        </div>
       )}
     </AnimatePresence>
   );
