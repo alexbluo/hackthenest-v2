@@ -12,6 +12,7 @@ interface Props {
   searchParams: { confirm: string | undefined };
 }
 
+// TODO: add question mark to hover into status explanation
 const Dashboard = async ({ searchParams }: Props) => {
   const session = await getServerSession(authOptions);
   const { email } = session!.user!;
@@ -44,9 +45,9 @@ const Dashboard = async ({ searchParams }: Props) => {
               name="Hacker Application"
               href="/app/hacker"
               status={
-                // completed(user.completed, "HACKERAPP")
-                //   ? "COMPLETE" :
-                "INCOMPLETE"
+                completed(user.completed, "HACKERAPP")
+                  ? "COMPLETE"
+                  : "INCOMPLETE"
               }
             />
             <DashboardButton

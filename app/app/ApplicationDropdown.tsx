@@ -27,6 +27,7 @@ interface Props {
     | undefined;
 }
 
+// TODO: remove default value?
 const ApplicationDropdown = ({
   fieldName,
   name,

@@ -1,21 +1,22 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface Props {
   confirm: string | undefined;
 }
 
+// TODO: change to close button instead of automatic fade? onclick setstate to fade display none variant
 const Confirmation = ({ confirm }: Props) => {
   if (!confirm) return null;
 
   let text;
   if (confirm === "hackerapp") {
     text =
-      "Thank you for applying to be a hacker - be on the lookout for emails from us in the future!";
+      "Thank you for submitting a hacker app - be on the lookout for emails from us in the future!";
   } else if (confirm === "volunteerapp") {
     text =
-      "Thank you for applying to be a volunteer - be on the lookout for emails from us in the future!";
+      "Thank you for submitting a volunteer app - be on the lookout for emails from us in the future!";
   }
 
   return (

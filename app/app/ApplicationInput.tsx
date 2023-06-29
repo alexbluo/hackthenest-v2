@@ -10,6 +10,8 @@ interface Props {
   name: keyof HackerApp;
   // placeholder display text
   placeholder: string;
+  // max length of characters for phone number
+  maxLength?: number;
   // register function from RHF
   register: UseFormRegister<HackerApp>;
   // error message
@@ -20,6 +22,7 @@ const ApplicationInput = ({
   fieldName,
   name,
   placeholder,
+  maxLength,
   register,
   error,
 }: Props) => {
@@ -34,6 +37,7 @@ const ApplicationInput = ({
         className="w-full border-b-2 border-grey bg-black bg-transparent py-1 placeholder-grey duration-200 ease-in-out"
         type="text"
         placeholder={placeholder}
+        maxLength={maxLength}
         {...register(name)}
         onFocus={() => setFocus("focused")}
         onBlur={() => setFocus("unfocused")}

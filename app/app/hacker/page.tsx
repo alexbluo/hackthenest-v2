@@ -14,6 +14,7 @@ const HackerApp = async () => {
     include: { completed: true },
   });
 
+  // user can't be null because of middleware redirect > login > dashboard upsert
   // if (completed(user!.completed, "HACKERAPP")) redirect("/dashboard");
 
   // because undefined !== null...

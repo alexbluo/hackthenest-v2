@@ -5,42 +5,47 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { HackerApp } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
-import * as z from "zod";
+import { z } from "zod";
 import countries from "utils/countries";
 import ApplicationDropdown from "../ApplicationDropdown";
 import ApplicationInput from "../ApplicationInput";
 
+// min in case delete to empty string
 const schema = z.object({
-  firstName: z.string().min(1, { message: "*" }).optional(),
-  lastName: z.string().min(1, { message: "*" }).optional(),
+  firstName: z.string().min(1, { message: "*" }),
+  lastName: z.string().min(1, { message: "*" }),
   phone: z
     .string()
     .min(1, { message: "*" })
-    .regex(/^\d{10}$/, { message: "* please check formatting" })
-    .optional(),
-  age: z.number().min(1, { message: "*" }).optional(),
-  yog: z.number().min(1, { message: "*" }).optional(),
+    .regex(/^\d{10}$/, { message: "* please check formatting" }),
+  age: z.number(),
+  yog: z.number(),
   school: z
     .string()
     .min(1, { message: "*" })
     .refine(
-      (val) => val.split(" ").every((word) => word[0].match(/^[A-Z]*$/)),
+      (val) =>
+        val
+          .trim()
+          .split(" ")
+          .every((word) => word.match(/^[A-Z].*$/)),
       { message: "* please capitalize each word" }
     )
     .optional(),
-  country: z.string().min(1, { message: "*" }).optional(),
-  diet: z.string().min(1, { message: "*" }).optional(),
-  shirt: z.string().min(1, { message: "*" }).optional(),
-  experience: z.number().min(1, { message: "*" }).optional(),
-  outreach: z.string().min(1, { message: "*" }).optional(),
-  conduct: z.literal(true).optional(),
-  privacy: z.literal(true).optional(),
+  country: z.string(),
+  diet: z.string(),
+  shirt: z.string(),
+  experience: z.number(),
+  outreach: z.string(),
+  conduct: z.literal(true),
+  privacy: z.literal(true),
 });
 
 interface Props {
   app?: HackerApp;
 }
 
+// TODO: jumbo on focus??
 const AppForm = ({ app }: Props) => {
   const {
     register,
@@ -79,6 +84,8 @@ const AppForm = ({ app }: Props) => {
 
   // set focus to top-most error field on submission
   useEffect(() => {
+    console.log(errors);
+    console.log(getValues());
     if (Object.keys(errors).length > 0) {
       const firstError = Object.keys(errors)[0] as keyof HackerApp;
       setFocus(firstError);
@@ -120,6 +127,7 @@ const AppForm = ({ app }: Props) => {
           fieldName="Phone Number"
           name="phone"
           placeholder="1234567890"
+          maxLength={10}
           register={register}
           error={errors.phone}
         />
@@ -202,7 +210,6 @@ const AppForm = ({ app }: Props) => {
           fieldName="How many hackathons have you been to?"
           name="experience"
           options={[
-            // TODO: error on 0
             { value: 0, label: "This is my first one :D" },
             { value: 1, label: "1" },
             { value: 2, label: "2" },

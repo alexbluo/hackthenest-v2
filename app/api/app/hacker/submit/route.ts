@@ -36,19 +36,19 @@ export const POST = async (req: NextRequest) => {
     },
   });
 
-  const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
+  // const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
-  client.sendEmailWithTemplate({
-    From: "hello@hackthenest.org",
-    To: email,
-    TemplateAlias: "hackerConfirmation",
-    TemplateModel: {
-      name: app.firstName,
-      email: app.userEmail,
-    },
-    MessageStream: "outbound",
-    TrackOpens: true,
-  });
+  // client.sendEmailWithTemplate({
+  //   From: "hello@hackthenest.org",
+  //   To: email,
+  //   TemplateAlias: "hackerConfirmation",
+  //   TemplateModel: {
+  //     name: app.firstName,
+  //     email: app.userEmail,
+  //   },
+  //   MessageStream: "outbound",
+  //   TrackOpens: true,
+  // });
 
   return NextResponse.json(app);
 };

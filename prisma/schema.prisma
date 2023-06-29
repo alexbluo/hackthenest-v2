@@ -31,7 +31,7 @@ model HackerApp {
   outreach   String?
   conduct    Boolean?
   privacy    Boolean?
-  user       User     @relation(fields: [userEmail], references: [email])
+  user       User     @relation(fields: [userEmail], references: [email], onDelete: Cascade)
   userEmail  String   @id
 }
 
@@ -44,7 +44,7 @@ model VolunteerApp {
   affiliation String? // school/company
   diet        String?
   shirt       String?
-  user        User    @relation(fields: [userEmail], references: [email])
+  user        User    @relation(fields: [userEmail], references: [email], onDelete: Cascade)
   userEmail   String  @id
 }
 
@@ -55,6 +55,7 @@ enum Item {
 }
 
 model Completed {
-  item Item   @id
-  User User[]
+  item      Item    @id
+  user      User?   @relation(fields: [userEmail], references: [email])
+  userEmail String?
 }
