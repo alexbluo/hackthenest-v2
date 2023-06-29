@@ -83,7 +83,7 @@ const FAQSection = () => {
   return (
     <section id="faq" className="">
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
-        <h2 className="gradient-text">FAQ</h2>
+        <h2 className="gradient-text">faq</h2>
       </div>
       <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl sm:rounded-tl-none md:flex-row md:gap-16">
         {questions.map((column, i) => (

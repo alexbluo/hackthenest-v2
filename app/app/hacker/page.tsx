@@ -15,7 +15,7 @@ const HackerApp = async () => {
   });
 
   // user can't be null because of middleware redirect > login > dashboard upsert
-  // if (completed(user!.completed, "HACKERAPP")) redirect("/dashboard");
+  if (completed(user!.completed, "HACKERAPP")) redirect("/dashboard");
 
   // because undefined !== null...
   const app =
@@ -25,7 +25,7 @@ const HackerApp = async () => {
 
   return (
     <>
-      <h2 className="gradient-text mb-8">Hacker App</h2>
+      <h2 className="gradient-text mb-8">hacker app</h2>
       <AppForm app={app} />
     </>
   );
