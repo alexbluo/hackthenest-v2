@@ -8,6 +8,8 @@ interface Props {
   onTap: (event: MouseEvent | TouchEvent | PointerEvent, info: TapInfo) => void;
 }
 
+// TODO: fix early close with double bg tap while open, reopen with modal tap while closing
+// TODO: fix heights
 const Modal = ({ visible, width, children, onTap }: Props) => {
   if (width > 768) {
     width *= 0.5;
@@ -20,7 +22,7 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
       {visible && (
         <>
           <motion.div
-            className="fixed top-0 left-0 z-50 flex h-screen w-screen cursor-pointer items-center justify-center bg-black/95"
+            className="fixed left-0 top-0 z-50 flex h-screen w-screen cursor-pointer items-center justify-center bg-black/95"
             initial={{
               opacity: 0,
             }}
@@ -42,7 +44,7 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
             onTap={onTap}
           ></motion.div>
           <motion.div
-            className="shadow-logo fixed top-1/2 left-1/2 z-50 aspect-[2] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-blue-light p-8 text-lg text-white shadow-lg md:w-1/2"
+            className="shadow-logo fixed left-1/2 top-1/2 z-50 aspect-[2] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-blue-light p-8 text-left text-lg text-white shadow-lg md:w-1/2"
             initial={{
               opacity: 0,
             }}
@@ -65,12 +67,12 @@ const Modal = ({ visible, width, children, onTap }: Props) => {
             {children}
           </motion.div>
           <svg
-            className="fixed top-1/2 left-1/2 z-50 -translate-y-1/2 -translate-x-1/2 overflow-visible"
+            className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 overflow-visible"
             width={width}
             height={width / 2}
           >
             <motion.rect
-              className=" fill-transparent stroke-gold"
+              className="fill-transparent stroke-gold"
               width={width}
               height={width / 2}
               strokeWidth="4px"

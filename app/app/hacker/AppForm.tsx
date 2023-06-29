@@ -45,7 +45,6 @@ interface Props {
   app?: HackerApp;
 }
 
-// TODO: jumbo on focus??
 const AppForm = ({ app }: Props) => {
   const {
     register,
@@ -84,8 +83,6 @@ const AppForm = ({ app }: Props) => {
 
   // set focus to top-most error field on submission
   useEffect(() => {
-    console.log(errors);
-    console.log(getValues());
     if (Object.keys(errors).length > 0) {
       const firstError = Object.keys(errors)[0] as keyof HackerApp;
       setFocus(firstError);
@@ -109,14 +106,14 @@ const AppForm = ({ app }: Props) => {
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-12 sm:flex-row">
           <ApplicationInput
-            fieldName="First Name"
+            fieldName="first name"
             name="firstName"
             placeholder="Bumble"
             register={register}
             error={errors.firstName}
           />
           <ApplicationInput
-            fieldName="Last Name"
+            fieldName="last name"
             name="lastName"
             placeholder="Bee"
             register={register}
@@ -124,7 +121,7 @@ const AppForm = ({ app }: Props) => {
           />
         </div>
         <ApplicationInput
-          fieldName="Phone Number"
+          fieldName="phone"
           name="phone"
           placeholder="1234567890"
           maxLength={10}
@@ -132,14 +129,14 @@ const AppForm = ({ app }: Props) => {
           error={errors.phone}
         />
         <ApplicationInput
-          fieldName="School"
+          fieldName="school"
           name="school"
           placeholder="Barry Benson High School"
           register={register}
           error={errors.school}
         />
         <ApplicationDropdown
-          fieldName="Age"
+          fieldName="age"
           name="age"
           options={[
             { value: 13, label: "13" },
@@ -154,7 +151,7 @@ const AppForm = ({ app }: Props) => {
           error={errors.age}
         />
         <ApplicationDropdown
-          fieldName="Year of Graduation"
+          fieldName="year of graduation"
           name="yog"
           options={[
             { value: 2023, label: "2023" },
@@ -167,7 +164,7 @@ const AppForm = ({ app }: Props) => {
           error={errors.yog}
         />
         <ApplicationDropdown
-          fieldName="Country of Residence"
+          fieldName="country of residence"
           name="country"
           options={countries}
           defaultValue={undefined}
@@ -175,7 +172,7 @@ const AppForm = ({ app }: Props) => {
           error={errors.country}
         />
         <ApplicationDropdown
-          fieldName="Dietary Restrictions"
+          fieldName="dietary restrictions"
           name="diet"
           options={[
             { value: "None", label: "None" },
@@ -193,7 +190,7 @@ const AppForm = ({ app }: Props) => {
           error={errors.diet}
         />
         <ApplicationDropdown
-          fieldName="Shirt Size"
+          fieldName="shirt size"
           name="shirt"
           options={[
             { value: "XS", label: "XS" },
@@ -207,7 +204,7 @@ const AppForm = ({ app }: Props) => {
           error={errors.shirt}
         />
         <ApplicationDropdown
-          fieldName="How many hackathons have you been to?"
+          fieldName="how many hackathons have you been to?"
           name="experience"
           options={[
             { value: 0, label: "This is my first one :D" },
@@ -221,7 +218,7 @@ const AppForm = ({ app }: Props) => {
           error={errors.shirt}
         />
         <ApplicationDropdown
-          fieldName="How did you hear about us?"
+          fieldName="how did you hear about us?"
           name="outreach"
           options={[
             { value: "friendFamily", label: "Friend/Family" },

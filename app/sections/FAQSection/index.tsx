@@ -8,8 +8,7 @@ interface Question {
   answer: ReactNode;
 }
 
-// shallow index is column
-// TODO: transportation (buses but not reimbursements), prizes (tracks, preview)
+// shallow index is column ltr
 const questions: Question[][] = [
   [
     {

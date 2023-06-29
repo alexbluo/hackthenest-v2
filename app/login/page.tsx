@@ -8,7 +8,7 @@ const Login = async () => {
   return (
     <div className="w-screen bg-black">
       <div className="mx-auto flex min-h-screen w-80 flex-col items-center justify-center gap-4 py-16">
-        <div className="relative z-50 mx-auto aspect-square w-1/2">
+        <div className="relative mx-auto aspect-square w-1/2">
           <Image
             src="/logo-colored.png"
             alt="Hack the Nest Logo"

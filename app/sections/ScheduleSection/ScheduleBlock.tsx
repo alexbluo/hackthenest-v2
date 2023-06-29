@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import classNames from "classnames";
 import { motion } from "framer-motion";
-import Modal from "./Modal";
+import Modal from "../../components/Modal";
 
 interface Props {
   name: ReactNode;
