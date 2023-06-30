@@ -57,8 +57,8 @@ const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
           ></motion.div>
           {/* content window */}
           <motion.div
-            className="shadow-logo fixed left-1/2 top-1/2 z-50 flex aspect-[5/4] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 flex-col gap-2 rounded-3xl bg-blue-mid p-8 text-left text-lg text-white shadow-lg lg:aspect-[2] lg:w-1/2"
-            // style={{ height: width / 2 }}
+            className="shadow-logo fixed left-1/2 top-1/2 z-50 flex w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 flex-col gap-2 rounded-3xl bg-blue-mid p-8 text-left text-lg text-white shadow-lg lg:w-1/2"
+            style={{ height }}
             initial={{
               opacity: 0,
             }}
