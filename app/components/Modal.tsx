@@ -11,13 +11,17 @@ interface Props {
   onTap: (event: MouseEvent | TouchEvent | PointerEvent, info: TapInfo) => void;
 }
 
-// TODO: add height variable thats higher on mobile
 const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
-  if  (width >= 1024) {
+  let height;
+
+  if (width >= 1024) {
     width *= 0.5;
+    height = width * 0.5;
   } else {
     width *= 0.8;
+    height = width * 0.8;
   }
+  const borderLength = width * 2 + height * 2;
 
   useLayoutEffect(() => {
     if (visible) lockScroll(true);
@@ -30,7 +34,7 @@ const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
         <>
           {/* background */}
           <motion.div
-            className="fixed left-0 lg:text-ellipsis top-0 z-50 flex h-screen w-screen cursor-pointer items-center justify-center bg-black/95"
+            className="fixed left-0 top-0 z-50 flex h-screen w-screen cursor-pointer items-center justify-center bg-black/95 lg:text-ellipsis"
             initial={{
               opacity: 0,
             }}
@@ -53,8 +57,8 @@ const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
           ></motion.div>
           {/* content window */}
           <motion.div
-            className="shadow-logo fixed left-1/2 top-1/2 z-50 flex aspect-[2] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 flex-col gap-2 rounded-3xl bg-blue-mid p-8 text-left text-lg text-white shadow-lg lg:w-1/2"
-            style={{ height: width / 2 }}
+            className="shadow-logo fixed left-1/2 top-1/2 z-50 flex aspect-[5/4] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 flex-col gap-2 rounded-3xl bg-blue-mid p-8 text-left text-lg text-white shadow-lg lg:aspect-[2] lg:w-1/2"
+            // style={{ height: width / 2 }}
             initial={{
               opacity: 0,
             }}
@@ -84,21 +88,21 @@ const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
           <svg
             className="pointer-events-none fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 overflow-visible"
             width={width}
-            height={width / 2}
+            height={height}
           >
             <motion.rect
               className="fill-transparent stroke-gold"
               width={width}
-              height={width / 2}
+              height={height}
               strokeWidth="4px"
               rx="24px"
-              strokeDasharray={width * 3}
-              strokeDashoffset={width * 3}
+              strokeDasharray={borderLength}
+              strokeDashoffset={borderLength}
               animate={{
                 strokeDashoffset: 0,
               }}
               exit={{
-                strokeDashoffset: width * 3,
+                strokeDashoffset: borderLength,
               }}
               transition={{
                 duration: 0.8,
