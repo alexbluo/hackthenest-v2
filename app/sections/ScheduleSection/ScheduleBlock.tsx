@@ -16,6 +16,8 @@ interface Props {
   handleClose: () => void;
 }
 
+// TODO: decrease left time width and only include start time (split and include full time block on modal)
+// TODO: remove time on left on mobile and make square, move to front right and ... long name on left
 const ScheduleBlock = ({
   name,
   time,
@@ -31,7 +33,7 @@ const ScheduleBlock = ({
   return (
     <li className={classNames("relative", { "sm:ml-12": order % 2 === 0 })}>
       <motion.button
-        className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between bg-blue-light px-8 text-lg"
+        className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between bg-blue-mid px-8 text-lg"
         animate={status}
         initial="flush"
         variants={{
@@ -71,7 +73,7 @@ const ScheduleBlock = ({
         {name}
       </motion.button>
       <motion.div
-        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center overflow-hidden whitespace-nowrap bg-blue-mid"
+        className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center overflow-hidden whitespace-nowrap bg-blue-dark"
         animate={status}
         initial="flush"
         variants={{
@@ -89,7 +91,7 @@ const ScheduleBlock = ({
         <span className="pl-4">{time}</span>
       </motion.div>
       <motion.div
-        className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark "
+        className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark brightness-75"
         animate={status}
         initial="flush"
         variants={{
@@ -104,13 +106,18 @@ const ScheduleBlock = ({
           ease: "easeInOut",
         }}
       ></motion.div>
-      <Modal
-        visible={status === "pressed" && order !== 0}
-        width={width}
-        onTap={handleClose}
-      >
-        {children}
-      </Modal>
+      {/* only for non-cycle schedule blocks for stricter type safety on modal title */}
+      {typeof name === "string" && (
+        <Modal
+          visible={status === "pressed" && order !== 0}
+          width={width}
+          title={name}
+          subtitle={time}
+          onTap={handleClose}
+        >
+          {children}
+        </Modal>
+      )}
     </li>
   );
 };

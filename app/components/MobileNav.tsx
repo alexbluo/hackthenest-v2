@@ -4,6 +4,7 @@ import { useLayoutEffect } from "react";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import Link from "next/link";
 import { Session } from "next-auth";
+import lockScroll from "utils/lockScroll";
 import useWindowWidth from "utils/useWindowWidth";
 import MobileNavToggle from "./MobileNavToggle";
 import NavItem from "./NavItem";
@@ -17,11 +18,8 @@ const MobileNav = ({ session }: Props) => {
   const width = useWindowWidth();
 
   useLayoutEffect(() => {
-    if (open && width < 768) {
-      document.body.classList.add("h-full", "overflow-hidden");
-    } else {
-      document.body.classList.remove("h-full", "overflow-hidden");
-    }
+    if (open && width < 768) lockScroll(true);
+    else if (open && width >= 768) lockScroll(false);
   }, [open, width]);
 
   return (

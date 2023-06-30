@@ -51,6 +51,7 @@ export const metadata: Metadata = {
 // TODO: possibly aws bucket upload for waivers
 // TODO: app submission confirmation status text at dashboard top green bg with param passed to router function onsubmit
 // TODO: add designs for right side of about and schedule
+// TODO: add footer to all pages
 // can maybe add client usesession like https://stackoverflow.com/questions/75404618/glitch-with-nextauth-session-nextjs-13 with separate client component for provider
 // dont know if necessary tho
 const RootLayout = ({ children }: { children: ReactNode }) => {

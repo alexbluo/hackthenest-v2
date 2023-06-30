@@ -23,11 +23,13 @@ const Stat = ({ stat, caption, children }: Props) => {
         <h3 className="pb-2 text-4xl font-semibold">{stat}</h3>
         <h4 className="">{caption}</h4>
       </button>
-      <Modal visible={open} width={width} onTap={() => setOpen(false)}>
-        <h3 className="mb-2 text-3xl font-semibold">
-          {stat} {caption}
-        </h3>
-        <p>{children}</p>
+      <Modal
+        visible={open}
+        width={width}
+        title={`${stat} ${caption}`}
+        onTap={() => setOpen(false)}
+      >
+        {children}
       </Modal>
     </div>
   );
