@@ -9,6 +9,7 @@ interface Props {
   status: "COMPLETE" | "INCOMPLETE" | "UNAVAILABLE";
 }
 
+// TODO: add status hover with description
 const DashboardButton = ({ name, href, status }: Props) => {
   const router = useRouter();
 

@@ -12,7 +12,6 @@ interface Props {
   searchParams: { confirm: string | undefined };
 }
 
-// TODO: add question mark to hover into status explanation
 const Dashboard = async ({ searchParams }: Props) => {
   const session = await getServerSession(authOptions);
   const { email } = session!.user!;

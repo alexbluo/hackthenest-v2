@@ -12,7 +12,6 @@ interface Props {
 }
 
 // TODO: add height variable thats higher on mobile
-// TODO: add scroll lock
 const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
   // TODO add additional breakpoint for 768 to lg?
   if (width >= 768) {
@@ -55,7 +54,7 @@ const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
           ></motion.div>
           {/* content window */}
           <motion.div
-            className="shadow-logo fixed left-1/2 top-1/2 z-50 flex aspect-[2] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 flex-col gap-2 overflow-y-auto rounded-3xl bg-blue-mid p-8 text-left text-lg text-white shadow-lg md:w-1/2"
+            className="shadow-logo fixed left-1/2 top-1/2 z-50 flex aspect-[2] w-4/5 origin-bottom -translate-x-1/2 -translate-y-1/2 flex-col gap-2 rounded-3xl bg-blue-mid p-8 text-left text-lg text-white shadow-lg md:w-1/2"
             style={{ height: width / 2 }}
             initial={{
               opacity: 0,
@@ -80,11 +79,11 @@ const Modal = ({ visible, width, title, subtitle, children, onTap }: Props) => {
               <h3 className="text-3xl font-semibold text-white">{title}</h3>
               <h4 className="font-medium">{subtitle}</h4>
             </div>
-            <div className="h-full ">{children}</div>
+            <div className="overflow-y-auto">{children}</div>
           </motion.div>
           {/* animated border */}
           <svg
-            className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 overflow-visible"
+            className="pointer-events-none fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 overflow-visible"
             width={width}
             height={width / 2}
           >
