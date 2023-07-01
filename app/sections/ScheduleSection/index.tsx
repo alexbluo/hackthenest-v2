@@ -247,7 +247,7 @@ const ScheduleSection = () => {
 
   return (
     <section id="schedule">
-      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
+      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-br-none sm:rounded-tl-3xl sm:rounded-tr-3xl">
         <h2 className="gradient-text">schedule</h2>
       </div>
       {/* {width > 768 ? ( */}

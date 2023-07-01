@@ -80,8 +80,8 @@ const FAQSection = () => {
   const [open, setOpen] = useState<string | undefined>(undefined);
 
   return (
-    <section id="faq" className="">
-      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
+    <section id="faq">
+      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-br-none sm:rounded-tl-3xl sm:rounded-tr-3xl">
         <h2 className="gradient-text">faq</h2>
       </div>
       <div className="-mx-8 flex flex-col gap-4 bg-black p-8 sm:rounded-3xl sm:rounded-tl-none md:flex-row md:gap-16">

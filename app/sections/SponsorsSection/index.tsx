@@ -3,7 +3,7 @@ import Sponsor from "./Sponsor";
 const SponsorsSection = () => {
   return (
     <section id="sponsors">
-      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full sm:rounded-bl-none">
+      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-br-none sm:rounded-tl-3xl sm:rounded-tr-3xl">
         <h2 className="gradient-text">sponsors</h2>
       </div>
       <p className="-mx-8 mb-8 rounded-3xl rounded-tl-none bg-black p-8 text-xl sm:w-fit">

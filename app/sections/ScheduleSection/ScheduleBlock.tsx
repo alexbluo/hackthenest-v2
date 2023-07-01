@@ -18,6 +18,7 @@ interface Props {
 
 // TODO: decrease left time width and only include start time (split and include full time block on modal)
 // TODO: remove time on left on mobile and make square, move to front right and ... long name on left
+// TODO: add gcal link
 const ScheduleBlock = ({
   name,
   time,
