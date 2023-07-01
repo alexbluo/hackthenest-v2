@@ -146,7 +146,6 @@ const AppForm = ({ app }: Props) => {
             { value: 17, label: "17" },
             { value: 18, label: "18" },
           ]}
-          defaultValue={undefined}
           control={control}
           error={errors.age}
         />
@@ -159,7 +158,6 @@ const AppForm = ({ app }: Props) => {
             { value: 2025, label: "2025" },
             { value: 2026, label: "2026" },
           ]}
-          defaultValue={undefined}
           control={control}
           error={errors.yog}
         />
@@ -167,7 +165,6 @@ const AppForm = ({ app }: Props) => {
           fieldName="country of residence"
           name="country"
           options={countries}
-          defaultValue={undefined}
           control={control}
           error={errors.country}
         />
@@ -185,7 +182,6 @@ const AppForm = ({ app }: Props) => {
             { value: "nutAllergy", label: "Nut Allergy" },
             { value: "other", label: "Other" },
           ]}
-          defaultValue={undefined}
           control={control}
           error={errors.diet}
         />
@@ -199,7 +195,6 @@ const AppForm = ({ app }: Props) => {
             { value: "LG", label: "LG" },
             { value: "XL", label: "XL" },
           ]}
-          defaultValue={undefined}
           control={control}
           error={errors.shirt}
         />
@@ -213,9 +208,8 @@ const AppForm = ({ app }: Props) => {
             { value: 3, label: "3" },
             { value: 4, label: "4+" },
           ]}
-          defaultValue={undefined}
           control={control}
-          error={errors.shirt}
+          error={errors.experience}
         />
         <ApplicationDropdown
           fieldName="how did you hear about us?"
@@ -232,7 +226,6 @@ const AppForm = ({ app }: Props) => {
             { value: "hackClub", label: "Hack Club" },
             { value: "other", label: "Other" },
           ]}
-          defaultValue={undefined}
           control={control}
           error={errors.outreach}
         />

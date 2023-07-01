@@ -14,8 +14,6 @@ interface Props {
   name: keyof HackerApp;
   // options list
   options: Option[];
-  // default value - also controls placeholder
-  defaultValue: string | true | undefined;
   // control from RHF
   control: Control<HackerApp>;
   // error message
@@ -27,12 +25,10 @@ interface Props {
     | undefined;
 }
 
-// TODO: remove default value?
 const ApplicationDropdown = ({
   fieldName,
   name,
   options,
-  defaultValue,
   control,
   error,
 }: Props) => {
@@ -44,7 +40,6 @@ const ApplicationDropdown = ({
       <Controller
         control={control}
         name={name}
-        defaultValue={defaultValue}
         render={({ field: { onChange, value, ref } }) => (
           <Select
             className="w-full border-separate rounded"
