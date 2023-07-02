@@ -7,7 +7,6 @@ interface Props {
   confirm: string | undefined;
 }
 
-// TODO: change to close button instead of automatic fade? onclick setstate to fade display none variant
 const Confirmation = ({ confirm }: Props) => {
   const [visible, setVisible] = useState<boolean>(true);
 

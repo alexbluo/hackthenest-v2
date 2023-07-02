@@ -4,8 +4,8 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="container relative z-0 mx-auto py-12 lg:py-16">
-      <div className="flex flex-row justify-between">
-        <div className="relative h-full w-full">
+      <div className="flex flex-col items-center justify-center gap-8 sm:flex-row sm:justify-between">
+        <div className="relative">
           <Image
             src="/logo-colored.png"
             alt="Hack the Nest Logo"
@@ -82,7 +82,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="flex flex-col gap-1 text-right font-medium text-gold">
+          <div className="flex flex-col gap-1 text-center font-medium text-gold sm:text-right">
             <a
               href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
               target="_blank"
