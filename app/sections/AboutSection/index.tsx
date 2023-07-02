@@ -61,12 +61,12 @@ const AboutSection = () => {
           approaches.
         </Stat>
       </div>
-      <div className="gradient-text mt-6 max-h-24 cursor-default bg-clip-text px-4 font-circular text-8xl leading-[0.5] text-transparent">
-        if you can see this then why lol like what is the point seriously
-        and if this somehow goes the full width then you must have a very wide
-        monitor blah blah blah lorem ipsum dolor yah yah i dont remember the
-        rest im just trying to fill this space up to make extra sure that it
-        doesnt look funny for you youre welcome
+      <div className="gradient-text mt-6 max-h-24 cursor-default select-none bg-clip-text px-4 font-circular text-8xl leading-[0.5] text-transparent">
+        if you can see this then why lol like what is the point seriously and if
+        this somehow goes the full width then you must have a very wide monitor
+        blah blah blah lorem ipsum dolor yah yah i dont remember the rest im
+        just trying to fill this space up to make extra sure that it doesnt look
+        funny for you youre welcome
       </div>
     </section>
   );

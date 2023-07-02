@@ -250,7 +250,6 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-br-none sm:rounded-tl-3xl sm:rounded-tr-3xl">
         <h2 className="gradient-text">schedule</h2>
       </div>
-      {/* {width > 768 ? ( */}
       <motion.ul className="flex flex-col pt-40">
         {blocks.map(({ name, time, description, status }, i) => {
           return (
@@ -271,9 +270,6 @@ const ScheduleSection = () => {
           );
         })}
       </motion.ul>
-      {/* ) : (
-          <div></div> */}
-      {/* )} */}
     </section>
   );
 };

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 const Path = (props: any) => {
   return (
     <motion.path
-      className="stroke-green-apple"
       strokeWidth="3"
       strokeLinecap="round"
       {...props}

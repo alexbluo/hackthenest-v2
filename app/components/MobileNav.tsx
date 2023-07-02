@@ -37,9 +37,9 @@ const MobileNav = ({ session }: Props) => {
               <NavItem to="about" onClick={toggleOpen}>
                 about
               </NavItem>
-              {/* <NavItem to="schedule" onClick={toggleOpen}>
+              <NavItem to="schedule" onClick={toggleOpen}>
                 Schedule
-              </NavItem> */}
+              </NavItem>
               <NavItem to="faq" onClick={toggleOpen}>
                 faq
               </NavItem>
