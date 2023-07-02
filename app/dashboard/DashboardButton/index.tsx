@@ -2,6 +2,8 @@
 
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
+import useHackerText from "utils/useHackerText";
+import Status from "./Status";
 
 interface Props {
   name: string;
@@ -9,8 +11,9 @@ interface Props {
   status: "COMPLETE" | "INCOMPLETE" | "UNAVAILABLE";
 }
 
-// TODO: add status hover with description
 const DashboardButton = ({ name, href, status }: Props) => {
+  const [animatedName, animate] = useHackerText(name);
+
   const router = useRouter();
 
   const handleClick = () => {
@@ -19,26 +22,23 @@ const DashboardButton = ({ name, href, status }: Props) => {
   };
 
   return (
-    <div className="flex h-16 w-full items-center gap-1 overflow-hidden rounded-md bg-black">
+    <div className="flex h-16 w-full items-center gap-1 bg-black font-mono">
       <button
         className={classNames(
-          "flex h-full w-full items-center px-6 text-lg text-black",
-          { "gradient-bg": status === "INCOMPLETE" },
-          { "cursor-default bg-grey": status === "COMPLETE" },
+          "flex h-full w-full items-center rounded-l-md px-6 text-lg text-black",
+          {
+            "gradient-bg duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light":
+              status === "INCOMPLETE",
+          },
+          { "cursor-default bg-green": status === "COMPLETE" },
           { "cursor-default bg-grey": status === "UNAVAILABLE" }
         )}
         onClick={handleClick}
+        onMouseEnter={() => animate({ duration: 500 })}
       >
-        {name}
+        {animatedName}
       </button>
-      <div
-        className={classNames(
-          "h-full w-16 cursor-default bg-gold py-4 text-center text-lg text-black",
-          { "bg-gold": status === "INCOMPLETE" },
-          { "bg-green": status === "COMPLETE" },
-          { "bg-grey": status === "UNAVAILABLE" }
-        )}
-      ></div>
+      <Status status={status} />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// TODO: center stack or remove logo on mobile
 const Footer = () => {
   return (
     <footer className="container relative z-0 mx-auto py-12 lg:py-16">
