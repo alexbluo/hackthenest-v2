@@ -16,6 +16,10 @@ const DashboardButton = ({ name, href, status }: Props) => {
 
   const router = useRouter();
 
+  const handleHover = () => {
+    if (status === "INCOMPLETE") animate({ duration: 500 });
+  };
+
   const handleClick = () => {
     if (!href) return;
     if (status === "INCOMPLETE") router.push(href);
@@ -33,8 +37,8 @@ const DashboardButton = ({ name, href, status }: Props) => {
           { "cursor-default bg-green": status === "COMPLETE" },
           { "cursor-default bg-grey": status === "UNAVAILABLE" }
         )}
+        onMouseEnter={handleHover}
         onClick={handleClick}
-        onMouseEnter={() => animate({ duration: 500 })}
       >
         {animatedName}
       </button>
