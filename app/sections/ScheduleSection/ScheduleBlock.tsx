@@ -34,7 +34,7 @@ const ScheduleBlock = ({
   const [blockWidth, setBlockWidth] = useState(384);
 
   useEffect(() => {
-    if (width < 640) setBlockWidth(width - 64 - 65.4522726878);
+    if (width < 640) setBlockWidth(width - 64 - 81);
     else setBlockWidth(384);
   }, [width]);
 
