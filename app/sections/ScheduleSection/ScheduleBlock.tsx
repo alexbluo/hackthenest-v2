@@ -8,7 +8,7 @@ interface Props {
   time: string;
   width: number;
   order: number;
-  status: "neutral" | "hover" | "pressed" | "flush";
+  status: "neutral" | "hover" | "pressed" | "flush" | "hidden";
   children?: string;
   handleHoverStart: () => void;
   handleHoverEnd: () => void;
@@ -42,22 +42,30 @@ const ScheduleBlock = ({
             x: 0,
             y: 0,
             filter: "brightness(1)",
+            opacity: 1
           },
           hover: {
             x: "-40px",
             y: "23px",
             filter: "brightness(0.75)",
+            opacity: 1
           },
           pressed: {
             x: "-120px",
             y: "69px",
             filter: "brightness(0.5)",
+            opacity: 1
           },
           flush: {
             x: "-160px",
             y: "92px",
             filter: "brightness(0.25)",
-            // transitionEnd: { display: "none" },
+            opacity: 1
+          },
+          hidden: {
+            x: "-160px",
+            y: "92px",
+            transitionEnd: { opacity: 0 },
           },
         }}
         exit="flush"

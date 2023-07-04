@@ -9,7 +9,7 @@ interface Block {
   name: ReactNode;
   time: string;
   description?: string;
-  status: "neutral" | "hover" | "pressed" | "flush";
+  status: "neutral" | "hover" | "pressed" | "flush" | "hidden";
 }
 
 // make sure to maintain key uniqueness (name + time + description)
@@ -67,12 +67,12 @@ const saturday: Block[] = [
     description: "description here",
     status: "neutral",
   },
-  // {
-  //   name: "Ding Dong",
-  //   time: "9:00am - 10:00am",
-  //   description: "description here",
-  //   status: "neutral",
-  // },
+  {
+    name: "Ding Dong",
+    time: "9:00am - 10:00am",
+    description: "description here",
+    status: "neutral",
+  },
 ];
 
 const sunday: Block[] = [
@@ -125,7 +125,6 @@ const sunday: Block[] = [
   },
 ];
 
-// TODO add loading placeholder height or something to fix split second background size change on page load
 const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("Saturday", "Sunday");
   const [blocks, setBlocks] = useState(saturday);
@@ -140,44 +139,35 @@ const ScheduleSection = () => {
     let iteration = -1;
 
     const interval = setInterval(() => {
-      setBlocks((prev) => {
-        return prev.map((block, i) => {
-          if (i === iteration) {
-            return { ...block, status: "flush" };
+      setBlocks((prev): Block[] => {
+        const newBlocks: Block[] = [];
+
+        // im so sorry
+        for (let i = 0; i < Math.max(prev.length, incoming.length); i++) {
+          const block = prev[i];
+
+          if (
+            i >= incoming.length &&
+            iteration >= incoming.length &&
+            i === iteration
+          ) {
+            // hide excess from previous set
+            newBlocks.push({ ...block, status: "hidden" });
+          } else if (i === iteration - 4) {
+            // set incoming block when old one finishes animating
+            newBlocks.push(incoming[iteration - 4]);
+          } else if (block) {
+            if (i === iteration) {
+              // flush next block down each iteration
+              newBlocks.push({ ...block, status: "flush" });
+            } else {
+              // default keep everything else the same
+              newBlocks.push(block);
+            }
           }
-          if (i === iteration - 4) {
-            return incoming[iteration - 4];
-          }
+        }
 
-          return block;
-        });
-
-        // TODO: wip to fix uneven lengths, might need animatepresence
-        //   const newBlocks: Block[] = [];
-
-        //   prev.forEach((_, i) => {
-        //     const block = prev[i];
-
-        //     if (i >= incoming.length && iteration >= incoming.length) {
-        //       return;
-        //     }
-
-        //     if (i === iteration) {
-        //       newBlocks.push({ ...block, status: "flush" });
-        //       return;
-        //     }
-        //     // set incoming block when old one finishes animating
-        //     if (i === iteration - 4) {
-        //       newBlocks.push(incoming[iteration - 4]);
-        //       return;
-        //     }
-
-        //     if (block) {
-        //       newBlocks.push(block);
-        //     }
-        //   });
-
-        //   return newBlocks;
+        return newBlocks;
       });
 
       iteration += 1;
@@ -194,7 +184,8 @@ const ScheduleSection = () => {
         if (
           i === target &&
           block.status !== "pressed" &&
-          block.status !== "flush"
+          block.status !== "flush" &&
+          block.status !== "hidden"
         ) {
           return { ...block, status: "hover" };
         }
@@ -211,7 +202,8 @@ const ScheduleSection = () => {
           if (
             i === target &&
             block.status !== "pressed" &&
-            block.status !== "flush"
+            block.status !== "flush" &&
+            block.status !== "hidden"
           ) {
             return { ...block, status: "neutral" };
           }
@@ -227,7 +219,11 @@ const ScheduleSection = () => {
 
     setBlocks((prev) => {
       return prev.map((block, i) => {
-        if (i === target && block.status !== "flush") {
+        if (
+          i === target &&
+          block.status !== "flush" &&
+          block.status !== "hidden"
+        ) {
           return { ...block, status: i === 0 ? "flush" : "pressed" };
         }
 
@@ -247,7 +243,7 @@ const ScheduleSection = () => {
 
   return (
     <section id="schedule">
-      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-br-none sm:rounded-tl-3xl sm:rounded-tr-3xl">
+      <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className="gradient-text">schedule</h2>
       </div>
       <motion.ul className="flex flex-col pt-40">
