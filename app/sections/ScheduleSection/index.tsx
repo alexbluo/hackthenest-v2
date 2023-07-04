@@ -28,7 +28,7 @@ const saturday: Block[] = [
         </svg>
       </div>
     ),
-    time: "9.23.23",
+    time: "9.23",
     status: "neutral",
   },
   {
@@ -90,7 +90,7 @@ const sunday: Block[] = [
         </svg>
       </div>
     ),
-    time: "9.24.23",
+    time: "9.24",
     status: "neutral",
   },
   {
@@ -131,7 +131,7 @@ const ScheduleSection = () => {
   const width = useWindowWidth();
 
   // flush randomly consistently persists if cycled right after page load for some reason...
-  const staggerOutIn = () => {
+  const glissando = () => {
     const incoming = day === "Saturday" ? sunday : saturday;
     cycleDay();
 
@@ -215,7 +215,7 @@ const ScheduleSection = () => {
   };
 
   const handleTap = (target: number) => {
-    if (target === 0 && blocks[target].status !== "flush") staggerOutIn();
+    if (target === 0 && blocks[target].status !== "flush") glissando();
 
     setBlocks((prev) => {
       return prev.map((block, i) => {

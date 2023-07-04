@@ -35,8 +35,8 @@ const ScheduleBlock = ({
     <li className={classNames("relative", { "sm:ml-12": order % 2 === 0 })}>
       {/* front panel */}
       <motion.button
-        className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between text-ellipsis bg-blue-mid px-8 text-lg"
-        animate={status}
+        className="relative bottom-[46px] left-20 flex h-16 w-96 origin-bottom-left items-center justify-between text-ellipsis bg-blue-mid px-8 text-lg"
+        animate={status}  
         initial="flush"
         variants={{
           neutral: {
@@ -46,26 +46,26 @@ const ScheduleBlock = ({
             opacity: 1,
           },
           hover: {
-            x: "-40px",
-            y: "23px",
+            x: "-20px",
+            y: "11.5px",
             filter: "brightness(0.75)",
             opacity: 1,
           },
           pressed: {
-            x: "-120px",
-            y: "69px",
+            x: "-60px",
+            y: "34.5px",
             filter: "brightness(0.5)",
             opacity: 1,
           },
           flush: {
-            x: "-160px",
-            y: "92px",
+            x: "-80px",
+            y: "46px",
             filter: "brightness(0.25)",
             opacity: 1,
           },
           hidden: {
-            x: "-160px",
-            y: "92px",
+            x: "-80px",
+            y: "46px",
             transitionEnd: { opacity: 0 },
           },
         }}
@@ -88,9 +88,9 @@ const ScheduleBlock = ({
         animate={status}
         initial="flush"
         variants={{
-          neutral: { width: "160px" },
-          hover: { width: "120px" },
-          pressed: { width: "40px" },
+          neutral: { width: "80px" },
+          hover: { width: "60px" },
+          pressed: { width: "20px" },
           flush: { width: 0 },
         }}
         exit="flush"
@@ -107,9 +107,9 @@ const ScheduleBlock = ({
         animate={status}
         initial="flush"
         variants={{
-          neutral: { height: "92px" },
-          hover: { height: "69px" },
-          pressed: { height: "23px" },
+          neutral: { height: "46px" },
+          hover: { height: "34.5px" },
+          pressed: { height: "11.5px" },
           flush: { height: 0 },
         }}
         exit="flush"
