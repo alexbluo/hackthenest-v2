@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal";
@@ -17,7 +17,6 @@ interface Props {
 }
 
 // TODO: decrease left time width and only include start time (split and include full time block on modal)
-// TODO: remove time on left on mobile and make square, move to front right and ... long name on left
 // TODO: add gcal link
 const ScheduleBlock = ({
   name,
@@ -31,12 +30,21 @@ const ScheduleBlock = ({
   handleTap,
   handleClose,
 }: Props) => {
+  // 384 default 96rem
+  const [blockWidth, setBlockWidth] = useState(384);
+
+  useEffect(() => {
+    if (width < 640) setBlockWidth(width - 64 - 65.4522726878);
+    else setBlockWidth(384);
+  }, [width]);
+
   return (
     <li className={classNames("relative", { "sm:ml-12": order % 2 === 0 })}>
       {/* front panel */}
       <motion.button
-        className="relative bottom-[46px] left-20 flex h-16 w-96 origin-bottom-left items-center justify-between text-ellipsis bg-blue-mid px-8 text-lg"
-        animate={status}  
+        className="relative bottom-[46px] left-20 flex h-16 origin-bottom-left items-center justify-between text-ellipsis bg-blue-mid px-8 text-lg"
+        style={{ width: blockWidth }}
+        animate={status}
         initial="flush"
         variants={{
           neutral: {
@@ -99,11 +107,12 @@ const ScheduleBlock = ({
           ease: "easeInOut",
         }}
       >
-        <span className="pl-4">{time}</span>
+        <span className="pl-4">{time.substring(0, time.indexOf(" "))}</span>
       </motion.div>
       {/* bottom panel */}
       <motion.div
-        className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark brightness-75"
+        className="absolute bottom-0 origin-bottom-left -skew-x-[60deg] bg-blue-dark brightness-75"
+        style={{ width: blockWidth }}
         animate={status}
         initial="flush"
         variants={{
