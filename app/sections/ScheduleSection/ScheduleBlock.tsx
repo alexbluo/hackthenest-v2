@@ -33,8 +33,9 @@ const ScheduleBlock = ({
 }: Props) => {
   return (
     <li className={classNames("relative", { "sm:ml-12": order % 2 === 0 })}>
+      {/* front panel */}
       <motion.button
-        className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between bg-blue-mid px-8 text-lg"
+        className="relative bottom-[92px] left-40 flex h-16 w-96 origin-bottom-left items-center justify-between text-ellipsis bg-blue-mid px-8 text-lg"
         animate={status}
         initial="flush"
         variants={{
@@ -42,25 +43,25 @@ const ScheduleBlock = ({
             x: 0,
             y: 0,
             filter: "brightness(1)",
-            opacity: 1
+            opacity: 1,
           },
           hover: {
             x: "-40px",
             y: "23px",
             filter: "brightness(0.75)",
-            opacity: 1
+            opacity: 1,
           },
           pressed: {
             x: "-120px",
             y: "69px",
             filter: "brightness(0.5)",
-            opacity: 1
+            opacity: 1,
           },
           flush: {
             x: "-160px",
             y: "92px",
             filter: "brightness(0.25)",
-            opacity: 1
+            opacity: 1,
           },
           hidden: {
             x: "-160px",
@@ -81,6 +82,7 @@ const ScheduleBlock = ({
       >
         {name}
       </motion.button>
+      {/* left panel */}
       <motion.div
         className="absolute bottom-0 flex h-16 w-40 origin-bottom-left -skew-y-[30deg] items-center overflow-hidden whitespace-nowrap bg-blue-dark"
         animate={status}
@@ -99,6 +101,7 @@ const ScheduleBlock = ({
       >
         <span className="pl-4">{time}</span>
       </motion.div>
+      {/* bottom panel */}
       <motion.div
         className="absolute bottom-0 h-[92px] w-96 origin-bottom-left -skew-x-[60deg] bg-blue-dark brightness-75"
         animate={status}
@@ -114,8 +117,8 @@ const ScheduleBlock = ({
           duration: 0.4,
           ease: "easeInOut",
         }}
-      ></motion.div>
-      {/* only for non-cycle schedule blocks for stricter type safety on modal title */}
+      />
+      {/* only for non-cycle blocks for stricter type safety on modal title */}
       {typeof name === "string" && (
         <Modal
           visible={status === "pressed" && order !== 0}

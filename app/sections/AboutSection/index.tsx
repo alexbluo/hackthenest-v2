@@ -15,7 +15,7 @@ const AboutSection = () => {
         unforgettable experience for an audience normally barred from
         hackathons.
       </article>
-      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 my-8">
         <Stat stat="36" caption="hours">
           Hackathons typically take place over a weekend and last 12-48 hours.
           Hack the Nest is a 36-hour event starting the morning of Saturday,
