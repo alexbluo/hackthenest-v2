@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useState } from "react";
-import classNames from "classnames";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal";
 
@@ -38,10 +37,10 @@ const ScheduleBlock = ({
   }, [width]);
 
   return (
-    <li className={classNames("relative odd:ml-12")}>
+    <li className="relative sm:odd:ml-12">
       {/* front panel */}
       <motion.button
-        className="relative bottom-[46px] left-20 flex h-16 origin-bottom-left items-center justify-between bg-blue-mid px-6 sm:px-8 text-left text-lg"
+        className="relative bottom-[46px] left-20 h-16 origin-bottom-left text-ellipsis bg-blue-mid text-left text-lg"
         style={{ width: blockWidth }}
         animate={status}
         initial="flush"
@@ -87,7 +86,7 @@ const ScheduleBlock = ({
         onBlur={handleHoverEnd}
         onTap={handleTap}
       >
-        {name}
+        <h3 className="text-ellipsis px-6 sm:px-8 whitespace-nowrap overflow-hidden">{name}</h3>
       </motion.button>
       {/* left panel */}
       <motion.div
@@ -129,7 +128,7 @@ const ScheduleBlock = ({
       {/* only for non-cycle blocks for stricter type safety on modal title */}
       {typeof name === "string" && (
         <Modal
-          visible={status === "pressed" && order !== 0}
+          visible={status === "pressed"}
           width={width}
           title={`${name} @ ${location}`}
           subtitle={time}
