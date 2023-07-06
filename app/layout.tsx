@@ -50,7 +50,6 @@ export const metadata: Metadata = {
 
 // TODO: volunteer app
 // TODO: admin table and qr check in
-// TODO: mobile schedule
 // TODO: possibly aws bucket upload for waivers
 // TODO: add designs for right side of about and schedule
 // TODO: add footer to all pages

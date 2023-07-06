@@ -8,6 +8,7 @@ import ScheduleBlock from "./ScheduleBlock";
 interface Block {
   name: ReactNode;
   time: string;
+  location: string;
   description?: string;
   status: "neutral" | "hover" | "pressed" | "flush" | "hidden";
 }
@@ -29,47 +30,55 @@ const saturday: Block[] = [
       </div>
     ),
     time: "",
+    location: "",
     status: "neutral",
   },
   {
     name: "Check-in",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Team Formation",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Opening Ceremony",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Lunch",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Dinner",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Ping Pong",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
-    name: "Ding Dong",
+    name: "Ding Dong Ping Pong",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
@@ -91,35 +100,41 @@ const sunday: Block[] = [
       </div>
     ),
     time: "",
+    location: "",
     status: "neutral",
   },
   {
     name: "Hacking Ends",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Judging",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Closing Ceremony",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Breakfast",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
   {
     name: "Workshop",
     time: "21:30 - 22:00",
+    location: "Room 1",
     description: "description here",
     status: "neutral",
   },
@@ -211,7 +226,7 @@ const ScheduleSection = () => {
           return block;
         });
       });
-    }, 100);
+    }, 150);
   };
 
   const handleTap = (target: number) => {
@@ -247,19 +262,19 @@ const ScheduleSection = () => {
         <h2 className="gradient-text">schedule</h2>
       </div>
       <motion.ul className="flex flex-col pt-40">
-        {blocks.map(({ name, time, description, status }, i) => {
+        {blocks.map(({ name, time, location, description, status }, i) => {
           return (
             <ScheduleBlock
               name={name}
               time={time}
+              location={location}
               width={width}
-              order={i}
               status={status}
               handleHoverStart={() => handleHoverStart(i)}
               handleHoverEnd={() => handleHoverEnd(i)}
               handleTap={() => handleTap(i)}
               handleClose={() => handleClose(i)}
-              key={name + time + description}
+              key={name + time + location + description}
             >
               {description}
             </ScheduleBlock>

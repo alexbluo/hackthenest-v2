@@ -6,8 +6,8 @@ import Modal from "../../components/Modal";
 interface Props {
   name: ReactNode;
   time: string;
+  location: string;
   width: number;
-  order: number;
   status: "neutral" | "hover" | "pressed" | "flush" | "hidden";
   children?: string;
   handleHoverStart: () => void;
@@ -16,13 +16,12 @@ interface Props {
   handleClose: () => void;
 }
 
-// TODO: decrease left time width and only include start time (split and include full time block on modal)
 // TODO: add gcal link
 const ScheduleBlock = ({
   name,
   time,
+  location,
   width,
-  order,
   status,
   children,
   handleHoverStart,
@@ -39,10 +38,10 @@ const ScheduleBlock = ({
   }, [width]);
 
   return (
-    <li className={classNames("relative", { "sm:ml-12": order % 2 === 0 })}>
+    <li className={classNames("relative odd:ml-12")}>
       {/* front panel */}
       <motion.button
-        className="relative bottom-[46px] left-20 flex h-16 origin-bottom-left items-center justify-between text-ellipsis bg-blue-mid px-8 text-lg"
+        className="relative bottom-[46px] left-20 flex h-16 origin-bottom-left items-center justify-between bg-blue-mid px-6 sm:px-8 text-left text-lg"
         style={{ width: blockWidth }}
         animate={status}
         initial="flush"
@@ -132,7 +131,7 @@ const ScheduleBlock = ({
         <Modal
           visible={status === "pressed" && order !== 0}
           width={width}
-          title={name}
+          title={`${name} @ ${location}`}
           subtitle={time}
           onTap={handleClose}
         >

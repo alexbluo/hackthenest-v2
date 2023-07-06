@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "db";
 
-// TODO change to post
-export const GET = async (request: NextRequest) => {
+export const POST = async (request: NextRequest) => {
   const deleteList: string[] = [
     "hello@hackthenest.org",
     "hackthenest@gmail.com",
