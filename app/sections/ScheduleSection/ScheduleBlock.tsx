@@ -28,20 +28,17 @@ const ScheduleBlock = ({
   handleTap,
   handleClose,
 }: Props) => {
-  // 384 default 96rem
-  const [blockWidth, setBlockWidth] = useState(384);
-
-  useEffect(() => {
-    if (width < 640) setBlockWidth(width - 64 - 81);
-    else setBlockWidth(384);
-  }, [width]);
+  const blockWidth = () => {
+    if (width < 640) return width - 64 - 81;
+    return 384;
+  };
 
   return (
     <li className="relative sm:odd:ml-12">
       {/* front panel */}
       <motion.button
         className="relative bottom-[46px] left-20 h-16 origin-bottom-left text-ellipsis bg-blue-mid text-left text-lg"
-        style={{ width: blockWidth }}
+        style={{ width: blockWidth() }}
         animate={status}
         initial="flush"
         variants={{
@@ -86,7 +83,9 @@ const ScheduleBlock = ({
         onBlur={handleHoverEnd}
         onTap={handleTap}
       >
-        <h3 className="text-ellipsis px-6 sm:px-8 whitespace-nowrap overflow-hidden">{name}</h3>
+        <h3 className="overflow-hidden text-ellipsis whitespace-nowrap px-6 sm:px-8">
+          {name}
+        </h3>
       </motion.button>
       {/* left panel */}
       <motion.div
@@ -110,7 +109,7 @@ const ScheduleBlock = ({
       {/* bottom panel */}
       <motion.div
         className="absolute bottom-0 origin-bottom-left -skew-x-[60deg] bg-blue-dark brightness-75"
-        style={{ width: blockWidth }}
+        style={{ width: blockWidth() }}
         animate={status}
         initial="flush"
         variants={{
