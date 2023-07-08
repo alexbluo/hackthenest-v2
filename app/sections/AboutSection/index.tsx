@@ -15,17 +15,16 @@ const AboutSection = () => {
         unforgettable experience for an audience normally barred from
         hackathons.
       </article>
-      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 my-8">
+      <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="36" caption="hours">
           Hackathons typically take place over a weekend and last 12-48 hours.
           Hack the Nest is a 36-hour event starting the morning of Saturday,
           September 23 and ending the evening of Sunday, September 24.
         </Stat>
         <Stat stat="300" caption="hackers">
-          With 300 hackers from primarily the east coast, Hack the Nest will be
-          the DMV&apos;s (and one of the country&apos;s) largest high school
-          hackathons! We welcome hackers from all geographic areas and of all
-          demographics and experience levels.
+          Hack the Nest will be the DMV area&apos;s (and one of the country&apos;s)
+          largest high school hackathons! We welcome hackers from all geographic
+          areas and of all demographics and experience levels.
         </Stat>
         <Stat stat="$10000+" caption="prizes">
           Winning teams will receive prizes from a $10,000+ prize pool! Below is

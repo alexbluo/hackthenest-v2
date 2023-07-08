@@ -25,9 +25,9 @@ const Dashboard = async ({ searchParams }: Props) => {
   });
 
   return (
-    <div className="bg-black">
+    <div className="bg-black min-h-screen">
       <AuthNav />
-      <section className="min-h-screen pt-32">
+      <section className="pt-32">
         <h2 className="gradient-text mb-8">dashboard</h2>
         <h3 className="mb-8 text-3xl font-semibold text-gold">
           welcome back, {session?.user?.name ?? session?.user?.email}

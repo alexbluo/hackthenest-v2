@@ -36,10 +36,24 @@ const SponsorsSection = () => {
             href="https://www.thecoderschool.com/"
             tier="gold"
           />
+          {/* <Sponsor
+            src="/.png"
+            alt="Collins Aerospace gold sponsorship"
+            href="https://www.collinsaerospace.com/"
+            tier="gold"
+          /> */}
         </div>
 
         {/* silver */}
-        {/* <div className="grid grid-cols-2 gap-6"></div> */}
+        <div className="grid grid-cols-2 gap-6">
+          <Sponsor
+            src="/prhi.png"
+            alt="PRHI silver sponsorship"
+            href="https://www.patientsafetytech.com/"
+            tier="silver"
+          />
+        </div>
+
         {/* bronze */}
         <div className="grid grid-cols-3 gap-6">
           <Sponsor

@@ -52,9 +52,7 @@ export const metadata: Metadata = {
 // TODO: admin table and qr check in
 // TODO: possibly aws bucket upload for waivers
 // TODO: add designs for right side of about and schedule
-// TODO: add footer to all pages
-// can maybe add client usesession like https://stackoverflow.com/questions/75404618/glitch-with-nextauth-session-nextjs-13 with separate client component for provider
-// dont know if necessary tho
+// TODO: remove dashboard status and replace with parenthesis addon to buttom
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html
@@ -63,6 +61,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
     >
       <GoogleAnalytics />
       <body>
+        {/* doesn't show up correctly on google search results, could just be update lag? */}
         <div itemScope itemType="https://schema.org/WebSite">
           <meta itemProp="url" content="https://www.hackthenest.org/" />
           <meta itemProp="name" content="Hack the Nest" />
