@@ -3,7 +3,6 @@
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import useHackerText from "utils/useHackerText";
-import Status from "./Status";
 
 interface Props {
   name: string;
@@ -42,7 +41,14 @@ const DashboardButton = ({ name, href, status }: Props) => {
       >
         {animatedName}
       </button>
-      <Status status={status} />
+      <div
+        className={classNames(
+          "flex h-full w-16 items-center justify-center overflow-visible rounded-r-md bg-gold py-4 text-center text-lg text-black",
+          { "bg-gold": status === "INCOMPLETE" },
+          { "bg-green": status === "COMPLETE" },
+          { "bg-grey": status === "UNAVAILABLE" }
+        )}
+      />
     </div>
   );
 };

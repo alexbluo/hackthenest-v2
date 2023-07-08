@@ -25,7 +25,7 @@ const Dashboard = async ({ searchParams }: Props) => {
   });
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen bg-black">
       <AuthNav />
       <section className="pt-32">
         <h2 className="gradient-text mb-8">dashboard</h2>
@@ -50,11 +50,11 @@ const Dashboard = async ({ searchParams }: Props) => {
               }
             />
             <DashboardButton
-              name="volunteer app"
+              name="volunteer app (coming soon!)"
               href="/app/hacker"
               status="UNAVAILABLE"
             />
-            <DashboardButton name="rsvp" status="UNAVAILABLE" />
+            <DashboardButton name="rsvp (coming soon!)" status="UNAVAILABLE" />
           </div>
         </div>
       </section>

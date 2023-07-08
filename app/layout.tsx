@@ -52,7 +52,6 @@ export const metadata: Metadata = {
 // TODO: admin table and qr check in
 // TODO: possibly aws bucket upload for waivers
 // TODO: add designs for right side of about and schedule
-// TODO: remove dashboard status and replace with parenthesis addon to buttom
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html
