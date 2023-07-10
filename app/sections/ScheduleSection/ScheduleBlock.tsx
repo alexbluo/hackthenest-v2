@@ -39,7 +39,6 @@ const ScheduleBlock = ({
       {/* front panel */}
       <motion.button
         className="relative bottom-[46px] left-20 h-16 w-full origin-bottom-left text-ellipsis bg-blue-mid text-left text-lg"
-        style={{ width: blockWidth() }}
         animate={status}
         initial="flush"
         variants={{
@@ -70,10 +69,9 @@ const ScheduleBlock = ({
           hidden: {
             x: "-80px",
             y: "46px",
-            transitionEnd: { opacity: 0 },
+            opacity: 0,
           },
         }}
-        exit="flush"
         transition={{
           duration: 0.4,
           ease: "easeInOut",
@@ -94,12 +92,12 @@ const ScheduleBlock = ({
         animate={status}
         initial="flush"
         variants={{
-          neutral: { width: "80px" },
-          hover: { width: "60px" },
-          pressed: { width: "20px" },
-          flush: { width: 0 },
+          neutral: { width: "80px", opacity: 1 },
+          hover: { width: "60px", opacity: 1 },
+          pressed: { width: "20px", opacity: 1 },
+          flush: { width: 0, opacity: 1 },
+          hidden: { opacity: 0 },
         }}
-        exit="flush"
         transition={{
           duration: 0.4,
           ease: "easeInOut",
@@ -109,17 +107,16 @@ const ScheduleBlock = ({
       </motion.div>
       {/* bottom panel */}
       <motion.div
-        className="absolute bottom-0 origin-bottom-left -skew-x-[60deg] bg-blue-dark brightness-75"
-        style={{ width: blockWidth() }}
+        className="absolute bottom-0 w-full origin-bottom-left -skew-x-[60deg] bg-blue-dark brightness-75"
         animate={status}
         initial="flush"
         variants={{
-          neutral: { height: "46px" },
-          hover: { height: "34.5px" },
-          pressed: { height: "11.5px" },
-          flush: { height: 0 },
+          neutral: { height: "46px", opacity: 1 },
+          hover: { height: "34.5px", opacity: 1 },
+          pressed: { height: "11.5px", opacity: 1 },
+          flush: { height: 0, opacity: 1 },
+          hidden: { opacity: 0 },
         }}
-        exit="flush"
         transition={{
           duration: 0.4,
           ease: "easeInOut",
