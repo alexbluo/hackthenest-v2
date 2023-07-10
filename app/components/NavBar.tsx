@@ -11,7 +11,8 @@ const NavBar = async () => {
 
   return (
     <nav className="container absolute left-0 right-0 top-0 z-50 flex h-32 w-full items-center justify-between bg-transparent">
-      <div className="relative aspect-square h-3/5">
+      {/* z index on logo to stay visible in mobile nav */}
+      <div className="relative aspect-square h-3/5 z-50">
         <Image
           src="/logo-colored.png"
           alt="Hack the Nest Logo"

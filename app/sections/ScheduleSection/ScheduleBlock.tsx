@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal";
 
@@ -16,6 +16,7 @@ interface Props {
 }
 
 // TODO: add gcal link
+// TODO: add hidden state to all panels
 const ScheduleBlock = ({
   name,
   time,
@@ -34,10 +35,10 @@ const ScheduleBlock = ({
   };
 
   return (
-    <li className="relative sm:odd:ml-12">
+    <li className="relative sm:odd:ml-12" style={{ width: blockWidth() }}>
       {/* front panel */}
       <motion.button
-        className="relative bottom-[46px] left-20 h-16 origin-bottom-left text-ellipsis bg-blue-mid text-left text-lg"
+        className="relative bottom-[46px] left-20 h-16 w-full origin-bottom-left text-ellipsis bg-blue-mid text-left text-lg"
         style={{ width: blockWidth() }}
         animate={status}
         initial="flush"

@@ -20,6 +20,7 @@ const MobileNav = ({ session }: Props) => {
   useLayoutEffect(() => {
     if (open && width < 768) lockScroll(true);
     else if (open && width >= 768) lockScroll(false);
+    else if (!open) lockScroll(false);
   }, [open, width]);
 
   return (

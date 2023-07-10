@@ -2,8 +2,15 @@
 
 import React, { ReactNode, useState } from "react";
 import { motion, useCycle } from "framer-motion";
+import dynamic from "next/dynamic";
 import useWindowWidth from "utils/useWindowWidth";
-import ScheduleBlock from "./ScheduleBlock";
+
+// must be lazy loaded in order to prevent framer motion client server mismatch on width
+const ScheduleBlock = dynamic(() => import("./ScheduleBlock"), {
+  ssr: false,
+  // empty space placeholder to prevent background dimension seizure on initial load
+  loading: () => <div className="h-16"></div>,
+});
 
 interface Block {
   name: ReactNode;
@@ -13,7 +20,7 @@ interface Block {
   status: "neutral" | "hover" | "pressed" | "flush" | "hidden";
 }
 
-// make sure to maintain key uniqueness (name + time + description)
+// make sure to maintain key uniqueness (name + time + location + description)
 const saturday: Block[] = [
   {
     name: (
