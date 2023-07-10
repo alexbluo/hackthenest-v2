@@ -116,13 +116,6 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Intro to Competitive Programming",
-    time: "5:00 - 6:00",
-    location: "",
-    description: "",
-    status: "neutral",
-  },
-  {
     name: "Dinner",
     time: "6:00 - 8:00",
     location: "",
@@ -130,18 +123,17 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "What's That Font?",
-    time: "7:00 - 8:00",
-    location: "",
-    description:
-      'Dive into the typography region with this informative "What&apos;s that Pokemon?" style Kahoot!',
-    status: "neutral",
-  },
-  {
     name: "S'mores",
     time: "9:00 - 10:00",
     location: "",
-    description: "", 
+    description: "",
+    status: "neutral",
+  },
+  {
+    name: "Smash Tournament",
+    time: "10:00 - 11:00",
+    location: "",
+    description: "",
     status: "neutral",
   },
 ];
@@ -213,7 +205,7 @@ const sunday: Block[] = [
   },
 ];
 
-// TODO: 
+// TODO: cap height with scroll
 const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("Saturday", "Sunday");
   const [blocks, setBlocks] = useState(saturday);

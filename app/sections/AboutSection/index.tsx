@@ -8,12 +8,11 @@ const AboutSection = () => {
       </div>
       <article className="-mx-8 rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none">
         This September, join 300 hackers for the DMV area&apos;s largest high
-        school hackathon. Hack the Nest is a 36-hour collaborative coding
-        event/competition where participants (also called hackers) create cool
-        new tech projects from scratch. Whether it&apos;s 2am-debugging with
-        cookies or ping-pong without paddles, our ultimate goal is to host an
-        unforgettable experience for an audience normally barred from
-        hackathons.
+        school hackathon. Hack the Nest is a collaborative coding event where
+        participants (also called hackers) bring their innovative ideas to life
+        in just one weekend. Whether it&apos;s 2am-debugging with cookies or
+        ping-pong without paddles, our ultimate goal is to host an unforgettable
+        experience for an audience normally barred from hackathons.
       </article>
       <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="36" caption="hours">

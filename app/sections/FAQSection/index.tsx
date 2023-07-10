@@ -32,6 +32,11 @@ const questions: Question[][] = [
         "The application isn't rigorous at all; we use the term more like registration in the unlikely case that we shoot way over our logistical limit. It only takes a few minutes to fill out and you can always change your mind about attending as the event approaches.",
     },
     {
+      question: "What if I don't have a project idea?",
+      answer:
+        "You definitely don't need to have an idea beforehand! Remember that your project can come in any form you want - creative, funny, innovative, and more - and you'll have teammates to help ideate during the weekend!",
+    },
+    {
       question: "Do I have to make a project?",
       answer:
         "You're not required to make a project to attend, but we recommend that you do in order to get the full hackathon experience.",
@@ -64,9 +69,14 @@ const questions: Question[][] = [
       ),
     },
     {
+      question: "How do I get to the venue?",
+      answer:
+        "We plan to provide buses running from Howard County to the venue with stops in Montgomery County, DC, and Northern Virginia. Please consider carpooling before taking a spot, as we have a limited capacity. If you are flying in, we'll have 5-10% discount codes for major airlines.",
+    },
+    {
       question: "What are the overnight arrangements?",
       answer:
-        "We will have a dedicated sleeping room and a limited supply of airbeds and sleeping bags on a first come first serve basis. Feel free to bring your own blanket, bed, or... bouncy castle?",
+        "We'll have a dedicated sleeping room and a limited supply of airbeds and sleeping bags on a first come first serve basis. Feel free to bring your own blanket, bed, or... bouncy castle?",
     },
     {
       question: "I have more questions!",
