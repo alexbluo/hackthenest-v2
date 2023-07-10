@@ -22,9 +22,10 @@ const AboutSection = () => {
           September 23 and ending the evening of Sunday, September 24.
         </Stat>
         <Stat stat="300" caption="hackers">
-          Hack the Nest will be the DMV area&apos;s (and one of the country&apos;s)
-          largest high school hackathons! We welcome hackers from all geographic
-          areas and of all demographics and experience levels.
+          Hack the Nest will be the DMV area&apos;s (and one of the
+          country&apos;s) largest high school hackathons! We welcome hackers
+          from all geographic areas and of all demographics and experience
+          levels.
         </Stat>
         <Stat stat="$10000+" caption="prizes">
           Winning teams will receive prizes from a $10,000+ prize pool! Below is
@@ -52,9 +53,9 @@ const AboutSection = () => {
         <Stat stat="16" caption="workshops & mini-events">
           Don&apos;t miss our workshops and mini-events! Workshops are
           educational 30-60 minute interactive sessions on technical and
-          non-technical topics catered towards hackers of all experience levels.
-          Mini-events are fun activities where you can take a break and meet
-          other hackers. We will also have a sponsor fair where you can chat
+          non-technical topics catered towards hackers of all experience levels,
+          and mini-events are fun activities where you can take a break and meet
+          other hackers. We&apos;ll also have a sponsor fair where you can chat
           with our sponsor representatives, collect swag, and learn about
           recruiting. Our full schedule will be released as the event
           approaches.

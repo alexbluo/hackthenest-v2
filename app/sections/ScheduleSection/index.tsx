@@ -42,51 +42,106 @@ const saturday: Block[] = [
   },
   {
     name: "Check-in",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    time: "7:00 - 11:00",
+    location: "Lobby",
+    description:
+      "Please have your QR codes ready! This helps us identify your name, shirt size, and whether you are a hacker or volunteer so that we can direct you accordingly. Late check-in will last throughout the entire day!",
     status: "neutral",
   },
   {
-    name: "Team Formation",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    name: "Breakfast",
+    time: "9:00 - 10:00",
+    location: "",
+    description: "Start your hacking with bagels and cream cheese!",
     status: "neutral",
   },
   {
     name: "Opening Ceremony",
     time: "21:30 - 22:00",
     location: "Room 1",
-    description: "description here",
+    description: "Join us for an exciting kick-off to the weekend!",
+    status: "neutral",
+  },
+  {
+    name: "Team Formation",
+    time: "9:30 - 10:00",
+    location: "",
+    description:
+      "Find your perfect team in this pitch-style team formation session!",
+    status: "neutral",
+  },
+  {
+    name: "Sponsor Fair",
+    time: "10:00 - 12:00",
+    location: "",
+    description:
+      "Come chat with our sponsors, collect swag, and learn about recruiting!",
     status: "neutral",
   },
   {
     name: "Lunch",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    time: "12:00 - 1:00",
+    location: "",
+    description: "Recharge with Subway!",
+    status: "neutral",
+  },
+  {
+    name: "Intro to Git",
+    time: "1:00 - 2:00",
+    location: "",
+    description:
+      "Every project needs some sort of version management, and the most prevalent tool for it is Git. Learn how to share and sync your code with your team, from Git installation to your first commit! ",
+    status: "neutral",
+  },
+  {
+    name: "Intro to React",
+    time: "2:00 - 3:00",
+    location: "",
+    description:
+      "Web development has come a long way since the early days of plain HTML tables; today, we have powerful JavaScript frameworks such as React, created by Facebook, which open up far more possibilities in your next website! Explore the fundamentals of the world's most popular and important frontend framework by creating a game of Whac-A-Mole!",
+    status: "neutral",
+  },
+  {
+    name: "Intro to Machine Learning",
+    time: "3:00 - 4:00",
+    location: "",
+    description: "",
+    status: "neutral",
+  },
+  {
+    name: "Typeracer",
+    time: "4:00 - 5:00",
+    location: "",
+    description: "Put your typing skills to the test!",
+    status: "neutral",
+  },
+  {
+    name: "Intro to Competitive Programming",
+    time: "5:00 - 6:00",
+    location: "",
+    description: "",
     status: "neutral",
   },
   {
     name: "Dinner",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    time: "6:00 - 8:00",
+    location: "",
+    description: "Keep yourself going with some Chick-fil-A!",
     status: "neutral",
   },
   {
-    name: "Ping Pong",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    name: "What's That Font?",
+    time: "7:00 - 8:00",
+    location: "",
+    description:
+      'Dive into the typography region with this informative "What&apos;s that Pokemon?" style Kahoot!',
     status: "neutral",
   },
   {
-    name: "Ding Dong Ping Pong",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    name: "S'mores",
+    time: "9:00 - 10:00",
+    location: "",
+    description: "", 
     status: "neutral",
   },
 ];
@@ -111,42 +166,54 @@ const sunday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Hacking Ends",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    name: "Check-in",
+    time: "7:00 - 11:00",
+    location: "Lobby",
+    description:
+      "Please have your QR codes ready! This helps us identify your name, shirt size, and whether you are a hacker or volunteer so that we can direct you accordingly. Late check-in will last throughout the entire day!",
     status: "neutral",
   },
   {
-    name: "Judging",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    name: "Breakfast1",
+    time: "9:00 - 10:00",
+    location: "",
+    description: "Start your hacking with bagels and cream cheese!",
     status: "neutral",
   },
   {
-    name: "Closing Ceremony",
+    name: "Opening Ceremony1",
     time: "21:30 - 22:00",
     location: "Room 1",
-    description: "description here",
+    description: "Join us for an exciting kick-off to the weekend!",
     status: "neutral",
   },
   {
-    name: "Breakfast",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    name: "Team Formation1",
+    time: "9:30 - 10:00",
+    location: "",
+    description:
+      "Find your perfect team in this pitch-style team formation session!",
     status: "neutral",
   },
   {
-    name: "Workshop",
-    time: "21:30 - 22:00",
-    location: "Room 1",
-    description: "description here",
+    name: "Sponsor Fair1",
+    time: "10:00 - 12:00",
+    location: "",
+    description:
+      "Come chat with our sponsors, collect swag, and learn about recruiting!",
+    status: "neutral",
+  },
+  {
+    name: "Intro to React1",
+    time: "2:00 - 3:00",
+    location: "",
+    description:
+      "Web development has come a long way since the early days of plain HTML tables; today, we have powerful JavaScript frameworks such as React, created by Facebook, which open up far more possibilities in your next website! Explore the fundamentals of the world's most popular and important frontend framework by creating a game of Whac-A-Mole!",
     status: "neutral",
   },
 ];
 
+// TODO: 
 const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("Saturday", "Sunday");
   const [blocks, setBlocks] = useState(saturday);
@@ -159,13 +226,14 @@ const ScheduleSection = () => {
 
     // idk why setState comes after increment
     let iteration = -1;
+    const maxIterations = Math.max(saturday.length, sunday.length);
 
     const interval = setInterval(() => {
       setBlocks((prev): Block[] => {
         const newBlocks: Block[] = [];
 
         // im so sorry
-        for (let i = 0; i < Math.max(prev.length, incoming.length); i++) {
+        for (let i = 0; i < maxIterations; i++) {
           const block = prev[i];
 
           if (
@@ -175,7 +243,7 @@ const ScheduleSection = () => {
           ) {
             // hide excess from previous set
             newBlocks.push({ ...block, status: "hidden" });
-          } else if (i === iteration - 4) {
+          } else if (i === iteration - 4 && incoming[iteration - 4]) {
             // set incoming block when old one finishes animating
             newBlocks.push(incoming[iteration - 4]);
           } else if (block) {
@@ -194,7 +262,7 @@ const ScheduleSection = () => {
 
       iteration += 1;
 
-      if (iteration === incoming.length + 3) clearInterval(interval);
+      if (iteration === maxIterations + 3) clearInterval(interval);
     }, 100);
   };
 
@@ -268,7 +336,7 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className="gradient-text">schedule</h2>
       </div>
-      <motion.ul className="flex flex-col pt-40">
+      <motion.ul className="flex flex-col pt-24">
         {blocks.map(({ name, time, location, description, status }, i) => {
           return (
             <ScheduleBlock
