@@ -120,7 +120,12 @@ const AppForm = ({ app }: Props) => {
         <ApplicationDropdown
           fieldName="role"
           name="role"
-          options={[]}
+          options={[
+            { value: "volunteer", label: "Volunteer" },
+            { value: "mentor", label: "Mentor" },
+            { value: "judge", label: "Judge" },
+            { value: "sponsor", label: "Sponsor" },
+          ]}
           control={control}
           error={errors.role}
         />
@@ -128,7 +133,7 @@ const AppForm = ({ app }: Props) => {
           fieldName="dietary restrictions"
           name="diet"
           options={[
-            { value: "None", label: "None" },
+            { value: "none", label: "None" },
             { value: "vegan", label: "Vegan" },
             { value: "vegetarian", label: "Vegetarian" },
             { value: "kosher", label: "Kosher" },

@@ -9,7 +9,7 @@ export const POST = async (req: NextRequest) => {
   const session = await getServerSession(authOptions);
   const { email } = session!.user;
 
-  const app = await prisma.hackerApp.upsert({
+  const app = await prisma.volunteerApp.upsert({
     where: {
       userEmail: email,
     },

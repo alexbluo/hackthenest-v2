@@ -39,6 +39,7 @@ model VolunteerApp {
   firstName   String?
   lastName    String?
   phone       String?
+  age         Int?    @ignore
   role        String? // volunteer, mentor, judge, sponsor
   affiliation String? // school/company
   diet        String?
