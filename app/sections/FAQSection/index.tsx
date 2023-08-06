@@ -68,10 +68,11 @@ const questions: Question[][] = [
         </>
       ),
     },
+    // old bus sentence deleted, check github history
     {
       question: "How do I get to the venue?",
       answer:
-        "We plan to provide buses running from Howard County to the venue with stops in Montgomery County, DC, and Northern Virginia. Please consider carpooling before taking a spot, as we have a limited capacity. If you are flying in, we'll have 5-10% discount codes for major airlines.",
+        "Carpooling is a great option if you plan on coming with friends! We are currently working on providing buses from HoCo to the venue with stops in MoCo, DC, and Fairfax County. If you are flying in, we'll have 5-10% discount codes for major airlines which will be sent to your email after registering.",
     },
     {
       question: "What are the overnight arrangements?",

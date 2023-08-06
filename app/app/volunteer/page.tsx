@@ -15,17 +15,17 @@ const HackerApp = async () => {
   });
 
   // user can't be null because of middleware redirect > login > dashboard upsert
-  if (completed(user!.completed, "HACKERAPP")) redirect("/dashboard");
+  if (completed(user!.completed, "VOLUNTEERAPP")) redirect("/dashboard");
 
   // because undefined !== null...
   const app =
-    (await prisma.hackerApp.findUnique({
+    (await prisma.volunteerApp.findUnique({
       where: { userEmail: email },
     })) ?? undefined;
 
   return (
     <>
-      <h2 className="gradient-text mb-8">hacker registration</h2>
+      <h2 className="gradient-text mb-8">volunteer registration</h2>
       <AppForm app={app} />
     </>
   );

@@ -9,7 +9,7 @@ const FrontSection = () => {
   const [name, animateName] = useHackerText("Hack the Nest");
   const [date, animateDate] = useHackerText("9.23.23 - 9.24.23");
   const [location, animateLocation] = useHackerText("Sterling, VA");
-  const [apply, animateApply] = useHackerText("Apply Now!");
+  const [register, animateRegister] = useHackerText("Register Now!");
 
   useEffect(() => {
     animateName();
@@ -34,9 +34,9 @@ const FrontSection = () => {
           <Link
             className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black text-opacity-90 shadow-md shadow-grey duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
             href="/login"
-            onMouseOver={() => animateApply({ duration: 500 })}
+            onMouseOver={() => animateRegister({ duration: 500 })}
           >
-            {apply}
+            {register}
           </Link>
         </div>
       </div>

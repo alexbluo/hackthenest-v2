@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HackerApp } from "@prisma/client";
+import { HackerApp, VolunteerApp } from "@prisma/client";
 import { motion } from "framer-motion";
 import { FieldError, UseFormRegister } from "react-hook-form";
 
@@ -7,13 +7,13 @@ interface Props {
   // display name
   fieldName: string;
   // internal name
-  name: keyof HackerApp;
+  name: keyof HackerApp | keyof VolunteerApp;
   // placeholder display text
   placeholder: string;
   // max length of characters for phone number
   maxLength?: number;
   // register function from RHF
-  register: UseFormRegister<HackerApp>;
+  register: UseFormRegister<HackerApp> | UseFormRegister<VolunteerApp>;
   // error message
   error: FieldError | undefined;
 }

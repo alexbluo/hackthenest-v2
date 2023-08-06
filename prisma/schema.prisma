@@ -39,7 +39,6 @@ model VolunteerApp {
   firstName   String?
   lastName    String?
   phone       String?
-  age         Int?
   role        String? // volunteer, mentor, judge, sponsor
   affiliation String? // school/company
   diet        String?
@@ -55,7 +54,7 @@ enum Item {
 }
 
 model Completed {
-  item      Item     @id
-  time      DateTime @default(now())
-  user      User[]
+  item Item     @id
+  time DateTime @default(now())
+  user User[]
 }

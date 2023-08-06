@@ -1,4 +1,4 @@
-import { HackerApp } from "@prisma/client";
+import { HackerApp, VolunteerApp } from "@prisma/client";
 import { Control, Controller, FieldError, Merge } from "react-hook-form";
 import Select from "react-select";
 
@@ -11,11 +11,11 @@ interface Props {
   // displayed above field
   fieldName: string;
   // internal name
-  name: keyof HackerApp;
+  name: keyof HackerApp | keyof VolunteerApp;
   // options list
   options: Option[];
   // control from RHF
-  control: Control<HackerApp>;
+  control: Control<HackerApp> | Control<VolunteerApp>;
   // error message
   error:
     | Merge<
