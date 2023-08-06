@@ -15,7 +15,7 @@ interface Props {
   // options list
   options: Option[];
   // control from RHF
-  control: Control<HackerApp> | Control<VolunteerApp>;
+  control: Control<any>;
   // error message
   error:
     | Merge<

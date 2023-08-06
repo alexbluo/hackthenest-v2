@@ -13,7 +13,7 @@ interface Props {
   // max length of characters for phone number
   maxLength?: number;
   // register function from RHF
-  register: UseFormRegister<HackerApp> | UseFormRegister<VolunteerApp>;
+  register: UseFormRegister<any>;
   // error message
   error: FieldError | undefined;
 }
