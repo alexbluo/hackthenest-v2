@@ -57,7 +57,7 @@ const saturday: Block[] = [
   },
   {
     name: "Opening Ceremony",
-    time: "21:30 - 22:00",
+    time: "8:00 - 9:00",
     location: "Room 1",
     description: "Join us for an exciting kick-off to the weekend!",
     status: "neutral",
@@ -80,7 +80,7 @@ const saturday: Block[] = [
   },
   {
     name: "Lunch",
-    time: "12:00 - 1:00",
+    time: "11:00 - 1:00",
     location: "",
     description: "Recharge with Subway!",
     status: "neutral",
@@ -109,10 +109,11 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Typeracer",
-    time: "4:00 - 5:00",
+    name: "Worst Website Design Contest",
+    time: "3:00 - 4:00",
     location: "",
-    description: "Put your typing skills to the test!",
+    description:
+      "We usually try to aim for the most intuitively designed website, but what happens when you do the opposite?",
     status: "neutral",
   },
   {
@@ -124,13 +125,13 @@ const saturday: Block[] = [
   },
   {
     name: "S'mores",
-    time: "9:00 - 10:00",
+    time: "8:00 - 9:00",
     location: "",
     description: "",
     status: "neutral",
   },
   {
-    name: "Smash Tournament",
+    name: "Smash Bros",
     time: "10:00 - 11:00",
     location: "",
     description: "",
@@ -158,23 +159,22 @@ const sunday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Check-in",
-    time: "7:00 - 11:00",
-    location: "Lobby",
-    description:
-      "Please have your QR codes ready! This helps us identify your name, shirt size, and whether you are a hacker or volunteer so that we can direct you accordingly. Late check-in will last throughout the entire day!",
+    name: "Movie Night",
+    time: "12:00 - 2:00",
+    location: "",
+    description: "",
     status: "neutral",
   },
   {
-    name: "Breakfast1",
-    time: "9:00 - 10:00",
+    name: "Cookie Debugging",
+    time: "2:00",
     location: "",
     description: "Start your hacking with bagels and cream cheese!",
     status: "neutral",
   },
   {
-    name: "Opening Ceremony1",
-    time: "21:30 - 22:00",
+    name: "Breakfast",
+    time: "",
     location: "Room 1",
     description: "Join us for an exciting kick-off to the weekend!",
     status: "neutral",

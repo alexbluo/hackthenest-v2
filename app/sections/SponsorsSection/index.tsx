@@ -69,6 +69,12 @@ const SponsorsSection = () => {
             tier="bronze"
           />
           <Sponsor
+            src="/verbwire.svg"
+            alt="Verbwire bronze sponsorship"
+            href="https://www.verbwire.com/"
+            tier="bronze"
+          />
+          <Sponsor
             src="/wolfram.png"
             alt="Wolfram bronze sponsorship"
             href="https://www.wolframalpha.com/"
@@ -78,6 +84,12 @@ const SponsorsSection = () => {
             src="/no-starch-press.png"
             alt="No Starch Press Bronze Sponsorships"
             href="https://nostarch.com/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/standout-stickers.png"
+            alt="StandOut Stickers bronze sponsorship"
+            href="http://hackp.ac/mlh-StandOutStickers-hackathons"
             tier="bronze"
           />
         </div>

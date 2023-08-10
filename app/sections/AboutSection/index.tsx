@@ -6,17 +6,16 @@ const AboutSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-br-none sm:rounded-tl-3xl sm:rounded-tr-3xl">
         <h2 className="gradient-text">about</h2>
       </div>
-      <article className="-mx-8 flex w-full flex-col rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none md:flex-row">
-        <div className="xl:w-1/2">
-          This September, join 300 hackers for the DMV area&apos;s largest high
-          school hackathon. Hack the Nest is a collaborative coding event where
-          participants (also called hackers) bring their innovative ideas to
-          life in just one weekend. Whether it&apos;s 2am-debugging with cookies
-          or ping-pong without paddles, our ultimate goal is to host an
-          unforgettable experience for an audience normally barred from
-          hackathons.
-        </div>
-        <div className="xl:w-1/2"></div>
+      <article className="-mx-8 flex flex-col rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none md:flex-row">
+        {/* <div className="xl:w-1/2"> */}
+        This September, join 300 hackers for the DMV area&apos;s largest high
+        school hackathon. Hack the Nest is a collaborative coding event where
+        participants (also called hackers) bring their innovative ideas to life
+        in just one weekend. Whether it&apos;s 2am-debugging with cookies or
+        ping-pong without paddles, our ultimate goal is to host an unforgettable
+        experience for an audience normally barred from hackathons.
+        {/* </div> */}
+        {/* <div className="xl:w-1/2"></div> */}
       </article>
       <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="36" caption="hours">
@@ -50,6 +49,13 @@ const AboutSection = () => {
               Arduino UNO (x4), No Starch Press Books (x4), $25 AoPS Gift Card
               (x4)
             </p>
+            <p className="font-medium">
+              Most Innovative Use Of Verbwire API (x2)
+            </p>
+            <p>$25 gift card for each team member </p>
+            <p>API Credits for whole team</p>
+            <p className="font-medium">Creative Use Of Verbwire API (x20)</p>
+            <p>API Credits for whole team</p>
           </div>
           Our full list of prizes with details will soon be available on
           Devpost.
