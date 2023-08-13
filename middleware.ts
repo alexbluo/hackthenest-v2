@@ -7,7 +7,8 @@ export const middleware = async (req: NextRequest) => {
 
   if (url.pathname.startsWith("/api/admin")) {
     if (token?.email !== "ADMIN") {
-      return NextResponse.json(null, { status: 400 });
+      url.pathname = "/admin/login";
+      return NextResponse.redirect(url);
     }
   }
 
