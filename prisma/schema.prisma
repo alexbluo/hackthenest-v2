@@ -54,6 +54,7 @@ enum Item {
   RSVP
 }
 
+// time is broken bc connect or create, don't know how to swap id in prisma too scary
 model Completed {
   item Item     @id
   time DateTime @default(now())
