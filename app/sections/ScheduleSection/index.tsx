@@ -1,7 +1,12 @@
 "use client";
 
-import React, { ReactNode, useState } from "react";
-import { motion, useCycle } from "framer-motion";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
+import {
+  motion,
+  useCycle,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import dynamic from "next/dynamic";
 import useWindowWidth from "utils/useWindowWidth";
 
@@ -206,10 +211,24 @@ const sunday: Block[] = [
 ];
 
 // TODO: cap height with scroll
+// TODO: add shadow on top/bottom that fades on scroll, move scroll bar closer?, edit scroll bar style to not hide?
 const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("Saturday", "Sunday");
   const [blocks, setBlocks] = useState(saturday);
   const width = useWindowWidth();
+
+  // for scroll shadow and bird animation
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  const [shadow, setShadow] = useState<boolean>(true);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    // initial value of latest is 1 so shadow doesnt render without this
+    if (shadow && latest === 1) return;
+
+    if (latest >= 0.80) setShadow(false);
+    else setShadow(true);
+  });
 
   // flush randomly consistently persists if cycled right after page load for some reason...
   const glissando = () => {
@@ -328,26 +347,41 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className="gradient-text">schedule</h2>
       </div>
-      <motion.ul className="flex flex-col pt-24">
-        {blocks.map(({ name, time, location, description, status }, i) => {
-          return (
-            <ScheduleBlock
-              name={name}
-              time={time}
-              location={location}
-              width={width}
-              status={status}
-              handleHoverStart={() => handleHoverStart(i)}
-              handleHoverEnd={() => handleHoverEnd(i)}
-              handleTap={() => handleTap(i)}
-              handleClose={() => handleClose(i)}
-              key={name + time + location + description}
-            >
-              {description}
-            </ScheduleBlock>
-          );
-        })}
-      </motion.ul>
+      <div className="grid grid-rows-2 sm:grid-cols-2 sm:grid-rows-1 gap-16">
+        {/* overflow hidden for extra shadow edges */}
+        <div className="w-full overflow-hidden">
+          <motion.ul
+            className="custom-scrollbar relative mt-12 flex max-h-[36rem] flex-col overflow-y-scroll pt-12"
+            ref={containerRef}
+          >
+            {blocks.map(({ name, time, location, description, status }, i) => {
+              return (
+                <ScheduleBlock
+                  name={name}
+                  time={time}
+                  location={location}
+                  width={width}
+                  status={status}
+                  handleHoverStart={() => handleHoverStart(i)}
+                  handleHoverEnd={() => handleHoverEnd(i)}
+                  handleTap={() => handleTap(i)}
+                  handleClose={() => handleClose(i)}
+                  key={name + time + location + description}
+                >
+                  {description}
+                </ScheduleBlock>
+              );
+            })}
+          </motion.ul>
+          <div
+            className={`h-4 rotate-180 shadow-lg duration-200 ease-in-out ${
+              shadow ? "shadow-black" : "shadow-transparent"
+            }`}
+          ></div>
+          <p className="text-gold text-xs">(scroll me!)</p>
+        </div>
+        <div className=""></div>
+      </div>
     </section>
   );
 };

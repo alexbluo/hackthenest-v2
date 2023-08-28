@@ -27,11 +27,6 @@ const questions: Question[][] = [
         "That's completely fine - in fact, many participants are first time hackers and beginners!",
     },
     {
-      question: "Why is there an application?",
-      answer:
-        "The application isn't rigorous at all; we use the term more like registration in the unlikely case that we shoot way over our logistical limit. It only takes a few minutes to fill out and you can always change your mind about attending as the event approaches.",
-    },
-    {
       question: "What if I don't have a project idea?",
       answer:
         "You definitely don't need to have an idea beforehand! Remember that your project can come in any form you want - creative, funny, innovative, and more - and you'll have teammates to help ideate during the weekend!",
@@ -41,17 +36,17 @@ const questions: Question[][] = [
       answer:
         "You're not required to make a project to attend, but we recommend that you do in order to get the full hackathon experience.",
     },
+    {
+      question: "How do teams work?",
+      answer:
+        "There are up to four people per team and you get to choose who you work with, so bring your friends along! Don't worry if you don't have a team; we have a dedicated team formation Discord channel as well as a team formation session at the beginning of the event.",
+    },
   ],
   [
     {
       question: "Can I attend?",
       answer:
         "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school, we'd love to have you as a mentor, volunteer, or sponsor!",
-    },
-    {
-      question: "How do teams work?",
-      answer:
-        "There are up to four people per team and you get to choose who you work with, so bring your friends along! Don't worry if you don't have a team; we have a dedicated team formation Discord channel as well as a team formation session at the beginning of the event.",
     },
     {
       question: "Where is the hackathon being held?",
@@ -80,9 +75,14 @@ const questions: Question[][] = [
         "We'll have a dedicated sleeping room and a limited supply of airbeds and sleeping bags on a first come first serve basis. Feel free to bring your own blanket, bed, or... bouncy castle?",
     },
     {
+      question: "Who organized this event?",
+      answer:
+        "Hack the Nest was built by high schoolers from River Hill and Glenelg High School in Howard County, Maryland. We are supported by MLH, Hack Club, and our generous teachers and sponsors.",
+    },
+    {
       question: "I have more questions!",
       answer:
-        "Please direct any additional questions to hello@hackthenest.org and we'll get back to you as soon as possible!",
+        "Please direct any other questions to hello@hackthenest.org and we'll get back to you as soon as possible!",
     },
   ],
 ];
