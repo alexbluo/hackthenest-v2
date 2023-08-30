@@ -39,9 +39,9 @@ const AboutSection = () => {
             <p className="font-medium">
               Cybersecurity Track sponsored by C-HIT
             </p>
-            <p>$1,000</p>
-            <p className="font-medium">Collins Aerospace Prize</p>
             <p>$500</p>
+            {/* <p className="font-medium">Collins Aerospace Prize</p> */}
+            {/* <p>$500</p> */}
             <p className="font-medium">Patient Safety Technology Challenge</p>
             <p>$500</p>
             <p className="font-medium">Beginner Track</p>

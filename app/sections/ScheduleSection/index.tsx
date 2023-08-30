@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import {
   motion,
   useCycle,
@@ -226,7 +226,7 @@ const ScheduleSection = () => {
     // initial value of latest is 1 so shadow doesnt render without this
     if (shadow && latest === 1) return;
 
-    if (latest >= 0.80) setShadow(false);
+    if (latest >= 0.8) setShadow(false);
     else setShadow(true);
   });
 
@@ -347,7 +347,7 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className="gradient-text">schedule</h2>
       </div>
-      <div className="grid grid-rows-2 sm:grid-cols-2 sm:grid-rows-1 gap-16">
+      <div className="grid grid-rows-2 gap-16 sm:grid-cols-2 sm:grid-rows-1">
         {/* overflow hidden for extra shadow edges */}
         <div className="w-full overflow-hidden">
           <motion.ul
@@ -378,7 +378,7 @@ const ScheduleSection = () => {
               shadow ? "shadow-black" : "shadow-transparent"
             }`}
           ></div>
-          <p className="text-gold text-xs">(scroll me!)</p>
+          <p className="text-xs text-gold">(scroll me!)</p>
         </div>
         <div className=""></div>
       </div>

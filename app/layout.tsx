@@ -26,7 +26,7 @@ const flow_circular = Flow_Circular({
 export const metadata: Metadata = {
   title: "Hack the Nest",
   description:
-    "This September, join 300 hackers for the DMV area&apos;s largest high school hackathon. Hack the Nest is a 36-hour collaborative coding event/competition where participants (also called hackers) create cool new tech projects from scratch. Whether it&apos;s 2am-debugging with cookies or ping-pong without paddles, our ultimate goal is to host an unforgettable experience for an audience normally barred from hackathons.",
+    "This September, join 300 hackers for the DMV area's largest high school hackathon. Hack the Nest is a 36-hour collaborative coding event/competition where participants (also called hackers) create cool new tech projects from scratch. Whether it's 2am-debugging with cookies or ping-pong without paddles, our ultimate goal is to host an unforgettable experience for an audience normally barred from hackathons.",
   metadataBase: new URL("https://www.hackthenest.org"),
   alternates: {
     canonical: "/",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url: "",
     title: "Hack the Nest",
     description:
-      "This September, join 300 hackers for the DMV area&apos;s largest high school hackathon. Hack the Nest is a 36-hour collaborative coding event/competition where participants (also called hackers) create cool new tech projects from scratch. Whether it&apos;s 2am-debugging with cookies or ping-pong without paddles, our ultimate goal is to host an unforgettable experience for an audience normally barred from hackathons.",
+      "This September, join 300 hackers for the DMV area's largest high school hackathon. Hack the Nest is a 36-hour collaborative coding event/competition where participants (also called hackers) create cool new tech projects from scratch. Whether it's 2am-debugging with cookies or ping-pong without paddles, our ultimate goal is to host an unforgettable experience for an audience normally barred from hackathons.",
     siteName: "Hack the Nest",
     images: [{ url: "/banner.png" }],
   },

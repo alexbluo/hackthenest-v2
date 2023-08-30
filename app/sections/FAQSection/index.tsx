@@ -29,12 +29,7 @@ const questions: Question[][] = [
     {
       question: "What if I don't have a project idea?",
       answer:
-        "You definitely don't need to have an idea beforehand! Remember that your project can come in any form you want - creative, funny, innovative, and more - and you'll have teammates to help ideate during the weekend!",
-    },
-    {
-      question: "Do I have to make a project?",
-      answer:
-        "You're not required to make a project to attend, but we recommend that you do in order to get the full hackathon experience.",
+        "You definitely don't need to have an idea beforehand! Remember that your project can come in any form you want - creative, funny, innovative, and more - and you'll have teammates to help ideate during the weekend! You're not required to make a project to attend, but we recommend that you do in order to get the full hackathon experience.",
     },
     {
       question: "How do teams work?",
@@ -49,7 +44,7 @@ const questions: Question[][] = [
         "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school, we'd love to have you as a mentor, volunteer, or sponsor!",
     },
     {
-      question: "Where is the hackathon being held?",
+      question: "How do I get to the venue?",
       answer: (
         <>
           Hack the Nest is being held in-person at{" "}
@@ -59,15 +54,12 @@ const questions: Question[][] = [
           >
             21680 Ridgetop Circle, #150 Sterling, Va 20166
           </a>{" "}
-          thanks to our generous sponsor theCoderSchool!
+          thanks to our generous sponsor theCoderSchool! Unfortunately, we will
+          not be able to provide buses or travel reimbursement this year (this
+          year - wink, wink). We encourage you to carpool if you are coming with
+          friends!
         </>
       ),
-    },
-    // old bus sentence deleted, check github history
-    {
-      question: "How do I get to the venue?",
-      answer:
-        "Carpooling is a great option if you plan on coming with friends! We are currently working on providing buses from HoCo to the venue with stops in MoCo, DC, and Fairfax County. If you are flying in, we'll have 5-10% discount codes for major airlines which will be sent to your email after registering.",
     },
     {
       question: "What are the overnight arrangements?",
