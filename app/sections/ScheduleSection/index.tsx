@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import dynamic from "next/dynamic";
 import useWindowWidth from "utils/useWindowWidth";
+import ScrollIndicator from "./ScrollIndicator";
 
 // must be lazy loaded in order to prevent framer motion client server mismatch on width
 const ScheduleBlock = dynamic(() => import("./ScheduleBlock"), {
@@ -50,21 +51,21 @@ const saturday: Block[] = [
     time: "7:00 - 11:00",
     location: "Lobby",
     description:
-      "Please have your QR codes ready! This helps us identify your name, shirt size, and whether you are a hacker or volunteer so that we can direct you accordingly. Late check-in will last throughout the entire day!",
+      "Please have your QR codes ready! This helps us identify your name, shirt size, and whether you are a hacker or volunteer so that we can direct you accordingly. Late check-in will last throughout the entire day.",
     status: "neutral",
   },
   {
     name: "Breakfast",
-    time: "9:00 - 10:00",
+    time: "8:00 - 10:00",
     location: "",
-    description: "Start your hacking with bagels and cream cheese!",
+    description: "Start your hacking with some baked goods!",
     status: "neutral",
   },
   {
     name: "Opening Ceremony",
     time: "8:00 - 9:00",
     location: "Room 1",
-    description: "Join us for an exciting kick-off to the weekend!",
+    description: "An exciting kickoff to the weekend!",
     status: "neutral",
   },
   {
@@ -72,7 +73,7 @@ const saturday: Block[] = [
     time: "9:30 - 10:00",
     location: "",
     description:
-      "Find your perfect team in this pitch-style team formation session!",
+      "Find your perfect team in this pitch-based team formation session.",
     status: "neutral",
   },
   {
@@ -87,7 +88,7 @@ const saturday: Block[] = [
     name: "Lunch",
     time: "11:00 - 1:00",
     location: "",
-    description: "Recharge with Subway!",
+    description: "Wouldn't be a hackathon without pizza :)",
     status: "neutral",
   },
   {
@@ -128,13 +129,13 @@ const saturday: Block[] = [
     description: "Keep yourself going with some Chick-fil-A!",
     status: "neutral",
   },
-  {
-    name: "S'mores",
-    time: "8:00 - 9:00",
-    location: "",
-    description: "",
-    status: "neutral",
-  },
+  // {
+  //   name: "S'mores",
+  //   time: "8:00 - 9:00",
+  //   location: "",
+  //   description: "",
+  //   status: "neutral",
+  // },
   {
     name: "Smash Bros",
     time: "10:00 - 11:00",
@@ -150,6 +151,7 @@ const sunday: Block[] = [
       <div className="flex w-full items-center justify-between">
         <p>Sunday</p>
         <svg
+          className="stroke-gold"
           height="16px"
           width="16px"
           xmlns="http://www.w3.org/2000/svg"
@@ -167,51 +169,70 @@ const sunday: Block[] = [
     name: "Movie Night",
     time: "12:00 - 2:00",
     location: "",
-    description: "",
+    description:
+      "Follow Mark Zuckerberg not on Facebook, but through The Social Network!",
     status: "neutral",
   },
   {
     name: "Cookie Debugging",
-    time: "2:00",
+    time: "2:00 - 3:00",
     location: "",
-    description: "Start your hacking with bagels and cream cheese!",
+    description: "Bring us a bug and we'll give you cookies in return!",
     status: "neutral",
   },
   {
     name: "Breakfast",
-    time: "",
+    time: "8:00 - 9:00",
     location: "Room 1",
-    description: "Join us for an exciting kick-off to the weekend!",
+    description: "Final stretch! Energize with bagels & cream cheese.",
     status: "neutral",
   },
   {
-    name: "Team Formation1",
-    time: "9:30 - 10:00",
+    name: "Speed Dating Interviews",
+    time: "10:00 - 11:00",
     location: "",
     description:
-      "Find your perfect team in this pitch-style team formation session!",
+      "Tech companies commonly hire via technical interviews, 30 - 60 minute coding challenges which involve both simple and complex data structures and algorithms. Practice your technical interview in this cooperative speed dating style workshop! ",
     status: "neutral",
   },
   {
-    name: "Sponsor Fair1",
-    time: "10:00 - 12:00",
+    name: "Lunch",
+    time: "11:00 - 1:00",
     location: "",
-    description:
-      "Come chat with our sponsors, collect swag, and learn about recruiting!",
+    description: "",
     status: "neutral",
   },
   {
-    name: "Intro to React1",
+    name: "Chess Tournament",
     time: "2:00 - 3:00",
     location: "",
-    description:
-      "Web development has come a long way since the early days of plain HTML tables; today, we have powerful JavaScript frameworks such as React, created by Facebook, which open up far more possibilities in your next website! Explore the fundamentals of the world's most popular and important frontend framework by creating a game of Whac-A-Mole!",
+    description: "",
+    status: "neutral",
+  },
+  {
+    name: "Korean Fire Noodle Challenge",
+    time: "2:00 - 3:00",
+    location: "",
+    description: "Get fired up and ready for demos!",
+    status: "neutral",
+  },
+  {
+    name: "Judging & Expo",
+    time: "4:00 - 6:00",
+    location: "",
+    description: "",
+    status: "neutral",
+  },
+  {
+    name: "Closing Ceremony",
+    time: "6:00 - 6:30",
+    location: "",
+    description: "",
     status: "neutral",
   },
 ];
 
-// TODO: cap height with scroll
-// TODO: add shadow on top/bottom that fades on scroll, move scroll bar closer?, edit scroll bar style to not hide?
+// TODO: add gcal link
 const ScheduleSection = () => {
   const [day, cycleDay] = useCycle("Saturday", "Sunday");
   const [blocks, setBlocks] = useState(saturday);
@@ -347,9 +368,9 @@ const ScheduleSection = () => {
       <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-full">
         <h2 className="gradient-text">schedule</h2>
       </div>
-      <div className="grid grid-rows-2 gap-16 sm:grid-cols-2 sm:grid-rows-1">
+      <div className="flex flex-col gap-12 xl:flex-row">
         {/* overflow hidden for extra shadow edges */}
-        <div className="w-full overflow-hidden">
+        <div className="w-full xl:w-1/2">
           <motion.ul
             className="custom-scrollbar relative mt-12 flex max-h-[36rem] flex-col overflow-y-scroll pt-12"
             ref={containerRef}
@@ -372,13 +393,15 @@ const ScheduleSection = () => {
                 </ScheduleBlock>
               );
             })}
+            <div className="absolute bottom-4 right-8">
+              <ScrollIndicator scrollYProgress={scrollYProgress} />
+            </div>
           </motion.ul>
           <div
             className={`h-4 rotate-180 shadow-lg duration-200 ease-in-out ${
               shadow ? "shadow-black" : "shadow-transparent"
             }`}
           ></div>
-          <p className="text-xs text-gold">(scroll me!)</p>
         </div>
         <div className=""></div>
       </div>

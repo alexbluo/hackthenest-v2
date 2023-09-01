@@ -15,7 +15,6 @@ interface Props {
   handleClose: () => void;
 }
 
-// TODO: add gcal link
 const ScheduleBlock = ({
   name,
   time,

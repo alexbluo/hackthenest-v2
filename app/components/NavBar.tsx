@@ -23,7 +23,7 @@ const NavBar = async () => {
 
       <ul className="hidden gap-12 text-gold md:flex">
         <NavItem to="about">about</NavItem>
-        {/* <NavItem to="schedule">Schedule</NavItem> */}
+        <NavItem to="schedule">schedule</NavItem>
         <NavItem to="faq">faq</NavItem>
         <NavItem to="sponsors">sponsors</NavItem>
         <Link

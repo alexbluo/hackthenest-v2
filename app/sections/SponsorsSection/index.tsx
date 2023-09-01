@@ -52,6 +52,12 @@ const SponsorsSection = () => {
             href="https://www.patientsafetytech.com/"
             tier="silver"
           />
+          <Sponsor
+            src="/gramaco.png"
+            alt="Gramaco silver sponsorship"
+            href="https://www.gramaco.com/"
+            tier="silver"
+          />
         </div>
 
         {/* bronze */}

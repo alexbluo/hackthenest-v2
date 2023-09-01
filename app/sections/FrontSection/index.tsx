@@ -31,6 +31,9 @@ const FrontSection = () => {
             <div>&nbsp;•&nbsp;</div>
             <span className="whitespace-nowrap">{location}</span>
           </div>
+          <p className="text-md mx-auto -mt-2 -mb-4 text-center font-mono text-ice font-bold sm:text-lg">
+            Registration closes September 6
+          </p>
           <Link
             className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black text-opacity-90 shadow-md shadow-grey duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
             href="/login"
