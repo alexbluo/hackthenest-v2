@@ -53,11 +53,14 @@ const questions: Question[][] = [
             href="https://www.google.com/maps/dir/?api=1&destination=21680+Ridgetop+Circle+150+Sterling+Va+20166&travelmode=driving"
           >
             21680 Ridgetop Circle, #150 Sterling, Va 20166
-          </a>{" "}
-          thanks to our generous sponsor theCoderSchool! Unfortunately, we will
-          not be able to provide buses or travel reimbursement this year (this
-          year - wink, wink). We encourage you to carpool if you are coming with
-          friends!
+          </a>
+          . We will be able to provide travel reimbursements thanks to{" "}
+          <a
+            className="cursor-pointer text-blue-light underline"
+            href="https://gas.hackclub.com/"
+          >
+            Hack Club&apos;s new Gas Fund initiative!
+          </a>
         </>
       ),
     },

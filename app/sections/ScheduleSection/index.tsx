@@ -10,6 +10,7 @@ import {
 import dynamic from "next/dynamic";
 import useWindowWidth from "utils/useWindowWidth";
 import ScrollIndicator from "./ScrollIndicator";
+import { boolean } from "zod";
 
 // must be lazy loaded in order to prevent framer motion client server mismatch on width
 const ScheduleBlock = dynamic(() => import("./ScheduleBlock"), {
@@ -242,6 +243,7 @@ const ScheduleSection = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
   const [shadow, setShadow] = useState<boolean>(true);
+  const [indicator, setIndicator] = useState<boolean>(true)
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     // initial value of latest is 1 so shadow doesnt render without this
@@ -249,7 +251,11 @@ const ScheduleSection = () => {
 
     if (latest >= 0.8) setShadow(false);
     else setShadow(true);
+
+    // hide indicator on scroll
+    setIndicator(false)
   });
+
 
   // flush randomly consistently persists if cycled right after page load for some reason...
   const glissando = () => {
@@ -394,7 +400,7 @@ const ScheduleSection = () => {
               );
             })}
             <div className="absolute bottom-4 right-8">
-              <ScrollIndicator scrollYProgress={scrollYProgress} />
+              <ScrollIndicator visible={indicator} />
             </div>
           </motion.ul>
           <div
