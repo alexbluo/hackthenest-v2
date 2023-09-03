@@ -8,9 +8,9 @@ import {
   useScroll,
 } from "framer-motion";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import useWindowWidth from "utils/useWindowWidth";
 import ScrollIndicator from "./ScrollIndicator";
-import { boolean } from "zod";
 
 // must be lazy loaded in order to prevent framer motion client server mismatch on width
 const ScheduleBlock = dynamic(() => import("./ScheduleBlock"), {
@@ -243,7 +243,8 @@ const ScheduleSection = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
   const [shadow, setShadow] = useState<boolean>(true);
-  const [indicator, setIndicator] = useState<boolean>(true)
+  const [indicator, setIndicator] = useState<boolean>(true);
+  const [bird, setBird] = useState<"up" | "down">("up");
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     // initial value of latest is 1 so shadow doesnt render without this
@@ -252,10 +253,12 @@ const ScheduleSection = () => {
     if (latest >= 0.8) setShadow(false);
     else setShadow(true);
 
-    // hide indicator on scroll
-    setIndicator(false)
-  });
+    if (latest < 0.5) setBird("up");
+    else setBird("down");
 
+    // hide indicator on scroll
+    setIndicator(false);
+  });
 
   // flush randomly consistently persists if cycled right after page load for some reason...
   const glissando = () => {
@@ -409,7 +412,22 @@ const ScheduleSection = () => {
             }`}
           ></div>
         </div>
-        <div className=""></div>
+        <div className="w-full p-12 xl:w-1/2">
+          <div className="relative flex aspect-square items-center justify-center">
+            <Image
+              className={bird === "up" ? "visible" : "hidden"}
+              src="/bird-up.png"
+              alt="schedule bird up"
+              fill
+            />
+            <Image
+              className={bird === "down" ? "visible" : "hidden"}
+              src="/bird-down.png"
+              alt="schedule bird down"
+              fill
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
