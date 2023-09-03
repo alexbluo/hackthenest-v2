@@ -36,6 +36,11 @@ const questions: Question[][] = [
       answer:
         "There are up to four people per team and you get to choose who you work with, so bring your friends along! Don't worry if you don't have a team; we have a dedicated team formation Discord channel as well as a team formation session at the beginning of the event.",
     },
+    {
+      question: "Who organized this event?",
+      answer:
+        "Hack the Nest was built by high schoolers from River Hill and Glenelg High School in Howard County, Maryland. We are supported by MLH, Hack Club, and our generous teachers and sponsors.",
+    },
   ],
   [
     {
@@ -54,25 +59,33 @@ const questions: Question[][] = [
           >
             21680 Ridgetop Circle, #150 Sterling, Va 20166
           </a>
-          . We will be able to provide travel reimbursements thanks to{" "}
+          .
+        </>
+      ),
+    },
+    {
+      question: "Are there travel reimbursements?",
+      answer: (
+        <>
+          We will be able to provide travel reimbursements thanks to{" "}
           <a
             className="cursor-pointer text-blue-light underline"
             href="https://gas.hackclub.com/"
           >
-            Hack Club&apos;s new Gas Fund initiative!
+            Hack Club&apos;s new Gas Fund initiative
           </a>
+          !
         </>
       ),
+    },
+    {
+      question: "Can I leave early/arrive late?",
+      answer: "Feel free to arrive, leave, and come back at any time!",
     },
     {
       question: "What are the overnight arrangements?",
       answer:
         "We'll have a dedicated sleeping room and a limited supply of airbeds and sleeping bags on a first come first serve basis. Feel free to bring your own blanket, bed, or... bouncy castle?",
-    },
-    {
-      question: "Who organized this event?",
-      answer:
-        "Hack the Nest was built by high schoolers from River Hill and Glenelg High School in Howard County, Maryland. We are supported by MLH, Hack Club, and our generous teachers and sponsors.",
     },
     {
       question: "I have more questions!",

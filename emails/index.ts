@@ -5,6 +5,8 @@ import { ServerClient } from "postmark";
 
 dotenv.config();
 
+console.log(process.env.POSTMARK_API_TOKEN);
+
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
 client.sendEmailBatchWithTemplates([
