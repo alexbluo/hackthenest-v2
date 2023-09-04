@@ -1,11 +1,15 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "db";
+import completed from "utils/completed";
 
-// get emails of all users with volunteer app and rsvp submitted
 export const GET = async () => {
-  const users = await prisma.user.findMany({
-    where: {},
-  });
+  const users = await prisma.user.findMany({ include: { completed: true } });
 
-  return NextResponse.json({ users });
+  const emails = users
+    .filter((user) => completed(user.completed, "VOLUNTEERAPP"))
+    .map((user) => user.email);
+
+  return NextResponse.json({
+    emails,
+  });
 };

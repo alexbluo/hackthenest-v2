@@ -48,9 +48,7 @@ export const metadata: Metadata = {
   },
 };
 
-// TODO: volunteer app
 // TODO: admin table and qr check in
-// TODO: add designs for right side of about and schedule
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html

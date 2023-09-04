@@ -6,7 +6,7 @@ export const GET = async () => {
   const users = await prisma.user.findMany({ include: { completed: true } });
 
   const emails = users
-    .filter((user) => completed(user.completed, "HACKERAPP"))
+    .filter((user) => !completed(user.completed, "HACKERAPP"))
     .map((user) => user.email);
 
   return NextResponse.json({

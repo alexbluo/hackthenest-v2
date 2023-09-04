@@ -418,12 +418,14 @@ const ScheduleSection = () => {
               className={bird === "up" ? "visible" : "hidden"}
               src="/bird-up.png"
               alt="schedule bird up"
+              priority
               fill
             />
             <Image
               className={bird === "down" ? "visible" : "hidden"}
               src="/bird-down.png"
               alt="schedule bird down"
+              priority
               fill
             />
           </div>
