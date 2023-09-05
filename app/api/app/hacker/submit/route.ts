@@ -47,7 +47,6 @@ export const POST = async (req: NextRequest) => {
       email: app.userEmail,
     },
     MessageStream: "outbound",
-    TrackOpens: true,
   });
 
   return NextResponse.json(app);
