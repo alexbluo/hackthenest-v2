@@ -10,12 +10,13 @@ const emails = [
 
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
+// edit other routes to include name
 client.sendEmailBatchWithTemplates(
   emails.map((email) => {
     return {
       From: "hello@hackthenest.org",
       To: email,
-      TemplateAlias: "deadlineNotice1",
+      // TemplateAlias: "deadlineNotice1",
       TemplateModel: {
         email,
       },

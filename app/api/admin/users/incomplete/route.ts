@@ -13,3 +13,5 @@ export const GET = async () => {
     emails,
   });
 };
+
+export const dynamic = "force-dynamic";
