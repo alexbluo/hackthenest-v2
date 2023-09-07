@@ -58,6 +58,12 @@ const SponsorsSection = () => {
             href="https://www.gramaco.com/"
             tier="silver"
           />
+          <Sponsor
+            src="/xten-av.png"
+            alt="XTEN-AV silver sponsorship"
+            href="https://xtenav.com/"
+            tier="silver"
+          />
         </div>
 
         {/* bronze */}

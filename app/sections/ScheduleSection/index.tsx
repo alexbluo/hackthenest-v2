@@ -23,7 +23,7 @@ interface Block {
   name: ReactNode;
   time: string;
   location: string;
-  description?: string;
+  description?: ReactNode;
   status: "neutral" | "hover" | "pressed" | "flush" | "hidden";
 }
 
@@ -117,7 +117,7 @@ const saturday: Block[] = [
   },
   {
     name: "Worst Website Design Contest",
-    time: "3:00 - 4:00",
+    time: "5:00 - 6:00",
     location: "",
     description:
       "We usually try to aim for the most intuitively designed website, but what happens when you do the opposite?",
@@ -137,6 +137,13 @@ const saturday: Block[] = [
   //   description: "",
   //   status: "neutral",
   // },
+  {
+    name: "Karoake!",
+    time: "8:00 - 9:00",
+    location: "",
+    description: "Sing your heart out to your favorite songs!",
+    status: "neutral",
+  },
   {
     name: "Smash Bros",
     time: "10:00 - 11:00",
@@ -204,8 +211,28 @@ const sunday: Block[] = [
     status: "neutral",
   },
   {
+    name: "Programming CircuitPython on the Pico W(orkshop)",
+    time: "11:00 - 12:00",
+    location: "",
+    description: (
+      <>
+        Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it
+        to connect to a live multiplayer game where you compete and collaborate
+        with other people in the workshop! We will also provide a brief
+        description of a NASA project called{" "}
+        <a href="https://ezie.jhuapl.edu/outreach/ezie-mag/" target="_blank">
+          EZIE-Mag
+        </a>{" "}
+        that aims to do citizen driven science using a Raspberry Pi connected to
+        a magnetometer, and we will show how you can also assemble and operate
+        hardware that will contribute to the science of this mission.
+      </>
+    ),
+    status: "neutral",
+  },
+  {
     name: "Chess Tournament",
-    time: "2:00 - 3:00",
+    time: "1:00 - 2:00",
     location: "",
     description: "",
     status: "neutral",
@@ -379,9 +406,9 @@ const ScheduleSection = () => {
       </div>
       <div className="flex flex-col gap-12 xl:flex-row">
         {/* overflow hidden for extra shadow edges */}
-        <div className="w-full xl:w-1/2">
+        <div className="w-full overflow-hidden xl:w-1/2">
           <motion.ul
-            className="custom-scrollbar relative mt-12 flex max-h-[36rem] flex-col overflow-y-scroll pt-12"
+            className="relative mt-12 flex max-h-[36rem] flex-col overflow-y-scroll pt-12"
             ref={containerRef}
           >
             {blocks.map(({ name, time, location, description, status }, i) => {

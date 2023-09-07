@@ -8,7 +8,7 @@ interface Props {
   location: string;
   width: number;
   status: "neutral" | "hover" | "pressed" | "flush" | "hidden";
-  children?: string;
+  children: ReactNode;
   handleHoverStart: () => void;
   handleHoverEnd: () => void;
   handleTap: () => void;
