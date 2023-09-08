@@ -81,6 +81,12 @@ const SponsorsSection = () => {
             tier="bronze"
           />
           <Sponsor
+            src="/inspiritai.png"
+            alt="Inspirit AI bronze sponsorship"
+            href="https://www.inspiritai.com/"
+            tier="bronze"
+          />
+          <Sponsor
             src="/verbwire.svg"
             alt="Verbwire bronze sponsorship"
             href="https://www.verbwire.com/"
