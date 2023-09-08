@@ -50,15 +50,19 @@ const Dashboard = async ({ searchParams }: Props) => {
               }
             />
             <DashboardButton
-              name="volunteer registration"
+              name="volunteer registration (closed)"
               href="/app/volunteer"
+              status="UNAVAILABLE"
+            />
+            <DashboardButton
+              name="rsvp"
+              href="https://forms.gle/fAxXj8n4ibFVTxWHA"
               status={
-                completed(user.completed, "VOLUNTEERAPP")
-                  ? "COMPLETE"
-                  : "INCOMPLETE"
+                completed(user.completed, "HACKERAPP")
+                  ? "INCOMPLETE"
+                  : "UNAVAILABLE"
               }
             />
-            <DashboardButton name="rsvp (coming soon!)" status="UNAVAILABLE" />
           </div>
         </div>
       </section>

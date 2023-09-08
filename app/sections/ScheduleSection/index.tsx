@@ -151,6 +151,13 @@ const saturday: Block[] = [
     description: "",
     status: "neutral",
   },
+  {
+    name: "MLH Cup Stacking",
+    time: "11:00 - 12:00",
+    location: "",
+    description: "",
+    status: "neutral",
+  },
 ];
 
 const sunday: Block[] = [
