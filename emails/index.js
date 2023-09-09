@@ -6,6 +6,7 @@ const { ServerClient } = require("postmark");
 dotenv.config();
 
 const emails = [
+  "hello@hackthenest.org"
 ];
 
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
@@ -16,7 +17,7 @@ client.sendEmailBatchWithTemplates(
     return {
       From: "hello@hackthenest.org",
       To: email,
-      // TemplateAlias: "deadlineNotice1",
+      TemplateAlias: "twoWeeks",
       TemplateModel: {
         email,
       },

@@ -56,7 +56,7 @@ const Dashboard = async ({ searchParams }: Props) => {
             />
             <DashboardButton
               name="rsvp"
-              href="https://forms.gle/fAxXj8n4ibFVTxWHA"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScOMM4ESVuRi23QwTFwy-8yV-3DJ28m-sK_p4Qa6xeqXtCOuw/viewform?usp=sharing"
               status={
                 completed(user.completed, "HACKERAPP")
                   ? "INCOMPLETE"

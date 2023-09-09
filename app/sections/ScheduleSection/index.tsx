@@ -155,7 +155,8 @@ const saturday: Block[] = [
     name: "MLH Cup Stacking",
     time: "11:00 - 12:00",
     location: "",
-    description: "",
+    description:
+      "The classic MLH mini event is back with a bit of a twist. Join us to try to build the largest cup tower you can - no coding required here.",
     status: "neutral",
   },
 ];
