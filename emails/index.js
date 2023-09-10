@@ -6,7 +6,6 @@ const { ServerClient } = require("postmark");
 dotenv.config();
 
 const emails = [
-  "hello@hackthenest.org"
 ];
 
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
