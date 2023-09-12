@@ -9,9 +9,7 @@ export const GET = async () => {
     .filter((user) => completed(user.completed, "RSVP"))
     .map((user) => user.email);
 
-  return NextResponse.json({
-    emails,
-  });
+  return NextResponse.json({ emails });
 };
 
 export const dynamic = "force-dynamic";

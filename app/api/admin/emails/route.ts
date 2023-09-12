@@ -6,9 +6,7 @@ export const GET = async () => {
 
   const emails = users.map((user) => user.email);
 
-  return NextResponse.json({
-    emails,
-  });
+  return NextResponse.json({ emails });
 };
 
 export const dynamic = "force-dynamic";
