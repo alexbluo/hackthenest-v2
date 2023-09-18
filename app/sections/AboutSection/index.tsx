@@ -40,15 +40,10 @@ const AboutSection = () => {
               Cybersecurity Track sponsored by C-HIT
             </p>
             <p>$500</p>
-            {/* <p className="font-medium">Collins Aerospace Prize</p> */}
-            {/* <p>$500</p> */}
             <p className="font-medium">Patient Safety Technology Challenge</p>
             <p>$500</p>
             <p className="font-medium">Beginner Track</p>
-            <p>
-              Arduino UNO (x4), No Starch Press Books (x4), $25 AoPS Gift Card
-              (x4)
-            </p>
+            <p>No Starch Press Books (x4), $25 AoPS Gift Card (x4)</p>
             <p className="font-medium">
               Most Innovative Use Of Verbwire API (x2)
             </p>
@@ -57,8 +52,8 @@ const AboutSection = () => {
             <p className="font-medium">Creative Use Of Verbwire API (x20)</p>
             <p>API Credits for whole team</p>
           </div>
-          Our full list of prizes with details will soon be available on
-          Devpost.
+          Our full list of prizes is now available on{" "}
+          <a href="https://hackthenest.devpost.com">Devpost</a>
         </Stat>
         <Stat stat="16" caption="workshops & mini-events">
           Don&apos;t miss our workshops and mini-events! Workshops are

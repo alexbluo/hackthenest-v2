@@ -81,6 +81,12 @@ const SponsorsSection = () => {
             tier="bronze"
           />
           <Sponsor
+            src="/bayun.png"
+            alt="Bayun Systems bronze sponsorship"
+            href="https://www.bayunsystems.com/"
+            tier="bronze"
+          />
+          <Sponsor
             src="/inspiritai.png"
             alt="Inspirit AI bronze sponsorship"
             href="https://www.inspiritai.com/"

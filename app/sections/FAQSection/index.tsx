@@ -85,7 +85,7 @@ const questions: Question[][] = [
     {
       question: "What are the overnight arrangements?",
       answer:
-        "We'll have a dedicated sleeping room and a limited supply of airbeds and sleeping bags on a first come first serve basis. Feel free to bring your own blanket, bed, or... bouncy castle?",
+        "We'll have a dedicated sleeping room and a VERY limited supply of air mattresses and sleeping bags on a first come first serve basis. Feel free to bring your own blanket, bed, or... bouncy castle?",
     },
     {
       question: "I have more questions!",
