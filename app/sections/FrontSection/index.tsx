@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import useHackerText from "utils/useHackerText";
 
 const FrontSection = () => {
   const [name, animateName] = useHackerText("Hack the Nest");
-  const [date, animateDate] = useHackerText("9.23.23 - 9.24.23");
-  const [location, animateLocation] = useHackerText("Sterling, VA");
+  const [date, animateDate] = useHackerText("11.11.23 - 11.12.23");
+  const [location, animateLocation] = useHackerText("In-person, DMV area");
   const [register, animateRegister] = useHackerText("Register Now!");
 
   useEffect(() => {
@@ -31,9 +30,6 @@ const FrontSection = () => {
             <div>&nbsp;•&nbsp;</div>
             <span className="whitespace-nowrap">{location}</span>
           </div>
-          <p className="text-md mx-auto -mb-4 -mt-2 text-center font-mono  text-ice">
-            FINAL registration deadline September 20!
-          </p>
           <Link
             className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black text-opacity-90 shadow-md shadow-grey duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
             href="/login"
@@ -43,23 +39,6 @@ const FrontSection = () => {
           </Link>
         </div>
       </div>
-
-      <a
-        id="mlh-trust-badge"
-        className="absolute right-4 top-0 z-50 hidden aspect-[571/1000] w-[10%] min-w-[60px] max-w-[100px] lg:block "
-        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=yellow"
-        target="_blank"
-        aria-label="MLH"
-        rel="noreferrer"
-      >
-        <Image
-          src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-yellow.svg"
-          alt="Major League Hacking 2023 Hackathon Season"
-          sizes="100px"
-          priority
-          fill
-        />
-      </a>
     </section>
   );
 };

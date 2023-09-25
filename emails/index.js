@@ -16,7 +16,7 @@ client.sendEmailBatchWithTemplates(
     return {
       From: "hello@hackthenest.org",
       To: email,
-      TemplateAlias: "twoWeeks",
+      TemplateAlias: "postpone",
       TemplateModel: {
         email,
       },

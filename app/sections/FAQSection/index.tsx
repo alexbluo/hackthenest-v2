@@ -49,20 +49,25 @@ const questions: Question[][] = [
         "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school, we'd love to have you as a mentor, volunteer, or sponsor!",
     },
     {
-      question: "How do I get to the venue?",
-      answer: (
-        <>
-          Hack the Nest is being held in-person at{" "}
-          <a
-            className="cursor-pointer text-blue-light underline"
-            href="https://www.google.com/maps/dir/?api=1&destination=21680+Ridgetop+Circle+150+Sterling+Va+20166&travelmode=driving"
-          >
-            21680 Ridgetop Circle, #150 Sterling, Va 20166
-          </a>
-          .
-        </>
-      ),
+      question: "Where/when is the event?",
+      answer:
+        "Our team is searching for a venue near DC and targeting November.",
     },
+    // {
+    //   question: "How do I get to the venue?",
+    //   answer: (
+    //     <>
+    //       Hack the Nest is being held in-person at{" "}
+    //       <a
+    //         className="cursor-pointer text-blue-light underline"
+    //         href="https://www.google.com/maps/dir/?api=1&destination=21680+Ridgetop+Circle+150+Sterling+Va+20166&travelmode=driving"
+    //       >
+    //         21680 Ridgetop Circle, #150 Sterling, Va 20166
+    //       </a>
+    //       .
+    //     </>
+    //   ),
+    // },
     {
       question: "Are there travel reimbursements?",
       answer: (
