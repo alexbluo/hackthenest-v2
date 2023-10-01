@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import {
   motion,
   useCycle,
@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { flushSync } from "react-dom";
 import useWindowWidth from "utils/useWindowWidth";
 import ScrollIndicator from "./ScrollIndicator";
 
@@ -295,16 +296,23 @@ const ScheduleSection = () => {
     setIndicator(false);
   });
 
-  // flush randomly consistently persists if cycled right after page load for some reason...
-  const glissando = () => {
-    const incoming = day === "Saturday" ? sunday : saturday;
-    cycleDay();
+  useEffect(() => {
+    const incoming = day === "Saturday" ? saturday : sunday;
 
     // idk why setState comes after increment
-    let iteration = -1;
+    let iteration = 0;
     const maxIterations = Math.max(saturday.length, sunday.length);
+    console.log(
+      "______________________________________________________________"
+    );
 
+    // runs twice - first time f n f f n f, second f f f f like supposed to be
+    // bugged on single runs
+    // why is it running twice???? not in prod has to be react strictmode. why is first diff from second? prod doesnt add up??
     const interval = setInterval(() => {
+      // INCREMENT HAS TO BE HERE, BOTTOM CAUSES WEIRD FUNKY BUG IDK WHY PLEASE DONT DO IT
+      iteration += 1;
+
       setBlocks((prev): Block[] => {
         const newBlocks: Block[] = [];
 
@@ -317,6 +325,7 @@ const ScheduleSection = () => {
             iteration >= incoming.length &&
             i === iteration
           ) {
+            console.log(i, "hidden");
             // hide excess from previous set
             newBlocks.push({ ...block, status: "hidden" });
           } else if (i === iteration - 4 && incoming[iteration - 4]) {
@@ -324,6 +333,7 @@ const ScheduleSection = () => {
             newBlocks.push(incoming[iteration - 4]);
           } else if (block) {
             if (i === iteration) {
+              console.log(i, "flush");
               // flush next block down each iteration
               newBlocks.push({ ...block, status: "flush" });
             } else {
@@ -333,14 +343,22 @@ const ScheduleSection = () => {
           }
         }
 
+        console.log(
+          newBlocks.map(({ status }) => status[0].toUpperCase()),
+          iteration
+        );
         return newBlocks;
       });
-
-      iteration += 1;
+      // console.log(
+      //   blocks.map(({ status }) => status[0].toUpperCase()),
+      //   iteration
+      // );
 
       if (iteration === maxIterations + 3) clearInterval(interval);
     }, 100);
-  };
+
+    return () => clearInterval(interval);
+  }, [day]);
 
   // have to use callbacks in setState
   // https://stackoverflow.com/questions/33613728/what-happens-when-using-this-setstate-multiple-times-in-react-component
@@ -381,7 +399,7 @@ const ScheduleSection = () => {
   };
 
   const handleTap = (target: number) => {
-    if (target === 0 && blocks[target].status !== "flush") glissando();
+    if (target === 0 && blocks[target].status !== "flush") cycleDay();
 
     setBlocks((prev) => {
       return prev.map((block, i) => {

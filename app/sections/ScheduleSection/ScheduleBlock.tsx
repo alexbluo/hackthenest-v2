@@ -33,10 +33,10 @@ const ScheduleBlock = ({
   };
 
   return (
-    <li className="relative sm:odd:ml-8" style={{ width: blockWidth() }}>
+    <li className="relative sm:odd:ml-8 group" style={{ width: blockWidth() }}>
       {/* front panel */}
       <motion.button
-        className="relative bottom-[46px] left-20 h-16 w-full origin-bottom-left text-ellipsis bg-blue-mid text-left text-lg"
+        className="relative bottom-[46px] left-20 h-16 w-full origin-bottom-left text-ellipsis bg-blue-mid group-first:bg-gold text-left text-lg"
         animate={status}
         initial="flush"
         variants={{
