@@ -300,15 +300,9 @@ const ScheduleSection = () => {
     const incoming = day === "Saturday" ? saturday : sunday;
 
     // idk why setState comes after increment
-    let iteration = 0;
+    let iteration = -1;
     const maxIterations = Math.max(saturday.length, sunday.length);
-    console.log(
-      "______________________________________________________________"
-    );
 
-    // runs twice - first time f n f f n f, second f f f f like supposed to be
-    // bugged on single runs
-    // why is it running twice???? not in prod has to be react strictmode. why is first diff from second? prod doesnt add up??
     const interval = setInterval(() => {
       // INCREMENT HAS TO BE HERE, BOTTOM CAUSES WEIRD FUNKY BUG IDK WHY PLEASE DONT DO IT
       iteration += 1;
@@ -325,7 +319,6 @@ const ScheduleSection = () => {
             iteration >= incoming.length &&
             i === iteration
           ) {
-            console.log(i, "hidden");
             // hide excess from previous set
             newBlocks.push({ ...block, status: "hidden" });
           } else if (i === iteration - 4 && incoming[iteration - 4]) {
@@ -333,7 +326,6 @@ const ScheduleSection = () => {
             newBlocks.push(incoming[iteration - 4]);
           } else if (block) {
             if (i === iteration) {
-              console.log(i, "flush");
               // flush next block down each iteration
               newBlocks.push({ ...block, status: "flush" });
             } else {
@@ -343,16 +335,8 @@ const ScheduleSection = () => {
           }
         }
 
-        console.log(
-          newBlocks.map(({ status }) => status[0].toUpperCase()),
-          iteration
-        );
         return newBlocks;
       });
-      // console.log(
-      //   blocks.map(({ status }) => status[0].toUpperCase()),
-      //   iteration
-      // );
 
       if (iteration === maxIterations + 3) clearInterval(interval);
     }, 100);
