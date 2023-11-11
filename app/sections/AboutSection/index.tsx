@@ -8,7 +8,7 @@ const AboutSection = () => {
       </div>
       <article className="-mx-8 flex flex-col rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none md:flex-row">
         {/* <div className="xl:w-1/2"> */}
-        This September, join 300 hackers for the DMV area&apos;s largest high
+        This September, join 200 hackers for the DMV area&apos;s largest high
         school hackathon. Hack the Nest is a collaborative coding event where
         participants (also called hackers) bring their innovative ideas to life
         in just one weekend. Whether it&apos;s 2am-debugging with cookies or
@@ -18,13 +18,14 @@ const AboutSection = () => {
         {/* <div className="xl:w-1/2"></div> */}
       </article>
       <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat stat="36" caption="hours">
+        <Stat stat="24" caption="hours">
           Hackathons typically take place over a weekend and last anywhere from
-          12 to 48 hours. Hack the Nest is a 36-hour event starting the morning
+          12 to 48 hours.
+          {/* Hack the Nest is a 24-hour event starting the morning
           of Saturday, September 23 and ending the evening of Sunday, September
-          24.
+          24. */}
         </Stat>
-        <Stat stat="300" caption="hackers">
+        <Stat stat="200" caption="hackers">
           Hack the Nest will be the DMV area&apos;s (and one of the
           country&apos;s) largest high school hackathons! We welcome hackers
           from all geographic areas and of all demographics and experience

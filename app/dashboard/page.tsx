@@ -53,7 +53,7 @@ const Dashboard = async ({ searchParams }: Props) => {
               name="volunteer registration"
               href="/app/volunteer"
               status={
-                completed(user.completed, "HACKERAPP")
+                completed(user.completed, "VOLUNTEERAPP")
                   ? "COMPLETE"
                   : "INCOMPLETE"
               }
