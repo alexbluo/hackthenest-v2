@@ -55,7 +55,7 @@ const questions: Question[][] = [
           Hack the Nest is being held in-person at{" "}
           <a
             className="cursor-pointer text-blue-light underline"
-            href="https://www.google.com/maps/dir/?api=1&destination=21680+Ridgetop+Circle+150+Sterling+Va+20166&travelmode=driving"
+            href="https://www.google.com/maps/dir/?api=1&destination=1934+Old+Gallows+Rd+STE+350,+Vienna,+VA+22182&travelmode=driving"
           >
             1934 Old Gallows Rd Suite 350, Vienna, VA 22182
           </a>
