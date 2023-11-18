@@ -36,12 +36,6 @@ const SponsorsSection = () => {
             href="https://www.thecoderschool.com/"
             tier="gold"
           />
-          {/* <Sponsor
-            src="/.png"
-            alt="Collins Aerospace gold sponsorship"
-            href="https://www.collinsaerospace.com/"
-            tier="gold"
-          /> */}
         </div>
 
         {/* silver */}
@@ -62,6 +56,12 @@ const SponsorsSection = () => {
             src="/xten-av.png"
             alt="XTEN-AV silver sponsorship"
             href="https://xtenav.com/"
+            tier="silver"
+          />
+          <Sponsor
+            src="/intelligent-office.svg"
+            alt="Intelligent Office silver sponsorship"
+            href="https://www.intelligentoffice.com/"
             tier="silver"
           />
         </div>
@@ -106,7 +106,7 @@ const SponsorsSection = () => {
           />
           <Sponsor
             src="/no-starch-press.png"
-            alt="No Starch Press Bronze Sponsorships"
+            alt="No Starch Press bronze sponsorship"
             href="https://nostarch.com/"
             tier="bronze"
           />
@@ -114,6 +114,12 @@ const SponsorsSection = () => {
             src="/standout-stickers.png"
             alt="StandOut Stickers bronze sponsorship"
             href="http://hackp.ac/mlh-StandOutStickers-hackathons"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/hcb.svg"
+            alt="HCB bronze sponsorship"
+            href="https://nostarch.com/"
             tier="bronze"
           />
         </div>

@@ -50,7 +50,7 @@ const saturday: Block[] = [
   },
   {
     name: "Check-in",
-    time: "7:00 - 11:00",
+    time: "8:00 - 10:00",
     location: "Lobby",
     description:
       "Please have your QR codes ready! This helps us identify your name, shirt size, and whether you are a hacker or volunteer so that we can direct you accordingly. Late check-in will last throughout the entire day.",
@@ -59,36 +59,44 @@ const saturday: Block[] = [
   {
     name: "Breakfast",
     time: "8:00 - 10:00",
-    location: "",
+    location: "Kitchen",
     description: "Start your hacking with some baked goods!",
     status: "neutral",
   },
   {
     name: "Opening Ceremony",
-    time: "8:00 - 9:00",
+    time: "9:30 - 10:00",
     location: "Room 1",
     description: "An exciting kickoff to the weekend!",
     status: "neutral",
   },
   {
     name: "Team Formation",
-    time: "9:30 - 10:00",
+    time: "10:00 - 11:00",
     location: "",
     description:
       "Find your perfect team in this pitch-based team formation session.",
     status: "neutral",
   },
   {
-    name: "Sponsor Fair",
-    time: "10:00 - 12:00",
+    name: "Speed Dating Interviews",
+    time: "11:00 - 12:00",
     location: "",
     description:
-      "Come chat with our sponsors, collect swag, and learn about recruiting!",
+      "Tech companies commonly hire via technical interviews, 30 - 60 minute coding challenges which involve both simple and complex data structures and algorithms. Practice your technical interview and meet other hackers in this cooperative speed dating style workshop! ",
     status: "neutral",
   },
+  // {
+  //   name: "Sponsor Fair",
+  //   time: "10:00 - 12:00",
+  //   location: "",
+  //   description:
+  //     "Come chat with our sponsors, collect swag, and learn about recruiting!",
+  //   status: "neutral",
+  // },
   {
     name: "Lunch",
-    time: "11:00 - 1:00",
+    time: "12:00 - 1:00",
     location: "",
     description: "Wouldn't be a hackathon without pizza :)",
     status: "neutral",
@@ -131,16 +139,16 @@ const saturday: Block[] = [
     description: "Keep yourself going with some Chick-fil-A!",
     status: "neutral",
   },
-  // {
-  //   name: "S'mores",
-  //   time: "8:00 - 9:00",
-  //   location: "",
-  //   description: "",
-  //   status: "neutral",
-  // },
+  {
+    name: "Chess Tournament",
+    time: "8:00 - 9:00",
+    location: "",
+    description: "",
+    status: "neutral",
+  },
   {
     name: "Karoake!",
-    time: "8:00 - 9:00",
+    time: "9:00 - 10:00",
     location: "",
     description: "Sing your heart out to your favorite songs!",
     status: "neutral",
@@ -152,14 +160,14 @@ const saturday: Block[] = [
     description: "",
     status: "neutral",
   },
-  {
-    name: "MLH Cup Stacking",
-    time: "11:00 - 12:00",
-    location: "",
-    description:
-      "The classic MLH mini event is back with a bit of a twist. Join us to try to build the largest cup tower you can - no coding required here.",
-    status: "neutral",
-  },
+  // {
+  //   name: "MLH Cup Stacking",
+  //   time: "11:00 - 12:00",
+  //   location: "",
+  //   description:
+  //     "The classic MLH mini event is back with a bit of a twist. Join us to try to build the largest cup tower you can - no coding required here.",
+  //   status: "neutral",
+  // },
 ];
 
 const sunday: Block[] = [
@@ -204,65 +212,50 @@ const sunday: Block[] = [
     description: "Final stretch! Energize with bagels & cream cheese.",
     status: "neutral",
   },
-  {
-    name: "Speed Dating Interviews",
-    time: "10:00 - 11:00",
-    location: "",
-    description:
-      "Tech companies commonly hire via technical interviews, 30 - 60 minute coding challenges which involve both simple and complex data structures and algorithms. Practice your technical interview in this cooperative speed dating style workshop! ",
-    status: "neutral",
-  },
-  {
-    name: "Lunch",
-    time: "11:00 - 1:00",
-    location: "",
-    description: "",
-    status: "neutral",
-  },
-  {
-    name: "Programming CircuitPython on the Pico W(orkshop)",
-    time: "11:00 - 12:00",
-    location: "",
-    description: (
-      <>
-        Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it
-        to connect to a live multiplayer game where you compete and collaborate
-        with other people in the workshop! We will also provide a brief
-        description of a NASA project called{" "}
-        <a href="https://ezie.jhuapl.edu/outreach/ezie-mag/" target="_blank">
-          EZIE-Mag
-        </a>{" "}
-        that aims to do citizen driven science using a Raspberry Pi connected to
-        a magnetometer, and we will show how you can also assemble and operate
-        hardware that will contribute to the science of this mission.
-      </>
-    ),
-    status: "neutral",
-  },
-  {
-    name: "Chess Tournament",
-    time: "1:00 - 2:00",
-    location: "",
-    description: "",
-    status: "neutral",
-  },
+  // {
+  //   name: "Programming CircuitPython on the Pico W(orkshop)",
+  //   time: "11:00 - 12:00",
+  //   location: "",
+  //   description: (
+  //     <>
+  //       Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it
+  //       to connect to a live multiplayer game where you compete and collaborate
+  //       with other people in the workshop! We will also provide a brief
+  //       description of a NASA project called{" "}
+  //       <a href="https://ezie.jhuapl.edu/outreach/ezie-mag/" target="_blank">
+  //         EZIE-Mag
+  //       </a>{" "}
+  //       that aims to do citizen driven science using a Raspberry Pi connected to
+  //       a magnetometer, and we will show how you can also assemble and operate
+  //       hardware that will contribute to the science of this mission.
+  //     </>
+  //   ),
+  //   status: "neutral",
+  // },
   {
     name: "Korean Fire Noodle Challenge",
-    time: "2:00 - 3:00",
+    time: "9:00 - 10:00",
     location: "",
     description: "Get fired up and ready for demos!",
     status: "neutral",
   },
   {
+    name: "Submission Deadline",
+    time: "10:00",
+    location: "",
+    description: "",
+    status: "neutral",
+  },
+  {
     name: "Judging & Expo",
-    time: "4:00 - 6:00",
+    time: "10:00 - 12:00",
     location: "",
     description: "",
     status: "neutral",
   },
   {
     name: "Closing Ceremony",
-    time: "6:00 - 6:30",
+    time: "12:00 - 12:30",
     location: "",
     description: "",
     status: "neutral",
