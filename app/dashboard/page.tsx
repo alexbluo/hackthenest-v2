@@ -59,14 +59,9 @@ const Dashboard = async ({ searchParams }: Props) => {
               }
             />
             <DashboardButton
-              name="rsvp (coming soon!)"
-              // href="https://docs.google.com/forms/d/e/1FAIpQLScOMM4ESVuRi23QwTFwy-8yV-3DJ28m-sK_p4Qa6xeqXtCOuw/viewform?usp=sharing"
-              status="UNAVAILABLE"
-              // status={
-              //   completed(user.completed, "HACKERAPP")
-              //     ? "INCOMPLETE"
-              //     : "UNAVAILABLE"
-              // }
+              name="rsvp"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeQ7J-A7zxYnGZCOp2-ccHLd-i7NLMBNqZBEWzyTnDvLFY4vA/viewform?usp=sf_link"
+              status="INCOMPLETE"
             />
           </div>
         </div>

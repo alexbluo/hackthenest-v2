@@ -37,6 +37,9 @@ const FrontSection = () => {
           >
             {register}
           </Link>
+          <div className="text-md mx-auto flex gap-2 text-center font-mono tracking-tight text-ice sm:text-lg">
+            Registration closes 12.2.23
+          </div>
         </div>
       </div>
     </section>
