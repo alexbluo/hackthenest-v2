@@ -30,15 +30,17 @@ const FrontSection = () => {
             <div>&nbsp;•&nbsp;</div>
             <span className="whitespace-nowrap">{location}</span>
           </div>
-          <Link
-            className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black text-opacity-90 shadow-md shadow-grey duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
-            href="/login"
-            onMouseOver={() => animateRegister({ duration: 500 })}
-          >
-            {register}
-          </Link>
-          <div className="text-md mx-auto flex gap-2 text-center font-mono tracking-tight text-ice sm:text-lg">
-            Registration closes 12.2.23
+          <div className="flex flex-col gap-2">
+            <Link
+              className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black shadow-md shadow-grey duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
+              href="/login"
+              onMouseOver={() => animateRegister({ duration: 500 })}
+            >
+              {register}
+            </Link>
+            <p className="text-md mx-auto text-center font-mono tracking-tight text-ice">
+              Registration closes 12.2.23
+            </p>
           </div>
         </div>
       </div>

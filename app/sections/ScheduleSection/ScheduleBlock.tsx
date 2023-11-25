@@ -101,7 +101,7 @@ const ScheduleBlock = ({
           ease: "easeInOut",
         }}
       >
-        <span className="pl-4">{time.substring(0, time.indexOf(" "))}</span>
+        <span className="pl-4">{time.split(" ")[0]}</span>
       </motion.div>
       {/* bottom panel */}
       <motion.div

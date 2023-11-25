@@ -147,14 +147,14 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Karoake!",
+    name: "Smash Bros",
     time: "9:00 - 10:00",
     location: "",
     description: "Sing your heart out to your favorite songs!",
     status: "neutral",
   },
   {
-    name: "Smash Bros",
+    name: "Karoake!",
     time: "10:00 - 11:00",
     location: "",
     description: "",

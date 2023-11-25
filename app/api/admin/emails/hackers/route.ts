@@ -7,9 +7,9 @@ export const GET = async () => {
 
   const emails = users
     .filter((user) => completed(user.completed, "HACKERAPP"))
-    .map((user) => user.email);
+    .map((user) => user);
 
-  return NextResponse.json({ emails });
+  return NextResponse.json({ hackers: emails });
 };
 
 export const dynamic = "force-dynamic";

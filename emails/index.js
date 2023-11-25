@@ -5,6 +5,7 @@ const { ServerClient } = require("postmark");
 
 dotenv.config();
 
+// copy paste from api
 const emails = [
 ];
 
@@ -16,10 +17,11 @@ client.sendEmailBatchWithTemplates(
     return {
       From: "hello@hackthenest.org",
       To: email,
-      TemplateAlias: "postpone",
+      TemplateAlias: "returnFix",
       TemplateModel: {
         email,
       },
+      TrackLinks: "None",
       MessageStream: "outbound",
     };
   })
