@@ -6,7 +6,7 @@ import useHackerText from "utils/useHackerText";
 
 const FrontSection = () => {
   const [name, animateName] = useHackerText("Hack the Nest");
-  const [date, animateDate] = useHackerText("12.9.23 - 12.10.23");
+  const [date, animateDate] = useHackerText("12.09.23 - 12.10.23");
   const [location, animateLocation] = useHackerText("Tysons, VA");
   const [register, animateRegister] = useHackerText("Register Now!");
 
@@ -39,7 +39,7 @@ const FrontSection = () => {
               {register}
             </Link>
             <p className="text-md mx-auto text-center font-mono tracking-tight text-ice">
-              Registration closes 12.2.23
+              Registration closes 12.02.23
             </p>
           </div>
         </div>

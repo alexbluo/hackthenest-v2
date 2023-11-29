@@ -53,7 +53,7 @@ const saturday: Block[] = [
     time: "8:00 - 10:00",
     location: "Lobby",
     description:
-      "Please have your QR codes ready! This helps us identify your name, shirt size, and whether you are a hacker or volunteer so that we can direct you accordingly. Late check-in will last throughout the entire day.",
+      "Late check-in will last throughout the entire day, but please try to arrive before opening ceremony!",
     status: "neutral",
   },
   {
@@ -96,7 +96,7 @@ const saturday: Block[] = [
   // },
   {
     name: "Lunch",
-    time: "12:00 - 1:00",
+    time: "12:00 - 2:00",
     location: "",
     description: "Wouldn't be a hackathon without pizza :)",
     status: "neutral",
@@ -125,18 +125,26 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
+    name: "Programming CircuitPython on the Pico W(orkshop)",
+    time: "4:00 - 5:00",
+    location: "",
+    description:
+      "Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it to connect to a live multiplayer game where you compete and collaborate with other people in the workshop! We will also provide a brief description of a NASA project called EZIE-Mag https://ezie.jhuapl.edu/outreach/ezie-mag/ that aims to do citizen driven science using a Raspberry Pi connected to a magnetometer, and we will show how you can also assemble and operate hardware that will contribute to the science of this mission.",
+    status: "neutral",
+  },
+  {
     name: "Worst Website Design Contest",
     time: "5:00 - 6:00",
     location: "",
     description:
-      "We usually try to aim for the most intuitively designed website, but what happens when you do the opposite?",
+      "Designers strive for the most intuitive interface, but what happens when you do the opposite?",
     status: "neutral",
   },
   {
     name: "Dinner",
     time: "6:00 - 8:00",
     location: "",
-    description: "Keep yourself going with some Chick-fil-A!",
+    description: "Keep expressing your creativity with Panda Express!",
     status: "neutral",
   },
   {
@@ -150,14 +158,14 @@ const saturday: Block[] = [
     name: "Smash Bros",
     time: "9:00 - 10:00",
     location: "",
-    description: "Sing your heart out to your favorite songs!",
+    description: "King of the Hill style 1v1s.",
     status: "neutral",
   },
   {
     name: "Karoake!",
     time: "10:00 - 11:00",
     location: "",
-    description: "",
+    description: "Sing your heart out to your favorite songs!",
     status: "neutral",
   },
   // {
