@@ -59,7 +59,7 @@ const questions: Question[][] = [
           >
             1934 Old Gallows Rd Suite 350, Vienna, VA 22182
           </a>
-          . We&apos;re on the 3rd floor on the Bank of America building, just across the street from Tysons Corner Center!
+          . We&apos;re on the 3rd floor of the Bank of America building, just across the street from Tysons Corner Center!
         </>
       ),
     },

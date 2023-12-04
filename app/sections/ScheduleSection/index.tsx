@@ -86,14 +86,6 @@ const saturday: Block[] = [
       "Tech companies commonly hire via technical interviews, 30 - 60 minute coding challenges which involve both simple and complex data structures and algorithms. Practice your technical interview and meet other hackers in this cooperative speed dating style workshop! ",
     status: "neutral",
   },
-  // {
-  //   name: "Sponsor Fair",
-  //   time: "10:00 - 12:00",
-  //   location: "",
-  //   description:
-  //     "Come chat with our sponsors, collect swag, and learn about recruiting!",
-  //   status: "neutral",
-  // },
   {
     name: "Lunch",
     time: "12:00 - 2:00",
@@ -106,7 +98,7 @@ const saturday: Block[] = [
     time: "1:00 - 2:00",
     location: "",
     description:
-      "Every project needs some sort of version management, and the most prevalent tool for it is Git. Learn how to share and sync your code with your team, from Git installation to your first commit! ",
+      "Every project needs some sort of version management, and the most prevalent tool for it is Git. Learn how to share and sync your code with your team, from Git installation to your first commit (with Pokemon)! ",
     status: "neutral",
   },
   {
@@ -121,15 +113,28 @@ const saturday: Block[] = [
     name: "Intro to Machine Learning",
     time: "3:00 - 4:00",
     location: "",
-    description: "",
+    description:
+      "In this machine learning workshop, you will learn about genetic algorithms and how they can be used to make game-playing AIs! Specifically, you will learn about the mechanics behind the NEAT algorithm, a common genetic algorithm used for common game-playing AIs (see Code Bullet on YouTube for examples). We will be demonstrating how to build your own Pokemon Showdown bot to train and battle against!",
     status: "neutral",
   },
   {
     name: "Programming CircuitPython on the Pico W(orkshop)",
     time: "4:00 - 5:00",
     location: "",
-    description:
-      "Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it to connect to a live multiplayer game where you compete and collaborate with other people in the workshop! We will also provide a brief description of a NASA project called EZIE-Mag https://ezie.jhuapl.edu/outreach/ezie-mag/ that aims to do citizen driven science using a Raspberry Pi connected to a magnetometer, and we will show how you can also assemble and operate hardware that will contribute to the science of this mission.",
+    description: (
+      <>
+        Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it
+        to connect to a live multiplayer game where you compete and collaborate
+        with other people in the workshop! We will also provide a brief
+        description of a NASA project called{" "}
+        <a href="https://ezie.jhuapl.edu/outreach/ezie-mag/" target="_blank">
+          EZIE-Mag
+        </a>{" "}
+        that aims to do citizen driven science using a Raspberry Pi connected to
+        a magnetometer, and we will show how you can also assemble and operate
+        hardware that will contribute to the science of this mission.
+      </>
+    ),
     status: "neutral",
   },
   {
@@ -162,20 +167,12 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Karoake!",
+    name: "Karaoke!",
     time: "10:00 - 11:00",
     location: "",
     description: "Sing your heart out to your favorite songs!",
     status: "neutral",
   },
-  // {
-  //   name: "MLH Cup Stacking",
-  //   time: "11:00 - 12:00",
-  //   location: "",
-  //   description:
-  //     "The classic MLH mini event is back with a bit of a twist. Join us to try to build the largest cup tower you can - no coding required here.",
-  //   status: "neutral",
-  // },
 ];
 
 const sunday: Block[] = [
@@ -220,26 +217,6 @@ const sunday: Block[] = [
     description: "Final stretch! Energize with bagels & cream cheese.",
     status: "neutral",
   },
-  // {
-  //   name: "Programming CircuitPython on the Pico W(orkshop)",
-  //   time: "11:00 - 12:00",
-  //   location: "",
-  //   description: (
-  //     <>
-  //       Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it
-  //       to connect to a live multiplayer game where you compete and collaborate
-  //       with other people in the workshop! We will also provide a brief
-  //       description of a NASA project called{" "}
-  //       <a href="https://ezie.jhuapl.edu/outreach/ezie-mag/" target="_blank">
-  //         EZIE-Mag
-  //       </a>{" "}
-  //       that aims to do citizen driven science using a Raspberry Pi connected to
-  //       a magnetometer, and we will show how you can also assemble and operate
-  //       hardware that will contribute to the science of this mission.
-  //     </>
-  //   ),
-  //   status: "neutral",
-  // },
   {
     name: "Korean Fire Noodle Challenge",
     time: "9:00 - 10:00",

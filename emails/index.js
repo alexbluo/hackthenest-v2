@@ -17,7 +17,7 @@ client.sendEmailBatchWithTemplates(
     return {
       From: "hello@hackthenest.org",
       To: email,
-      TemplateAlias: "returnFix",
+      TemplateAlias: "deadlineNotice1129",
       TemplateModel: {
         email,
       },

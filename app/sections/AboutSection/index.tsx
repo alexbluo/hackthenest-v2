@@ -17,11 +17,8 @@ const AboutSection = () => {
       </article>
       <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="24" caption="hours">
-          Hackathons typically take place over a weekend and last anywhere from
-          12 to 48 hours.
-          {/* Hack the Nest is a 24-hour event starting the morning
-          of Saturday, September 23 and ending the evening of Sunday, September
-          24. */}
+          Hack the Nest is a 24-hour event starting the morning of Saturday,
+          December 9 and ending around noon of Sunday, December 10.
         </Stat>
         <Stat stat="200" caption="hackers">
           Hack the Nest will be the DMV area&apos;s (and one of the
