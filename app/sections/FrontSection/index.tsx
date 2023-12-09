@@ -38,9 +38,6 @@ const FrontSection = () => {
             >
               {register}
             </Link>
-            <p className="text-md mx-auto text-center font-mono tracking-tight text-ice">
-              FINAL Deadline 12.05.23
-            </p>
           </div>
         </div>
       </div>

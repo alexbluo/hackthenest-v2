@@ -66,37 +66,37 @@ const saturday: Block[] = [
   {
     name: "Opening Ceremony",
     time: "9:30 - 10:00",
-    location: "Room 1",
+    location: "P&G",
     description: "An exciting kickoff to the weekend!",
     status: "neutral",
   },
   {
     name: "Team Formation",
     time: "10:00 - 11:00",
-    location: "",
+    location: "P&G",
     description:
       "Find your perfect team in this pitch-based team formation session.",
     status: "neutral",
   },
   {
-    name: "Speed Dating Interviews",
+    name: "Patient Safety Technology Challenge",
     time: "11:00 - 12:00",
-    location: "",
+    location: "363",
     description:
-      "Tech companies commonly hire via technical interviews, 30 - 60 minute coding challenges which involve both simple and complex data structures and algorithms. Practice your technical interview and meet other hackers in this cooperative speed dating style workshop! ",
+      "Learn more about how to create a project for the Patient Safety Technology Challenge!",
     status: "neutral",
   },
   {
     name: "Lunch",
     time: "12:00 - 2:00",
-    location: "",
+    location: "Kitchen",
     description: "Wouldn't be a hackathon without pizza :)",
     status: "neutral",
   },
   {
     name: "Intro to Git",
     time: "1:00 - 2:00",
-    location: "",
+    location: "363",
     description:
       "Every project needs some sort of version management, and the most prevalent tool for it is Git. Learn how to share and sync your code with your team, from Git installation to your first commit (with Pokemon)! ",
     status: "neutral",
@@ -104,7 +104,7 @@ const saturday: Block[] = [
   {
     name: "Intro to React",
     time: "2:00 - 3:00",
-    location: "",
+    location: "363",
     description:
       "Web development has come a long way since the early days of plain HTML tables; today, we have powerful JavaScript frameworks such as React, created by Facebook, which open up far more possibilities in your next website! Explore the fundamentals of the world's most popular and important frontend framework by creating a game of Whac-A-Mole!",
     status: "neutral",
@@ -112,7 +112,7 @@ const saturday: Block[] = [
   {
     name: "Intro to Machine Learning",
     time: "3:00 - 4:00",
-    location: "",
+    location: "363",
     description:
       "In this machine learning workshop, you will learn about genetic algorithms and how they can be used to make game-playing AIs! Specifically, you will learn about the mechanics behind the NEAT algorithm, a common genetic algorithm used for common game-playing AIs (see Code Bullet on YouTube for examples). We will be demonstrating how to build your own Pokemon Showdown bot to train and battle against!",
     status: "neutral",
@@ -120,7 +120,7 @@ const saturday: Block[] = [
   {
     name: "Programming CircuitPython on the Pico W(orkshop)",
     time: "4:00 - 5:00",
-    location: "",
+    location: "363",
     description: (
       <>
         Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it
@@ -140,7 +140,7 @@ const saturday: Block[] = [
   {
     name: "Worst Website Design Contest",
     time: "5:00 - 6:00",
-    location: "",
+    location: "363",
     description:
       "Designers strive for the most intuitive interface, but what happens when you do the opposite?",
     status: "neutral",
@@ -148,28 +148,28 @@ const saturday: Block[] = [
   {
     name: "Dinner",
     time: "6:00 - 8:00",
-    location: "",
+    location: "Kitchen",
     description: "Keep expressing your creativity with Panda Express!",
     status: "neutral",
   },
   {
     name: "Chess Tournament",
     time: "8:00 - 9:00",
-    location: "",
-    description: "",
+    location: "363",
+    description: "Brain exercises :)",
     status: "neutral",
   },
   {
     name: "Smash Bros",
     time: "9:00 - 10:00",
-    location: "",
+    location: "363",
     description: "King of the Hill style 1v1s.",
     status: "neutral",
   },
   {
     name: "Karaoke!",
     time: "10:00 - 11:00",
-    location: "",
+    location: "Coworking",
     description: "Sing your heart out to your favorite songs!",
     status: "neutral",
   },
@@ -198,7 +198,7 @@ const sunday: Block[] = [
   {
     name: "Movie Night",
     time: "12:00 - 2:00",
-    location: "",
+    location: "363",
     description:
       "Follow Mark Zuckerberg not on Facebook, but through The Social Network!",
     status: "neutral",
@@ -206,42 +206,35 @@ const sunday: Block[] = [
   {
     name: "Cookie Debugging",
     time: "2:00 - 3:00",
-    location: "",
+    location: "Coworking",
     description: "Bring us a bug and we'll give you cookies in return!",
     status: "neutral",
   },
   {
     name: "Breakfast",
     time: "8:00 - 9:00",
-    location: "Room 1",
+    location: "Kitchen",
     description: "Final stretch! Energize with bagels & cream cheese.",
     status: "neutral",
   },
   {
     name: "Korean Fire Noodle Challenge",
     time: "9:00 - 10:00",
-    location: "",
+    location: "Kitchen",
     description: "Get fired up and ready for demos!",
-    status: "neutral",
-  },
-  {
-    name: "Submission Deadline",
-    time: "10:00",
-    location: "",
-    description: "",
     status: "neutral",
   },
   {
     name: "Judging & Expo",
     time: "10:00 - 12:00",
-    location: "",
-    description: "",
+    location: "P&G + Coworking",
+    description: "Showcase your creations! See full details on Devpost",
     status: "neutral",
   },
   {
     name: "Closing Ceremony",
     time: "12:00 - 12:30",
-    location: "",
+    location: "P&G",
     description: "",
     status: "neutral",
   },

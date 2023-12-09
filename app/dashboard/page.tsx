@@ -52,11 +52,7 @@ const Dashboard = async ({ searchParams }: Props) => {
             <DashboardButton
               name="volunteer registration"
               href="/app/volunteer"
-              status={
-                completed(user.completed, "VOLUNTEERAPP")
-                  ? "COMPLETE"
-                  : "INCOMPLETE"
-              }
+              status="UNAVAILABLE"
             />
             <DashboardButton
               name="rsvp"

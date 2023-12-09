@@ -7,6 +7,7 @@ dotenv.config();
 
 // copy paste from api
 const emails = [
+
 ];
 
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
@@ -17,7 +18,7 @@ client.sendEmailBatchWithTemplates(
     return {
       From: "hello@hackthenest.org",
       To: email,
-      TemplateAlias: "deadlineNotice1129",
+      TemplateAlias: "logistics",
       TemplateModel: {
         email,
       },

@@ -7,7 +7,7 @@ export const GET = async () => {
 
   const emails = users
     .filter((user) => completed(user.completed, "HACKERAPP"))
-    .map((user) => user);
+    .map((user) => user.email);
 
   return NextResponse.json({ hackers: emails });
 };
