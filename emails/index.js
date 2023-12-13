@@ -6,9 +6,7 @@ const { ServerClient } = require("postmark");
 dotenv.config();
 
 // copy paste from api
-const emails = [
-
-];
+const emails = [];
 
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 

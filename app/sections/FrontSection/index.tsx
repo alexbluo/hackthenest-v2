@@ -8,7 +8,7 @@ const FrontSection = () => {
   const [name, animateName] = useHackerText("Hack the Nest");
   const [date, animateDate] = useHackerText("12.09.23 - 12.10.23");
   const [location, animateLocation] = useHackerText("Tysons, VA");
-  const [register, animateRegister] = useHackerText("Register Now!");
+  // const [register, animateRegister] = useHackerText("Register Now!");
 
   useEffect(() => {
     animateName();
@@ -30,7 +30,13 @@ const FrontSection = () => {
             <div>&nbsp;•&nbsp;</div>
             <span className="whitespace-nowrap">{location}</span>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="font-medium gap-2 text-center font-sans tracking-tight text-white text-xl max-w-xl mx-16">
+            <p>Thanks for attending!</p>
+            <p>
+              Hack the Nest will return next year, recap coming soon :)
+            </p>
+          </div>
+          {/* <div className="flex flex-col gap-2">
             <Link
               className="gradient-bg mx-auto w-full rounded-md bg-white px-6 py-4 text-center font-mono text-lg font-medium text-black shadow-md shadow-grey duration-200 ease-in-out hover:shadow-lg hover:shadow-blue-light"
               href="/login"
@@ -38,7 +44,7 @@ const FrontSection = () => {
             >
               {register}
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

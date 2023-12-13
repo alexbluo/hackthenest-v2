@@ -22,7 +22,7 @@ const AboutSection = () => {
         </Stat>
         <Stat stat="200" caption="hackers">
           Hack the Nest will be the DMV area&apos;s (and one of the
-          country&apos;s) largest high school hackathons! We welcome hackers
+          country&apos;s) largest high school hackathon! We welcome hackers
           from all geographic areas and of all demographics and experience
           levels.
         </Stat>
@@ -32,6 +32,8 @@ const AboutSection = () => {
           <div className="my-2">
             <p className="font-medium">Grand Prize</p>
             <p>Nintendo Switch Lite (x4)</p>
+            <p className="font-medium">Social Good Track</p>
+            <p>$1,000</p>
             <p className="font-medium">
               Cybersecurity Track sponsored by C-HIT
             </p>
@@ -49,17 +51,14 @@ const AboutSection = () => {
             <p>API Credits for whole team</p>
           </div>
           Our full list of prizes is now available on{" "}
-          <a href="https://hackthenest.devpost.com">Devpost</a>
+          <a href="https://hackthenest-2023.devpost.com" className="underline">Devpost</a>.
         </Stat>
         <Stat stat="16" caption="workshops & mini-events">
           Don&apos;t miss our workshops and mini-events! Workshops are
           educational 30-60 minute interactive sessions on technical and
           non-technical topics catered towards hackers of all experience levels,
           and mini-events are fun activities where you can take a break and meet
-          other hackers. We&apos;ll also have a sponsor fair where you can chat
-          with our sponsor representatives, collect swag, and learn about
-          recruiting. Our full schedule will be released as the event
-          approaches.
+          other hackers.
         </Stat>
       </div>
       <div className="gradient-text mt-6 max-h-24 cursor-default select-none overflow-hidden bg-clip-text px-4 font-circular text-8xl leading-[0.5] text-transparent">
