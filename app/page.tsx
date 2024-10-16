@@ -6,6 +6,7 @@ import FAQSection from "./sections/FAQSection";
 import FrontSection from "./sections/FrontSection";
 import ScheduleSection from "./sections/ScheduleSection";
 import SponsorsSection from "./sections/SponsorsSection";
+import RecapSection from "./sections/RecapSection";
 
 const Home = async () => {
   return (
@@ -24,6 +25,7 @@ const Home = async () => {
       <main className="relative z-0">
         <FrontSection />
         <AboutSection />
+        <RecapSection />
         <ScheduleSection />
         <FAQSection />
         <SponsorsSection />

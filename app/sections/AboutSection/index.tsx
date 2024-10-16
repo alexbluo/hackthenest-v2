@@ -8,12 +8,13 @@ const AboutSection = () => {
       </div>
       <article className="-mx-8 flex flex-col rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none md:flex-row">
         {/* <div className="xl:w-1/2"> */}
-        This December, join 200 hackers for the DMV area&apos;s largest high
+        {/* This December, join 200 hackers for the DMV area&apos;s largest high
         school hackathon. Hack the Nest is a collaborative coding event where
         participants (also called hackers) bring their innovative ideas to life
         in just one weekend. Whether it&apos;s 2am-debugging with cookies or
         karaoke, our ultimate goal is to host an unforgettable experience for an
-        audience normally barred from hackathons.
+        audience normally barred from hackathons. */}
+        Hack the Nest V2 loading...
       </article>
       <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="24" caption="hours">
