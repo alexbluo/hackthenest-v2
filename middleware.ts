@@ -43,7 +43,8 @@ export const middleware = async (req: NextRequest) => {
 
   if (
     url.pathname.startsWith("/dashboard") ||
-    url.pathname.startsWith("/app")
+    url.pathname.startsWith("/app") ||
+    url.pathname.startsWith("/recap")
   ) {
     if (!token) {
       url.pathname = "/login";

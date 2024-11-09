@@ -33,15 +33,7 @@ const FrontSection = () => {
           <div className="font-medium gap-2 text-center font-sans tracking-tight text-white text-xl max-w-xl mx-16">
             <p>Thanks for attending!</p>
             <p>
-              Hack the Nest will return next year, recap{' '}
-              <Link
-                className="cursor-pointer text-white underline"
-                to="recap"
-                duration={600}
-                smooth="easeInOutQuart"
-              >
-                here!
-              </Link>
+              Hack the Nest will return next year!
             </p>
 
 

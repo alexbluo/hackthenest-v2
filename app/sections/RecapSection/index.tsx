@@ -1,31 +1,63 @@
 "use client";
-import Carousel from './carousel';
-import Stat from "./Stat";
+
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import useHackerText from "utils/useHackerText";
+import { motion } from 'framer-motion';
+import FadeInImage from "./FadeInImage";
+import FadeInStat from "./FadeInStat";
+
+import img1 from "public/recap-page/IMG_8437.jpg"
+import img2 from "public/recap-page/IMG_8750.jpg"
+import img3 from "public/recap-page/IMG_8772.jpg"
+import img4 from "public/recap-page/IMG_8779.jpg"
 
 const RecapSection = () => {
+    const [title, animateTitle] = useHackerText("Last year, we had...");
+    // const [register, animateRegister] = useHackerText("Register Now!");
+
+    useEffect(() => {
+        animateTitle();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
-        <section id="recap">
-            <div className="-mx-8 inline-block rounded-r-full bg-black px-8 py-2 sm:rounded-br-none sm:rounded-tl-3xl sm:rounded-tr-3xl">
-                <h2 className="gradient-text">recap</h2>
+        <section className="min-h-screen px-0 pt-32 sm:px-8" id="recap">
+            <div className="relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-12 sm:pt-24">
+                {/* https://stackoverflow.com/questions/66457359/how-to-keep-a-paragraph-height-even-when-there-is-no-text-in-it */}
+                <h1 className="gradient-text h-fit bg-clip-text text-center font-mono text-7xl font-black tracking-tighter text-transparent before:inline-block before:content-['']">
+                    {title}
+                </h1>
             </div>
-            <article className="-mx-8 flex flex-col rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none md:flex-row">
-                {/* <div className="xl:w-1/2"> */}
-                This past December, 200 high school hackers from the DMV area teamed up for Hack the Nest,
-                the DMV area's largest high school hackathon. It was a weekend packed with creativity,
-                code, and fun! Between late-night debugging fueled by cookies and spontaneous karaoke sessions,
-                check out some of our favorite moments in the recap below!
-            </article>
-            <div className="my-8d">
-                <Carousel />
+
+            <div className="flex flex-col space-y-36 pt-36">
+                <div className="flex justify-start">
+                    <div className="w-1/2 rounded-xl overflow-hidden">
+                        <FadeInImage src={img1} alt="Image1" />
+
+                    </div>
+
+                    <div>
+                        <FadeInStat stat="Hello" caption="Bro" alt="Stat1" />
+                    </div>
+                </div>
+                <div className="flex justify-end">
+                    <div className="w-1/2 rounded-xl overflow-hidden">
+                        <FadeInImage src={img2} alt="Image2" />
+                    </div>
+                </div>
+                <div className="flex justify-start">
+                    <div className="w-1/2 rounded-xl overflow-hidden">
+                        <FadeInImage src={img3} alt="Image3" />
+                    </div>
+                </div>
+                <div className="flex justify-end">
+                    <div className="w-1/2 rounded-xl overflow-hidden">
+                        <FadeInImage src={img4} alt="Image4" />
+                    </div>
+                </div>
             </div>
-            {/* <div className="gradient-text mt-6 max-h-24 cursor-default select-none overflow-hidden bg-clip-text px-4 font-circular text-8xl leading-[0.5] text-transparent">
-                if you can see this then why lol like what is the point seriously and if
-                this somehow goes the full width then you must have a very wide monitor
-                blah blah blah lorem ipsum dolor yah yah i dont remember the rest im
-                just trying to fill this space up to make extra sure that it doesnt look
-                funny for you youre welcome
-            </div> */}
-        </section>
+        </section >
     );
 };
 
