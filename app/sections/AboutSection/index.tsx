@@ -8,15 +8,14 @@ const AboutSection = () => {
       </div>
       <article className="-mx-8 flex flex-col rounded-r-3xl bg-black p-8 text-xl text-white sm:rounded-3xl sm:rounded-tl-none md:flex-row">
         {/* <div className="xl:w-1/2"> */}
-        {/* This December, join 200 hackers for the DMV area&apos;s largest high
+        This December, join 200 hackers for the DMV area&apos;s largest high
         school hackathon. Hack the Nest is a collaborative coding event where
         participants (also called hackers) bring their innovative ideas to life
         in just one weekend. Whether it&apos;s 2am-debugging with cookies or
         karaoke, our ultimate goal is to host an unforgettable experience for an
-        audience normally barred from hackathons. */}
-        Hack the Nest V2 loading...
+        audience normally barred from hackathons.
       </article>
-      <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+      {/* <div className="my-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
         <Stat stat="24" caption="hours">
           Hack the Nest is a 24-hour event starting the morning of Saturday,
           December 9 and ending around noon of Sunday, December 10.
@@ -61,7 +60,7 @@ const AboutSection = () => {
           and mini-events are fun activities where you can take a break and meet
           other hackers.
         </Stat>
-      </div>
+      </div> */}
       <div className="gradient-text mt-6 max-h-24 cursor-default select-none overflow-hidden bg-clip-text px-4 font-circular text-8xl leading-[0.5] text-transparent">
         if you can see this then why lol like what is the point seriously and if
         this somehow goes the full width then you must have a very wide monitor

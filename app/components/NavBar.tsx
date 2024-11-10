@@ -25,16 +25,22 @@ const NavBar = async () => {
       </div>
 
       <ul className="hidden gap-12 text-gold md:flex">
-        <Link
-
-          href="/recap"
-        >
+        <Link href="/recap">
           recap
         </Link>
-        <NavItem to="about">about</NavItem>
-        <NavItem to="schedule">schedule</NavItem>
-        <NavItem to="faq">faq</NavItem>
-        <NavItem to="sponsors">sponsors</NavItem>
+        <Link href="/#about">
+          about
+        </Link>
+        <Link href="/#faq">
+          faq
+        </Link>
+        <Link href="/#sponsors">
+          sponsors
+        </Link>
+        {/* <NavItem to="about">about</NavItem> */}
+        {/* <NavItem href="/" to="schedule">schedule</NavItem> */}
+        {/* <NavItem to="faq">faq</NavItem>
+        <NavItem to="sponsors">sponsors</NavItem> */}
         <Link
           href={session ? "/dashboard" : "/login"}
         >

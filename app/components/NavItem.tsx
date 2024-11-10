@@ -2,7 +2,8 @@
 
 "use client";
 
-import { Link } from "react-scroll";
+import { useRouter } from 'next/router';
+import { scroller } from 'react-scroll';
 
 interface Props {
   to: string;
@@ -11,18 +12,28 @@ interface Props {
 }
 
 const NavItem = ({ to, children, onClick }: Props) => {
+
+  const router = useRouter();
+  const handleClick = async () => {
+    if (router.pathname !== '/') {
+      // Navigate to the root page first
+      await router.push('/');
+    }
+
+    // Scroll to the target ID after navigation
+    scroller.scrollTo(to, {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    });
+  };
+
   return (
     <li>
-      <Link
-        className="text-md cursor-pointer font-mono font-medium"
-        to={to}
-        duration={600}
-        smooth="easeInOutQuart"
-        onClick={onClick}
-      >
+      <button onClick={handleClick} className="text-md cursor-pointer font-mono font-medium">
         {children}
-      </Link>
-    </li>
+      </button>
+    </li >
   );
 };
 
