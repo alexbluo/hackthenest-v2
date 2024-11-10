@@ -70,7 +70,7 @@ const RecapSection = () => {
 
             <div className="relative z-10 mx-auto flex w-fit flex-col items-center justify-center gap-8 pt-12 sm:pt-24">
                 {/* https://stackoverflow.com/questions/66457359/how-to-keep-a-paragraph-height-even-when-there-is-no-text-in-it */}
-                <h1 className="h-fit bg-clip-text text-center font-mono text-7xl gradient-text font-semibold tracking-tighter text-transparent before:inline-block before:content-['']">
+                <h1 className="h-fit bg-clip-text text-center font-mono text-5xl gradient-text font-semibold tracking-tighter text-transparent before:inline-block before:content-['']">
                     Hack the Nest will return in 2025!
                 </h1>
             </div>
