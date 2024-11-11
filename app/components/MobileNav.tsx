@@ -23,6 +23,10 @@ const MobileNav = ({ session }: Props) => {
     else if (!open) lockScroll(false);
   }, [open, width]);
 
+  const handleClick = () => {
+    toggleOpen(); // Toggle the state without passing any event
+  };
+
   return (
     <>
       <MobileNavToggle open={open} toggleOpen={toggleOpen} />
@@ -35,7 +39,7 @@ const MobileNav = ({ session }: Props) => {
             exit={{ opacity: 0 }}
           >
             <ul className="flex h-screen flex-col items-center justify-center gap-8 text-gold">
-              <NavItem to="about" onClick={toggleOpen}>
+              {/* <NavItem to="about" onClick={toggleOpen}>
                 about
               </NavItem>
               <NavItem to="schedule" onClick={toggleOpen}>
@@ -46,7 +50,16 @@ const MobileNav = ({ session }: Props) => {
               </NavItem>
               <NavItem to="sponsors" onClick={toggleOpen}>
                 sponsors
-              </NavItem>
+              </NavItem> */}
+              <Link onClick={handleClick} href="#about">
+                about
+              </Link>
+              <Link onClick={handleClick} href="#faq">
+                faq
+              </Link>
+              <Link onClick={handleClick} href="#sponsors">
+                sponsors
+              </Link>
               <Link
                 className="cursor-pointer font-mono text-lg font-medium"
                 href={session ? "/dashboard" : "/login"}
