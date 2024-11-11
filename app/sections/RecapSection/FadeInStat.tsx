@@ -3,7 +3,6 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import Image, { StaticImageData } from 'next/image';
 
 interface FadeInStatProps {
     stat: string;
@@ -20,7 +19,7 @@ const FadeInStat: React.FC<FadeInStatProps> = ({ stat, caption, alt }) => {
             if (element) {
                 const elementTop = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                if (elementTop < windowHeight * 3 / 4) {
+                if (elementTop < (windowHeight * 3) / 4) {
                     setIsVisible(true);
                 }
             }
@@ -41,9 +40,9 @@ const FadeInStat: React.FC<FadeInStatProps> = ({ stat, caption, alt }) => {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -50 }}
             transition={{ duration: 2 }}
         >
-            <div className="gradient-bg bg-blue-light hover:shadow-blue-light w-full cursor-pointer rounded-xl px-10 py-10  text-white shadow-lg shadow-black duration-200 ease-in-out hover:shadow-lg ">
-                <h1 className="pb-2 text-8xl font-semibold">{stat}</h1>
-                <h4 className="text-4xl">{caption}</h4>
+            <div className="gradient-bg bg-blue-light hover:shadow-blue-light w-full cursor-pointer rounded-xl px-6 py-6 md:px-10 md:py-10 text-white shadow-lg shadow-black duration-200 ease-in-out hover:shadow-lg">
+                <h1 className="pb-2 text-5xl font-semibold md:text-8xl">{stat}</h1>
+                <h4 className="text-2xl md:text-4xl">{caption}</h4>
             </div>
         </motion.div>
     );

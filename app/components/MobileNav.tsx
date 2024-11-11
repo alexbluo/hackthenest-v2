@@ -51,6 +51,9 @@ const MobileNav = ({ session }: Props) => {
               <NavItem to="sponsors" onClick={toggleOpen}>
                 sponsors
               </NavItem> */}
+              <Link onClick={handleClick} href="/recap">
+                recap
+              </Link>
               <Link onClick={handleClick} href="#about">
                 about
               </Link>
