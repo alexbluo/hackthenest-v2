@@ -40,7 +40,7 @@ const RecapSection = () => {
                         <FadeInStat stat="16" caption="workshops & mini-events" alt="Stat2" />
                     </div>
                     <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
-                        <FadeInImage src='/recap_4.jpg' alt="Image4" />
+                        <FadeInImage src='/recap_2.jpg' alt="Image4" />
                     </div>
 
                 </div>
@@ -57,7 +57,7 @@ const RecapSection = () => {
                         <FadeInStat stat="A lot..." caption="of fun! 😎" alt="Stat4" />
                     </div>
                     <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
-                        <FadeInImage src='/recap_2.jpg' alt="Image2" />
+                        <FadeInImage src='/recap_4.jpg' alt="Image2" />
                     </div>
 
                 </div>

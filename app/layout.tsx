@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { ReactNode } from "react";
 import { Metadata } from "next";
-import { Flow_Circular, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+// import { Flow_Circular, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Flow_Circular, IBM_Plex_Mono } from "next/font/google";
 import GoogleAnalytics from "utils/GoogleAnalytics";
 import "../index.css";
 
@@ -11,7 +12,7 @@ const mono = IBM_Plex_Mono({
   variable: "--font-mono",
 });
 
-const sans = IBM_Plex_Sans({
+const sans = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
