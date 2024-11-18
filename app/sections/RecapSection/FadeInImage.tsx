@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 interface FadeInImageProps {
-    src: StaticImageData;
+    src: string;
     alt: string;
 }
 
@@ -40,7 +40,7 @@ const FadeInImage: React.FC<FadeInImageProps> = ({ src, alt }) => {
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ duration: 2 }}
         >
-            <Image src={src} alt={alt} />
+            <Image src={src} alt={alt} style={{ objectFit: "contain" }} width={1000} height={1000} />
         </motion.div>
     );
 };
