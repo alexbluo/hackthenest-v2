@@ -28,7 +28,7 @@ const RecapSection = () => {
             <div className="flex flex-col space-y-36 pt-36 mx-6 md:mx-0">
                 <div className="flex justify-start">
                     <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
-                        <FadeInImage src='/recap_1.jpg' alt="Image1" />
+                        <FadeInImage src='/recap_1.png' alt="Image1" />
                     </div>
                     <div className="relative -ml-10 -mt-10 z-10">
                         <FadeInStat stat="200" caption="hackers" alt="Stat1" />
@@ -40,13 +40,13 @@ const RecapSection = () => {
                         <FadeInStat stat="16" caption="workshops & mini-events" alt="Stat2" />
                     </div>
                     <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
-                        <FadeInImage src='/recap_2.jpg' alt="Image4" />
+                        <FadeInImage src='/recap_2.png' alt="Image4" />
                     </div>
 
                 </div>
                 <div className="flex justify-start">
                     <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
-                        <FadeInImage src='/recap_3.jpg' alt="Image3" />
+                        <FadeInImage src='/recap_3.png' alt="Image3" />
                     </div>
                     <div className="relative -ml-10 -mt-10 z-10">
                         <FadeInStat stat="$10,000+" caption="in prizes" alt="Stat3" />
@@ -57,7 +57,7 @@ const RecapSection = () => {
                         <FadeInStat stat="A lot..." caption="of fun! 😎" alt="Stat4" />
                     </div>
                     <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
-                        <FadeInImage src='/recap_4.jpg' alt="Image2" />
+                        <FadeInImage src='/recap_4.png' alt="Image2" />
                     </div>
 
                 </div>
