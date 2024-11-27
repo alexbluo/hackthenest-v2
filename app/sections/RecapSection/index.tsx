@@ -30,8 +30,8 @@ const RecapSection = () => {
                     <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
                         <FadeInImage src='/recap_1.png' alt="Image1" />
                     </div>
-                    <div className="relative -ml-10 -mt-10 z-10">
-                        <FadeInStat stat="200" caption="hackers" alt="Stat1" />
+                    <div className="relative -ml-32 -mt-10 z-10">
+                        <FadeInStat stat="150" caption="hackers" alt="Stat1" />
                     </div>
                 </div>
 
