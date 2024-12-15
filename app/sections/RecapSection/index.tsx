@@ -27,7 +27,7 @@ const RecapSection = () => {
 
             <div className="flex flex-col space-y-36 pt-36 mx-6 md:mx-0">
                 <div className="flex justify-start">
-                    <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
+                    <div className="w-full sm:w-5/6 md:w-3/4 rounded-xl overflow-hidden">
                         <FadeInImage src='/recap_1.png' alt="Image1" />
                     </div>
                     <div className="relative -ml-32 -mt-10 z-10">
@@ -39,13 +39,13 @@ const RecapSection = () => {
                     <div className="relative -mr-10 mt-10 z-10">
                         <FadeInStat stat="16" caption="workshops & mini-events" alt="Stat2" />
                     </div>
-                    <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
+                    <div className="w-full sm:w-5/6 md:w-3/4 rounded-xl overflow-hidden">
                         <FadeInImage src='/recap_2.png' alt="Image4" />
                     </div>
 
                 </div>
                 <div className="flex justify-start">
-                    <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
+                    <div className="w-full sm:w-5/6 md:w-3/4 rounded-xl overflow-hidden">
                         <FadeInImage src='/recap_3.png' alt="Image3" />
                     </div>
                     <div className="relative -ml-10 -mt-10 z-10">
@@ -56,7 +56,7 @@ const RecapSection = () => {
                     <div className="relative -mr-10 mt-10 z-10">
                         <FadeInStat stat="A lot..." caption="of fun! 😎" alt="Stat4" />
                     </div>
-                    <div className="w-full md:w-3/4 rounded-xl overflow-hidden">
+                    <div className="w-full sm:w-5/6 md:w-3/4 rounded-xl overflow-hidden">
                         <FadeInImage src='/recap_4.png' alt="Image2" />
                     </div>
 
