@@ -48,21 +48,21 @@ const questions: Question[][] = [
       answer:
         "Hack the Nest is open to all high school students of all experience levels from anywhere. If you're not in high school, we'd love to have you as a mentor, volunteer, or sponsor!",
     },
-    {
-      question: "How do I get to the venue?",
-      answer: (
-        <>
-          Hack the Nest is being held in-person at{" "}
-          <a
-            className="cursor-pointer text-blue-light underline"
-            href="https://www.google.com/maps/dir/?api=1&destination=1934+Old+Gallows+Rd+STE+350,+Vienna,+VA+22182&travelmode=driving"
-          >
-            1934 Old Gallows Rd Suite 350, Vienna, VA 22182
-          </a>
-          . We&apos;re on the 3rd floor of the Bank of America building, just across the street from Tysons Corner Center!
-        </>
-      ),
-    },
+    // {
+    //   question: "How do I get to the venue?",
+    //   answer: (
+    //     <>
+    //       Hack the Nest is being held in-person at{" "}
+    //       <a
+    //         className="cursor-pointer text-blue-light underline"
+    //         href="https://www.google.com/maps/dir/?api=1&destination=1934+Old+Gallows+Rd+STE+350,+Vienna,+VA+22182&travelmode=driving"
+    //       >
+    //         1934 Old Gallows Rd Suite 350, Vienna, VA 22182
+    //       </a>
+    //       . We&apos;re on the 3rd floor of the Bank of America building, just across the street from Tysons Corner Center!
+    //     </>
+    //   ),
+    // },
     {
       question: "Are there travel reimbursements?",
       answer: (
