@@ -28,18 +28,25 @@ const SponsorsSection = () => {
         !
       </p>
       <div className="flex flex-col gap-6">
+        {/* placeholder */}
+        <div className="h-48 rounded-xl p-4 sm:p-8 bg-blue-light" aria-label="Sponsor link">
+          <div className="flex justify-center items-center relative h-full">
+            <h2 className="text-blue-dark">coming soon...</h2>
+          </div>
+        </div>
+
         {/* gold */}
-        <div className="grid gap-6">
+        {/* <div className="grid gap-6">
           <Sponsor
             src="/theCoderSchool.png"
             alt="theCoderSchool gold sponsorship"
             href="https://www.thecoderschool.com/"
             tier="gold"
           />
-        </div>
+        </div> */}
 
         {/* silver */}
-        <div className="grid grid-cols-2 gap-6">
+        {/* <div className="grid grid-cols-2 gap-6">
           <Sponsor
             src="/prhi.png"
             alt="PRHI silver sponsorship"
@@ -64,10 +71,10 @@ const SponsorsSection = () => {
             href="https://www.intelligentoffice.com/"
             tier="silver"
           />
-        </div>
+        </div> */}
 
         {/* bronze */}
-        <div className="grid grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-3 gap-6">
           <Sponsor
             src="/c-hit.png"
             alt="C-HIT bronze sponsorship"
@@ -122,7 +129,7 @@ const SponsorsSection = () => {
             href="https://nostarch.com/"
             tier="bronze"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
