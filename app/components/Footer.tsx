@@ -5,13 +5,13 @@ const Footer = () => {
     <footer className="container relative z-0 mx-auto py-12 lg:py-16">
       <div className="flex flex-col items-center justify-center gap-8 sm:flex-row sm:justify-between">
         <div className="relative">
-          <Image
+          {/* <Image
             src="/logo-colored.png"
             alt="Hack the Nest Logo"
             sizes="128px"
             height={128}
             width={128}
-          />
+          /> */}
         </div>
 
         <div className="flex flex-col justify-center gap-4">
@@ -82,15 +82,15 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-1 text-center font-medium text-gold sm:text-right">
-            <a
+            {/* <a
               href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
               target="_blank"
               rel="noreferrer"
             >
               MLH Code of Conduct
-            </a>
+            </a> */}
             <p>hello@hackthenest.org</p>
-            <p>© Hack the Nest 2023</p>
+            <p>© Hack the Nest 2025</p>
           </div>
         </div>
       </div>

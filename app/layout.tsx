@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { ReactNode } from "react";
 import { Metadata } from "next";
-// import { Flow_Circular, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
-import { Flow_Circular, IBM_Plex_Mono } from "next/font/google";
+import { Flow_Circular, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+// import { Flow_Circular, IBM_Plex_Mono } from "next/font/google";
 import GoogleAnalytics from "utils/GoogleAnalytics";
 import "../index.css";
 
