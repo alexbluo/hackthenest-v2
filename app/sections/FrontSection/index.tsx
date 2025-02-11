@@ -7,7 +7,7 @@ import useHackerText from "utils/useHackerText";
 const FrontSection = () => {
   const [name, animateName] = useHackerText("Hack the Nest");
   const [date, animateDate] = useHackerText("3.29.25 - 3.30.25");
-  const [location, animateLocation] = useHackerText("Tysons Corner, MD");
+  const [location, animateLocation] = useHackerText("Tysons Corner, VA");
   // const [register, animateRegister] = useHackerText("Register Now!");
 
   useEffect(() => {
