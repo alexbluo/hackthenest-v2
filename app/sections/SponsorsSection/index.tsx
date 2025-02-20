@@ -29,11 +29,11 @@ const SponsorsSection = () => {
       </p>
       <div className="flex flex-col gap-6">
         {/* placeholder */}
-        <div className="h-48 rounded-xl p-4 sm:p-8 bg-blue-light" aria-label="Sponsor link">
+        {/* <div className="h-48 rounded-xl p-4 sm:p-8 bg-blue-light" aria-label="Sponsor link">
           <div className="flex justify-center items-center relative h-full">
             <h2 className="text-blue-dark">coming soon...</h2>
           </div>
-        </div>
+        </div> */}
 
         {/* gold */}
         {/* <div className="grid gap-6">
@@ -46,8 +46,8 @@ const SponsorsSection = () => {
         </div> */}
 
         {/* silver */}
-        {/* <div className="grid grid-cols-2 gap-6">
-          <Sponsor
+        <div className="grid grid-cols-1 gap-6">
+          {/* <Sponsor
             src="/prhi.png"
             alt="PRHI silver sponsorship"
             href="https://www.patientsafetytech.com/"
@@ -64,16 +64,48 @@ const SponsorsSection = () => {
             alt="XTEN-AV silver sponsorship"
             href="https://xtenav.com/"
             tier="silver"
-          />
+          /> */}
           <Sponsor
             src="/intelligent-office.svg"
             alt="Intelligent Office silver sponsorship"
             href="https://www.intelligentoffice.com/"
             tier="silver"
           />
-        </div> */}
+        </div>
 
         {/* bronze */}
+        <div className="grid grid-cols-3 gap-6">
+          <Sponsor
+              src="/launchx.png"
+              alt="LaunchX sponsorship"
+              href="https://www.launchx.com/"
+              tier="bronze"
+            />
+            <Sponsor
+              src="/x-camp.png"
+              alt="X-Camp sponsorship"
+              href="https://x-camp.academy/"
+              tier="bronze"
+            />
+            <Sponsor
+              src="/aops.png"
+              alt="AoPS sponsorship"
+              href="https://artofproblemsolving.com/"
+              tier="bronze"
+            />
+            <Sponsor
+              src="/sja.png"
+              alt="SJA sponsorship"
+              href="https://www.studentjusticealliance.org/"
+              tier="bronze"
+            />
+            <Sponsor
+              src="/chagantifoundation.png"
+              alt="Chaganti Foundation sponsorship"
+              href="https://chagantifoundation.org/"
+              tier="bronze"
+            />
+        </div>
         {/* <div className="grid grid-cols-3 gap-6">
           <Sponsor
             src="/c-hit.png"
