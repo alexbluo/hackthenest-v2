@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="flex h-8 flex-row gap-6">
             <a
               className="h-8 w-8"
-              href="https://www.instagram.com/hackthenest_"
+              href="https://www.instagram.com/hackthenest"
               target="_blank"
               aria-label="Instagram"
               rel="noreferrer"

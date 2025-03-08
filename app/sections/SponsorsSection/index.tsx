@@ -76,35 +76,41 @@ const SponsorsSection = () => {
         {/* bronze */}
         <div className="grid grid-cols-3 gap-6">
           <Sponsor
-              src="/launchx.png"
-              alt="LaunchX sponsorship"
-              href="https://www.launchx.com/"
-              tier="bronze"
-            />
-            <Sponsor
-              src="/x-camp.png"
-              alt="X-Camp sponsorship"
-              href="https://x-camp.academy/"
-              tier="bronze"
-            />
-            <Sponsor
-              src="/aops.png"
-              alt="AoPS sponsorship"
-              href="https://artofproblemsolving.com/"
-              tier="bronze"
-            />
-            <Sponsor
-              src="/sja.png"
-              alt="SJA sponsorship"
-              href="https://www.studentjusticealliance.org/"
-              tier="bronze"
-            />
-            <Sponsor
-              src="/chagantifoundation.png"
-              alt="Chaganti Foundation sponsorship"
-              href="https://chagantifoundation.org/"
-              tier="bronze"
-            />
+            src="/launchx.png"
+            alt="LaunchX sponsorship"
+            href="https://www.launchx.com/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/x-camp.png"
+            alt="X-Camp sponsorship"
+            href="https://x-camp.academy/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/aops.png"
+            alt="AoPS sponsorship"
+            href="https://artofproblemsolving.com/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/sja.png"
+            alt="SJA sponsorship"
+            href="https://www.studentjusticealliance.org/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/chagantifoundation.png"
+            alt="Chaganti Foundation sponsorship"
+            href="https://chagantifoundation.org/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/1password.png"
+            alt="1Password sponsorship"
+            href="https://1password.com/"
+            tier="bronze"
+          />
         </div>
         {/* <div className="grid grid-cols-3 gap-6">
           <Sponsor
