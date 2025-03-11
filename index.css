@@ -6,8 +6,22 @@
   section {
     @apply container py-8 lg:py-16;
   }
+
   h2 {
     @apply bg-clip-text text-5xl font-bold text-transparent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }
 
@@ -24,6 +38,7 @@ input[type="checkbox"]:focus-visible {
   from {
     background-position: 0% center;
   }
+
   to {
     background-position: -200% center;
   }
@@ -33,55 +48,47 @@ input[type="checkbox"]:focus-visible {
   0% {
     background-position: 0 0%;
   }
+
   50% {
     background-position: 0 2%;
   }
+
   100% {
     background-position: 0 0%;
   }
 }
 
 .gradient-text {
-  background-image: linear-gradient(
-    to right,
-    #045de9,
-    #09cdf9,
-    #7fcec5,
-    #045de9
-  );
+  background-image: linear-gradient(to right,
+      #045de9,
+      #09cdf9,
+      #7fcec5,
+      #045de9);
   background-size: 200%;
   animation: text 3s linear infinite;
 }
 
 .gradient-bg {
-  background-image: repeating-linear-gradient(
-      -10deg,
+  background-image: repeating-linear-gradient(-10deg,
       #09cdf963 200px,
       #7fcec563 300px,
       #045de963 400px,
-      #09c6f963 600px
-    ),
-    repeating-linear-gradient(
-      10deg,
+      #09c6f963 600px),
+    repeating-linear-gradient(10deg,
       #09c5f969 150px,
       #045de981 250px,
       #7fcec581 350px,
-      #09c6f969 450px
-    ),
-    repeating-linear-gradient(
-      20deg,
+      #09c6f969 450px),
+    repeating-linear-gradient(20deg,
       #09c5f963 100px,
       #045de981 200px,
       #7fcec581 300px,
-      #09c6f963 400px
-    ),
-    repeating-linear-gradient(
-      22deg,
+      #09c6f963 400px),
+    repeating-linear-gradient(22deg,
       #09c6f981 150px,
       #045de969 250px,
       #7fcec569 400px,
-      #09c6f981 500px
-    );
+      #09c6f981 500px);
   background-size: 100% 200%;
   animation: wave 3s infinite ease-in-out;
 }

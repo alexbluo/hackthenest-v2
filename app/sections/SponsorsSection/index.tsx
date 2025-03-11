@@ -44,6 +44,12 @@ const SponsorsSection = () => {
             tier="gold"
           />
         </div> */}
+        <Sponsor
+          src="/craignewmark.png"
+          alt="Intelligent Office silver sponsorship"
+          href="https://craignewmarkphilanthropies.org/"
+          tier="gold"
+        />
 
         {/* silver */}
         <div className="grid grid-cols-1 gap-6">
@@ -71,6 +77,7 @@ const SponsorsSection = () => {
             href="https://www.intelligentoffice.com/"
             tier="silver"
           />
+
         </div>
 
         {/* bronze */}

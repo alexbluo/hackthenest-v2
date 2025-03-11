@@ -79,18 +79,25 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Patient Safety Technology Challenge",
-    time: "11:00 - 12:00",
-    location: "363",
+    name: "UMBC Challenge",
+    time: "10:30 - 11:00",
+    location: "P&G",
     description:
-      "Learn more about how to create a project for the Patient Safety Technology Challenge!",
+      "Ask karen aeioughseoguhse",
     status: "neutral",
   },
   {
     name: "Lunch",
-    time: "12:00 - 2:00",
+    time: "11:00 - 12:00",
     location: "Kitchen",
     description: "Wouldn't be a hackathon without pizza :)",
+    status: "neutral",
+  },
+  {
+    name: "Student Justice Alliance",
+    time: "12:00 - 1:00",
+    location: "363",
+    description: "Alvin",
     status: "neutral",
   },
   {
@@ -102,11 +109,11 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Intro to React",
+    name: "Intro to Python",
     time: "2:00 - 3:00",
     location: "363",
     description:
-      "Web development has come a long way since the early days of plain HTML tables; today, we have powerful JavaScript frameworks such as React, created by Facebook, which open up far more possibilities in your next website! Explore the fundamentals of the world's most popular and important frontend framework by creating a game of Whac-A-Mole!",
+      "pyton",
     status: "neutral",
   },
   {
@@ -118,31 +125,20 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Programming CircuitPython on the Pico W(orkshop)",
+    name: "Intro to Competitive Programming",
     time: "4:00 - 5:00",
     location: "363",
     description: (
-      <>
-        Connect buttons to a Raspberry Pi Pico W on a breadboard, then code it
-        to connect to a live multiplayer game where you compete and collaborate
-        with other people in the workshop! We will also provide a brief
-        description of a NASA project called{" "}
-        <a href="https://ezie.jhuapl.edu/outreach/ezie-mag/" target="_blank">
-          EZIE-Mag
-        </a>{" "}
-        that aims to do citizen driven science using a Raspberry Pi connected to
-        a magnetometer, and we will show how you can also assemble and operate
-        hardware that will contribute to the science of this mission.
-      </>
+      "comp program"
     ),
     status: "neutral",
   },
   {
-    name: "Worst Website Design Contest",
+    name: "Jeopardy",
     time: "5:00 - 6:00",
     location: "363",
     description:
-      "Designers strive for the most intuitive interface, but what happens when you do the opposite?",
+      "jepody",
     status: "neutral",
   },
   {
@@ -153,23 +149,16 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Chess Tournament",
+    name: "Monkeytype Contest",
     time: "8:00 - 9:00",
     location: "363",
     description: "Brain exercises :)",
     status: "neutral",
   },
   {
-    name: "Smash Bros",
-    time: "9:00 - 10:00",
-    location: "363",
-    description: "King of the Hill style 1v1s.",
-    status: "neutral",
-  },
-  {
     name: "Karaoke!",
-    time: "10:00 - 11:00",
-    location: "Coworking",
+    time: "9:00 - 11:00",
+    location: "363",
     description: "Sing your heart out to your favorite songs!",
     status: "neutral",
   },
@@ -215,13 +204,6 @@ const sunday: Block[] = [
     time: "8:00 - 9:00",
     location: "Kitchen",
     description: "Final stretch! Energize with bagels & cream cheese.",
-    status: "neutral",
-  },
-  {
-    name: "Korean Fire Noodle Challenge",
-    time: "9:00 - 10:00",
-    location: "Kitchen",
-    description: "Get fired up and ready for demos!",
     status: "neutral",
   },
   {
@@ -389,7 +371,7 @@ const ScheduleSection = () => {
         {/* overflow hidden for extra shadow edges */}
         <div className="w-full overflow-hidden xl:w-1/2">
           <motion.ul
-            className="relative mt-12 flex max-h-[36rem] flex-col overflow-y-scroll pt-12"
+            className="relative mt-12 flex max-h-[36rem] flex-col no-scrollbar overflow-y-scroll pt-12"
             ref={containerRef}
           >
             {blocks.map(({ name, time, location, description, status }, i) => {
@@ -415,9 +397,8 @@ const ScheduleSection = () => {
             </div>
           </motion.ul>
           <div
-            className={`h-4 rotate-180 shadow-lg duration-200 ease-in-out ${
-              shadow ? "shadow-black" : "shadow-transparent"
-            }`}
+            className={`h-4 rotate-180 shadow-lg duration-200 ease-in-out ${shadow ? "shadow-transparent" : "shadow-transparent"
+              }`}
           ></div>
         </div>
         <div className="w-full p-12 xl:w-1/2">

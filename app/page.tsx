@@ -25,7 +25,7 @@ const MainPage = async () => {
             <main className="relative z-0">
                 <FrontSection />
                 <AboutSection />
-                {/* <ScheduleSection /> */}
+                <ScheduleSection />
                 <FAQSection />
                 <SponsorsSection />
             </main>
