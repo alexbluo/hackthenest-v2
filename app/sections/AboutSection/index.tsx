@@ -27,8 +27,9 @@ const AboutSection = () => {
           levels.
         </Stat>
         <Stat stat="$5000+" caption="prizes">
-          Winning teams will receive prizes from a $5,000+ prize pool! Below is
-          a tentative preview:
+          Winning teams will receive prizes from a $5,000+ prize pool! 
+          More details soon... 
+          {/* Below is a tentative preview:
           <div className="my-2">
             <p className="font-medium">Grand Prize</p>
             <p>$800</p>
@@ -51,7 +52,7 @@ const AboutSection = () => {
             <p>API Credits for whole team</p>
           </div>
           Our full list of prizes is now available on{" "}
-          <a href="https://hackthenest-2023.devpost.com" className="underline">Devpost</a>.
+          <a href="https://hackthenest-2023.devpost.com" className="underline">Devpost</a>. */}
         </Stat>
         <Stat stat="10" caption="workshops & mini-events">
           Don&apos;t miss our workshops and mini-events! Workshops are

@@ -83,7 +83,7 @@ const saturday: Block[] = [
     time: "10:30 - 11:00",
     location: "P&G",
     description:
-      "Ask karen aeioughseoguhse",
+      "More Details Soon...", // todo
     status: "neutral",
   },
   {
@@ -97,7 +97,7 @@ const saturday: Block[] = [
     name: "Student Justice Alliance",
     time: "12:00 - 1:00",
     location: "363",
-    description: "Alvin",
+    description: "Solving social injustices is a problem-solving exercise. In this interactive workshop, we’ll break down systemic injustices, explore creative solutions, and challenge you to design bold, impact-driven strategies to disrupt inequality.",
     status: "neutral",
   },
   {
@@ -113,7 +113,7 @@ const saturday: Block[] = [
     time: "2:00 - 3:00",
     location: "363",
     description:
-      "pyton",
+      "More Details Soon...", // todo
     status: "neutral",
   },
   {
@@ -121,16 +121,14 @@ const saturday: Block[] = [
     time: "3:00 - 4:00",
     location: "363",
     description:
-      "In this machine learning workshop, you will learn about genetic algorithms and how they can be used to make game-playing AIs! Specifically, you will learn about the mechanics behind the NEAT algorithm, a common genetic algorithm used for common game-playing AIs (see Code Bullet on YouTube for examples). We will be demonstrating how to build your own Pokemon Showdown bot to train and battle against!",
+      "Join us for a gentle introduction into the world of Machine Learning where we'll familiarize ourselves with the likes of linear regression, logistic regression, and K-means clustering, all while discovering how you can apply these algorithms to your own project!",
     status: "neutral",
   },
   {
     name: "Intro to Competitive Programming",
     time: "4:00 - 5:00",
     location: "363",
-    description: (
-      "comp program"
-    ),
+    description: "More Details Soon...", // todo
     status: "neutral",
   },
   {
@@ -138,7 +136,7 @@ const saturday: Block[] = [
     time: "5:00 - 6:00",
     location: "363",
     description:
-      "jepody",
+      "More Details Soon...", // todo
     status: "neutral",
   },
   {
@@ -152,7 +150,7 @@ const saturday: Block[] = [
     name: "Monkeytype Contest",
     time: "8:00 - 9:00",
     location: "363",
-    description: "Brain exercises :)",
+    description: "Tournament-style battle for honor and glory... and a new keyboard? 👀",
     status: "neutral",
   },
   {
@@ -189,7 +187,7 @@ const sunday: Block[] = [
     time: "12:00 - 2:00",
     location: "363",
     description:
-      "Follow Mark Zuckerberg not on Facebook, but through The Social Network!",
+      "More details soon...",
     status: "neutral",
   },
   {
