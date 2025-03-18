@@ -24,18 +24,6 @@ export const POST = async (req: NextRequest) => {
     },
   });
 
-  await prisma.user.update({
-    where: { email },
-    data: {
-      completed: {
-        connectOrCreate: {
-          where: { item: "HACKERAPP" },
-          create: { item: "HACKERAPP" },
-        },
-      },
-    },
-  });
-
   const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
   client.sendEmailWithTemplate({
@@ -51,6 +39,18 @@ export const POST = async (req: NextRequest) => {
     console.log("Emails sent successfully:", response);
   }).catch(error => {
     console.error("Error sending emails:", error);
+  });
+
+  await prisma.user.update({
+    where: { email },
+    data: {
+      completed: {
+        connectOrCreate: {
+          where: { item: "HACKERAPP" },
+          create: { item: "HACKERAPP" },
+        },
+      },
+    },
   });
 
   return NextResponse.json(app);
