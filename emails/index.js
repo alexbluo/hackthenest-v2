@@ -11,6 +11,7 @@ dotenv.config();
 // const emails = ["thomasli2025@gmail.com"]
 
 console.log(process.env.POSTMARK_API_TOKEN)
+
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
 // Transactional Test
