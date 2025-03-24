@@ -12,6 +12,7 @@ const emails = ["thomasli2025@gmail.com", "1556316@fcpsschools.net","1662636@fcp
 // get incomplete emails and use them
 
 console.log(process.env.POSTMARK_API_TOKEN)
+
 const client = new ServerClient(process.env.POSTMARK_API_TOKEN);
 
 // Transactional Test
