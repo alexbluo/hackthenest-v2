@@ -122,6 +122,12 @@ const SponsorsSection = () => {
             href="https://www.interviewcake.com/"
             tier="bronze"
           />
+          <Sponsor
+            src="/intelligent-office.svg"
+            alt="Intelligent Office bronze sponsorship"
+            href="https://www.intelligentoffice.com/"
+            tier="bronze"
+          />
         </div>
         {/* <div className="grid grid-cols-3 gap-6">
           <Sponsor

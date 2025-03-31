@@ -26,9 +26,9 @@ const AboutSection = () => {
           from all geographic areas and of all demographics and experience
           levels.
         </Stat>
-        <Stat stat="$5000+" caption="prizes">
-          Winning teams will receive prizes from a $5,000+ prize pool! 
-          More details soon... 
+        <Stat stat="$12,000+" caption="prizes">
+          Winning teams will receive prizes from a $12,000+ prize pool!
+          More details soon...
           {/* Below is a tentative preview:
           <div className="my-2">
             <p className="font-medium">Grand Prize</p>

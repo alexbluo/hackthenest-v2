@@ -79,7 +79,7 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "UMBC Challenge",
+    name: "iHARP Talk",
     time: "10:30 - 11:00",
     location: "P&G",
     description:
@@ -132,7 +132,7 @@ const saturday: Block[] = [
     status: "neutral",
   },
   {
-    name: "Jeopardy",
+    name: "Chess Tournament",
     time: "5:00 - 6:00",
     location: "363",
     description:
