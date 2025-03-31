@@ -46,13 +46,13 @@ const SponsorsSection = () => {
         </div> */}
         <Sponsor
           src="/craignewmark.png"
-          alt="Intelligent Office silver sponsorship"
+          alt="Craig Newmark Philanthropies Gold sponsorship"
           href="https://craignewmarkphilanthropies.org/"
           tier="gold"
         />
 
         {/* silver */}
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {/* <Sponsor
             src="/prhi.png"
             alt="PRHI silver sponsorship"
@@ -71,27 +71,31 @@ const SponsorsSection = () => {
             href="https://xtenav.com/"
             tier="silver"
           /> */}
-          <Sponsor
+          {/* <Sponsor
             src="/intelligent-office.svg"
             alt="Intelligent Office silver sponsorship"
             href="https://www.intelligentoffice.com/"
             tier="silver"
+          /> */}
+          <Sponsor
+            src="/x-camp.png"
+            alt="X-Camp sponsorship"
+            href="https://x-camp.academy/"
+            tier="silver"
           />
-
+          <Sponsor
+            src="/chagantifoundation.png"
+            alt="Chaganti Foundation sponsorship"
+            href="https://chagantifoundation.org/"
+            tier="silver"
+          />
         </div>
-
         {/* bronze */}
         <div className="grid grid-cols-3 gap-6">
           <Sponsor
             src="/launchx.png"
             alt="LaunchX sponsorship"
             href="https://www.launchx.com/"
-            tier="bronze"
-          />
-          <Sponsor
-            src="/x-camp.png"
-            alt="X-Camp sponsorship"
-            href="https://x-camp.academy/"
             tier="bronze"
           />
           <Sponsor
@@ -107,15 +111,15 @@ const SponsorsSection = () => {
             tier="bronze"
           />
           <Sponsor
-            src="/chagantifoundation.png"
-            alt="Chaganti Foundation sponsorship"
-            href="https://chagantifoundation.org/"
-            tier="bronze"
-          />
-          <Sponsor
             src="/1password.png"
             alt="1Password sponsorship"
             href="https://1password.com/"
+            tier="bronze"
+          />
+          <Sponsor
+            src="/interview-cake.svg"
+            alt="Interview cake sponsorship"
+            href="https://www.interviewcake.com/"
             tier="bronze"
           />
         </div>
