@@ -31,6 +31,9 @@ const NavBar = async () => {
         <Link href="/#about">
           about
         </Link>
+        <Link href="/#schedule">
+          schedule
+        </Link>
         <Link href="/#faq">
           faq
         </Link>

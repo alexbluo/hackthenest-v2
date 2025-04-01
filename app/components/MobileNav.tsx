@@ -57,6 +57,9 @@ const MobileNav = ({ session }: Props) => {
               <Link onClick={handleClick} href="#about">
                 about
               </Link>
+              <Link onClick={handleClick} href="#schedule">
+                schedule
+              </Link>
               <Link onClick={handleClick} href="#faq">
                 faq
               </Link>
@@ -64,7 +67,6 @@ const MobileNav = ({ session }: Props) => {
                 sponsors
               </Link>
               <Link
-                className="cursor-pointer font-mono text-lg font-medium"
                 href={session ? "/dashboard" : "/login"}
               >
                 {session ? "dashboard" : "login"}

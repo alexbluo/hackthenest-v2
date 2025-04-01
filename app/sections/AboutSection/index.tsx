@@ -28,30 +28,34 @@ const AboutSection = () => {
         </Stat>
         <Stat stat="$12,000+" caption="prizes">
           Winning teams will receive prizes from a $12,000+ prize pool!
-          More details soon...
-          {/* Below is a tentative preview:
+          Below is a tentative preview:
           <div className="my-2">
             <p className="font-medium">Grand Prize</p>
-            <p>$800</p>
-            <p className="font-medium">Social Good Track</p>
-            <p>$1,000</p>
-            <p className="font-medium">
-              Cybersecurity Track sponsored by C-HIT
-            </p>
-            <p>$500</p>
-            <p className="font-medium">Patient Safety Technology Challenge</p>
-            <p>$500</p>
+            <p>$600, $200 X-Camp Credit (x4)</p>
+            <p className="font-medium">Second Place</p>
+            <p>$150 X-Camp Credit (x4), 1Password One Year (x10), Interview Cake License(x10)</p>
+            <p className="font-medium">Third Place</p>
+            <p>$100 X-Camp Credit (x4), 1Password One Year (x5), Interview Cake License(x5)</p>
+
+            <br></br>
+
+            <p className="font-medium">Craig Newmark Philanthropies Cybersecurity Track</p>
+            <p>Sony WH-CH720N Noise Cancelling Headphones (x4)</p>
+            <p className="font-medium"> SJA Social Justice Track </p>
+            <p>$400 Seed Funding</p>
+            <p className="font-medium">Environmental Track</p>
+            <p>24-In HD Monitor (x4)</p>
             <p className="font-medium">Beginner Track</p>
             <p>No Starch Press Books (x4), $25 AoPS Gift Card (x4)</p>
+
+            <br></br>
+
             <p className="font-medium">
-              Most Innovative Use Of Verbwire API (x2)
+              Runner-Ups
             </p>
-            <p>$25 gift card for each team member </p>
-            <p>API Credits for whole team</p>
-            <p className="font-medium">Creative Use Of Verbwire API (x20)</p>
-            <p>API Credits for whole team</p>
+            <p>Interview Cake License (1/student) as supplies last</p>
           </div>
-          Our full list of prizes is now available on{" "}
+          {/* Our full list of prizes is now available on{" "}
           <a href="https://hackthenest-2023.devpost.com" className="underline">Devpost</a>. */}
         </Stat>
         <Stat stat="10" caption="workshops & mini-events">

@@ -83,21 +83,21 @@ const saturday: Block[] = [
     time: "10:30 - 11:00",
     location: "P&G",
     description:
-      "More Details Soon...", // todo
-    status: "neutral",
-  },
-  {
-    name: "Lunch",
-    time: "11:00 - 12:00",
-    location: "Kitchen",
-    description: "Wouldn't be a hackathon without pizza :)",
+      "Faculty from University of Baltimore County's iHARP institute will discuss problems they are currently working on.", // todo
     status: "neutral",
   },
   {
     name: "Student Justice Alliance",
-    time: "12:00 - 1:00",
+    time: "11:00 - 12:00",
     location: "363",
     description: "Solving social injustices is a problem-solving exercise. In this interactive workshop, we’ll break down systemic injustices, explore creative solutions, and challenge you to design bold, impact-driven strategies to disrupt inequality.",
+    status: "neutral",
+  },
+  {
+    name: "Lunch",
+    time: "12:00 - 1:00",
+    location: "Kitchen",
+    description: "Wouldn't be a hackathon without pizza :)",
     status: "neutral",
   },
   {
@@ -105,7 +105,7 @@ const saturday: Block[] = [
     time: "1:00 - 2:00",
     location: "363",
     description:
-      "Every project needs some sort of version management, and the most prevalent tool for it is Git. Learn how to share and sync your code with your team, from Git installation to your first commit (with Pokemon)! ",
+      "Every project needs some sort of version management, and the most prevalent tool for it is Git. Learn how to share and sync your code with your team, from Git installation to your first commit! ",
     status: "neutral",
   },
   {
@@ -113,7 +113,7 @@ const saturday: Block[] = [
     time: "2:00 - 3:00",
     location: "363",
     description:
-      "More Details Soon...", // todo
+      "Go from zero to hero by learning the basics of one of the world's most popular programming languages. Join us as we build your first game: Tic-Tac-Toe!",
     status: "neutral",
   },
   {
@@ -128,7 +128,7 @@ const saturday: Block[] = [
     name: "Intro to Competitive Programming",
     time: "4:00 - 5:00",
     location: "363",
-    description: "More Details Soon...", // todo
+    description: "Learn the basics of Competitive Programming from a USACO Finalist, as well as compete for free boba!",
     status: "neutral",
   },
   {
@@ -136,7 +136,7 @@ const saturday: Block[] = [
     time: "5:00 - 6:00",
     location: "363",
     description:
-      "More Details Soon...", // todo
+      "As in classical Hack the Nest tradition, battle it out with your fellow hackers for a chance to win some new tech!", // todo
     status: "neutral",
   },
   {
@@ -150,7 +150,7 @@ const saturday: Block[] = [
     name: "Monkeytype Contest",
     time: "8:00 - 9:00",
     location: "363",
-    description: "Tournament-style battle for honor and glory... and a new keyboard? 👀",
+    description: "Tournament-style battle for honor and glory... and a new keyboard?",
     status: "neutral",
   },
   {
@@ -208,7 +208,7 @@ const sunday: Block[] = [
     name: "Judging & Expo",
     time: "10:00 - 12:00",
     location: "P&G + Coworking",
-    description: "Showcase your creations! See full details on Devpost",
+    description: "Showcase your creations!",
     status: "neutral",
   },
   {
