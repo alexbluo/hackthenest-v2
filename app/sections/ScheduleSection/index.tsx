@@ -193,7 +193,7 @@ const sunday: Block[] = [
     time: "12:00 - 2:00",
     location: "Coworking",
     description:
-      "More details soon...",
+      "Interstellar!",
     status: "neutral",
   },
   {
