@@ -161,7 +161,7 @@ const saturday: Block[] = [
   },
   {
     name: "Karaoke!",
-    time: "9:00 - 11:00",
+    time: "10:00 - 11:00",
     location: "Coworking",
     description: "Sing your heart out to your favorite songs!",
     status: "neutral",
@@ -190,7 +190,7 @@ const sunday: Block[] = [
   },
   {
     name: "Movie Night",
-    time: "12:00 - 2:00",
+    time: "11:00 - 1:30",
     location: "Coworking",
     description:
       "Interstellar!",
@@ -207,7 +207,7 @@ const sunday: Block[] = [
     name: "Breakfast",
     time: "8:00 - 9:00",
     location: "Kitchen",
-    description: "Final stretch! Energize with bagels & cream cheese.",
+    description: "Final stretch! Energize with muffins.",
     status: "neutral",
   },
   {
