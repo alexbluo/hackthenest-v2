@@ -196,13 +196,13 @@ const sunday: Block[] = [
       "Interstellar!",
     status: "neutral",
   },
-  {
-    name: "Cookie Debugging",
-    time: "2:00 - 3:00",
-    location: "Coworking",
-    description: "Bring us a bug and we'll give you cookies in return!",
-    status: "neutral",
-  },
+  // {
+  //   name: "Cookie Debugging",
+  //   time: "2:00 - 3:00",
+  //   location: "Coworking",
+  //   description: "Bring us a bug and we'll give you cookies in return!",
+  //   status: "neutral",
+  // },
   {
     name: "Breakfast",
     time: "8:00 - 9:00",
