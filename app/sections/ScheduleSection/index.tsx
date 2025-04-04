@@ -89,7 +89,7 @@ const saturday: Block[] = [
   {
     name: "Student Justice Alliance",
     time: "11:00 - 12:00",
-    location: "363",
+    location: "P&G",
     description: "Solving social injustices is a problem-solving exercise. In this interactive workshop, we’ll break down systemic injustices, explore creative solutions, and challenge you to design bold, impact-driven strategies to disrupt inequality.",
     status: "neutral",
   },
@@ -103,7 +103,7 @@ const saturday: Block[] = [
   {
     name: "Intro to Git",
     time: "1:00 - 2:00",
-    location: "363",
+    location: "P&G",
     description:
       "Every project needs some sort of version management, and the most prevalent tool for it is Git. Learn how to share and sync your code with your team, from Git installation to your first commit! ",
     status: "neutral",
@@ -111,7 +111,7 @@ const saturday: Block[] = [
   {
     name: "Intro to Python",
     time: "2:00 - 3:00",
-    location: "363",
+    location: "P&G",
     description:
       "Go from zero to hero by learning the basics of one of the world's most popular programming languages. Join us as we build your first game: Tic-Tac-Toe!",
     status: "neutral",
@@ -119,7 +119,7 @@ const saturday: Block[] = [
   {
     name: "Intro to Machine Learning",
     time: "3:00 - 4:00",
-    location: "363",
+    location: "P&G",
     description:
       "Join us for a gentle introduction into the world of Machine Learning where we'll familiarize ourselves with the likes of linear regression, logistic regression, and K-means clustering, all while discovering how you can apply these algorithms to your own project!",
     status: "neutral",
@@ -127,16 +127,15 @@ const saturday: Block[] = [
   {
     name: "Intro to Competitive Programming",
     time: "4:00 - 5:00",
-    location: "363",
+    location: "P&G",
     description: "Learn the basics of Competitive Programming from a USACO Finalist, as well as compete for free boba!",
     status: "neutral",
   },
   {
-    name: "Chess Tournament",
+    name: "GeoGuessr Tournament",
     time: "5:00 - 6:00",
-    location: "363",
-    description:
-      "As in classical Hack the Nest tradition, battle it out with your fellow hackers for a chance to win some new tech!", // todo
+    location: "P&G",
+    description: 'Put your geography skills to the test in the GeoGuessr Tournament—can you pinpoint the world faster than anyone else?',
     status: "neutral",
   },
   {
@@ -149,14 +148,21 @@ const saturday: Block[] = [
   {
     name: "Monkeytype Contest",
     time: "8:00 - 9:00",
-    location: "363",
+    location: "P&G",
     description: "Tournament-style battle for honor and glory... and a new keyboard?",
     status: "neutral",
   },
   {
+    name: 'Korean Fire Noodle Challenge',
+    time: '9:00 - 10:00',
+    location: 'Kitchen',
+    description: 'Test your spice tolerance in the Korean Fire Noodle Challenge—where only the bold survive the burn!',
+    status: 'neutral',
+  },
+  {
     name: "Karaoke!",
     time: "9:00 - 11:00",
-    location: "363",
+    location: "Coworking",
     description: "Sing your heart out to your favorite songs!",
     status: "neutral",
   },
@@ -185,7 +191,7 @@ const sunday: Block[] = [
   {
     name: "Movie Night",
     time: "12:00 - 2:00",
-    location: "363",
+    location: "Coworking",
     description:
       "More details soon...",
     status: "neutral",
